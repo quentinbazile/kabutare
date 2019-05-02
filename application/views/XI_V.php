@@ -18,50 +18,50 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
       <div>
         <form method="post" action="" class="form-inline">
       <table id="dt">
         <thead>
           <tr>
-            <th rowspan="2">Number <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th rowspan="2" style="min-width:200px;"> Name <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2" style="max-width:40px;">Age < 5 <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2" style="max-width:40px;">Age 5 to 9 <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2" style="max-width:40px;">Age 10 to 18 <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2" style="max-width:40px;">Age 19 to 24 <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2" style="max-width:40px;">Age > 25 <i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th rowspan="2" class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age 5 to 9<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age 10 to 18<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age 19 to 24<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age > 25<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
           </tr>
           <tr>
-            <th style="max-width:20px;">M</th>
-            <th style="max-width:20px;">F</th>
-            <th style="max-width:20px;">M</th>
-            <th style="max-width:20px;">F</th>
-            <th style="max-width:20px;">M</th>
-            <th style="max-width:20px;">F</th>
-            <th style="max-width:20px;">M</th>
-            <th style="max-width:20px;">F</th>
-            <th style="max-width:20px;">M</th>
-            <th style="max-width:20px;">F</th>
+            <th>M</th>
+            <th>F</th>
+            <th>M</th>
+            <th>F</th>
+            <th>M</th>
+            <th>F</th>
+            <th>M</th>
+            <th>F</th>
+            <th>M</th>
+            <th>F</th>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td style="min-width:200px;">GBV victims with symptoms of sexual violence (new cases)</td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_5m" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_5f" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_9m" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_9f" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_18m" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_18f" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_24m" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_24f" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_25m" class="form-control"></td>
-            <td style="max-width:20px;"><input required type="number" min="0" name="sexual_violence_25f" class="form-control"></td>
+            <td class="center">1</td>
+            <td>GBV victims with symptoms of sexual violence (new cases)</td>
+            <td><input required type="number" min="0" name="sexual_violence_5m" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_5f" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_9m" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_9f" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_18m" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_18f" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_24m" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_24f" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_25m" class="form-control"></td>
+            <td><input required type="number" min="0" name="sexual_violence_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>2</td>
-            <td style="min-width:200px;">GBV victims with symptoms of physical violence (new cases)</td>
+            <td class="center">2</td>
+            <td>GBV victims with symptoms of physical violence (new cases)</td>
             <td><input required type="number" min="0" name="physical_violence_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="physical_violence_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="physical_violence_9m" class="form-control"></td>
@@ -74,7 +74,7 @@
             <td><input required type="number" min="0" name="physical_violence_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>3</td>
+            <td class="center">3</td>
             <td>GBV victims with symptoms of emotional violence (new cases)</td>
             <td><input required type="number" min="0" name="emotional_violence_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="emotional_violence_5f" class="form-control"></td>
@@ -88,8 +88,8 @@
             <td><input required type="number" min="0" name="emotional_violence_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>4</td>
-            <td style="min-width:200px;">GBV victims with symptoms of economic violence (new cases)</td>
+            <td class="center">4</td>
+            <td>GBV victims with symptoms of economic violence (new cases)</td>
             <td><input required type="number" min="0" name="economic_violence_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="economic_violence_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="economic_violence_9m" class="form-control"></td>
@@ -102,8 +102,8 @@
             <td><input required type="number" min="0" name="economic_violence_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>5</td>
-            <td style="min-width:200px;">GBV victims referred for care to higher level health facility</td>
+            <td class="center">5</td>
+            <td>GBV victims referred for care to higher level health facility</td>
             <td><input required type="number" min="0" name="refered_higher_level_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_higher_level_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_higher_level_9m" class="form-control"></td>
@@ -116,8 +116,8 @@
             <td><input required type="number" min="0" name="refered_higher_level_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>6</td>
-            <td style="min-width:200px;">GBV victims referred to this facility by police</td>
+            <td class="center">6</td>
+            <td>GBV victims referred to this facility by police</td>
             <td><input required type="number" min="0" name="refered_police_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_police_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_police_9m" class="form-control"></td>
@@ -130,8 +130,8 @@
             <td><input required type="number" min="0" name="refered_police_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>7</td>
-            <td style="min-width:200px;">GBV victims referred to this facilit by community health workers</td>
+            <td class="center">7</td>
+            <td>GBV victims referred to this facilit by community health workers</td>
             <td><input required type="number" min="0" name="refered_community_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_community_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="refered_community_9m" class="form-control"></td>
@@ -144,8 +144,8 @@
             <td><input required type="number" min="0" name="refered_community_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>8</td>
-            <td style="min-width:200px;">GBV victims HIV + sero-conversion 3 months after exposure</td>
+            <td class="center">8</td>
+            <td>GBV victims HIV + sero-conversion 3 months after exposure</td>
             <td><input required type="number" min="0" name="hiv_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="hiv_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="hiv_9m" class="form-control"></td>
@@ -158,8 +158,8 @@
             <td><input required type="number" min="0" name="hiv_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>9</td>
-            <td style="min-width:200px;">GBV victims with irreversible disabilities due to GBV</td>
+            <td class="center">9</td>
+            <td>GBV victims with irreversible disabilities due to GBV</td>
             <td><input required type="number" min="0" name="disabilities_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="disabilities_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="disabilities_9m" class="form-control"></td>
@@ -172,8 +172,8 @@
             <td><input required type="number" min="0" name="disabilities_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>10</td>
-            <td style="min-width:200px;">GBV victims deaths</td>
+            <td class="center">10</td>
+            <td>GBV victims deaths</td>
             <td><input required type="number" min="0" name="deaths_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="deaths_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="deaths_9m" class="form-control"></td>
@@ -186,36 +186,36 @@
             <td><input required type="number" min="0" name="deaths_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>11</td>
-            <td style="min-width:200px;">GBV victims pregnant 4 weeks after exposure</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="center">11</td>
+            <td>GBV victims pregnant 4 weeks after exposure</td>
+            <td class="grey"></td>
+            <td class="grey"></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="pregnant_9f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="pregnant_18f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="pregnant_24f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="pregnant_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>12</td>
-            <td style="min-width:200px;">GBV victims received emergency contraception within 72 hours</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="center">12</td>
+            <td>GBV victims received emergency contraception within 72h</td>
+            <td class="grey"></td>
+            <td class="grey"></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="contraception_9f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="contraception_18f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="contraception_24f" class="form-control"></td>
-            <td></td>
+            <td class="grey"></td>
             <td><input required type="number" min="0" name="contraception_25f" class="form-control"></td>
           </tr>
           <tr>
-            <td>13</td>
-            <td style="min-width:200px;">GBV victims received post exposure HIV prophylaxis within 48 hours</td>
+            <td class="center">13</td>
+            <td>GBV victims received post exposure HIV prophylaxis within 48h</td>
             <td><input required type="number" min="0" name="exposure_hiv_5m" class="form-control"></td>
             <td><input required type="number" min="0" name="exposure_hiv_5f" class="form-control"></td>
             <td><input required type="number" min="0" name="exposure_hiv_9m" class="form-control"></td>
@@ -229,7 +229,7 @@
           </tr>
         </tbody>
       </table>
-      <input class="btn btn-success" type="submit" name="btn" id="btn" value="Valider">
+      <center><button type="submit">Validate</button></center>
     </form>
     </div>
 
@@ -241,6 +241,9 @@
   </body>
 </html>
 <script>
-$('#dt').DataTable();
+$('#dt').DataTable({
+        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+        "iDisplayLength": 25
+    });
 $('.dataTables_length').addClass('bs-select');
 </script>
