@@ -38,8 +38,7 @@ CREATE TABLE Postnatal_Care(
         complications_nb    Int NOT NULL ,
         referrals_m         Int NOT NULL ,
         referrals_nb        Int NOT NULL ,
-        ppfp_m              Int NOT NULL ,
-        num_rapport         Int NOT NULL
+        ppfp_m              Int NOT NULL
 	,CONSTRAINT Postnatal_Care_PK PRIMARY KEY (date_postnatal_care)
 )ENGINE=InnoDB;
 
@@ -59,8 +58,7 @@ CREATE TABLE Identification(
         date_sent           Date NOT NULL ,
         date_received       Date NOT NULL ,
         name_received       Varchar (50) NOT NULL ,
-        date_dhis           Date NOT NULL ,
-        num_rapport         Int NOT NULL
+        date_dhis           Date NOT NULL
 	,CONSTRAINT Identification_PK PRIMARY KEY (date_identification)
 )ENGINE=InnoDB;
 
@@ -446,8 +444,7 @@ CREATE TABLE Consultation(
         other_teeth_39m          Int NOT NULL ,
         other_teeth_39f          Int NOT NULL ,
         other_teeth_40m          Int NOT NULL ,
-        other_teeth_40f          Int NOT NULL ,
-        num_rapport              Int NOT NULL
+        other_teeth_40f          Int NOT NULL
 	,CONSTRAINT Consultation_PK PRIMARY KEY (date_consultation)
 )ENGINE=InnoDB;
 
@@ -640,8 +637,7 @@ CREATE TABLE Mental_Health(
         other_neuro_oc39m  Int NOT NULL ,
         other_neuro_oc39f  Int NOT NULL ,
         other_neuro_oc40m  Int NOT NULL ,
-        other_neuro_oc40f  Int NOT NULL ,
-        num_rapport        Int NOT NULL
+        other_neuro_oc40f  Int NOT NULL
 	,CONSTRAINT Mental_Health_PK PRIMARY KEY (date_mental_health)
 )ENGINE=InnoDB;
 
@@ -996,8 +992,7 @@ CREATE TABLE Chronic_Disease(
         cancer_others_d39m   Int NOT NULL ,
         cancer_others_d39f   Int NOT NULL ,
         cancer_others_d40m   Int NOT NULL ,
-        cancer_others_d40f   Int NOT NULL ,
-        num_rapport          Int NOT NULL
+        cancer_others_d40f   Int NOT NULL
 	,CONSTRAINT Chronic_Disease_PK PRIMARY KEY (date_chronic_disease)
 )ENGINE=InnoDB;
 
@@ -1241,8 +1236,7 @@ CREATE TABLE Other_Cardiovascular(
         other_endo_d39m           Int NOT NULL ,
         other_endo_d39f           Int NOT NULL ,
         other_endo_d40m           Int NOT NULL ,
-        other_endo_d40f           Int NOT NULL ,
-        num_rapport               Int NOT NULL
+        other_endo_d40f           Int NOT NULL
 	,CONSTRAINT Other_Cardiovascular_PK PRIMARY KEY (date_other_cardiovascular)
 )ENGINE=InnoDB;
 
@@ -1396,8 +1390,7 @@ CREATE TABLE Injury(
         other_unintent_d39m     Int NOT NULL ,
         other_unintent_d39f     Int NOT NULL ,
         other_unintent_d40m     Int NOT NULL ,
-        other_unintent_d40f     Int NOT NULL ,
-        num_rapport             Int NOT NULL
+        other_unintent_d40f     Int NOT NULL
 	,CONSTRAINT Injury_PK PRIMARY KEY (date_injury)
 )ENGINE=InnoDB;
 
@@ -1431,8 +1424,7 @@ CREATE TABLE Palliative_Care(
         death_19m            Int NOT NULL ,
         death_19f            Int NOT NULL ,
         death_20m            Int NOT NULL ,
-        death_20f            Int NOT NULL ,
-        num_rapport          Int NOT NULL
+        death_20f            Int NOT NULL
 	,CONSTRAINT Palliative_Care_PK PRIMARY KEY (date_palliative_care)
 )ENGINE=InnoDB;
 
@@ -1554,8 +1546,7 @@ CREATE TABLE Family_Planning(
         acceptors_prog_19         Int NOT NULL ,
         acceptors_prog_24         Int NOT NULL ,
         acceptors_prog_34         Int NOT NULL ,
-        acceptors_prog_35         Int NOT NULL ,
-        num_rapport               Int NOT NULL
+        acceptors_prog_35         Int NOT NULL
 	,CONSTRAINT Family_Planning_PK PRIMARY KEY (date_family_planning)
 )ENGINE=InnoDB;
 
@@ -1574,8 +1565,7 @@ CREATE TABLE Cancer_Screening(
         breast_screened       Int NOT NULL ,
         breast_referred       Int NOT NULL ,
         cervical_otherlevel   Int NOT NULL ,
-        biopsies              Int NOT NULL ,
-        num_rapport           Int NOT NULL
+        biopsies              Int NOT NULL
 	,CONSTRAINT Cancer_Screening_PK PRIMARY KEY (date_cancer_screening)
 )ENGINE=InnoDB;
 
@@ -1703,8 +1693,7 @@ CREATE TABLE Gender_Based_Violence(
         exposure_hiv_24m           Int NOT NULL ,
         exposure_hiv_24f           Int NOT NULL ,
         exposure_hiv_25m           Int NOT NULL ,
-        exposure_hiv_25f           Int NOT NULL ,
-        num_rapport                Int NOT NULL
+        exposure_hiv_25f           Int NOT NULL
 	,CONSTRAINT Gender_Based_Violence_PK PRIMARY KEY (date_gender_based_violence)
 )ENGINE=InnoDB;
 
@@ -1718,8 +1707,7 @@ CREATE TABLE Anesthesia(
         general         Int NOT NULL ,
         regional        Int NOT NULL ,
         local           Int NOT NULL ,
-        other_type      Int NOT NULL ,
-        num_rapport     Int NOT NULL
+        other_type      Int NOT NULL
 	,CONSTRAINT Anesthesia_PK PRIMARY KEY (date_anesthesia)
 )ENGINE=InnoDB;
 
@@ -1732,8 +1720,7 @@ CREATE TABLE Physiotherapy(
         date_physiotherapy Date NOT NULL ,
         physical_therapy   Int NOT NULL ,
         audiology          Int NOT NULL ,
-        speech_therapy     Int NOT NULL ,
-        num_rapport        Int NOT NULL
+        speech_therapy     Int NOT NULL
 	,CONSTRAINT Physiotherapy_PK PRIMARY KEY (date_physiotherapy)
 )ENGINE=InnoDB;
 
@@ -2409,8 +2396,7 @@ CREATE TABLE Hospitalization(
         cancer_deaths19m        Int NOT NULL ,
         cancer_deaths19f        Int NOT NULL ,
         cancer_deaths20m        Int NOT NULL ,
-        cancer_deaths20f        Int NOT NULL ,
-        num_rapport             Int NOT NULL
+        cancer_deaths20f        Int NOT NULL
 	,CONSTRAINT Hospitalization_PK PRIMARY KEY (date_hospitalization)
 )ENGINE=InnoDB;
 
@@ -2485,8 +2471,7 @@ CREATE TABLE Surgery(
         major_urg          Int NOT NULL ,
         major_plan         Int NOT NULL ,
         minor_urg          Int NOT NULL ,
-        minor_plan         Int NOT NULL ,
-        num_rapport        Int NOT NULL
+        minor_plan         Int NOT NULL
 	,CONSTRAINT Surgery_PK PRIMARY KEY (date_surgery)
 )ENGINE=InnoDB;
 
@@ -2611,8 +2596,7 @@ CREATE TABLE Obstetrical_Complication(
         Preeclampsia                  Int NOT NULL ,
         caesarean                     Int NOT NULL ,
         blood_tranf                   Int NOT NULL ,
-        women_w_obste_compli          Int NOT NULL ,
-        num_rapport                   Int NOT NULL
+        women_w_obste_compli          Int NOT NULL
 	,CONSTRAINT Obstetrical_Complication_PK PRIMARY KEY (date_obstetrical_complication)
 )ENGINE=InnoDB;
 
@@ -2664,8 +2648,7 @@ CREATE TABLE Kangaroo_Mother_Care(
         low_birth                 Int NOT NULL ,
         newborns                  Int NOT NULL ,
         kmc_deaths                Int NOT NULL ,
-        kmc_standard              Int NOT NULL ,
-        num_rapport               Int NOT NULL
+        kmc_standard              Int NOT NULL
 	,CONSTRAINT Kangaroo_Mother_Care_PK PRIMARY KEY (date_kangaroo_mother_care)
 )ENGINE=InnoDB;
 
@@ -2775,8 +2758,7 @@ CREATE TABLE Neonatal(
         hypothermia          Int NOT NULL ,
         risk_follow_up       Int NOT NULL ,
         one_follow_up        Int NOT NULL ,
-        deaths_24            Int NOT NULL ,
-        num_rapport          Int NOT NULL
+        deaths_24            Int NOT NULL
 	,CONSTRAINT Neonatal_PK PRIMARY KEY (date_neonatal)
 )ENGINE=InnoDB;
 
@@ -2832,8 +2814,7 @@ CREATE TABLE Nutrition_Screening(
         inpatient_7              Int NOT NULL ,
         inpatient_2              Int NOT NULL ,
         inpatient_5              Int NOT NULL ,
-        inpatient_15             Int NOT NULL ,
-        num_rapport              Int NOT NULL
+        inpatient_15             Int NOT NULL
 	,CONSTRAINT Nutrition_Screening_PK PRIMARY KEY (date_nutrition_screening)
 )ENGINE=InnoDB;
 
@@ -2891,8 +2872,7 @@ CREATE TABLE Malnourished_Rehabilitation(
         present_end_sev4                 Int NOT NULL ,
         present_end_sev5                 Int NOT NULL ,
         present_end_pw                   Int NOT NULL ,
-        present_end_lw                   Int NOT NULL ,
-        num_rapport                      Int NOT NULL
+        present_end_lw                   Int NOT NULL
 	,CONSTRAINT Malnourished_Rehabilitation_PK PRIMARY KEY (date_malnourished_rehabilitation)
 )ENGINE=InnoDB;
 
@@ -2909,8 +2889,7 @@ CREATE TABLE Community_Checkup(
         diabetes               Int NOT NULL ,
         renal                  Int NOT NULL ,
         cancer                 Int NOT NULL ,
-        disability             Int NOT NULL ,
-        num_rapport            Int NOT NULL
+        disability             Int NOT NULL
 	,CONSTRAINT Community_Checkup_PK PRIMARY KEY (date_community_checkup)
 )ENGINE=InnoDB;
 
@@ -2993,8 +2972,7 @@ CREATE TABLE Laboratory(
         blood_preg_t    Int NOT NULL ,
         cerebro_t       Int NOT NULL ,
         other_lab_t     Int NOT NULL ,
-        total           Int NOT NULL ,
-        num_rapport     Int NOT NULL
+        total           Int NOT NULL
 	,CONSTRAINT Laboratory_PK PRIMARY KEY (date_laboratory)
 )ENGINE=InnoDB;
 
@@ -3032,8 +3010,7 @@ CREATE TABLE Blood_Bank_Security(
         o_received               Int NOT NULL ,
         o_used                   Int NOT NULL ,
         o_destroyed              Int NOT NULL ,
-        o_stock                  Int NOT NULL ,
-        num_rapport              Int NOT NULL
+        o_stock                  Int NOT NULL
 	,CONSTRAINT Blood_Bank_Security_PK PRIMARY KEY (date_blood_bank_security)
 )ENGINE=InnoDB;
 
@@ -3052,8 +3029,7 @@ CREATE TABLE Medical_Imagery(
         gastroscopy          Int NOT NULL ,
         ultrasound           Int NOT NULL ,
         ecg                  Int NOT NULL ,
-        other_medical_img    Int NOT NULL ,
-        num_rapport          Int NOT NULL
+        other_medical_img    Int NOT NULL
 	,CONSTRAINT Medical_Imagery_PK PRIMARY KEY (date_medical_imagery)
 )ENGINE=InnoDB;
 
@@ -3339,8 +3315,7 @@ CREATE TABLE Pharmacy(
         insulin_l_dispensed            Int NOT NULL ,
         insulin_l_expired              Int NOT NULL ,
         insulin_l_end                  Int NOT NULL ,
-        insulin_l_stock                Int NOT NULL ,
-        num_rapport                    Int NOT NULL
+        insulin_l_stock                Int NOT NULL
 	,CONSTRAINT Pharmacy_PK PRIMARY KEY (date_pharmacy)
 )ENGINE=InnoDB;
 
@@ -3433,8 +3408,7 @@ CREATE TABLE Staff(
         left_retirement   Int NOT NULL ,
         left_career       Int NOT NULL ,
         left_remuneration Int NOT NULL ,
-        left_other        Int NOT NULL ,
-        num_rapport       Int NOT NULL
+        left_other        Int NOT NULL
 	,CONSTRAINT Staff_PK PRIMARY KEY (date_staff)
 )ENGINE=InnoDB;
 
@@ -3485,157 +3459,9 @@ CREATE TABLE Delivery_Birth(
         fistula                              Int NOT NULL ,
         fistula_treatment                    Int NOT NULL ,
         complications_higher_level           Int NOT NULL ,
-        observation_24                       Int NOT NULL ,
-        num_rapport                          Int NOT NULL
+        observation_24                       Int NOT NULL
 	,CONSTRAINT Delivery_Birth_PK PRIMARY KEY (date_delivery_birth)
 )ENGINE=InnoDB;
-
-
-
-
-ALTER TABLE Postnatal_Care
-	ADD CONSTRAINT Postnatal_Care_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Postnatal_Care 
-	ADD CONSTRAINT Postnatal_Care_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Identification
-	ADD CONSTRAINT Identification_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Identification 
-	ADD CONSTRAINT Identification_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Consultation
-	ADD CONSTRAINT Consultation_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Consultation 
-	ADD CONSTRAINT Consultation_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Mental_Health
-	ADD CONSTRAINT Mental_Health_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Mental_Health 
-	ADD CONSTRAINT Mental_Health_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Chronic_Disease
-	ADD CONSTRAINT Chronic_Disease_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Chronic_Disease 
-	ADD CONSTRAINT Chronic_Disease_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Other_Cardiovascular
-	ADD CONSTRAINT Other_Cardiovascular_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Other_Cardiovascular 
-	ADD CONSTRAINT Other_Cardiovascular_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Injury
-	ADD CONSTRAINT Injury_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Injury 
-	ADD CONSTRAINT Injury_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Palliative_Care
-	ADD CONSTRAINT Palliative_Care_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Palliative_Care 
-	ADD CONSTRAINT Palliative_Care_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Family_Planning
-	ADD CONSTRAINT Family_Planning_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Family_Planning 
-	ADD CONSTRAINT Family_Planning_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Cancer_Screening
-	ADD CONSTRAINT Cancer_Screening_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Cancer_Screening 
-	ADD CONSTRAINT Cancer_Screening_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Gender_Based_Violence
-	ADD CONSTRAINT Gender_Based_Violence_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Gender_Based_Violence 
-	ADD CONSTRAINT Gender_Based_Violence_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Anesthesia
-	ADD CONSTRAINT Anesthesia_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Anesthesia 
-	ADD CONSTRAINT Anesthesia_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Physiotherapy
-	ADD CONSTRAINT Physiotherapy_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Physiotherapy 
-	ADD CONSTRAINT Physiotherapy_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Hospitalization
-	ADD CONSTRAINT Hospitalization_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Hospitalization 
-	ADD CONSTRAINT Hospitalization_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Surgery
-	ADD CONSTRAINT Surgery_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Surgery 
-	ADD CONSTRAINT Surgery_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Obstetrical_Complication
-	ADD CONSTRAINT Obstetrical_Complication_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Obstetrical_Complication 
-	ADD CONSTRAINT Obstetrical_Complication_Rapport0_AK 
-	UNIQUE (num_rapport);
 
 ALTER TABLE Rapport
 	ADD CONSTRAINT Rapport_Consultation0_FK
@@ -3772,209 +3598,110 @@ ALTER TABLE Rapport
 	FOREIGN KEY (date_delivery_birth)
 	REFERENCES Delivery_Birth(date_delivery_birth);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Consultation0_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Consultation0_AK
 	UNIQUE (date_consultation);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Identification1_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Identification1_AK
 	UNIQUE (date_identification);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Mental_Health2_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Mental_Health2_AK
 	UNIQUE (date_mental_health);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Chronic_Disease3_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Chronic_Disease3_AK
 	UNIQUE (date_chronic_disease);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Other_Cardiovascular4_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Other_Cardiovascular4_AK
 	UNIQUE (date_other_cardiovascular);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Injury5_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Injury5_AK
 	UNIQUE (date_injury);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Anesthesia6_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Anesthesia6_AK
 	UNIQUE (date_anesthesia);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Physiotherapy7_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Physiotherapy7_AK
 	UNIQUE (date_physiotherapy);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Hospitalization8_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Hospitalization8_AK
 	UNIQUE (date_hospitalization);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Palliative_Care9_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Palliative_Care9_AK
 	UNIQUE (date_palliative_care);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Community_Checkup10_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Community_Checkup10_AK
 	UNIQUE (date_community_checkup);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Cancer_Screening11_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Cancer_Screening11_AK
 	UNIQUE (date_cancer_screening);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Gender_Based_Violence12_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Gender_Based_Violence12_AK
 	UNIQUE (date_gender_based_violence);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Surgery13_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Surgery13_AK
 	UNIQUE (date_surgery);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Kangaroo_Mother_Care14_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Kangaroo_Mother_Care14_AK
 	UNIQUE (date_kangaroo_mother_care);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Postnatal_Care15_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Postnatal_Care15_AK
 	UNIQUE (date_postnatal_care);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Obstetrical_Complication16_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Obstetrical_Complication16_AK
 	UNIQUE (date_obstetrical_complication);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Neonatal17_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Neonatal17_AK
 	UNIQUE (date_neonatal);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Nutrition_Screening18_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Nutrition_Screening18_AK
 	UNIQUE (date_nutrition_screening);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Blood_Bank_Security19_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Blood_Bank_Security19_AK
 	UNIQUE (date_blood_bank_security);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Family_Planning20_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Family_Planning20_AK
 	UNIQUE (date_family_planning);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Malnourished_Rehabilitation21_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Malnourished_Rehabilitation21_AK
 	UNIQUE (date_malnourished_rehabilitation);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Laboratory22_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Laboratory22_AK
 	UNIQUE (date_laboratory);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Medical_Imagery23_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Medical_Imagery23_AK
 	UNIQUE (date_medical_imagery);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Pharmacy24_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Pharmacy24_AK
 	UNIQUE (date_pharmacy);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Staff25_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Staff25_AK
 	UNIQUE (date_staff);
 
-ALTER TABLE Rapport 
-	ADD CONSTRAINT Rapport_Delivery_Birth26_AK 
+ALTER TABLE Rapport
+	ADD CONSTRAINT Rapport_Delivery_Birth26_AK
 	UNIQUE (date_delivery_birth);
-
-ALTER TABLE Kangaroo_Mother_Care
-	ADD CONSTRAINT Kangaroo_Mother_Care_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Kangaroo_Mother_Care 
-	ADD CONSTRAINT Kangaroo_Mother_Care_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Neonatal
-	ADD CONSTRAINT Neonatal_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Neonatal 
-	ADD CONSTRAINT Neonatal_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Nutrition_Screening
-	ADD CONSTRAINT Nutrition_Screening_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Nutrition_Screening 
-	ADD CONSTRAINT Nutrition_Screening_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Malnourished_Rehabilitation
-	ADD CONSTRAINT Malnourished_Rehabilitation_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Malnourished_Rehabilitation 
-	ADD CONSTRAINT Malnourished_Rehabilitation_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Community_Checkup
-	ADD CONSTRAINT Community_Checkup_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Community_Checkup 
-	ADD CONSTRAINT Community_Checkup_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Laboratory
-	ADD CONSTRAINT Laboratory_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Laboratory 
-	ADD CONSTRAINT Laboratory_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Blood_Bank_Security
-	ADD CONSTRAINT Blood_Bank_Security_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Blood_Bank_Security 
-	ADD CONSTRAINT Blood_Bank_Security_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Medical_Imagery
-	ADD CONSTRAINT Medical_Imagery_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Medical_Imagery 
-	ADD CONSTRAINT Medical_Imagery_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Pharmacy
-	ADD CONSTRAINT Pharmacy_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Pharmacy 
-	ADD CONSTRAINT Pharmacy_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Staff
-	ADD CONSTRAINT Staff_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Staff 
-	ADD CONSTRAINT Staff_Rapport0_AK 
-	UNIQUE (num_rapport);
-
-ALTER TABLE Delivery_Birth
-	ADD CONSTRAINT Delivery_Birth_Rapport0_FK
-	FOREIGN KEY (num_rapport)
-	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Delivery_Birth 
-	ADD CONSTRAINT Delivery_Birth_Rapport0_AK 
-	UNIQUE (num_rapport);

@@ -1,0 +1,46 @@
+/* Permet de centrer tous les élements du body et de définir l'image de fond de la page */
+body {
+  background-image: url("../images/bg-sobre.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.top-buffer {
+  margin-top: 20px;
+}
+
+/* Permet de modifier les titres de niveau h2 */
+h2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: #1e1e1e;
+  font-family: "Gabriela";
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Permet de modifier les inputs button */
+input[type="button"] {
+  background: transparent;
+  box-shadow: 10px 10px 7px 0px rgba(0, 0, 0, 0.52);
+  font-family: verdana, arial, sans-serif;
+  font-size: 1.25vw;
+  font-weight: bold;
+  height: 120px;
+  cursor: pointer;
+  width: 23vw;
+  border: none;
+  color: #151515;
+}
+
+/* Permet de modifier les inputs button au survol de la souris */
+input[type="button"]:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
