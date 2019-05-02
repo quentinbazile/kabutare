@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<title>Document</title>
+	<style>
+		.btn-file {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-file input[type=file] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			font-size: 999px;
+			text-align: right;
+			filter: alpha(opacity=0);
+			opacity: 0;
+			background: red;
+			cursor: inherit;
+			display: block;
+		}
+
+		input[readonly] {
+			background-color: white !important;
+			cursor: text !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="input-group">
+		<span class="input-group-btn">
+    <span class="btn btn-default btn-file">
+      Browse...
+      <input data-url="/upload" accept="image/jpeg" name="image" type="file" id="image">
+    </span>
+		</span>
+		<input readonly="readonly" placeholder="Picture file" class="form-control" name="filename" type="text">
+	</div>
+</body>
+
+</html>
