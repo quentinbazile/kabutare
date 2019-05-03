@@ -136,7 +136,8 @@ h4 {
 
 /* Permet de modifier le message d'erreur */
 .msg {
-  width: 350px;
+  width: 100%;
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
 }
