@@ -29,11 +29,7 @@ class login extends CI_Controller
             if ($this->login_model->check_login($pseudo, $mdp)) {
                 $num_user = $this->login_model->num_user($pseudo)->num_user;
                 $this->session->set_userdata('num_user', $num_user);
-                if ($this->login_model->check_service($pseudo, 'ophthalmology')) {
-                    redirect('ophthalmology', 'refresh');
-                } else {
-                    redirect('ophthalmology', 'refresh');
-                }
+                redirect('home', 'refresh');
             } else {
                 $data['msg'] = "Authentication Failed !";
                 $this->load->view('login_view', $data);

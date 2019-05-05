@@ -106,6 +106,8 @@ class ophthalmology extends CI_Controller
             $eye_pb_40m = $this->input->post('eye_pb_40m');
             $eye_pb_40f = $this->input->post('eye_pb_40f');
 
+            $this->ophthalmology_model->new_report();
+
             $this->ophthalmology_model->fetch_data1(
           $nc5m,
             $nc5f,
@@ -184,6 +186,7 @@ class ophthalmology extends CI_Controller
                     $eye_pb_40m,
                     $eye_pb_40f
                 );
+            redirect('home', 'refresh');
         } else {
             $this->load->view('ophthalmology_add_view');
         }

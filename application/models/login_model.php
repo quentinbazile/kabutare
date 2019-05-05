@@ -27,19 +27,6 @@ class login_model extends CI_Model
         }
     }
 
-    public function check_service($pseudo, $service)
-    {
-        $this->db->select('*')
-              ->from('user')
-              ->where('login', $pseudo)
-              ->where('service', $service);
-        if ($this->db->get()->num_rows() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function num_user($pseudo)
     {
         return $this->db->select('num_user')

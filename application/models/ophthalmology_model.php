@@ -1,6 +1,16 @@
 <?php
 class ophthalmology_model extends CI_Model
 {
+    public function new_report()
+    {
+        $this->db->where('date_rapport', $this->session->userdata('add_date'));
+        $q = $this->db->get('rapport');
+        if ($q->num_rows() == 0) {
+            return $this->db->set('date_rapport', $this->session->userdata('add_date'))
+                            ->insert('rapport');
+        }
+    }
+
     public function fetch_data1(
       $nc5m,
         $nc5f,
@@ -52,7 +62,7 @@ class ophthalmology_model extends CI_Model
       'num_rapport' => 1,
       'num_user' => $this->session->userdata('num_user')
     ))
-            ->set('date_consultation_abcde', 'NOW()', false)
+            ->set('date_consultation_abcde', $this->session->userdata('add_date'))
             ->insert('Consultation_abcde');
     }
 
@@ -180,7 +190,7 @@ class ophthalmology_model extends CI_Model
 
       'num_rapport' => 1
     ))
-            ->set('date_consultation_fg', 'NOW()', false)
+            ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
     }
 
