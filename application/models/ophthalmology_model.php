@@ -31,7 +31,8 @@ class ophthalmology_model extends CI_Model
         $counter_received,
       $nc_catch,
         $nc,
-        $international
+        $international,
+        $num_rapport
     ) {
         return $this->db->set(array(
       'nc5m' => $nc5m,
@@ -59,7 +60,7 @@ class ophthalmology_model extends CI_Model
       'nc' => $nc,
       'international' => $international,
 
-      'num_rapport' => 1,
+      'num_rapport' => $num_rapport,
       'num_user' => $this->session->userdata('num_user')
     ))
             ->set('date_consultation_abcde', $this->session->userdata('add_date'))
@@ -121,7 +122,8 @@ class ophthalmology_model extends CI_Model
         $eye_pb_39f,
         $eye_pb_39m,
         $eye_pb_40m,
-        $eye_pb_40f
+        $eye_pb_40f,
+        $num_rapport
     ) {
         return $this->db->set(array(
 
@@ -188,7 +190,7 @@ class ophthalmology_model extends CI_Model
       'eye_pb_40m' => $eye_pb_40m,
       'eye_pb_40f' => $eye_pb_40f,
 
-      'num_rapport' => 1
+      'num_rapport' => $num_rapport
     ))
             ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
@@ -206,6 +208,13 @@ class ophthalmology_model extends CI_Model
         return $this->db->where('date_consultation_fg', date('Y-m-d'))
                         ->get('Consultation_fg')
                         ->row();
+    }
+
+    public function num_rapport()
+    {
+        return $this->db->where('date_rapport', $this->session->userdata('add_date'))
+                      ->get('rapport')
+                      ->row();
     }
 
     public function update_data1(

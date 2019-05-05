@@ -108,6 +108,8 @@ class ophthalmology extends CI_Controller
 
             $this->ophthalmology_model->new_report();
 
+            $num_rapport = $this->ophthalmology_model->num_rapport()->num_rapport;
+
             $this->ophthalmology_model->fetch_data1(
           $nc5m,
             $nc5f,
@@ -128,7 +130,8 @@ class ophthalmology extends CI_Controller
             $counter_received,
           $nc_catch,
             $nc,
-            $international
+            $international,
+            $num_rapport
         );
             $this->ophthalmology_model->fetch_data2(
                   $glaucoma_19f,
@@ -184,8 +187,10 @@ class ophthalmology extends CI_Controller
                     $eye_pb_39f,
                     $eye_pb_39m,
                     $eye_pb_40m,
-                    $eye_pb_40f
+                    $eye_pb_40f,
+                    $num_rapport
                 );
+            $this->session->unset_userdata('add_date');
             redirect('home', 'refresh');
         } else {
             $this->load->view('ophthalmology_add_view');
