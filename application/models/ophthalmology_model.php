@@ -54,7 +54,6 @@ class ophthalmology_model extends CI_Model
     ))
             ->set('date_consultation_abcde', 'NOW()', false)
             ->insert('Consultation_abcde');
-
     }
 
     public function fetch_data2(
@@ -179,12 +178,10 @@ class ophthalmology_model extends CI_Model
       'eye_pb_40m' => $eye_pb_40m,
       'eye_pb_40f' => $eye_pb_40f,
 
-      'num_rapport' => 1,
-      'num_user' => 1
+      'num_rapport' => 1
     ))
             ->set('date_consultation_fg', 'NOW()', false)
             ->insert('Consultation_fg');
-
     }
 
     public function show_table1()
@@ -309,7 +306,6 @@ class ophthalmology_model extends CI_Model
         $eye_pb_40m,
         $eye_pb_40f
     ) {
-
         $this->db->set('glaucoma_19m', $glaucoma_19m);
         $this->db->set('glaucoma_19f', $glaucoma_19f);
         $this->db->set('glaucoma_39m', $glaucoma_39m);
@@ -375,5 +371,5 @@ class ophthalmology_model extends CI_Model
 
         $this->db->where('date_consultation_fg', date('Y-m-d'));
         return $this->db->update('Consultation_fg');
-      }
+    }
 }

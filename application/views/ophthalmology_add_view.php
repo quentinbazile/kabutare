@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,500|Roboto:300,400,500,700">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/recherche14.css'); ?>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/recherche15.css'); ?>" />
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,9 +97,7 @@
           </tr>
           <tr>
             <td>Counter referrals received</td>
-            <td><input type="number" min="0" name="counter_received
-
-              " class="form-control"></td>
+            <td><input type="number" min="0" name="counter_received" class="form-control"></td>
           </tr>
         </tbody>
       </table>
@@ -198,12 +196,12 @@
           <tr>
             <td class="center">6</td>
             <td>Pinguecula</td>
-            <td><input type="number" min="0" name="pinguela_19m" class="form-control"></td>
-            <td><input type="number" min="0" name="pinguela_19f" class="form-control"></td>
-            <td><input type="number" min="0" name="pinguela_39m" class="form-control"></td>
-            <td><input type="number" min="0" name="pinguela_39f" class="form-control"></td>
-            <td><input type="number" min="0" name="pinguela_40m" class="form-control"></td>
-            <td><input type="number" min="0" name="pinguela_40f" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_19m" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_19f" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_39m" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_39f" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_40m" class="form-control"></td>
+            <td><input type="number" min="0" name="pinguecula_40f" class="form-control"></td>
           </tr>
           <tr>
             <td class="center">7</td>

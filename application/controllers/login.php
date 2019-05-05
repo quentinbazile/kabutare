@@ -1,12 +1,12 @@
 <?php
 
-class LOGIN_C extends CI_Controller
+class login extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->database();
-        $this->load->model('LOGIN_M');
+        $this->load->model('login_model');
     }
 
     public function index()
@@ -26,20 +26,20 @@ class LOGIN_C extends CI_Controller
             $pseudo = $this->security->xss_clean($this->input->post('pseudo'));
             $mdp = $this->security->xss_clean($this->input->post('mdp'));
 
-            if ($this->LOGIN_M->check_login($pseudo, $mdp)) {
+            if ($this->login_model->check_login($pseudo, $mdp)) {
                 $this->session->set_userdata('login', $pseudo);
-                if ($this->LOGIN_M->check_add()) {
-                    redirect('index.php/XI_UPDATE_C', 'refresh');
+                if ($this->login_model->check_service($pseudo, 'ophthalmology')) {
+                    redirect('ophthalmology', 'refresh');
                 } else {
-                    redirect('index.php/XI_C', 'refresh');
+                    redirect('ophthalmology', 'refresh');
                 }
             } else {
                 $data['msg'] = "Authentication Failed !";
-                $this->load->view('LOGIN_V', $data);
+                $this->load->view('login_view', $data);
             }
         } else {
             $data['msg'] = '';
-            $this->load->view('LOGIN_V', $data);
+            $this->load->view('login_view', $data);
         }
     }
 }

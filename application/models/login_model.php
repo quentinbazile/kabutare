@@ -1,6 +1,6 @@
 <?php
 
-class LOGIN_M extends CI_Model
+class login_model extends CI_Model
 {
     public function check_login($pseudo, $mdp)
     {
@@ -20,6 +20,19 @@ class LOGIN_M extends CI_Model
         $this->db->select('*')
               ->from('Gender_Based_Violence')
               ->where('date_gender_based_violence', date('Y-m-d'));
+        if ($this->db->get()->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function check_service($pseudo, $service)
+    {
+        $this->db->select('*')
+              ->from('user')
+              ->where('login', $pseudo)
+              ->where('service', $service);
         if ($this->db->get()->num_rows() > 0) {
             return true;
         } else {
