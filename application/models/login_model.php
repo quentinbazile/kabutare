@@ -39,4 +39,13 @@ class login_model extends CI_Model
             return false;
         }
     }
+
+    public function num_user($pseudo)
+    {
+        return $this->db->select('num_user')
+              ->from('user')
+              ->where('login', $pseudo)
+              ->get()
+              ->row();
+    }
 }

@@ -27,7 +27,8 @@ class login extends CI_Controller
             $mdp = $this->security->xss_clean($this->input->post('mdp'));
 
             if ($this->login_model->check_login($pseudo, $mdp)) {
-                $this->session->set_userdata('login', $pseudo);
+                $num_user = $this->login_model->num_user($pseudo)->num_user;
+                $this->session->set_userdata('num_user', $num_user);
                 if ($this->login_model->check_service($pseudo, 'ophthalmology')) {
                     redirect('ophthalmology', 'refresh');
                 } else {

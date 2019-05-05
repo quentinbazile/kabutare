@@ -6,7 +6,11 @@ class ophthalmology extends CI_Controller
     public function index()
     {
         $this->load->model('ophthalmology_model');
-        $this->fetch();
+        if ($this->session->userdata('num_user') != '') {
+            $this->fetch();
+        } else {
+            redirect('login', 'refresh');
+        }
     }
 
     public function fetch()
@@ -124,7 +128,7 @@ class ophthalmology extends CI_Controller
             $nc,
             $international
         );
-                    $this->ophthalmology_model->fetch_data2(
+            $this->ophthalmology_model->fetch_data2(
                   $glaucoma_19f,
                     $glaucoma_19m,
                     $glaucoma_39m,

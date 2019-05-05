@@ -50,7 +50,7 @@ class ophthalmology_model extends CI_Model
       'international' => $international,
 
       'num_rapport' => 1,
-      'num_user' => 1
+      'num_user' => $this->session->userdata('num_user')
     ))
             ->set('date_consultation_abcde', 'NOW()', false)
             ->insert('Consultation_abcde');
