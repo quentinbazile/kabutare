@@ -19,16 +19,26 @@
 	</head>
 	<body>
 		<div class="container">
+			<h2>Stomatology - Report of <?php echo date("d/m/Y"); ?></h2>
       <div>
         <form method="post" action="" class="form-inline">
-      <h2> A) Outpatient morbidity summary table </h2>
+			<div class="row">
+				<div class="col-xs-8">
+	      	<h4>Outpatient Morbidity Summary Table</h4>
+				</div>
+				<div class="col-xs-4">
+			  	<h4>Health Insurance Status of New Cases</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
       <table id="A" class="center">
         <thead>
           <tr>
             <th rowspan="2">Outpatient visits<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th colspan="2">Age < 5</th>
+            <th colspan="2">Age 5 to 19</th>
+            <th colspan="2">Age > 20</th>
           </tr>
           <tr>
             <th>M</th>
@@ -58,8 +68,8 @@
             <td><input type="number" min="0" name="oc20f" class="form-control"></td>
           </tr>
         </tbody>
-      </table>
-      <h2> B) Health insurance status of new cases </h2>
+      </table></div>
+			<div class="col-xs-4">
       <table id="B" class="center">
         <thead>
           <tr>
@@ -81,8 +91,19 @@
             <td><input type="number" min="0" name="nc_indigent" class="form-control"></td>
           </tr>
         </tbody>
-      </table>
-      <h2> C) Referrals </h2>
+      </table></div></div>
+			<div><br>
+        <form method="post" action="" class="form-inline">
+			<div class="row">
+				<div class="col-xs-6">
+	      	<h4>Referrals</h4>
+				</div>
+				<div class="col-xs-6">
+			  	<h4>Origin of Outpatients</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
       <table id="C" class="center">
         <thead>
           <tr>
@@ -100,8 +121,8 @@
             <td><input type="number" min="0" name="counter_received" class="form-control"></td>
           </tr>
         </tbody>
-      </table>
-        <h2> D) Origin of outpatients </h2>
+      </table></div>
+			<div class="col-xs-6">
       <table id="D" class="center">
         <thead>
           <tr>
@@ -123,8 +144,8 @@
             <td><input type="number" min="0" name="international" class="form-control"></td>
           </tr>
         </tbody>
-      </table>
-      <h2>Gb) Oral diseases</h2>
+      </table></div></div><br>
+      <h4>Oral Diseases</h4>
       <table id="Gb" class="center">
         <thead>
           <tr>
@@ -174,7 +195,7 @@
             <td><input type="number" min="0" name="other_teeth_40f" class="form-control"></td>
           </tr>
         </tbody>
-      </table>
+      </table><br>
       <center><button type="submit">Validate</button></center>
     </form>
     </div>
@@ -188,24 +209,34 @@
 </html>
 <script>
 $('#A').DataTable({
-        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-        "iDisplayLength": 25
-    });
+	"bPaginate": false,
+	"bLengthChange": false,
+	"bInfo": false,
+	"searching": false
+});
 $('#B').DataTable({
-        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-        "iDisplayLength": 25
-    });
+	"bPaginate": false,
+	"bLengthChange": false,
+	"bInfo": false,
+	"searching": false
+});
 $('#C').DataTable({
-        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-        "iDisplayLength": 25
-    });
+	"bPaginate": false,
+	"bLengthChange": false,
+	"bInfo": false,
+	"searching": false
+});
 $('#D').DataTable({
-        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-        "iDisplayLength": 25
-    });
+	"bPaginate": false,
+	"bLengthChange": false,
+	"bInfo": false,
+	"searching": false
+});
 $('#Gb').DataTable({
-        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
-        "iDisplayLength": 25
-    });
+	"bPaginate": false,
+	"bLengthChange": false,
+	"bInfo": false,
+	"searching": false
+});
 $('.dataTables_length').addClass('bs-select');
 </script>
