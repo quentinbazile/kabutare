@@ -1,5 +1,5 @@
 <?php
-class ophthalmology_model extends CI_Model
+class stomatology_model extends CI_Model
 {
     public function new_report()
     {
@@ -12,24 +12,24 @@ class ophthalmology_model extends CI_Model
     }
 
     public function fetch_data1(
-      $nc5m,
+        $nc5m,
         $nc5f,
         $nc19f,
         $nc19m,
-      $nc20m,
+        $nc20m,
         $nc20f,
-      $oc5m,
+        $oc5m,
         $oc5f,
         $oc19f,
         $oc19m,
-      $oc20m,
+        $oc20m,
         $oc20f,
-      $insured,
+        $insured,
         $nc_non_paying,
         $nc_indigent,
-      $other_levels,
+        $other_levels,
         $counter_received,
-      $nc_catch,
+        $nc_catch,
         $nc,
         $international,
         $num_rapport
@@ -68,199 +68,77 @@ class ophthalmology_model extends CI_Model
     }
 
     public function fetch_data2(
-
-      $glaucoma_19f,
-        $glaucoma_19m,
-        $glaucoma_39m,
-        $glaucoma_39f,
-        $glaucoma_40m,
-        $glaucoma_40f,
-      $cataract_19f,
-        $cataract_19m,
-        $cataract_39m,
-        $cataract_39f,
-        $cataract_40m,
-        $cataract_40f,
-      $refrac_error_19f,
-        $refrac_error_19m,
-        $refrac_error_39m,
-        $refrac_error_39f,
-        $refrac_error_40m,
-        $refrac_error_40f,
-      $diab_retino_19f,
-        $diab_retino_19m,
-        $diab_retino_39m,
-        $diab_retino_39f,
-        $diab_retino_40m,
-        $diab_retino_40f,
-      $conjunctivitis_19f,
-        $conjunctivitis_19m,
-        $conjunctivitis_39m,
-        $conjunctivitis_39f,
-        $conjunctivitis_40m,
-        $conjunctivitis_40f,
-      $pinguecula_19f,
-        $pinguecula_19m,
-        $pinguecula_39m,
-        $pinguecula_39f,
-        $pinguecula_40m,
-        $pinguecula_40f,
-      $uveitis_19f,
-        $uveitis_19m,
-        $uveitis_39m,
-        $uveitis_39f,
-        $uveitis_40m,
-        $uveitis_40f,
-      $eye_trauma_19m,
-        $eye_trauma_19f,
-        $eye_trauma_39m,
-        $eye_trauma_39f,
-        $eye_trauma_40m,
-        $eye_trauma_40f,
-      $eye_pb_19m,
-        $eye_pb_19f,
-        $eye_pb_39f,
-        $eye_pb_39m,
-        $eye_pb_40m,
-        $eye_pb_40f,
+        $dent_caries_19m,
+        $dent_caries_19f,
+        $dent_caries_39m,
+        $dent_caries_39f,
+        $dent_caries_40m,
+        $dent_caries_40f,
+        $perio_diseas_19m,
+        $perio_diseas_19f,
+        $perio_diseas_39m,
+        $perio_diseas_39f,
+        $perio_diseas_40m,
+        $perio_diseas_40f,
+        $other_teeth_19m,
+        $other_teeth_19f,
+        $other_teeth_39m,
+        $other_teeth_39f,
+        $other_teeth_40m,
+        $other_teeth_40f,
         $num_rapport
     ) {
         $this->db->where('date_consultation_fg', $this->session->userdata('add_date'));
         $q = $this->db->get('Consultation_fg');
         if ($q->num_rows() == 0) {
             return $this->db->set(array(
+              'dent_caries_19m' => $dent_caries_19m,
+              'dent_caries_19f' => $dent_caries_19f,
+              'dent_caries_39m' => $dent_caries_39m,
+              'dent_caries_39f' => $dent_caries_39f,
+              'dent_caries_40m' => $dent_caries_40m,
+              'dent_caries_40f' => $dent_caries_40f,
 
-          'glaucoma_19m' => $glaucoma_19m,
-          'glaucoma_19f' => $glaucoma_19f,
-          'glaucoma_39m' => $glaucoma_39m,
-          'glaucoma_39f' => $glaucoma_39f,
-          'glaucoma_40m' => $glaucoma_40m,
-          'glaucoma_40f' => $glaucoma_40f,
+              'perio_diseas_19m' => $perio_diseas_19m,
+              'perio_diseas_19f' => $perio_diseas_19f,
+              'perio_diseas_39m' => $perio_diseas_39m,
+              'perio_diseas_39f' => $perio_diseas_39f,
+              'perio_diseas_40m' => $perio_diseas_40m,
+              'perio_diseas_40f' => $perio_diseas_40f,
 
-          'cataract_19m' => $cataract_19m,
-          'cataract_19f' => $cataract_19f,
-          'cataract_39m' => $cataract_39m,
-          'cataract_39f' => $cataract_39f,
-          'cataract_40m' => $cataract_40m,
-          'cataract_40f' => $cataract_40f,
+              'other_teeth_19m' => $other_teeth_19m,
+              'other_teeth_19f' => $other_teeth_19f,
+              'other_teeth_39m' => $other_teeth_39m,
+              'other_teeth_39f' => $other_teeth_39f,
+              'other_teeth_40m' => $other_teeth_40m,
+              'other_teeth_40f' => $other_teeth_40f,
 
-          'refrac_error_19m' => $refrac_error_19m,
-          'refrac_error_19f' => $refrac_error_19f,
-          'refrac_error_39m' => $refrac_error_39m,
-          'refrac_error_39f' => $refrac_error_39f,
-          'refrac_error_40m' => $refrac_error_40m,
-          'refrac_error_40f' => $refrac_error_40f,
-
-          'diab_retino_19m' => $diab_retino_19m,
-          'diab_retino_19f' => $diab_retino_19f,
-          'diab_retino_39m' => $diab_retino_39m,
-          'diab_retino_39f' => $diab_retino_39f,
-          'diab_retino_40m' => $diab_retino_40m,
-          'diab_retino_40f' => $diab_retino_40f,
-
-          'conjunctivitis_19m' => $conjunctivitis_19m,
-          'conjunctivitis_19f' => $conjunctivitis_19f,
-          'conjunctivitis_39m' => $conjunctivitis_39m,
-          'conjunctivitis_39f' => $conjunctivitis_39f,
-          'conjunctivitis_40m' => $conjunctivitis_40m,
-          'conjunctivitis_40f' => $conjunctivitis_40f,
-
-          'pinguecula_19m' => $pinguecula_19m,
-          'pinguecula_19f' => $pinguecula_19f,
-          'pinguecula_39m' => $pinguecula_39m,
-          'pinguecula_39f' => $pinguecula_39f,
-          'pinguecula_40m' => $pinguecula_40m,
-          'pinguecula_40f' => $pinguecula_40f,
-
-          'uveitis_19m' => $uveitis_19m,
-          'uveitis_19f' => $uveitis_19f,
-          'uveitis_39m' => $uveitis_39m,
-          'uveitis_39f' => $uveitis_39f,
-          'uveitis_40m' => $uveitis_40m,
-          'uveitis_40f' => $uveitis_40f,
-
-          'eye_trauma_19m' => $eye_trauma_19m,
-          'eye_trauma_19f' => $eye_trauma_19f,
-          'eye_trauma_39m' => $eye_trauma_39m,
-          'eye_trauma_39f' => $eye_trauma_39f,
-          'eye_trauma_40m' => $eye_trauma_40m,
-          'eye_trauma_40f' => $eye_trauma_40f,
-
-          'eye_pb_19m' => $eye_pb_19m,
-          'eye_pb_19f' => $eye_pb_19f,
-          'eye_pb_39m' => $eye_pb_39m,
-          'eye_pb_39f' => $eye_pb_39f,
-          'eye_pb_40m' => $eye_pb_40m,
-          'eye_pb_40f' => $eye_pb_40f,
-
-          'num_rapport' => $num_rapport
-        ))
-            ->set('date_consultation_fg', $this->session->userdata('add_date'))
-            ->insert('Consultation_fg');
+              'num_rapport' => $num_rapport
+            ))
+                ->set('date_consultation_fg', $this->session->userdata('add_date'))
+                ->insert('Consultation_fg');
         } else {
             $this->db->set(array(
-            'glaucoma_19m' => $glaucoma_19m,
-            'glaucoma_19f' => $glaucoma_19f,
-            'glaucoma_39m' => $glaucoma_39m,
-            'glaucoma_39f' => $glaucoma_39f,
-            'glaucoma_40m' => $glaucoma_40m,
-            'glaucoma_40f' => $glaucoma_40f,
+            'dent_caries_19m' => $dent_caries_19m,
+            'dent_caries_19f' => $dent_caries_19f,
+            'dent_caries_39m' => $dent_caries_39m,
+            'dent_caries_39f' => $dent_caries_39f,
+            'dent_caries_40m' => $dent_caries_40m,
+            'dent_caries_40f' => $dent_caries_40f,
 
-            'cataract_19m' => $cataract_19m,
-            'cataract_19f' => $cataract_19f,
-            'cataract_39m' => $cataract_39m,
-            'cataract_39f' => $cataract_39f,
-            'cataract_40m' => $cataract_40m,
-            'cataract_40f' => $cataract_40f,
+            'perio_diseas_19m' => $perio_diseas_19m,
+            'perio_diseas_19f' => $perio_diseas_19f,
+            'perio_diseas_39m' => $perio_diseas_39m,
+            'perio_diseas_39f' => $perio_diseas_39f,
+            'perio_diseas_40m' => $perio_diseas_40m,
+            'perio_diseas_40f' => $perio_diseas_40f,
 
-            'refrac_error_19m' => $refrac_error_19m,
-            'refrac_error_19f' => $refrac_error_19f,
-            'refrac_error_39m' => $refrac_error_39m,
-            'refrac_error_39f' => $refrac_error_39f,
-            'refrac_error_40m' => $refrac_error_40m,
-            'refrac_error_40f' => $refrac_error_40f,
-
-            'diab_retino_19m' => $diab_retino_19m,
-            'diab_retino_19f' => $diab_retino_19f,
-            'diab_retino_39m' => $diab_retino_39m,
-            'diab_retino_39f' => $diab_retino_39f,
-            'diab_retino_40m' => $diab_retino_40m,
-            'diab_retino_40f' => $diab_retino_40f,
-
-            'conjunctivitis_19m' => $conjunctivitis_19m,
-            'conjunctivitis_19f' => $conjunctivitis_19f,
-            'conjunctivitis_39m' => $conjunctivitis_39m,
-            'conjunctivitis_39f' => $conjunctivitis_39f,
-            'conjunctivitis_40m' => $conjunctivitis_40m,
-            'conjunctivitis_40f' => $conjunctivitis_40f,
-
-            'pinguecula_19m' => $pinguecula_19m,
-            'pinguecula_19f' => $pinguecula_19f,
-            'pinguecula_39m' => $pinguecula_39m,
-            'pinguecula_39f' => $pinguecula_39f,
-            'pinguecula_40m' => $pinguecula_40m,
-            'pinguecula_40f' => $pinguecula_40f,
-
-            'uveitis_19m' => $uveitis_19m,
-            'uveitis_19f' => $uveitis_19f,
-            'uveitis_39m' => $uveitis_39m,
-            'uveitis_39f' => $uveitis_39f,
-            'uveitis_40m' => $uveitis_40m,
-            'uveitis_40f' => $uveitis_40f,
-
-            'eye_trauma_19m' => $eye_trauma_19m,
-            'eye_trauma_19f' => $eye_trauma_19f,
-            'eye_trauma_39m' => $eye_trauma_39m,
-            'eye_trauma_39f' => $eye_trauma_39f,
-            'eye_trauma_40m' => $eye_trauma_40m,
-            'eye_trauma_40f' => $eye_trauma_40f,
-
-            'eye_pb_19m' => $eye_pb_19m,
-            'eye_pb_19f' => $eye_pb_19f,
-            'eye_pb_39m' => $eye_pb_39m,
-            'eye_pb_39f' => $eye_pb_39f,
-            'eye_pb_40m' => $eye_pb_40m,
-            'eye_pb_40f' => $eye_pb_40f,
+            'other_teeth_19m' => $other_teeth_19m,
+            'other_teeth_19f' => $other_teeth_19f,
+            'other_teeth_39m' => $other_teeth_39m,
+            'other_teeth_39f' => $other_teeth_39f,
+            'other_teeth_40m' => $other_teeth_40m,
+            'other_teeth_40f' => $other_teeth_40f,
 
             'num_rapport' => $num_rapport
           ))
@@ -268,11 +146,10 @@ class ophthalmology_model extends CI_Model
             return $this->db->update('Consultation_fg');
         }
     }
-
+    // SUITE A MODIFIER
     public function show_table1()
     {
         return $this->db->where('date_consultation_abcde', date('Y-m-d'))
-                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_abcde')
                         ->row();
     }
@@ -313,6 +190,7 @@ class ophthalmology_model extends CI_Model
         $nc,
         $international
     ) {
+        $this->db->set('sexual_violence_5m', $sexual_violence_5m);
         $this->db->set('nc5m', $nc5m);
         $this->db->set('nc5f', $nc5f);
         $this->db->set('nc19m', $nc19m);

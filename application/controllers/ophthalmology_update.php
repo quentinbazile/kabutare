@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ophthalmology extends CI_Controller
+class ophthalmology_update extends CI_Controller
 {
     public function index()
     {
@@ -124,7 +124,7 @@ class ophthalmology extends CI_Controller
             $nc,
             $international
         );
-                    $this->ophthalmology_model->update_data2(
+            $this->ophthalmology_model->update_data2(
                   $glaucoma_19f,
                     $glaucoma_19m,
                     $glaucoma_39m,
@@ -181,9 +181,9 @@ class ophthalmology extends CI_Controller
                     $eye_pb_40f
                 );
         } else {
-          $data['table1'] = $this->ophthalmology_model->show_table1();
-          $data['table2'] = $this->ophthalmology_model->show_table2();
-            $this->load->view('ophthalmology_update_view',$data);
+            $data['table1'] = $this->ophthalmology_model->show_table1();
+            $data['table2'] = $this->ophthalmology_model->show_table2();
+            $this->load->view('ophthalmology_update_view', $data);
         }
     }
 }

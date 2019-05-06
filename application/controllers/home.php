@@ -23,6 +23,15 @@ class home extends CI_Controller
             if ($this->home_model->check_service('ophthalmology')) {
                 redirect('ophthalmology', 'refresh');
             }
+            if ($this->home_model->check_service('stomatology')) {
+                redirect('stomatology', 'refresh');
+            }
+            if ($this->home_model->check_service('mental_health')) {
+                redirect('mental_health', 'refresh');
+            }
+            if ($this->home_model->check_service('gbv')) {
+                redirect('gbv', 'refresh');
+            }
             print_r($this->session->all_userdata());
         } else {
             $data['dates'] = $this->home_model->show_dates();

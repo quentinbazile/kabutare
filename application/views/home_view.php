@@ -32,7 +32,7 @@
                              date('Y-m-d', strtotime('-1 day')),
                              date('Y-m-d'));
           foreach ($dates as $date):
-             if (($val = array_search($date->date_consultation_fg, $array)) !== false) {
+             if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
                  unset($array[$val]);
              }
           endforeach;
