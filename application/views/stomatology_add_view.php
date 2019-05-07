@@ -22,221 +22,231 @@
 			<h2>Stomatology - Report of <?php echo date("d/m/Y"); ?></h2>
       <div>
         <form method="post" action="" class="form-inline">
-			<div class="row">
-				<div class="col-xs-8">
-	      	<h4>Outpatient Morbidity Summary Table</h4>
-				</div>
-				<div class="col-xs-4">
-			  	<h4>Health Insurance Status of New Cases</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-8">
-      <table id="A" class="center">
-        <thead>
-          <tr>
-            <th rowspan="2">Outpatient visits<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age < 5</th>
-            <th colspan="2">Age 5 to 19</th>
-            <th colspan="2">Age > 20</th>
-          </tr>
-          <tr>
-            <th>M</th>
-            <th>F</th>
-            <th>M</th>
-            <th>F</th>
-            <th>M</th>
-            <th>F</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="left">New cases (NC)</td>
-            <td><input type="number" min="0" name="nc5m" class="form-control"></td>
-            <td><input type="number" min="0" name="nc5f" class="form-control"></td>
-            <td><input type="number" min="0" name="nc19m" class="form-control"></td>
-            <td><input type="number" min="0" name="nc19f" class="form-control"></td>
-            <td><input type="number" min="0" name="nc20m" class="form-control"></td>
-            <td><input type="number" min="0" name="nc20f" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">Old cases</td>
-            <td><input type="number" min="0" name="oc5m" class="form-control"></td>
-            <td><input type="number" min="0" name="oc5f" class="form-control"></td>
-            <td><input type="number" min="0" name="oc19m" class="form-control"></td>
-            <td><input type="number" min="0" name="oc19f" class="form-control"></td>
-            <td><input type="number" min="0" name="oc20m" class="form-control"></td>
-            <td><input type="number" min="0" name="oc20f" class="form-control"></td>
-          </tr>
-        </tbody>
-      </table></div>
-			<div class="col-xs-4">
-      <table id="B" class="center">
-        <thead>
-          <tr>
-            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="left">Insured (Mutuelle or other insurance members)</td>
-            <td><input type="number" min="0" name="insured" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">Non-paying new cases</td>
-            <td><input type="number" min="0" name="nc_non_paying" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">Number of indigent new cases</td>
-            <td><input type="number" min="0" name="nc_indigent" class="form-control"></td>
-          </tr>
-        </tbody>
-      </table></div></div>
-			<div><br>
-        <form method="post" action="" class="form-inline">
-			<div class="row">
-				<div class="col-xs-6">
-	      	<h4>Referrals</h4>
-				</div>
-				<div class="col-xs-6">
-			  	<h4>Origin of Outpatients</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-6">
-      <table id="C" class="center">
-        <thead>
-          <tr>
-            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th >Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="left">Referred to other levels</td>
-            <td><input type="number" min="0" name="other_levels" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">Counter referrals received</td>
-            <td><input type="number" min="0" name="counter_received" class="form-control"></td>
-          </tr>
-        </tbody>
-      </table></div>
-			<div class="col-xs-6">
-      <table id="D" class="center">
-        <thead>
-          <tr>
-            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="left">New cases from the catchment area (zone)</td>
-            <td><input type="number" min="0" name="nc_catch" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">New cases (hors zone)</td>
-            <td><input type="number" min="0" name="nc" class="form-control"></td>
-          </tr>
-          <tr>
-            <td class="left">International patients (hors pays)</td>
-            <td><input type="number" min="0" name="international" class="form-control"></td>
-          </tr>
-        </tbody>
-      </table></div></div><br>
-      <h4>Oral Diseases</h4>
-      <table id="Gb" class="center">
-        <thead>
-          <tr>
-            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th rowspan="2" class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-            <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-          </tr>
-          <tr>
-            <th>M</th>
-            <th>F</th>
-            <th>M</th>
-            <th>F</th>
-            <th>M</th>
-            <th>F</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="left">Dental Caries</td>
-            <td><input type="number" min="0" name="dent_caries_19m" class="form-control"></td>
-            <td><input type="number" min="0" name="dent_caries_19f" class="form-control"></td>
-            <td><input type="number" min="0" name="dent_caries_39m" class="form-control"></td>
-            <td><input type="number" min="0" name="dent_caries_39f" class="form-control"></td>
-            <td><input type="number" min="0" name="dent_caries_40m" class="form-control"></td>
-            <td><input type="number" min="0" name="dent_caries_40f" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td class="left">Periodontal Disease</td>
-            <td><input type="number" min="0" name="perio_diseas_19m" class="form-control"></td>
-            <td><input type="number" min="0" name="perio_diseas_19f" class="form-control"></td>
-            <td><input type="number" min="0" name="perio_diseas_39m" class="form-control"></td>
-            <td><input type="number" min="0" name="perio_diseas_39f" class="form-control"></td>
-            <td><input type="number" min="0" name="perio_diseas_40m" class="form-control"></td>
-            <td><input type="number" min="0" name="perio_diseas_40f" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td class="left">Other Teeth and Gum Infections</td>
-            <td><input type="number" min="0" name="other_teeth_19m" class="form-control"></td>
-            <td><input type="number" min="0" name="other_teeth_19f" class="form-control"></td>
-            <td><input type="number" min="0" name="other_teeth_39m" class="form-control"></td>
-            <td><input type="number" min="0" name="other_teeth_39f" class="form-control"></td>
-            <td><input type="number" min="0" name="other_teeth_40m" class="form-control"></td>
-            <td><input type="number" min="0" name="other_teeth_40f" class="form-control"></td>
-          </tr>
-        </tbody>
-      </table><br>
-      <center><button type="submit">Validate</button></center>
-    </form>
-    </div>
-
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-  </body>
+					<div class="row">
+						<div class="col-xs-8">
+			      	<h4>Outpatient Morbidity Summary Table</h4>
+						</div>
+						<div class="col-xs-4">
+					  	<h4>Health Insurance Status of New Cases</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-8">
+				      <table id="A" class="center">
+				        <thead>
+				          <tr>
+				            <th rowspan="2">Outpatient visits<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th colspan="2">Age < 5</th>
+				            <th colspan="2">Age 5 to 19</th>
+				            <th colspan="2">Age > 20</th>
+				          </tr>
+				          <tr>
+				            <th>M</th>
+				            <th>F</th>
+				            <th>M</th>
+				            <th>F</th>
+				            <th>M</th>
+				            <th>F</th>
+									</tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td class="left">New cases (NC)</td>
+				            <td><input type="number" min="0" name="nc5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="nc5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="nc19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="nc19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="nc20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="nc20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td class="left">Old cases</td>
+				            <td><input type="number" min="0" name="oc5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="oc5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="oc19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="oc19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="oc20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="oc20f" class="form-control"></td>
+				          </tr>
+				        </tbody>
+				      </table>
+						</div>
+						<div class="col-xs-4">
+				      <table id="B" class="center">
+				        <thead>
+				          <tr>
+				            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td><input type="number" min="0" name="insured" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td class="left">Non-paying new cases</td>
+				            <td><input type="number" min="0" name="nc_non_paying" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td class="left">Number of indigent new cases</td>
+				            <td><input type="number" min="0" name="nc_indigent" class="form-control"></td>
+				          </tr>
+				        </tbody>
+				      </table>
+						</div>
+					</div>
+					<div>
+						<br>
+						<div class="row">
+							<div class="col-xs-6">
+				      	<h4>Referrals</h4>
+							</div>
+							<div class="col-xs-6">
+						  	<h4>Origin of Outpatients</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+					      <table id="C" class="center">
+					        <thead>
+					          <tr>
+					            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					            <th >Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          </tr>
+					        </thead>
+					        <tbody>
+					          <tr>
+					            <td class="left">Referred to other levels</td>
+					            <td><input type="number" min="0" name="other_levels" class="form-control"></td>
+					          </tr>
+					          <tr>
+					            <td class="left">Counter referrals received</td>
+					            <td><input type="number" min="0" name="counter_received" class="form-control"></td>
+					          </tr>
+					        </tbody>
+					      </table>
+							</div>
+							<div class="col-xs-6">
+			      		<table id="D" class="center">
+			        		<thead>
+					          <tr>
+					            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					            <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          </tr>
+					        </thead>
+			        		<tbody>
+					          <tr>
+					            <td class="left">New cases from the catchment area (zone)</td>
+					            <td><input type="number" min="0" name="nc_catch" class="form-control"></td>
+					          </tr>
+					          <tr>
+					            <td class="left">New cases (hors zone)</td>
+					            <td><input type="number" min="0" name="nc" class="form-control"></td>
+					          </tr>
+					          <tr>
+					            <td class="left">International patients (hors pays)</td>
+					            <td><input type="number" min="0" name="international" class="form-control"></td>
+					          </tr>
+			        		</tbody>
+			      		</table>
+							</div>
+						</div>
+						<br>
+	      		<h4>Oral Diseases</h4>
+	      		<table id="Gb" class="center">
+			        <thead>
+			          <tr>
+			            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th rowspan="2" class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			          </tr>
+			          <tr>
+			            <th>M</th>
+			            <th>F</th>
+			            <th>M</th>
+			            <th>F</th>
+			            <th>M</th>
+			            <th>F</th>
+								</tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>1</td>
+			            <td class="left">Dental Caries</td>
+			            <td><input type="number" min="0" name="dent_caries_19m" class="form-control"></td>
+			            <td><input type="number" min="0" name="dent_caries_19f" class="form-control"></td>
+			            <td><input type="number" min="0" name="dent_caries_39m" class="form-control"></td>
+			            <td><input type="number" min="0" name="dent_caries_39f" class="form-control"></td>
+			            <td><input type="number" min="0" name="dent_caries_40m" class="form-control"></td>
+			            <td><input type="number" min="0" name="dent_caries_40f" class="form-control"></td>
+			          </tr>
+			          <tr>
+			            <td>2</td>
+			            <td class="left">Periodontal Disease</td>
+			            <td><input type="number" min="0" name="perio_diseas_19m" class="form-control"></td>
+			            <td><input type="number" min="0" name="perio_diseas_19f" class="form-control"></td>
+			            <td><input type="number" min="0" name="perio_diseas_39m" class="form-control"></td>
+			            <td><input type="number" min="0" name="perio_diseas_39f" class="form-control"></td>
+			            <td><input type="number" min="0" name="perio_diseas_40m" class="form-control"></td>
+			            <td><input type="number" min="0" name="perio_diseas_40f" class="form-control"></td>
+			          </tr>
+			          <tr>
+			            <td>3</td>
+			            <td class="left">Other Teeth and Gum Infections</td>
+			            <td><input type="number" min="0" name="other_teeth_19m" class="form-control"></td>
+			            <td><input type="number" min="0" name="other_teeth_19f" class="form-control"></td>
+			            <td><input type="number" min="0" name="other_teeth_39m" class="form-control"></td>
+			            <td><input type="number" min="0" name="other_teeth_39f" class="form-control"></td>
+			            <td><input type="number" min="0" name="other_teeth_40m" class="form-control"></td>
+			            <td><input type="number" min="0" name="other_teeth_40f" class="form-control"></td>
+			          </tr>
+			        </tbody>
+			      </table>
+						<br>
+	      		<center><button type="submit">Validate</button></center>
+					</div>
+				</form>
+    	</div>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+		</div>
+	</body>
 </html>
 <script>
-$('#A').DataTable({
-	"bPaginate": false,
-	"bLengthChange": false,
-	"bInfo": false,
-	"searching": false
-});
-$('#B').DataTable({
-	"bPaginate": false,
-	"bLengthChange": false,
-	"bInfo": false,
-	"searching": false
-});
-$('#C').DataTable({
-	"bPaginate": false,
-	"bLengthChange": false,
-	"bInfo": false,
-	"searching": false
-});
-$('#D').DataTable({
-	"bPaginate": false,
-	"bLengthChange": false,
-	"bInfo": false,
-	"searching": false
-});
-$('#Gb').DataTable({
-	"bPaginate": false,
-	"bLengthChange": false,
-	"bInfo": false,
-	"searching": false
-});
-$('.dataTables_length').addClass('bs-select');
+	$('#A').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false,
+		"searching": false
+	});
+	$('#B').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false,
+		"searching": false
+	});
+	$('#C').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false,
+		"searching": false
+	});
+	$('#D').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false,
+		"searching": false
+	});
+	$('#Gb').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false,
+		"searching": false
+	});
+	$('.dataTables_length').addClass('bs-select');
 </script>
