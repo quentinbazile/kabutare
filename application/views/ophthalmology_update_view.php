@@ -196,12 +196,12 @@
           <tr>
             <td class="center">6</td>
             <td>Pinguecula</td>
-            <td><input type="number" min="0" name="pinguela_19m" class="form-control" value="<?php echo $table2->pinguela_19m; ?>"></td>
-            <td><input type="number" min="0" name="pinguela_19f" class="form-control" value="<?php echo $table2->pinguela_19f; ?>"></td>
-            <td><input type="number" min="0" name="pinguela_39m" class="form-control" value="<?php echo $table2->pinguela_39m; ?>"></td>
-            <td><input type="number" min="0" name="pinguela_39f" class="form-control" value="<?php echo $table2->pinguela_39f; ?>"></td>
-            <td><input type="number" min="0" name="pinguela_40m" class="form-control" value="<?php echo $table2->pinguela_40m; ?>"></td>
-            <td><input type="number" min="0" name="pinguela_40f" class="form-control" value="<?php echo $table2->pinguela_40f; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_19m" class="form-control" value="<?php echo $table2->pinguecula_19m; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_19f" class="form-control" value="<?php echo $table2->pinguecula_19f; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_39m" class="form-control" value="<?php echo $table2->pinguecula_39m; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_39f" class="form-control" value="<?php echo $table2->pinguecula_39f; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_40m" class="form-control" value="<?php echo $table2->pinguecula_40m; ?>"></td>
+            <td><input type="number" min="0" name="pinguecula_40f" class="form-control" value="<?php echo $table2->pinguecula_40f; ?>"></td>
           </tr>
           <tr>
             <td class="center">7</td>

@@ -271,7 +271,7 @@ class ophthalmology_model extends CI_Model
 
     public function show_table1()
     {
-        return $this->db->where('date_consultation_abcde', date('Y-m-d'))
+        return $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'))
                         ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_abcde')
                         ->row();
@@ -279,7 +279,7 @@ class ophthalmology_model extends CI_Model
 
     public function show_table2()
     {
-        return $this->db->where('date_consultation_fg', date('Y-m-d'))
+        return $this->db->where('date_consultation_fg', $this->session->userdata('update_date'))
                         ->get('Consultation_fg')
                         ->row();
     }
@@ -294,16 +294,16 @@ class ophthalmology_model extends CI_Model
     public function update_data1(
       $nc5m,
         $nc5f,
-        $nc9f,
-        $nc9m,
-      $nc18m,
-        $nc18f,
+        $nc19f,
+        $nc19m,
+      $nc20m,
+        $nc20f,
       $oc5m,
         $oc5f,
-        $oc9f,
-        $oc9m,
-      $oc18m,
-        $oc18f,
+        $oc19f,
+        $oc19m,
+      $oc20m,
+        $oc20f,
       $insured,
         $nc_non_paying,
         $nc_indigent,
@@ -338,7 +338,7 @@ class ophthalmology_model extends CI_Model
         $this->db->set('nc', $nc);
         $this->db->set('international', $international);
 
-        $this->db->where('date_consultation_abcde', date('Y-m-d'));
+        $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'));
         return $this->db->update('Consultation_abcde');
     }
 
@@ -461,7 +461,7 @@ class ophthalmology_model extends CI_Model
         $this->db->set('eye_pb_40m', $eye_pb_40m);
         $this->db->set('eye_pb_40f', $eye_pb_40f);
 
-        $this->db->where('date_consultation_fg', date('Y-m-d'));
+        $this->db->where('date_consultation_fg', $this->session->userdata('update_date'));
         return $this->db->update('Consultation_fg');
     }
 }
