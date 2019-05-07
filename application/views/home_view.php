@@ -43,7 +43,7 @@
 			</select>
 </div>
 	<div class="col-xs-2">
-			<button type="submit">Validate</button>
+			<button name="btn_add" type="submit">Validate</button>
 </div>
 		</form>
 	</div></div>
@@ -61,7 +61,7 @@
 				</select>
 	</div>
 	<div class="col-xs-2">
-			<button type="submit">Validate</button>
+			<button name="btn_update" type="submit">Validate</button>
 </div></form>
 </div>
     </div>

@@ -180,6 +180,8 @@ class ophthalmology_update extends CI_Controller
                     $eye_pb_40m,
                     $eye_pb_40f
                 );
+                $this->session->unset_userdata('update_date');
+                redirect('home', 'refresh');
         } else {
             $data['table1'] = $this->ophthalmology_model->show_table1();
             $data['table2'] = $this->ophthalmology_model->show_table2();

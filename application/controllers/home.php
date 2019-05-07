@@ -16,26 +16,47 @@ class home extends CI_Controller
     public function fetch()
     {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('add', '"add"', 'required');
-        if ($this->form_validation->run()) {
-            $add = $this->input->post('add');
-            $this->session->set_userdata('add_date', $add);
-            if ($this->home_model->check_service('ophthalmology')) {
-                redirect('ophthalmology', 'refresh');
+
+        if (isset ($_POST['btn_add'])){
+          $this->form_validation->set_rules('add', '"add"', 'required');
+          if ($this->form_validation->run()) {
+              $add = $this->input->post('add');
+              $this->session->set_userdata('add_date', $add);
+              if ($this->home_model->check_service('ophthalmology')) {
+                  redirect('ophthalmology', 'refresh');
+              }
+              if ($this->home_model->check_service('stomatology')) {
+                  redirect('stomatology', 'refresh');
+              }
+              if ($this->home_model->check_service('mental_health')) {
+                  redirect('mental_health', 'refresh');
+              }
+              if ($this->home_model->check_service('gbv')) {
+                  redirect('gbv', 'refresh');
+              }
+          }
+        } elseif (isset ($_POST['btn_update'])){
+          $this->form_validation->set_rules('update', '"update"', 'required');
+            if ($this->form_validation->run()) {
+                $update = $this->input->post('update');
+                $this->session->set_userdata('update_date', $update);
+                if ($this->home_model->check_service('ophthalmology')) {
+                    redirect('ophthalmology_update', 'refresh');
+                }
+                if ($this->home_model->check_service('stomatology')) {
+                    redirect('stomatology_update', 'refresh');
+                }
+                if ($this->home_model->check_service('mental_health')) {
+                    redirect('mental_health_update', 'refresh');
+                }
+                if ($this->home_model->check_service('gbv')) {
+                    redirect('gbv_update', 'refresh');
+                }
             }
-            if ($this->home_model->check_service('stomatology')) {
-                redirect('stomatology', 'refresh');
-            }
-            if ($this->home_model->check_service('mental_health')) {
-                redirect('mental_health', 'refresh');
-            }
-            if ($this->home_model->check_service('gbv')) {
-                redirect('gbv', 'refresh');
-            }
-            print_r($this->session->all_userdata());
-        } else {
-            $data['dates'] = $this->home_model->show_dates();
-            $this->load->view('home_view', $data);
+          } else {
+              $data['dates'] = $this->home_model->show_dates();
+              $this->load->view('home_view', $data);
+          }
         }
+
     }
-}
