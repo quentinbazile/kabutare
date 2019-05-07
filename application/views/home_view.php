@@ -19,11 +19,12 @@
 	</head>
 	<body>
 		<div class="container" id="all">
-			<div id="fill">
+			<div id="fill1">
 					<div class="row">
 			<h2>Fill out a report</h2>
-<div class="col-xs-offset-4 col-xs-2">
 			<form action="" method="POST">
+<div class="col-xs-offset-4 col-xs-2">
+
 
 			<select name="add" id="add" class="form-control" required>
 				<?php $array = array(date('Y-m-d', strtotime('-4 days')),
@@ -46,10 +47,25 @@
 </div>
 		</form>
 	</div></div>
-	<div id="update">
+	<div id="fill2">
+		<div class="row">
 	<h2>Update a report</h2>
+	<form action="" method="POST">
+	<div class="col-xs-offset-4 col-xs-2">
+
+
+				<select name="update" id="update" class="form-control" required>
+					<?php foreach ($dates as $date):?>
+						<option value="<?php echo $date->date_consultation_abcde; ?>"><?php echo date('d/m/Y', strtotime($date->date_consultation_abcde)); ?></option>
+					<?php endforeach; ?>
+				</select>
+	</div>
+	<div class="col-xs-2">
+			<button type="submit">Validate</button>
+</div></form>
 </div>
     </div>
+	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -58,8 +74,13 @@
 </html>
 
 <script>
-if (document.getElementById('add').options.length == 0)
-  document.getElementById('fill').style.display = 'none';
-else
-	document.getElementById('fill').style.display = 'block'
+	if (document.getElementById('add').options.length == 0)
+	  document.getElementById('fill1').style.display = 'none';
+	else
+		document.getElementById('fill1').style.display = 'block';
+
+	if (document.getElementById('update').options.length == 0)
+	  document.getElementById('fill2').style.display = 'none';
+	else
+		document.getElementById('fill2').style.display = 'block';
 </script>
