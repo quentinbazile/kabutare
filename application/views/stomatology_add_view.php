@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2>Stomatology - Report of <?php echo date("d/m/Y"); ?></h2>
+			<h2>Stomatology - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
       <div>
         <form method="post" action="" class="form-inline">
 					<div class="row">
