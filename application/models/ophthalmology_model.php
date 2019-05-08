@@ -339,6 +339,7 @@ class ophthalmology_model extends CI_Model
         $this->db->set('international', $international);
 
         $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Consultation_abcde');
     }
 

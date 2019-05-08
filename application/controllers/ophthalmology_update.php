@@ -6,7 +6,11 @@ class ophthalmology_update extends CI_Controller
     public function index()
     {
         $this->load->model('ophthalmology_model');
-        $this->fetch();
+        if ($this->session->userdata('num_user') != '') {
+            $this->fetch();
+        } else {
+            redirect('login', 'refresh');
+        }
     }
 
     public function fetch()

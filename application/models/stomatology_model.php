@@ -146,17 +146,18 @@ class stomatology_model extends CI_Model
             return $this->db->update('Consultation_fg');
         }
     }
-    // SUITE A MODIFIER
+
     public function show_table1()
     {
-        return $this->db->where('date_consultation_abcde', date('Y-m-d'))
+        return $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'))
+                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_abcde')
                         ->row();
     }
 
     public function show_table2()
     {
-        return $this->db->where('date_consultation_fg', date('Y-m-d'))
+        return $this->db->where('date_consultation_fg', $this->session->userdata('update_date'))
                         ->get('Consultation_fg')
                         ->row();
     }
@@ -170,27 +171,26 @@ class stomatology_model extends CI_Model
 
     public function update_data1(
       $nc5m,
-        $nc5f,
-        $nc9f,
-        $nc9m,
-      $nc18m,
-        $nc18f,
+      $nc5f,
+      $nc19f,
+      $nc19m,
+      $nc20m,
+      $nc20f,
       $oc5m,
-        $oc5f,
-        $oc9f,
-        $oc9m,
-      $oc18m,
-        $oc18f,
+      $oc5f,
+      $oc19f,
+      $oc19m,
+      $oc20m,
+      $oc20f,
       $insured,
-        $nc_non_paying,
-        $nc_indigent,
+      $nc_non_paying,
+      $nc_indigent,
       $other_levels,
-        $counter_received,
+      $counter_received,
       $nc_catch,
-        $nc,
-        $international
+      $nc,
+      $international
     ) {
-        $this->db->set('sexual_violence_5m', $sexual_violence_5m);
         $this->db->set('nc5m', $nc5m);
         $this->db->set('nc5f', $nc5f);
         $this->db->set('nc19m', $nc19m);
@@ -216,130 +216,53 @@ class stomatology_model extends CI_Model
         $this->db->set('nc', $nc);
         $this->db->set('international', $international);
 
-        $this->db->where('date_consultation_abcde', date('Y-m-d'));
+        $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Consultation_abcde');
     }
 
     public function update_data2(
-      $glaucoma_19f,
-        $glaucoma_19m,
-        $glaucoma_39m,
-        $glaucoma_39f,
-        $glaucoma_40m,
-        $glaucoma_40f,
-      $cataract_19f,
-        $cataract_19m,
-        $cataract_39m,
-        $cataract_39f,
-        $cataract_40m,
-        $cataract_40f,
-      $refrac_error_19f,
-        $refrac_error_19m,
-        $refrac_error_39m,
-        $refrac_error_39f,
-        $refrac_error_40m,
-        $refrac_error_40f,
-      $diab_retino_19f,
-        $diab_retino_19m,
-        $diab_retino_39m,
-        $diab_retino_39f,
-        $diab_retino_40m,
-        $diab_retino_40f,
-      $conjunctivitis_19f,
-        $conjunctivitis_19m,
-        $conjunctivitis_39m,
-        $conjunctivitis_39f,
-        $conjunctivitis_40m,
-        $conjunctivitis_40f,
-      $pinguecula_19f,
-        $pinguecula_19m,
-        $pinguecula_39m,
-        $pinguecula_39f,
-        $pinguecula_40m,
-        $pinguecula_40f,
-      $uveitis_19f,
-        $uveitis_19m,
-        $uveitis_39m,
-        $uveitis_39f,
-        $uveitis_40m,
-        $uveitis_40f,
-      $eye_trauma_19m,
-        $eye_trauma_19f,
-        $eye_trauma_39m,
-        $eye_trauma_39f,
-        $eye_trauma_40m,
-        $eye_trauma_40f,
-      $eye_pb_19m,
-        $eye_pb_19f,
-        $eye_pb_39f,
-        $eye_pb_39m,
-        $eye_pb_40m,
-        $eye_pb_40f
+      $dent_caries_19m,
+      $dent_caries_19f,
+      $dent_caries_39m,
+      $dent_caries_39f,
+      $dent_caries_40m,
+      $dent_caries_40f,
+      $perio_diseas_19m,
+      $perio_diseas_19f,
+      $perio_diseas_39m,
+      $perio_diseas_39f,
+      $perio_diseas_40m,
+      $perio_diseas_40f,
+      $other_teeth_19m,
+      $other_teeth_19f,
+      $other_teeth_39m,
+      $other_teeth_39f,
+      $other_teeth_40m,
+      $other_teeth_40f
     ) {
-        $this->db->set('glaucoma_19m', $glaucoma_19m);
-        $this->db->set('glaucoma_19f', $glaucoma_19f);
-        $this->db->set('glaucoma_39m', $glaucoma_39m);
-        $this->db->set('glaucoma_39f', $glaucoma_39f);
-        $this->db->set('glaucoma_40m', $glaucoma_40m);
-        $this->db->set('glaucoma_40f', $glaucoma_40f);
+        $this->db->set('dent_caries_19m', $dent_caries_19m);
+        $this->db->set('dent_caries_19f', $dent_caries_19f);
+        $this->db->set('dent_caries_39m', $dent_caries_39m);
+        $this->db->set('dent_caries_39f', $dent_caries_39f);
+        $this->db->set('dent_caries_40m', $dent_caries_40m);
+        $this->db->set('dent_caries_40f', $dent_caries_40f);
 
-        $this->db->set('cataract_19m', $cataract_19m);
-        $this->db->set('cataract_19f', $cataract_19f);
-        $this->db->set('cataract_39m', $cataract_39m);
-        $this->db->set('cataract_39f', $cataract_39f);
-        $this->db->set('cataract_40m', $cataract_40m);
-        $this->db->set('cataract_40f', $cataract_40f);
+        $this->db->set('perio_diseas_19m', $perio_diseas_19m);
+        $this->db->set('perio_diseas_19f', $perio_diseas_19f);
+        $this->db->set('perio_diseas_39m', $perio_diseas_39m);
+        $this->db->set('perio_diseas_39f', $perio_diseas_39f);
+        $this->db->set('perio_diseas_40m', $perio_diseas_40m);
+        $this->db->set('perio_diseas_40f', $perio_diseas_40f);
 
-        $this->db->set('refrac_error_19m', $refrac_error_19m);
-        $this->db->set('refrac_error_19f', $refrac_error_19f);
-        $this->db->set('refrac_error_39m', $refrac_error_39m);
-        $this->db->set('refrac_error_39f', $refrac_error_39f);
-        $this->db->set('refrac_error_40m', $refrac_error_40m);
-        $this->db->set('refrac_error_40f', $refrac_error_40f);
+        $this->db->set('other_teeth_19m', $other_teeth_19m);
+        $this->db->set('other_teeth_19f', $other_teeth_19f);
+        $this->db->set('other_teeth_39m', $other_teeth_39m);
+        $this->db->set('other_teeth_39f', $other_teeth_39f);
+        $this->db->set('other_teeth_40m', $other_teeth_40m);
+        $this->db->set('other_teeth_40f', $other_teeth_40f);
 
-        $this->db->set('diab_retino_19m', $diab_retino_19m);
-        $this->db->set('diab_retino_19f', $diab_retino_19f);
-        $this->db->set('diab_retino_39m', $diab_retino_39m);
-        $this->db->set('diab_retino_39f', $diab_retino_39f);
-        $this->db->set('diab_retino_40m', $diab_retino_40m);
-        $this->db->set('diab_retino_40f', $diab_retino_40f);
-
-        $this->db->set('conjunctivitis_19m', $conjunctivitis_19m);
-        $this->db->set('conjunctivitis_19f', $conjunctivitis_19f);
-        $this->db->set('conjunctivitis_39m', $conjunctivitis_39m);
-        $this->db->set('conjunctivitis_39f', $conjunctivitis_39f);
-        $this->db->set('conjunctivitis_40m', $conjunctivitis_40m);
-        $this->db->set('conjunctivitis_40f', $conjunctivitis_40f);
-
-        $this->db->set('pinguecula_19m', $pinguecula_19m);
-        $this->db->set('pinguecula_19f', $pinguecula_19f);
-        $this->db->set('pinguecula_39m', $pinguecula_39m);
-        $this->db->set('pinguecula_39f', $pinguecula_39f);
-        $this->db->set('pinguecula_40m', $pinguecula_40m);
-        $this->db->set('pinguecula_40f', $pinguecula_40f);
-
-        $this->db->set('uveitis_19m', $uveitis_19m);
-        $this->db->set('uveitis_19f', $uveitis_19f);
-        $this->db->set('uveitis_39m', $uveitis_39m);
-        $this->db->set('uveitis_39f', $uveitis_39f);
-        $this->db->set('uveitis_40m', $uveitis_40m);
-        $this->db->set('uveitis_40f', $uveitis_40f);
-
-        $this->db->set('eye_trauma_19m', $eye_trauma_19m);
-        $this->db->set('eye_trauma_19f', $eye_trauma_19f);
-        $this->db->set('eye_trauma_39m', $eye_trauma_39m);
-        $this->db->set('eye_trauma_39f', $eye_trauma_39f);
-        $this->db->set('eye_trauma_40m', $eye_trauma_40m);
-        $this->db->set('eye_trauma_40f', $eye_trauma_40f);
-
-        $this->db->set('eye_pb_19m', $eye_pb_19m);
-        $this->db->set('eye_pb_19f', $eye_pb_19f);
-        $this->db->set('eye_pb_39m', $eye_pb_39m);
-        $this->db->set('eye_pb_39f', $eye_pb_39f);
-        $this->db->set('eye_pb_40m', $eye_pb_40m);
-        $this->db->set('eye_pb_40f', $eye_pb_40f);
-
-        $this->db->where('date_consultation_fg', date('Y-m-d'));
+        $this->db->where('date_consultation_fg', $this->session->userdata('update_date'));
         return $this->db->update('Consultation_fg');
     }
 }

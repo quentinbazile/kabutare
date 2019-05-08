@@ -72,7 +72,7 @@ class mental_health_model extends CI_Model
         $higher_level,
         $hospitalized,
       $anxiety_nc19m,
-        $anxiety_nc5f,
+        $anxiety_nc19f,
         $anxiety_nc39f,
         $anxiety_nc39m,
         $anxiety_nc40m,
@@ -84,7 +84,7 @@ class mental_health_model extends CI_Model
         $anxiety_oc40m,
         $anxiety_oc40f,
       $stress_nc19m,
-        $stress_nc5f,
+        $stress_nc19f,
         $stress_nc39f,
         $stress_nc39m,
         $stress_nc40m,
@@ -96,7 +96,7 @@ class mental_health_model extends CI_Model
         $stress_oc40m,
         $stress_oc40f,
       $schizo_nc19m,
-        $schizo_nc5f,
+        $schizo_nc19f,
         $schizo_nc39f,
         $schizo_nc39m,
         $schizo_nc40m,
@@ -108,7 +108,7 @@ class mental_health_model extends CI_Model
         $schizo_oc40m,
         $schizo_oc40f,
       $soma_nc19m,
-        $soma_nc5f,
+        $soma_nc19f,
         $soma_nc39f,
         $soma_nc39m,
         $soma_nc40m,
@@ -120,7 +120,7 @@ class mental_health_model extends CI_Model
         $soma_oc40m,
         $soma_oc40f,
       $child_nc19m,
-        $child_nc5f,
+        $child_nc19f,
         $child_nc39f,
         $child_nc39m,
         $child_nc40m,
@@ -132,7 +132,7 @@ class mental_health_model extends CI_Model
         $child_oc40m,
         $child_oc40f,
       $alcohol_nc19m,
-        $alcohol_nc5f,
+        $alcohol_nc19f,
         $alcohol_nc39f,
         $alcohol_nc39m,
         $alcohol_nc40m,
@@ -144,7 +144,7 @@ class mental_health_model extends CI_Model
         $alcohol_oc40m,
         $alcohol_oc40f,
       $drugs_nc19m,
-        $drugs_nc5f,
+        $drugs_nc19f,
         $drugs_nc39f,
         $drugs_nc39m,
         $drugs_nc40m,
@@ -156,7 +156,7 @@ class mental_health_model extends CI_Model
         $drugs_oc40m,
         $drugs_oc40f,
       $dep_nc19m,
-        $dep_nc5f,
+        $dep_nc19f,
         $dep_nc39f,
         $dep_nc39m,
         $dep_nc40m,
@@ -168,7 +168,7 @@ class mental_health_model extends CI_Model
         $dep_oc40m,
         $dep_oc40f,
       $suicid_att_nc19m,
-        $suicid_att_nc5f,
+        $suicid_att_nc19f,
         $suicid_att_nc39f,
         $suicid_att_nc39m,
         $suicid_att_nc40m,
@@ -180,7 +180,7 @@ class mental_health_model extends CI_Model
         $suicid_att_oc40m,
         $suicid_att_oc40f,
       $suicid_d_nc19m,
-        $suicid_d_nc5f,
+        $suicid_d_nc19f,
         $suicid_d_nc39f,
         $suicid_d_nc39m,
         $suicid_d_nc40m,
@@ -192,7 +192,7 @@ class mental_health_model extends CI_Model
         $suicid_d_oc40m,
         $suicid_d_oc40f,
       $maniac_nc19m,
-        $maniac_nc5f,
+        $maniac_nc19f,
         $maniac_nc39f,
         $maniac_nc39m,
         $maniac_nc40m,
@@ -204,7 +204,7 @@ class mental_health_model extends CI_Model
         $maniac_oc40m,
         $maniac_oc40f,
       $bipolar_nc19m,
-        $bipolar_nc5f,
+        $bipolar_nc19f,
         $bipolar_nc39f,
         $bipolar_nc39m,
         $bipolar_nc40m,
@@ -216,7 +216,7 @@ class mental_health_model extends CI_Model
         $bipolar_oc40m,
         $bipolar_oc40f,
       $other_psy_nc19m,
-        $other_psy_nc5f,
+        $other_psy_nc19f,
         $other_psy_nc39f,
         $other_psy_nc39m,
         $other_psy_nc40m,
@@ -228,7 +228,7 @@ class mental_health_model extends CI_Model
         $other_psy_oc40m,
         $other_psy_oc40f,
       $epilepsy_nc19m,
-        $epilepsy_nc5f,
+        $epilepsy_nc19f,
         $epilepsy_nc39f,
         $epilepsy_nc39m,
         $epilepsy_nc40m,
@@ -240,7 +240,7 @@ class mental_health_model extends CI_Model
         $epilepsy_oc40m,
         $epilepsy_oc40f,
       $other_neuro_nc19m,
-        $other_neuro_nc5f,
+        $other_neuro_nc19f,
         $other_neuro_nc39f,
         $other_neuro_nc39m,
         $other_neuro_nc40m,
@@ -253,7 +253,7 @@ class mental_health_model extends CI_Model
         $other_neuro_oc40f,
         $num_rapport
     ) {
-      $this->db->where('mental_health', $this->session->userdata('add_date'));
+      $this->db->where('date_mental_health', $this->session->userdata('add_date'));
       $q = $this->db->get('Mental_Health');
       if ($q->num_rows() == 0) {
         return $this->db->set(array(
@@ -470,7 +470,7 @@ class mental_health_model extends CI_Model
       'other_neuro_oc39f' => $other_neuro_oc39f,
       'other_neuro_oc40m' => $other_neuro_oc40m,
       'other_neuro_oc40f' => $other_neuro_oc40f,
-
+      'num_user' => $this->session->userdata('num_user'),
       'num_rapport' => $num_rapport
     ))
             ->set('date_mental_health', $this->session->userdata('add_date'))
@@ -700,15 +700,15 @@ class mental_health_model extends CI_Model
 
     public function show_table1()
     {
-        return $this->db->where('date_consultation_abcde', $this->session->userdata('add_date'))
+        return $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'))
                         ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_abcde')
-                        ->result();
+                        ->row();
     }
 
     public function show_table2()
     {
-        return $this->db->where('date_mental_health', $this->session->userdata('add_date'))
+        return $this->db->where('date_mental_health', $this->session->userdata('update_date'))
                         ->get('Mental_Health')
                         ->row();
     }
@@ -767,7 +767,8 @@ class mental_health_model extends CI_Model
         $this->db->set('nc', $nc);
         $this->db->set('international', $international);
 
-        $this->db->where('date_consultation_abcde', $this->session->userdata('add_date'));
+        $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Consultation_abcde');
     }
 
@@ -776,7 +777,7 @@ class mental_health_model extends CI_Model
         $higher_level,
         $hospitalized,
       $anxiety_nc19m,
-        $anxiety_nc5f,
+        $anxiety_nc19f,
         $anxiety_nc39f,
         $anxiety_nc39m,
         $anxiety_nc40m,
@@ -788,7 +789,7 @@ class mental_health_model extends CI_Model
         $anxiety_oc40m,
         $anxiety_oc40f,
       $stress_nc19m,
-        $stress_nc5f,
+        $stress_nc19f,
         $stress_nc39f,
         $stress_nc39m,
         $stress_nc40m,
@@ -800,7 +801,7 @@ class mental_health_model extends CI_Model
         $stress_oc40m,
         $stress_oc40f,
       $schizo_nc19m,
-        $schizo_nc5f,
+        $schizo_nc19f,
         $schizo_nc39f,
         $schizo_nc39m,
         $schizo_nc40m,
@@ -812,7 +813,7 @@ class mental_health_model extends CI_Model
         $schizo_oc40m,
         $schizo_oc40f,
       $soma_nc19m,
-        $soma_nc5f,
+        $soma_nc19f,
         $soma_nc39f,
         $soma_nc39m,
         $soma_nc40m,
@@ -824,7 +825,7 @@ class mental_health_model extends CI_Model
         $soma_oc40m,
         $soma_oc40f,
       $child_nc19m,
-        $child_nc5f,
+        $child_nc19f,
         $child_nc39f,
         $child_nc39m,
         $child_nc40m,
@@ -836,7 +837,7 @@ class mental_health_model extends CI_Model
         $child_oc40m,
         $child_oc40f,
       $alcohol_nc19m,
-        $alcohol_nc5f,
+        $alcohol_nc19f,
         $alcohol_nc39f,
         $alcohol_nc39m,
         $alcohol_nc40m,
@@ -848,7 +849,7 @@ class mental_health_model extends CI_Model
         $alcohol_oc40m,
         $alcohol_oc40f,
       $drugs_nc19m,
-        $drugs_nc5f,
+        $drugs_nc19f,
         $drugs_nc39f,
         $drugs_nc39m,
         $drugs_nc40m,
@@ -860,7 +861,7 @@ class mental_health_model extends CI_Model
         $drugs_oc40m,
         $drugs_oc40f,
       $dep_nc19m,
-        $dep_nc5f,
+        $dep_nc19f,
         $dep_nc39f,
         $dep_nc39m,
         $dep_nc40m,
@@ -872,7 +873,7 @@ class mental_health_model extends CI_Model
         $dep_oc40m,
         $dep_oc40f,
       $suicid_att_nc19m,
-        $suicid_att_nc5f,
+        $suicid_att_nc19f,
         $suicid_att_nc39f,
         $suicid_att_nc39m,
         $suicid_att_nc40m,
@@ -884,7 +885,7 @@ class mental_health_model extends CI_Model
         $suicid_att_oc40m,
         $suicid_att_oc40f,
       $suicid_d_nc19m,
-        $suicid_d_nc5f,
+        $suicid_d_nc19f,
         $suicid_d_nc39f,
         $suicid_d_nc39m,
         $suicid_d_nc40m,
@@ -896,7 +897,7 @@ class mental_health_model extends CI_Model
         $suicid_d_oc40m,
         $suicid_d_oc40f,
       $maniac_nc19m,
-        $maniac_nc5f,
+        $maniac_nc19f,
         $maniac_nc39f,
         $maniac_nc39m,
         $maniac_nc40m,
@@ -908,7 +909,7 @@ class mental_health_model extends CI_Model
         $maniac_oc40m,
         $maniac_oc40f,
       $bipolar_nc19m,
-        $bipolar_nc5f,
+        $bipolar_nc19f,
         $bipolar_nc39f,
         $bipolar_nc39m,
         $bipolar_nc40m,
@@ -920,7 +921,7 @@ class mental_health_model extends CI_Model
         $bipolar_oc40m,
         $bipolar_oc40f,
       $other_psy_nc19m,
-        $other_psy_nc5f,
+        $other_psy_nc19f,
         $other_psy_nc39f,
         $other_psy_nc39m,
         $other_psy_nc40m,
@@ -932,7 +933,7 @@ class mental_health_model extends CI_Model
         $other_psy_oc40m,
         $other_psy_oc40f,
       $epilepsy_nc19m,
-        $epilepsy_nc5f,
+        $epilepsy_nc19f,
         $epilepsy_nc39f,
         $epilepsy_nc39m,
         $epilepsy_nc40m,
@@ -944,7 +945,7 @@ class mental_health_model extends CI_Model
         $epilepsy_oc40m,
         $epilepsy_oc40f,
       $other_neuro_nc19m,
-        $other_neuro_nc5f,
+        $other_neuro_nc19f,
         $other_neuro_nc39f,
         $other_neuro_nc39m,
         $other_neuro_nc40m,
@@ -954,8 +955,7 @@ class mental_health_model extends CI_Model
         $other_neuro_oc39f,
         $other_neuro_oc39m,
         $other_neuro_oc40m,
-        $other_neuro_oc40f,
-        $num_rapport
+        $other_neuro_oc40f
     ) {
         $this->db->set('follow_up', $follow_up);
         $this->db->set('higher_level', $higher_level);
@@ -1171,7 +1171,8 @@ class mental_health_model extends CI_Model
     $this->db->set('other_neuro_oc40m', $other_neuro_oc40m);
     $this->db->set('other_neuro_oc40f', $other_neuro_oc40f);
 
-        $this->db->where('date_mental_health', $this->session->userdata('add_date'));
+        $this->db->where('date_mental_health', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Mental_Health');
     }
 }

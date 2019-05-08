@@ -167,17 +167,17 @@
 					          <tr>
 					            <td class="center">1</td>
 					            <td class="left">Mental patients under follow up</td>
-					            <td><input required type="number" min="0" name="follow_up" class="form-control"></td>
+					            <td><input type="number" min="0" name="follow_up" class="form-control"></td>
 					            </tr>
 					          <tr>
 					            <td class="center">2</td>
 					            <td class="left">Mental problems referred to higher level</td>
-					            <td><input required type="number" min="0" name="higher_level" class="form-control"></td>
+					            <td><input type="number" min="0" name="higher_level" class="form-control"></td>
 					            </tr>
 					          <tr>
 					            <td class="center">3</td>
 					            <td class="left">Mental problems hospitalized</td>
-					            <td><input required type="number" min="0" name="hospitalized" class="form-control"></td>
+					            <td><input type="number" min="0" name="hospitalized" class="form-control"></td>
 					          </tr>
 					        </tbody>
 					      </table>
@@ -220,242 +220,242 @@
 				        <tr>
 				          <td class="center">1</td>
 				          <td class="left">Anxiety disorders</td>
-				          <td><input required type="number" min="0" name="anxiety_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="anxiety_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="anxiety_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">2</td>
 				          <td class="left">Post-traumatic stress disorders</td>
-				          <td><input required type="number" min="0" name="stress_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="stress_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="stress_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">3</td>
 				          <td class="left">Schizophrenia and other psychoses</td>
-				          <td><input required type="number" min="0" name="schizo_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="schizo_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="schizo_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">4</td>
 				          <td class="left">Somatoform disorders</td>
-				          <td><input required type="number" min="0" name="soma_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="soma_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="soma_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">5</td>
 				          <td class="left">Behavioral and emotional disorders with onset usually occurring in childhood and adolescence</td>
-				          <td><input required type="number" min="0" name="child_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="child_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="child_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">6</td>
 				          <td class="left">Mental and behavioral disorder due to use of alcohol</td>
-				          <td><input required type="number" min="0" name="alcohol_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="alcohol_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="alcohol_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">7</td>
 				          <td class="left">Mental and behavioral disorder due to substance abuse</td>
-				          <td><input required type="number" min="0" name="drugs_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="drugs_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="drugs_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">8</td>
 				          <td class="left">Depression</td>
-				          <td><input required type="number" min="0" name="dep_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="dep_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="dep_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">9</td>
 				          <td class="left">Suicide attempted</td>
-				          <td><input required type="number" min="0" name="suicid_att_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_att_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_att_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">10</td>
 				          <td class="left">Suicide deaths</td>
-				          <td><input required type="number" min="0" name="suicid_d_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="suicid_d_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="suicid_d_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">11</td>
 				          <td class="left">Maniac episode</td>
-				          <td><input required type="number" min="0" name="maniac_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="maniac_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="maniac_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">12</td>
 				          <td class="left">Bipolar disorders</td>
-				          <td><input required type="number" min="0" name="bipolar_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="bipolar_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="bipolar_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">13</td>
 				          <td class="left">Other psychological / Mental behavioral disorders</td>
-				          <td><input required type="number" min="0" name="other_psy_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_psy_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_psy_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">14</td>
 				          <td class="left">Epilepsy</td>
-				          <td><input required type="number" min="0" name="epilepsy_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="epilepsy_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="epilepsy_oc40f" class="form-control"></td>
 				        </tr>
 				        <tr>
 				          <td class="center">15</td>
 				          <td class="left">Other neurological disorders</td>
-				          <td><input required type="number" min="0" name="other_neuro_nc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_nc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_nc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_nc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_nc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_nc40f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc19m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc19f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc39m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc39f" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc40m" class="form-control"></td>
-				          <td><input required type="number" min="0" name="other_neuro_oc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_nc40f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc19m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc19f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc39m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc39f" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc40m" class="form-control"></td>
+				          <td><input type="number" min="0" name="other_neuro_oc40f" class="form-control"></td>
 				        </tr>
 				      </tbody>
 				    </table>
