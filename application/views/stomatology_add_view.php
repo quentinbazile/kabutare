@@ -112,7 +112,7 @@
 					        <thead>
 					          <tr>
 					            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					            <th >Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					            <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          </tr>
 					        </thead>
 					        <tbody>

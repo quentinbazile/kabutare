@@ -32,11 +32,25 @@
                              date('Y-m-d', strtotime('-2 days')),
                              date('Y-m-d', strtotime('-1 day')),
                              date('Y-m-d'));
-          foreach ($dates as $date):
-             if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
-                 unset($array[$val]);
-             }
-          endforeach;
+                if (check_service('minor_surgery') || check_service('operating_room')) {
+                    foreach ($dates_surgery as $d):
+                       if (($val = array_search($d->date_surgery, $array)) !== false) {
+                           unset($array[$val]);
+                       }
+                    endforeach;
+                } elseif (check_service('internal_medicine')) {
+                    foreach ($dates_im as $d):
+                                             if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
+                                                 unset($array[$val]);
+                                             }
+                    endforeach;
+                } else {
+                    foreach ($dates as $date):
+                       if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
+                           unset($array[$val]);
+                       }
+                    endforeach;
+                }
           foreach ($array as $value):?>
 					<option value="<?php echo $value; ?>"><?php echo date('d/m/Y', strtotime($value)); ?></option>
 				<?php endforeach; ?>
@@ -55,9 +69,19 @@
 
 
 				<select name="update" id="update" class="form-control" required>
-					<?php foreach ($dates as $date):?>
-						<option value="<?php echo $date->date_consultation_abcde; ?>"><?php echo date('d/m/Y', strtotime($date->date_consultation_abcde)); ?></option>
-					<?php endforeach; ?>
+					<?php if (check_service('minor_surgery') || check_service('operating_room')) {
+              foreach ($dates_surgery as $d):?>
+								<option value="<?php echo $d->date_surgery; ?>"><?php echo date('d/m/Y', strtotime($d->date_surgery)); ?></option>
+							<?php endforeach;
+          } elseif (check_service('internal_medicine')) {
+              foreach ($dates_im as $d):?>
+										<option value="<?php echo $d->date_hospitalization_bcde; ?>"><?php echo date('d/m/Y', strtotime($d->date_hospitalization_bcde)); ?></option>
+									<?php endforeach;
+          } else {
+              foreach ($dates as $date):?>
+								<option value="<?php echo $date->date_consultation_abcde; ?>"><?php echo date('d/m/Y', strtotime($date->date_consultation_abcde)); ?></option>
+							<?php endforeach;
+          }?>
 				</select>
 	</div>
 	<div class="col-xs-2">

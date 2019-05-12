@@ -13,6 +13,28 @@ class home_model extends CI_Model
               ->result();
     }
 
+    public function show_dates_surgery()
+    {
+        return $this->db->select('date_surgery')
+              ->from('surgery')
+              ->where('date_surgery >', date('Y-m-d', strtotime('-5 days')))
+              ->where('date_surgery <=', date('Y-m-d'))
+              ->where('num_user', $this->session->userdata('num_user'))
+              ->get()
+              ->result();
+    }
+
+    public function show_dates_im()
+    {
+        return $this->db->select('date_hospitalization_bcde')
+              ->from('Hospitalization_BCDE')
+              ->where('date_hospitalization_bcde >', date('Y-m-d', strtotime('-5 days')))
+              ->where('date_hospitalization_bcde <=', date('Y-m-d'))
+              ->where('num_user', $this->session->userdata('num_user'))
+              ->get()
+              ->result();
+    }
+
     public function check_service($service)
     {
         $this->db->select('*')

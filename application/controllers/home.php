@@ -37,6 +37,18 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('pregnant_woman')) {
                     redirect('pregnant_woman', 'refresh');
                 }
+                if ($this->home_model->check_service('minor_surgery')) {
+                    redirect('minor_surgery', 'refresh');
+                }
+                if ($this->home_model->check_service('operating_room')) {
+                    redirect('operating_room', 'refresh');
+                }
+                if ($this->home_model->check_service('emergency')) {
+                    redirect('emergency', 'refresh');
+                }
+                if ($this->home_model->check_service('internal_medicine')) {
+                    redirect('internal_medicine', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -58,9 +70,23 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('pregnant_woman')) {
                     redirect('pregnant_woman_update', 'refresh');
                 }
+                if ($this->home_model->check_service('minor_surgery')) {
+                    redirect('minor_surgery_update', 'refresh');
+                }
+                if ($this->home_model->check_service('operating_room')) {
+                    redirect('operating_room_update', 'refresh');
+                }
+                if ($this->home_model->check_service('emergency')) {
+                    redirect('emergency_update', 'refresh');
+                }
+                if ($this->home_model->check_service('internal_medicine')) {
+                    redirect('internal_medicine_update', 'refresh');
+                }
             }
         } else {
             $data['dates'] = $this->home_model->show_dates();
+            $data['dates_surgery'] = $this->home_model->show_dates_surgery();
+            $data['dates_im'] = $this->home_model->show_dates_im();
             $this->load->view('home_view', $data);
         }
     }

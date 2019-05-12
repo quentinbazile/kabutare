@@ -225,7 +225,7 @@ class pregnant_woman_model extends CI_Model
             ->set('date_medical_imagery', $this->session->userdata('add_date'))
             ->insert('Medical_Imagery');
     }
-    // SUITE A MODIFIER
+
     public function show_table1()
     {
         return $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'))
@@ -236,8 +236,15 @@ class pregnant_woman_model extends CI_Model
 
     public function show_table2()
     {
-        return $this->db->where('date_consultation_fg', $this->session->userdata('update_date'))
-                        ->get('Consultation_fg')
+        return $this->db->where('date_obstetrical_complication_a', $this->session->userdata('update_date'))
+                        ->get('Obstetrical_Complication_A')
+                        ->row();
+    }
+
+    public function show_table3()
+    {
+        return $this->db->where('date_medical_imagery', $this->session->userdata('update_date'))
+                        ->get('Medical_Imagery')
                         ->row();
     }
 
@@ -301,47 +308,106 @@ class pregnant_woman_model extends CI_Model
     }
 
     public function update_data2(
-      $dent_caries_19m,
-      $dent_caries_19f,
-      $dent_caries_39m,
-      $dent_caries_39f,
-      $dent_caries_40m,
-      $dent_caries_40f,
-      $perio_diseas_19m,
-      $perio_diseas_19f,
-      $perio_diseas_39m,
-      $perio_diseas_39f,
-      $perio_diseas_40m,
-      $perio_diseas_40f,
-      $other_teeth_19m,
-      $other_teeth_19f,
-      $other_teeth_39m,
-      $other_teeth_39f,
-      $other_teeth_40m,
-      $other_teeth_40f
+      $complications_opd19,
+      $complications_opd20,
+      $ectopic_opd19,
+      $ectopic_opd20,
+      $antepartum_opd19,
+      $antepartum_opd20,
+      $postpartum_opd19,
+      $postpartum_opd20,
+      $eclampsia_opd19,
+      $eclampsia_opd20,
+      $postc_opd19,
+      $postc_opd20,
+      $postpartum_other_opd19,
+      $postpartum_other_opd20,
+      $prolonged_opd19,
+      $prolonged_opd20,
+      $uterine_rup_opd19,
+      $uterine_rup_opd20,
+      $other_direct_obste_opd19,
+      $other_direct_obste_opd20,
+      $anemia_sev_opd19,
+      $anemia_sev_opd20,
+      $malaria_sim_opd19,
+      $malaria_sim_opd20,
+      $malaria_dig_opd19,
+      $malaria_dig_opd20,
+      $malaria_sev_opd19,
+      $malaria_sev_opd20,
+      $hiv_opd19,
+      $hiv_opd20,
+      $pulmonary_opd19,
+      $pulmonary_opd20,
+      $pneumonia_opd19,
+      $pneumonia_opd20,
+      $other_ind_obstet_opd19,
+      $other_ind_obstet_opd20
     ) {
-        $this->db->set('dent_caries_19m', $dent_caries_19m);
-        $this->db->set('dent_caries_19f', $dent_caries_19f);
-        $this->db->set('dent_caries_39m', $dent_caries_39m);
-        $this->db->set('dent_caries_39f', $dent_caries_39f);
-        $this->db->set('dent_caries_40m', $dent_caries_40m);
-        $this->db->set('dent_caries_40f', $dent_caries_40f);
+        $this->db->set('complications_opd19', $complications_opd19);
+        $this->db->set('complications_opd20', $complications_opd20);
+        $this->db->set('ectopic_opd19', $ectopic_opd19);
+        $this->db->set('ectopic_opd20', $ectopic_opd20);
+        $this->db->set('antepartum_opd19', $antepartum_opd19);
+        $this->db->set('antepartum_opd20', $antepartum_opd20);
+        $this->db->set('postpartum_opd19', $postpartum_opd19);
+        $this->db->set('postpartum_opd20', $postpartum_opd20);
+        $this->db->set('eclampsia_opd19', $eclampsia_opd19);
+        $this->db->set('eclampsia_opd20', $eclampsia_opd20);
+        $this->db->set('postc_opd19', $postc_opd19);
+        $this->db->set('postc_opd20', $postc_opd20);
+        $this->db->set('postpartum_other_opd19', $postpartum_other_opd19);
+        $this->db->set('postpartum_other_opd20', $postpartum_other_opd20);
+        $this->db->set('prolonged_opd19', $prolonged_opd19);
+        $this->db->set('prolonged_opd20', $prolonged_opd20);
+        $this->db->set('uterine_rup_opd19', $uterine_rup_opd19);
+        $this->db->set('uterine_rup_opd20', $uterine_rup_opd20);
+        $this->db->set('other_direct_obste_opd19', $other_direct_obste_opd19);
+        $this->db->set('other_direct_obste_opd20', $other_direct_obste_opd20);
+        $this->db->set('anemia_sev_opd19', $anemia_sev_opd19);
+        $this->db->set('anemia_sev_opd20', $anemia_sev_opd20);
+        $this->db->set('malaria_sim_opd19', $malaria_sim_opd19);
+        $this->db->set('malaria_sim_opd20', $malaria_sim_opd20);
+        $this->db->set('malaria_dig_opd19', $malaria_dig_opd19);
+        $this->db->set('malaria_dig_opd20', $malaria_dig_opd20);
+        $this->db->set('malaria_sev_opd19', $malaria_sev_opd19);
+        $this->db->set('malaria_sev_opd20', $malaria_sev_opd20);
+        $this->db->set('hiv_opd19', $hiv_opd19);
+        $this->db->set('hiv_opd20', $hiv_opd20);
+        $this->db->set('pulmonary_opd19', $pulmonary_opd19);
+        $this->db->set('pulmonary_opd20', $pulmonary_opd20);
+        $this->db->set('pneumonia_opd19', $pneumonia_opd19);
+        $this->db->set('pneumonia_opd20', $pneumonia_opd20);
+        $this->db->set('other_ind_obstet_opd19', $other_ind_obstet_opd19);
+        $this->db->set('other_ind_obstet_opd20', $other_ind_obstet_opd20);
 
-        $this->db->set('perio_diseas_19m', $perio_diseas_19m);
-        $this->db->set('perio_diseas_19f', $perio_diseas_19f);
-        $this->db->set('perio_diseas_39m', $perio_diseas_39m);
-        $this->db->set('perio_diseas_39f', $perio_diseas_39f);
-        $this->db->set('perio_diseas_40m', $perio_diseas_40m);
-        $this->db->set('perio_diseas_40f', $perio_diseas_40f);
+        $this->db->where('date_obstetrical_complication_a', $this->session->userdata('update_date'));
+        return $this->db->update('Obstetrical_Complication_A');
+    }
 
-        $this->db->set('other_teeth_19m', $other_teeth_19m);
-        $this->db->set('other_teeth_19f', $other_teeth_19f);
-        $this->db->set('other_teeth_39m', $other_teeth_39m);
-        $this->db->set('other_teeth_39f', $other_teeth_39f);
-        $this->db->set('other_teeth_40m', $other_teeth_40m);
-        $this->db->set('other_teeth_40f', $other_teeth_40f);
+    public function update_data3(
+      $lung,
+      $bones,
+      $abdomen_without,
+      $abdomen_with,
+      $other_xray,
+      $gastroscopy,
+      $ultrasound,
+      $ecg,
+      $other_medical_img
+    ) {
+        $this->db->set('lung', $lung);
+        $this->db->set('bones', $bones);
+        $this->db->set('abdomen_without', $abdomen_without);
+        $this->db->set('abdomen_with', $abdomen_with);
+        $this->db->set('other_xray', $other_xray);
+        $this->db->set('gastroscopy', $gastroscopy);
+        $this->db->set('ultrasound', $ultrasound);
+        $this->db->set('ecg', $ecg);
+        $this->db->set('other_medical_img', $other_medical_img);
 
-        $this->db->where('date_consultation_fg', $this->session->userdata('update_date'));
-        return $this->db->update('Consultation_fg');
+        $this->db->where('date_medical_imagery', $this->session->userdata('update_date'));
+        return $this->db->update('Medical_Imagery');
     }
 }
