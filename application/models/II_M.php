@@ -1210,7 +1210,6 @@ class II_M extends CI_Model
         $other_teeth_40m,
         $other_teeth_40f
     ) {
-        $this->db->set('sexual_violence_5m', $sexual_violence_5m);
         $this->db->set('nc5m', $nc5m);
         $this->db->set('nc5f', $nc5f);
         $this->db->set('nc19m', $nc19m);

@@ -108,7 +108,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-6">
-					      <table id="C2" class="center" style="width:100%;">
+					      <table id="C2" class="center">
 					        <thead>
 					          <tr>
 					            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -128,7 +128,7 @@
 					      </table>
 							</div>
 							<div class="col-xs-6">
-			      		<table id="D2" class="center" style="width:100%;">
+			      		<table id="D2" class="center">
 			        		<thead>
 					          <tr>
 					            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -151,6 +151,372 @@
 			        		</tbody>
 			      		</table>
 							</div>
+						</div>
+						<br>
+						<div class="row">
+							<h4>New cases of priority health problems in General OPD</h4>
+						</div>
+						<div class="row">
+							<table id="E2" class="center">
+								<thead>
+				          <tr>
+				            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				            <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+				          </tr>
+				          <tr>
+				            <th>M</th>
+				            <th>F</th>
+				            <th>M</th>
+				            <th>F</th>
+				            <th>M</th>
+				            <th>F</th>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td class="left">Diarrhea with dehydration</td>
+				            <td><input type="number" min="0" name="diar_w_dehy_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_w_dehy_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_w_dehy_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_w_dehy_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_w_dehy_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_w_dehy_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td class="left">Diarrhea no dehydration</td>
+				            <td><input type="number" min="0" name="diar_no_dehy_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_no_dehy_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_no_dehy_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_no_dehy_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_no_dehy_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="diar_no_dehy_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>3</td>
+				            <td class="left">Bloody diarrhea</td>
+				            <td><input type="number" min="0" name="blood_diar_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="blood_diar_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="blood_diar_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="blood_diar_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="blood_diar_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="blood_diar_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td class="center">4</td>
+				            <td class="left">Food poisoning</td>
+				            <td><input type="number" min="0" name="food_poison_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="food_poison_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="food_poison_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="food_poison_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="food_poison_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="food_poison_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>5</td>
+				            <td class="left">Ear infections</td>
+				            <td><input type="number" min="0" name="ear_infect_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ear_infect_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ear_infect_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ear_infect_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ear_infect_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ear_infect_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>6</td>
+				            <td class="left">Schistosomiasis</td>
+				            <td><input type="number" min="0" name="schisto_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="schisto_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="schisto_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="schisto_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="schisto_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="schisto_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>7</td>
+				            <td class="left">Ascarislumbricoides</td>
+				            <td><input type="number" min="0" name="ascaris_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ascaris_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ascaris_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ascaris_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ascaris_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ascaris_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>8</td>
+				            <td class="left">Trichuristrichiura</td>
+				            <td><input type="number" min="0" name="trichu_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="trichu_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="trichu_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="trichu_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="trichu_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="trichu_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>9</td>
+				            <td class="left">Hookworm</td>
+				            <td><input type="number" min="0" name="hook_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hook_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="hook_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hook_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="hook_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hook_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>10</td>
+				            <td class="left">Entamoeba</td>
+				            <td><input type="number" min="0" name="entam_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="entam_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="entam_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="entam_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="entam_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="entam_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>11</td>
+				            <td class="left">Giardia</td>
+				            <td><input type="number" min="0" name="giardia_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="giardia_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="giardia_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="giardia_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="giardia_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="giardia_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td class="center">12</td>
+				            <td>Taenia</td>
+				            <td><input type="number" min="0" name="taenia_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="taenia_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="taenia_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="taenia_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="taenia_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="taenia_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>13</td>
+				            <td class="left">Malaria simple (not pregnant)</td>
+				            <td><input type="number" min="0" name="malaria_s_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_s_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_s_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_s_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_s_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_s_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>14</td>
+				            <td class="left">Malaria with minor digestive symptoms (not pregnant)</td>
+				            <td><input type="number" min="0" name="malaria_dig_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_dig_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_dig_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_dig_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_dig_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="malaria_dig_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>15</td>
+				            <td class="left">Herpes simpplex infections</td>
+				            <td><input type="number" min="0" name="herpes_s_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="herpes_s_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="herpes_s_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="herpes_s_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="herpes_s_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="herpes_s_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>16</td>
+				            <td class="left">Meningitis suspected</td>
+				            <td><input type="number" min="0" name="mening_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mening_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="mening_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mening_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="mening_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mening_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>17</td>
+				            <td class="left">Pneumonia simple</td>
+				            <td><input type="number" min="0" name="pneumonia_simp_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_simp_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_simp_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_simp_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_simp_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_simp_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>18</td>
+				            <td class="left">Pneumonia severe</td>
+				            <td><input type="number" min="0" name="pneumonia_sev_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_sev_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_sev_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_sev_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_sev_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="pneumonia_sev_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>19</td>
+				            <td class="left">Influenza/Syndrome gripal</td>
+				            <td><input type="number" min="0" name="grip_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="grip_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="grip_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="grip_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="grip_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="grip_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>20</td>
+				            <td class="left">Respiratory infections acute (ARI) other</td>
+				            <td><input type="number" min="0" name="ari_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ari_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ari_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ari_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ari_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ari_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>21</td>
+				            <td class="left">Gastritis and duodenitis</td>
+				            <td><input type="number" min="0" name="gast_duoden_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="gast_duoden_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="gast_duoden_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="gast_duoden_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="gast_duoden_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="gast_duoden_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>22</td>
+				            <td class="left">Abscesses</td>
+				            <td><input type="number" min="0" name="absces_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="absces_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="absces_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="absces_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="absces_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="absces_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>23</td>
+				            <td class="left">Ulcers of skin</td>
+				            <td><input type="number" min="0" name="ulcers_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ulcers_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ulcers_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ulcers_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="ulcers_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="ulcers_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>24</td>
+				            <td class="left">Skin infection scabies</td>
+				            <td><input type="number" min="0" name="scabies_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="scabies_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="scabies_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="scabies_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="scabies_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="scabies_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>25</td>
+				            <td class="left">Skin infection fungal (mycoses) superficial</td>
+				            <td><input type="number" min="0" name="mycoses_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mycoses_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="mycoses_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mycoses_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="mycoses_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="mycoses_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>26</td>
+				            <td class="left">Skin infections other</td>
+				            <td><input type="number" min="0" name="si_others_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="si_others_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="si_others_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="si_others_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="si_others_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="si_others_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>27</td>
+				            <td class="left">Urinary tract infections</td>
+				            <td><input type="number" min="0" name="urinary_ti_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="urinary_ti_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="urinary_ti_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="urinary_ti_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="urinary_ti_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="urinary_ti_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>28</td>
+				            <td class="left">Anemia (confirmed)</td>
+				            <td><input type="number" min="0" name="anemia_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="anemia_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="anemia_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="anemia_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="anemia_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="anemia_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>29</td>
+				            <td class="left">Measles suspected</td>
+				            <td><input type="number" min="0" name="measles_susp_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_susp_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_susp_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_susp_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_susp_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_susp_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>30</td>
+				            <td class="left">Measles confirmed cases</td>
+				            <td><input type="number" min="0" name="measles_conf_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_conf_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_conf_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_conf_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_conf_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="measles_conf_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>31</td>
+				            <td class="left">Rubella confirmed cases</td>
+				            <td><input type="number" min="0" name="rubella_conf_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="rubella_conf_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="rubella_conf_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="rubella_conf_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="rubella_conf_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="rubella_conf_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>32</td>
+				            <td class="left">Acute flaccid paralysis cases</td>
+				            <td><input type="number" min="0" name="flaccid_paraly_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="flaccid_paraly_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="flaccid_paraly_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="flaccid_paraly_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="flaccid_paraly_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="flaccid_paraly_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>33</td>
+				            <td class="left">Tetanus</td>
+				            <td><input type="number" min="0" name="tetanus_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="tetanus_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="tetanus_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="tetanus_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="tetanus_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="tetanus_20f" class="form-control"></td>
+				          </tr>
+				          <tr>
+				            <td>34</td>
+				            <td class="left">Viral hepatitis (A, B, Chronic & others)</td>
+				            <td><input type="number" min="0" name="hepatitis_5m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hepatitis_5f" class="form-control"></td>
+				            <td><input type="number" min="0" name="hepatitis_19m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hepatitis_19f" class="form-control"></td>
+				            <td><input type="number" min="0" name="hepatitis_20m" class="form-control"></td>
+				            <td><input type="number" min="0" name="hepatitis_20f" class="form-control"></td>
+				          </tr>
+				        </tbody>
+							</table>
 						</div>
 						<br>
             <div class="row">
@@ -1146,6 +1512,11 @@
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
+	    });
+	$('#E2').DataTable({
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bInfo": false
 	    });
   $('#A10').DataTable({
     "bPaginate": false,

@@ -218,17 +218,8 @@
 		            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th colspan="2">Age < 1<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th colspan="2">Age 1 to 4<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		          </tr>
 		          <tr>
-		            <th>M</th>
-		            <th>F</th>
-		            <th>M</th>
-		            <th>F</th>
-		            <th>M</th>
-		            <th>F</th>
 		            <th>M</th>
 		            <th>F</th>
 							</tr>
@@ -266,14 +257,6 @@
 		          </tr>
 		          <tr>
 		            <th>M</th>
-		            <th>F</th>
-		            <th>M</th>
-		            <th>F</th>
-		            <th>M</th>
-		            <th>F</th>
-		            <th>M</th>
-		            <th>F</th>
-                <th>M</th>
 		            <th>F</th>
 		            <th>M</th>
 		            <th>F</th>

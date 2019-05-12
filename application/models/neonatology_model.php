@@ -135,8 +135,244 @@ class neonatology_model extends CI_Model
 
       'num_rapport' => $num_rapport
     ))
-            ->set('date_kangaroo_moher_care', $this->session->userdata('add_date'))
+            ->set('date_kangaroo_mother_care', $this->session->userdata('add_date'))
             ->insert('Kangaroo_Mother_Care');
+    }
+
+    public function fetch_data4(
+      $asphyxia_ad7m,
+      $asphyxia_ad7f,
+      $asphyxia_ad8m,
+      $asphyxia_ad8f,
+      $asphyxia_d7m,
+      $asphyxia_d7f,
+      $asphyxia_d8m,
+      $asphyxia_d8f,
+
+      $prematurity_ad7m,
+      $prematurity_ad7f,
+      $prematurity_ad8m,
+      $prematurity_ad8f,
+      $prematurity_d7m,
+      $prematurity_d7f,
+      $prematurity_d8m,
+      $prematurity_d8f,
+
+      $congenital_ad7m,
+      $congenital_ad7f,
+      $congenital_ad8m,
+      $congenital_ad8f,
+      $congenital_d7m,
+      $congenital_d7f,
+      $congenital_d8m,
+      $congenital_d8f,
+
+      $pneumonia_ad7m,
+      $pneumonia_ad7f,
+      $pneumonia_ad8m,
+      $pneumonia_ad8f,
+      $pneumonia_d7m,
+      $pneumonia_d7f,
+      $pneumonia_d8m,
+      $pneumonia_d8f,
+
+      $meningitis_ad7m,
+      $meningitis_ad7f,
+      $meningitis_ad8m,
+      $meningitis_ad8f,
+      $meningitis_d7m,
+      $meningitis_d7f,
+      $meningitis_d8m,
+      $meningitis_d8f,
+
+      $skin_ad7m,
+      $skin_ad7f,
+      $skin_ad8m,
+      $skin_ad8f,
+      $skin_d7m,
+      $skin_d7f,
+      $skin_d8m,
+      $skin_d8f,
+
+      $sepsis_ad7m,
+      $sepsis_ad7f,
+      $sepsis_ad8m,
+      $sepsis_ad8f,
+      $sepsis_d7m,
+      $sepsis_d7f,
+      $sepsis_d8m,
+      $sepsis_d8f,
+
+      $tetanus_ad7m,
+      $tetanus_ad7f,
+      $tetanus_ad8m,
+      $tetanus_ad8f,
+      $tetanus_d7m,
+      $tetanus_d7f,
+      $tetanus_d8m,
+      $tetanus_d8f,
+
+      $others_neonatal_ad7m,
+      $others_neonatal_ad7f,
+      $others_neonatal_ad8m,
+      $others_neonatal_ad8f,
+      $others_neonatal_d7m,
+      $others_neonatal_d7f,
+      $others_neonatal_d8m,
+      $others_neonatal_d8f,
+
+      $others_causes_ad7m,
+      $others_causes_ad7f,
+      $others_causes_ad8m,
+      $others_causes_ad8f,
+      $others_causes_d7m,
+      $others_causes_d7f,
+      $others_causes_d8m,
+      $others_causes_d8f,
+
+      $total_born_in_ad7m,
+      $total_born_in_ad7f,
+      $total_born_in_ad8m,
+      $total_born_in_ad8f,
+      $total_born_in_d7m,
+      $total_born_in_d7f,
+      $total_born_in_d8m,
+      $total_born_in_d8f,
+
+      $total_born_out_ad7m,
+      $total_born_out_ad7f,
+      $total_born_out_ad8m,
+      $total_born_out_ad8f,
+      $total_born_out_d7m,
+      $total_born_out_d7f,
+      $total_born_out_d8m,
+      $total_born_out_d8f,
+
+      $hypothermia,
+      $risk_follow_up,
+      $one_follow_up,
+      $deaths_24,
+
+      $num_rapport
+    ) {
+        return $this->db->set(array(
+          'asphyxia_ad7m' => $asphyxia_ad7m,
+          'asphyxia_ad7f' => $asphyxia_ad7f,
+          'asphyxia_ad8m' => $asphyxia_ad8m,
+          'asphyxia_ad8f' => $asphyxia_ad8f,
+          'asphyxia_d7m' => $asphyxia_d7m,
+          'asphyxia_d7f' => $asphyxia_d7f,
+          'asphyxia_d8m' => $asphyxia_d8m,
+          'asphyxia_d8f' => $asphyxia_d8f,
+
+          'prematurity_ad7m' => $prematurity_ad7m,
+          'prematurity_ad7f' => $prematurity_ad7f,
+          'prematurity_ad8m' => $prematurity_ad8m,
+          'prematurity_ad8f' => $prematurity_ad8f,
+          'prematurity_d7m' => $prematurity_d7m,
+          'prematurity_d7f' => $prematurity_d7f,
+          'prematurity_d8m' => $prematurity_d8m,
+          'prematurity_d8f' => $prematurity_d8f,
+
+          'congenital_ad7m' => $congenital_ad7m,
+          'congenital_ad7f' => $congenital_ad7f,
+          'congenital_ad8m' => $congenital_ad8m,
+          'congenital_ad8f' => $congenital_ad8f,
+          'congenital_d7m' => $congenital_d7m,
+          'congenital_d7f' => $congenital_d7f,
+          'congenital_d8m' => $congenital_d8m,
+          'congenital_d8f' => $congenital_d8f,
+
+          'pneumonia_ad7m' => $pneumonia_ad7m,
+          'pneumonia_ad7f' => $pneumonia_ad7f,
+          'pneumonia_ad8m' => $pneumonia_ad8m,
+          'pneumonia_ad8f' => $pneumonia_ad8f,
+          'pneumonia_d7m' => $pneumonia_d7m,
+          'pneumonia_d7f' => $pneumonia_d7f,
+          'pneumonia_d8m' => $pneumonia_d8m,
+          'pneumonia_d8f' => $pneumonia_d8f,
+
+          'meningitis_ad7m' => $meningitis_ad7m,
+          'meningitis_ad7f' => $meningitis_ad7f,
+          'meningitis_ad8m' => $meningitis_ad8m,
+          'meningitis_ad8f' => $meningitis_ad8f,
+          'meningitis_d7m' => $meningitis_d7m,
+          'meningitis_d7f' => $meningitis_d7f,
+          'meningitis_d8m' => $meningitis_d8m,
+          'meningitis_d8f' => $meningitis_d8f,
+
+          'skin_ad7m' => $skin_ad7m,
+          'skin_ad7f' => $skin_ad7f,
+          'skin_ad8m' => $skin_ad8m,
+          'skin_ad8f' => $skin_ad8f,
+          'skin_d7m' => $skin_d7m,
+          'skin_d7f' => $skin_d7f,
+          'skin_d8m' => $skin_d8m,
+          'skin_d8f' => $skin_d8f,
+
+          'sepsis_ad7m' => $sepsis_ad7m,
+          'sepsis_ad7f' => $sepsis_ad7f,
+          'sepsis_ad8m' => $sepsis_ad8m,
+          'sepsis_ad8f' => $sepsis_ad8f,
+          'sepsis_d7m' => $sepsis_d7m,
+          'sepsis_d7f' => $sepsis_d7f,
+          'sepsis_d8m' => $sepsis_d8m,
+          'sepsis_d8f' => $sepsis_d8f,
+
+          'tetanus_ad7m' => $tetanus_ad7m,
+          'tetanus_ad7f' => $tetanus_ad7f,
+          'tetanus_ad8m' => $tetanus_ad8m,
+          'tetanus_ad8f' => $tetanus_ad8f,
+          'tetanus_d7m' => $tetanus_d7m,
+          'tetanus_d7f' => $tetanus_d7f,
+          'tetanus_d8m' => $tetanus_d8m,
+          'tetanus_d8f' => $tetanus_d8f,
+
+          'others_neonatal_ad7m' => $others_neonatal_ad7m,
+          'others_neonatal_ad7f' => $others_neonatal_ad7f,
+          'others_neonatal_ad8m' => $others_neonatal_ad8m,
+          'others_neonatal_ad8f' => $others_neonatal_ad8f,
+          'others_neonatal_d7m' => $others_neonatal_d7m,
+          'others_neonatal_d7f' => $others_neonatal_d7f,
+          'others_neonatal_d8m' => $others_neonatal_d8m,
+          'others_neonatal_d8f' => $others_neonatal_d8f,
+
+          'others_causes_ad7m' => $others_causes_ad7m,
+          'others_causes_ad7f' => $others_causes_ad7f,
+          'others_causes_ad8m' => $others_causes_ad8m,
+          'others_causes_ad8f' => $others_causes_ad8f,
+          'others_causes_d7m' => $others_causes_d7m,
+          'others_causes_d7f' => $others_causes_d7f,
+          'others_causes_d8m' => $others_causes_d8m,
+          'others_causes_d8f' => $others_causes_d8f,
+
+          'total_born_in_ad7m' => $total_born_in_ad7m,
+          'total_born_in_ad7f' => $total_born_in_ad7f,
+          'total_born_in_ad8m' => $total_born_in_ad8m,
+          'total_born_in_ad8f' => $total_born_in_ad8f,
+          'total_born_in_d7m' => $total_born_in_d7m,
+          'total_born_in_d7f' => $total_born_in_d7f,
+          'total_born_in_d8m' => $total_born_in_d8m,
+          'total_born_in_d8f' => $total_born_in_d8f,
+
+          'total_born_out_ad7m' => $total_born_out_ad7m,
+          'total_born_out_ad7f' => $total_born_out_ad7f,
+          'total_born_out_ad8m' => $total_born_out_ad8m,
+          'total_born_out_ad8f' => $total_born_out_ad8f,
+          'total_born_out_d7m' => $total_born_out_d7m,
+          'total_born_out_d7f' => $total_born_out_d7f,
+          'total_born_out_d8m' => $total_born_out_d8m,
+          'total_born_out_d8f' => $total_born_out_d8f,
+
+          'hypothermia' => $hypothermia,
+          'risk_follow_up' => $risk_follow_up,
+          'one_follow_up' => $one_follow_up,
+          'deaths_24' => $deaths_24,
+
+      'num_rapport' => $num_rapport
+    ))
+            ->set('date_neonatal', $this->session->userdata('add_date'))
+            ->insert('Neonatal');
     }
 
     public function show_table1()
@@ -157,6 +393,13 @@ class neonatology_model extends CI_Model
     {
         return $this->db->where('date_kangaroo_mother_care', $this->session->userdata('update_date'))
                         ->get('Kangaroo_Mother_Care')
+                        ->row();
+    }
+
+    public function show_table4()
+    {
+        return $this->db->where('date_neonatal', $this->session->userdata('update_date'))
+                        ->get('Neonatal')
                         ->row();
     }
 
@@ -255,5 +498,236 @@ class neonatology_model extends CI_Model
 
         $this->db->where('date_kangaroo_mother_care', $this->session->userdata('update_date'));
         return $this->db->update('Kangaroo_Mother_Care');
+    }
+
+    public function update_data4(
+      $asphyxia_ad7m,
+      $asphyxia_ad7f,
+      $asphyxia_ad8m,
+      $asphyxia_ad8f,
+      $asphyxia_d7m,
+      $asphyxia_d7f,
+      $asphyxia_d8m,
+      $asphyxia_d8f,
+
+      $prematurity_ad7m,
+      $prematurity_ad7f,
+      $prematurity_ad8m,
+      $prematurity_ad8f,
+      $prematurity_d7m,
+      $prematurity_d7f,
+      $prematurity_d8m,
+      $prematurity_d8f,
+
+      $congenital_ad7m,
+      $congenital_ad7f,
+      $congenital_ad8m,
+      $congenital_ad8f,
+      $congenital_d7m,
+      $congenital_d7f,
+      $congenital_d8m,
+      $congenital_d8f,
+
+      $pneumonia_ad7m,
+      $pneumonia_ad7f,
+      $pneumonia_ad8m,
+      $pneumonia_ad8f,
+      $pneumonia_d7m,
+      $pneumonia_d7f,
+      $pneumonia_d8m,
+      $pneumonia_d8f,
+
+      $meningitis_ad7m,
+      $meningitis_ad7f,
+      $meningitis_ad8m,
+      $meningitis_ad8f,
+      $meningitis_d7m,
+      $meningitis_d7f,
+      $meningitis_d8m,
+      $meningitis_d8f,
+
+      $skin_ad7m,
+      $skin_ad7f,
+      $skin_ad8m,
+      $skin_ad8f,
+      $skin_d7m,
+      $skin_d7f,
+      $skin_d8m,
+      $skin_d8f,
+
+      $sepsis_ad7m,
+      $sepsis_ad7f,
+      $sepsis_ad8m,
+      $sepsis_ad8f,
+      $sepsis_d7m,
+      $sepsis_d7f,
+      $sepsis_d8m,
+      $sepsis_d8f,
+
+      $tetanus_ad7m,
+      $tetanus_ad7f,
+      $tetanus_ad8m,
+      $tetanus_ad8f,
+      $tetanus_d7m,
+      $tetanus_d7f,
+      $tetanus_d8m,
+      $tetanus_d8f,
+
+      $others_neonatal_ad7m,
+      $others_neonatal_ad7f,
+      $others_neonatal_ad8m,
+      $others_neonatal_ad8f,
+      $others_neonatal_d7m,
+      $others_neonatal_d7f,
+      $others_neonatal_d8m,
+      $others_neonatal_d8f,
+
+      $others_causes_ad7m,
+      $others_causes_ad7f,
+      $others_causes_ad8m,
+      $others_causes_ad8f,
+      $others_causes_d7m,
+      $others_causes_d7f,
+      $others_causes_d8m,
+      $others_causes_d8f,
+
+      $total_born_in_ad7m,
+      $total_born_in_ad7f,
+      $total_born_in_ad8m,
+      $total_born_in_ad8f,
+      $total_born_in_d7m,
+      $total_born_in_d7f,
+      $total_born_in_d8m,
+      $total_born_in_d8f,
+
+      $total_born_out_ad7m,
+      $total_born_out_ad7f,
+      $total_born_out_ad8m,
+      $total_born_out_ad8f,
+      $total_born_out_d7m,
+      $total_born_out_d7f,
+      $total_born_out_d8m,
+      $total_born_out_d8f,
+
+      $hypothermia,
+      $risk_follow_up,
+      $one_follow_up,
+      $deaths_24
+    ) {
+        $this->db->set('asphyxia_ad7m', $asphyxia_ad7m);
+        $this->db->set('asphyxia_ad7f', $asphyxia_ad7f);
+        $this->db->set('asphyxia_ad8m', $asphyxia_ad8m);
+        $this->db->set('asphyxia_ad8f', $asphyxia_ad8f);
+        $this->db->set('asphyxia_d7m', $asphyxia_d7m);
+        $this->db->set('asphyxia_d7f', $asphyxia_d7f);
+        $this->db->set('asphyxia_d8m', $asphyxia_d8m);
+        $this->db->set('asphyxia_d8f', $asphyxia_d8f);
+
+        $this->db->set('prematurity_ad7m', $prematurity_ad7m);
+        $this->db->set('prematurity_ad7f', $prematurity_ad7f);
+        $this->db->set('prematurity_ad8m', $prematurity_ad8m);
+        $this->db->set('prematurity_ad8f', $prematurity_ad8f);
+        $this->db->set('prematurity_d7m', $prematurity_d7m);
+        $this->db->set('prematurity_d7f', $prematurity_d7f);
+        $this->db->set('prematurity_d8m', $prematurity_d8m);
+        $this->db->set('prematurity_d8f', $prematurity_d8f);
+
+        $this->db->set('congenital_ad7m', $congenital_ad7m);
+        $this->db->set('congenital_ad7f', $congenital_ad7f);
+        $this->db->set('congenital_ad8m', $congenital_ad8m);
+        $this->db->set('congenital_ad8f', $congenital_ad8f);
+        $this->db->set('congenital_d7m', $congenital_d7m);
+        $this->db->set('congenital_d7f', $congenital_d7f);
+        $this->db->set('congenital_d8m', $congenital_d8m);
+        $this->db->set('congenital_d8f', $congenital_d8f);
+
+        $this->db->set('pneumonia_ad7m', $pneumonia_ad7m);
+        $this->db->set('pneumonia_ad7f', $pneumonia_ad7f);
+        $this->db->set('pneumonia_ad8m', $pneumonia_ad8m);
+        $this->db->set('pneumonia_ad8f', $pneumonia_ad8f);
+        $this->db->set('pneumonia_d7m', $pneumonia_d7m);
+        $this->db->set('pneumonia_d7f', $pneumonia_d7f);
+        $this->db->set('pneumonia_d8m', $pneumonia_d8m);
+        $this->db->set('pneumonia_d8f', $pneumonia_d8f);
+
+        $this->db->set('meningitis_ad7m', $meningitis_ad7m);
+        $this->db->set('meningitis_ad7f', $meningitis_ad7f);
+        $this->db->set('meningitis_ad8m', $meningitis_ad8m);
+        $this->db->set('meningitis_ad8f', $meningitis_ad8f);
+        $this->db->set('meningitis_d7m', $meningitis_d7m);
+        $this->db->set('meningitis_d7f', $meningitis_d7f);
+        $this->db->set('meningitis_d8m', $meningitis_d8m);
+        $this->db->set('meningitis_d8f', $meningitis_d8f);
+
+        $this->db->set('skin_ad7m', $skin_ad7m);
+        $this->db->set('skin_ad7f', $skin_ad7f);
+        $this->db->set('skin_ad8m', $skin_ad8m);
+        $this->db->set('skin_ad8f', $skin_ad8f);
+        $this->db->set('skin_d7m', $skin_d7m);
+        $this->db->set('skin_d7f', $skin_d7f);
+        $this->db->set('skin_d8m', $skin_d8m);
+        $this->db->set('skin_d8f', $skin_d8f);
+
+        $this->db->set('sepsis_ad7m', $sepsis_ad7m);
+        $this->db->set('sepsis_ad7f', $sepsis_ad7f);
+        $this->db->set('sepsis_ad8m', $sepsis_ad8m);
+        $this->db->set('sepsis_ad8f', $sepsis_ad8f);
+        $this->db->set('sepsis_d7m', $sepsis_d7m);
+        $this->db->set('sepsis_d7f', $sepsis_d7f);
+        $this->db->set('sepsis_d8m', $sepsis_d8m);
+        $this->db->set('sepsis_d8f', $sepsis_d8f);
+
+        $this->db->set('tetanus_ad7m', $tetanus_ad7m);
+        $this->db->set('tetanus_ad7f', $tetanus_ad7f);
+        $this->db->set('tetanus_ad8m', $tetanus_ad8m);
+        $this->db->set('tetanus_ad8f', $tetanus_ad8f);
+        $this->db->set('tetanus_d7m', $tetanus_d7m);
+        $this->db->set('tetanus_d7f', $tetanus_d7f);
+        $this->db->set('tetanus_d8m', $tetanus_d8m);
+        $this->db->set('tetanus_d8f', $tetanus_d8f);
+
+        $this->db->set('others_neonatal_ad7m', $others_neonatal_ad7m);
+        $this->db->set('others_neonatal_ad7f', $others_neonatal_ad7f);
+        $this->db->set('others_neonatal_ad8m', $others_neonatal_ad8m);
+        $this->db->set('others_neonatal_ad8f', $others_neonatal_ad8f);
+        $this->db->set('others_neonatal_d7m', $others_neonatal_d7m);
+        $this->db->set('others_neonatal_d7f', $others_neonatal_d7f);
+        $this->db->set('others_neonatal_d8m', $others_neonatal_d8m);
+        $this->db->set('others_neonatal_d8f', $others_neonatal_d8f);
+
+        $this->db->set('others_causes_ad7m', $others_causes_ad7m);
+        $this->db->set('others_causes_ad7f', $others_causes_ad7f);
+        $this->db->set('others_causes_ad8m', $others_causes_ad8m);
+        $this->db->set('others_causes_ad8f', $others_causes_ad8f);
+        $this->db->set('others_causes_d7m', $others_causes_d7m);
+        $this->db->set('others_causes_d7f', $others_causes_d7f);
+        $this->db->set('others_causes_d8m', $others_causes_d8m);
+        $this->db->set('others_causes_d8f', $others_causes_d8f);
+
+        $this->db->set('total_born_in_ad7m', $total_born_in_ad7m);
+        $this->db->set('total_born_in_ad7f', $total_born_in_ad7f);
+        $this->db->set('total_born_in_ad8m', $total_born_in_ad8m);
+        $this->db->set('total_born_in_ad8f', $total_born_in_ad8f);
+        $this->db->set('total_born_in_d7m', $total_born_in_d7m);
+        $this->db->set('total_born_in_d7f', $total_born_in_d7f);
+        $this->db->set('total_born_in_d8m', $total_born_in_d8m);
+        $this->db->set('total_born_in_d8f', $total_born_in_d8f);
+
+        $this->db->set('total_born_out_ad7m', $total_born_out_ad7m);
+        $this->db->set('total_born_out_ad7f', $total_born_out_ad7f);
+        $this->db->set('total_born_out_ad8m', $total_born_out_ad8m);
+        $this->db->set('total_born_out_ad8f', $total_born_out_ad8f);
+        $this->db->set('total_born_out_d7m', $total_born_out_d7m);
+        $this->db->set('total_born_out_d7f', $total_born_out_d7f);
+        $this->db->set('total_born_out_d8m', $total_born_out_d8m);
+        $this->db->set('total_born_out_d8f', $total_born_out_d8f);
+
+        $this->db->set('hypothermia', $hypothermia);
+        $this->db->set('risk_follow_up', $risk_follow_up);
+        $this->db->set('one_follow_up', $one_follow_up);
+        $this->db->set('deaths_24', $deaths_24);
+
+        $this->db->where('date_neonatal', $this->session->userdata('update_date'));
+        return $this->db->update('Neonatal');
     }
 }

@@ -32,13 +32,13 @@
                              date('Y-m-d', strtotime('-2 days')),
                              date('Y-m-d', strtotime('-1 day')),
                              date('Y-m-d'));
-                if (check_service('minor_surgery') || check_service('operating_room')) {
+                if ($this->home_model->check_service('minor_surgery') || $this->home_model->check_service('operating_room')) {
                     foreach ($dates_surgery as $d):
                        if (($val = array_search($d->date_surgery, $array)) !== false) {
                            unset($array[$val]);
                        }
                     endforeach;
-                } elseif (check_service('internal_medicine')) {
+                } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology')) {
                     foreach ($dates_im as $d):
                                              if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
                                                  unset($array[$val]);
@@ -51,7 +51,7 @@
                        }
                     endforeach;
                 }
-          foreach ($array as $value):?>
+								foreach ($array as $value):?>
 					<option value="<?php echo $value; ?>"><?php echo date('d/m/Y', strtotime($value)); ?></option>
 				<?php endforeach; ?>
 			</select>
@@ -69,11 +69,11 @@
 
 
 				<select name="update" id="update" class="form-control" required>
-					<?php if (check_service('minor_surgery') || check_service('operating_room')) {
+					<?php if ($this->home_model->check_service('minor_surgery') || $this->home_model->check_service('operating_room')) {
               foreach ($dates_surgery as $d):?>
 								<option value="<?php echo $d->date_surgery; ?>"><?php echo date('d/m/Y', strtotime($d->date_surgery)); ?></option>
 							<?php endforeach;
-          } elseif (check_service('internal_medicine')) {
+          } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology')) {
               foreach ($dates_im as $d):?>
 										<option value="<?php echo $d->date_hospitalization_bcde; ?>"><?php echo date('d/m/Y', strtotime($d->date_hospitalization_bcde)); ?></option>
 									<?php endforeach;

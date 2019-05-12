@@ -49,6 +49,9 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('internal_medicine')) {
                     redirect('internal_medicine', 'refresh');
                 }
+                if ($this->home_model->check_service('neonatology')) {
+                    redirect('neonatology', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -81,6 +84,9 @@ class home extends CI_Controller
                 }
                 if ($this->home_model->check_service('internal_medicine')) {
                     redirect('internal_medicine_update', 'refresh');
+                }
+                if ($this->home_model->check_service('neonatology')) {
+                    redirect('neonatology_update', 'refresh');
                 }
             }
         } else {

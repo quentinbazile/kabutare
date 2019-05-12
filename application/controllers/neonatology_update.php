@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class neonatology extends CI_Controller
+class neonatology_update extends CI_Controller
 {
     public function index()
     {
@@ -169,11 +169,7 @@ class neonatology extends CI_Controller
             $one_follow_up = $this->input->post('one_follow_up');
             $deaths_24 = $this->input->post('deaths_24');
 
-            $this->neonatology_model->new_report();
-
-            $num_rapport = $this->neonatology_model->num_rapport()->num_rapport;
-
-            $this->neonatology_model->fetch_data1(
+            $this->neonatology_model->update_data1(
               $e_beds,
               $e_present_start,
               $e_admissions,
@@ -187,10 +183,9 @@ class neonatology extends CI_Controller
               $e_counter,
               $e_present_end,
               $e_total,
-              $e_actual,
-              $num_rapport
+              $e_actual
             );
-            $this->neonatology_model->fetch_data2(
+            $this->neonatology_model->update_data2(
               $hosp_1m,
               $hosp_1f,
 
@@ -206,19 +201,15 @@ class neonatology extends CI_Controller
               $natural_disa_ad,
               $natural_disa_deaths,
               $work_inj_ad,
-              $work_inj_deaths,
-
-              $num_rapport
+              $work_inj_deaths
             );
-            $this->neonatology_model->fetch_data3(
+            $this->neonatology_model->update_data3(
               $low_birth,
               $newborns,
               $kmc_deaths,
-              $kmc_standard,
-
-              $num_rapport
+              $kmc_standard
             );
-            $this->neonatology_model->fetch_data4(
+            $this->neonatology_model->update_data4(
               $asphyxia_ad7m,
               $asphyxia_ad7f,
               $asphyxia_ad8m,
@@ -330,14 +321,16 @@ class neonatology extends CI_Controller
               $hypothermia,
               $risk_follow_up,
               $one_follow_up,
-              $deaths_24,
-
-              $num_rapport
+              $deaths_24
             );
-            $this->session->unset_userdata('add_date');
+            $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');
         } else {
-            $this->load->view('neonatology_add_view');
+          $data['table1'] = $this->neonatology_model->show_table1();
+          $data['table2'] = $this->neonatology_model->show_table2();
+          $data['table3'] = $this->neonatology_model->show_table3();
+          $data['table4'] = $this->neonatology_model->show_table4();
+          $this->load->view('neonatology_update_view', $data);
         }
     }
 }
