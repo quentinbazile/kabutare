@@ -52,6 +52,21 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('neonatology')) {
                     redirect('neonatology', 'refresh');
                 }
+                if ($this->home_model->check_service('pediatrics')) {
+                    redirect('pediatrics', 'refresh');
+                }
+                if ($this->home_model->check_service('surgery')) {
+                    redirect('surgery', 'refresh');
+                }
+                if ($this->home_model->check_service('family_planning')) {
+                    redirect('family_planning', 'refresh');
+                }
+                if ($this->home_model->check_service('kinesitherapy')) {
+                    redirect('kinesitherapy', 'refresh');
+                }
+                if ($this->home_model->check_service('intensive_care')) {
+                    redirect('intensive_care', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -88,11 +103,27 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('neonatology')) {
                     redirect('neonatology_update', 'refresh');
                 }
+                if ($this->home_model->check_service('pediatrics')) {
+                    redirect('pediatrics_update', 'refresh');
+                }
+                if ($this->home_model->check_service('surgery')) {
+                    redirect('surgery_update', 'refresh');
+                }
+                if ($this->home_model->check_service('family_planning')) {
+                    redirect('family_planning_update', 'refresh');
+                }
+                if ($this->home_model->check_service('kinesitherapy')) {
+                    redirect('kinesitherapy_update', 'refresh');
+                }
+                if ($this->home_model->check_service('intensive_care')) {
+                    redirect('intensive_care_update', 'refresh');
+                }
             }
         } else {
             $data['dates'] = $this->home_model->show_dates();
             $data['dates_surgery'] = $this->home_model->show_dates_surgery();
             $data['dates_im'] = $this->home_model->show_dates_im();
+            $data['dates_fp'] = $this->home_model->show_dates_fp();
             $this->load->view('home_view', $data);
         }
     }

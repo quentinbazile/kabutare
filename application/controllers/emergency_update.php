@@ -728,12 +728,12 @@ class emergency_update extends CI_Controller
             $gastritis_hos19f = $this->input->post('gastritis_hos19f');
             $gastritis_hos20m = $this->input->post('gastritis_hos20m');
             $gastritis_hos20f = $this->input->post('gastritis_hos20f');
-            $gastritis_death5m = $this->input->post('gastritis_death5m');
-            $gastritis_death5f = $this->input->post('gastritis_death5f');
-            $gastritis_death19m = $this->input->post('gastritis_death19m');
-            $gastritis_death19f = $this->input->post('gastritis_death19f');
-            $gastritis_death20m = $this->input->post('gastritis_death20m');
-            $gastritis_death20f = $this->input->post('gastritis_death20f');
+            $gastritis_deaths5m = $this->input->post('gastritis_deaths5m');
+            $gastritis_deaths5f = $this->input->post('gastritis_deaths5f');
+            $gastritis_deaths19m = $this->input->post('gastritis_deaths19m');
+            $gastritis_deaths19f = $this->input->post('gastritis_deaths19f');
+            $gastritis_deaths20m = $this->input->post('gastritis_deaths20m');
+            $gastritis_deaths20f = $this->input->post('gastritis_deaths20f');
 
             $ulcer_hos5m = $this->input->post('ulcer_hos5m');
             $ulcer_hos5f = $this->input->post('ulcer_hos5f');
@@ -1138,7 +1138,7 @@ class emergency_update extends CI_Controller
               $e_total,
               $e_actual
                 );
-                $this->emergency_model->update_data3(
+            $this->emergency_model->update_data3(
                   $hosp_1m,
                   $hosp_1f,
                   $hosp_4m,
@@ -1571,12 +1571,12 @@ class emergency_update extends CI_Controller
                   $gastritis_hos19f,
                   $gastritis_hos20m,
                   $gastritis_hos20f,
-                  $gastritis_death5m,
-                  $gastritis_death5f,
-                  $gastritis_death19m,
-                  $gastritis_death19f,
-                  $gastritis_death20m,
-                  $gastritis_death20f,
+                  $gastritis_deaths5m,
+                  $gastritis_deaths5f,
+                  $gastritis_deaths19m,
+                  $gastritis_deaths19f,
+                  $gastritis_deaths20m,
+                  $gastritis_deaths20f,
 
                   $ulcer_hos5m,
                   $ulcer_hos5f,
@@ -1742,10 +1742,10 @@ class emergency_update extends CI_Controller
             $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');
         } else {
-          $data['table1'] = $this->emergency_model->show_table1();
-          $data['table2'] = $this->emergency_model->show_table2();
-          $data['table3'] = $this->emergency_model->show_table3();
-          $this->load->view('emergency_update_view', $data);
+            $data['table1'] = $this->emergency_model->show_table1();
+            $data['table2'] = $this->emergency_model->show_table2();
+            $data['table3'] = $this->emergency_model->show_table3();
+            $this->load->view('emergency_update_view', $data);
         }
     }
 }

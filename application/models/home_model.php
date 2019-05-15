@@ -35,6 +35,16 @@ class home_model extends CI_Model
               ->result();
     }
 
+    public function show_dates_fp()
+    {
+        return $this->db->select('date_family_planning')
+              ->from('family_planning')
+              ->where('date_family_planning >', date('Y-m-d', strtotime('-5 days')))
+              ->where('date_family_planning <=', date('Y-m-d'))
+              ->get()
+              ->result();
+    }
+
     public function check_service($service)
     {
         $this->db->select('*')

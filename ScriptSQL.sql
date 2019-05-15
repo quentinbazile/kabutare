@@ -1327,14 +1327,14 @@ CREATE TABLE Family_Planning(
         inject_nor_quant          Int DEFAULT 0 ,
         inject_nor_stock          Int DEFAULT 0 ,
         inject_nor_day            Int DEFAULT 0 ,
-        implants_accep            Int DEFAULT 0 ,
-        implants_ppfp             Int DEFAULT 0 ,
-        implants_users            Int DEFAULT 0 ,
-        implants_stop             Int DEFAULT 0 ,
-        implants_active           Int DEFAULT 0 ,
-        implants_quant            Int DEFAULT 0 ,
-        implants_stock            Int DEFAULT 0 ,
-        implants_day              Int DEFAULT 0 ,
+        implants_nxt_accep        Int DEFAULT 0 ,
+        implants_nxt_ppfp         Int DEFAULT 0 ,
+        implants_nxt_users        Int DEFAULT 0 ,
+        implants_nxt_stop         Int DEFAULT 0 ,
+        implants_nxt_active       Int DEFAULT 0 ,
+        implants_nxt_quant        Int DEFAULT 0 ,
+        implants_nxt_stock        Int DEFAULT 0 ,
+        implants_nxt_day          Int DEFAULT 0 ,
         iud_accep                 Int DEFAULT 0 ,
         iud_ppfp                  Int DEFAULT 0 ,
         iud_users                 Int DEFAULT 0 ,
@@ -1407,6 +1407,14 @@ CREATE TABLE Family_Planning(
         acceptors_prog_24         Int DEFAULT 0 ,
         acceptors_prog_34         Int DEFAULT 0 ,
         acceptors_prog_35         Int DEFAULT 0 ,
+        implants_jad_accep        Int DEFAULT 0 ,
+        implants_jad_ppfp         Int DEFAULT 0 ,
+        implants_jad_users        Int DEFAULT 0 ,
+        implants_jad_stop         Int DEFAULT 0 ,
+        implants_jad_active       Int DEFAULT 0 ,
+        implants_jad_quant        Int DEFAULT 0 ,
+        implants_jad_stock        Int DEFAULT 0 ,
+        implants_jad_day          Int DEFAULT 0 ,
         num_rapport               Int DEFAULT 0
 	,CONSTRAINT Family_Planning_PK PRIMARY KEY (date_family_planning)
 )ENGINE=InnoDB;
@@ -1916,7 +1924,31 @@ CREATE TABLE Obstetrical_Complication_A(
 
 CREATE TABLE Rapport(
         num_rapport                      Int  Auto_increment  NOT NULL ,
-        date_rapport                     Date NOT NULL
+        date_rapport                     Date NOT NULL ,
+        date_identification              Date NOT NULL ,
+        date_chronic_disease             Date NOT NULL ,
+        date_other_cardiovascular        Date NOT NULL ,
+        date_injury                      Date NOT NULL ,
+        date_physiotherapy               Date NOT NULL ,
+        date_hospitalization_a           Date NOT NULL ,
+        date_palliative_care             Date NOT NULL ,
+        date_community_checkup           Date NOT NULL ,
+        date_cancer_screening            Date NOT NULL ,
+        date_gender_based_violence       Date NOT NULL ,
+        date_kangaroo_mother_care        Date NOT NULL ,
+        date_postnatal_care              Date NOT NULL ,
+        date_obstetrical_complication_a  Date NOT NULL ,
+        date_neonatal                    Date NOT NULL ,
+        date_nutrition_screening         Date NOT NULL ,
+        date_blood_bank_security         Date NOT NULL ,
+        date_family_planning             Date NOT NULL ,
+        date_malnourished_rehabilitation Date NOT NULL ,
+        date_laboratory                  Date NOT NULL ,
+        date_medical_imagery             Date NOT NULL ,
+        date_pharmacy                    Date NOT NULL ,
+        date_staff                       Date NOT NULL ,
+        date_delivery_birth              Date NOT NULL ,
+        date_consultation_fg             Date NOT NULL
 	,CONSTRAINT Rapport_PK PRIMARY KEY (num_rapport)
 )ENGINE=InnoDB;
 
@@ -2171,7 +2203,7 @@ CREATE TABLE Community_Checkup(
         date_community_checkup Date NOT NULL ,
         annual_checkup         Int DEFAULT 0 ,
         cardio                 Int DEFAULT 0 ,
-        repiratory             Int DEFAULT 0 ,
+        respiratory            Int DEFAULT 0 ,
         diabetes               Int DEFAULT 0 ,
         renal                  Int DEFAULT 0 ,
         cancer                 Int DEFAULT 0 ,
@@ -2780,7 +2812,6 @@ CREATE TABLE Hospitalization_BCDE(
         deaths_19f                Int DEFAULT 0 ,
         deaths_20m                Int DEFAULT 0 ,
         deaths_20f                Int DEFAULT 0 ,
-        payment_hosp              Int DEFAULT 0 ,
         insured_dis               Int DEFAULT 0 ,
         no_paying_dis             Int DEFAULT 0 ,
         no_paying_ind             Int DEFAULT 0 ,
@@ -3162,12 +3193,12 @@ CREATE TABLE Hospitalization_BCDE(
         gastritis_hos19f          Int DEFAULT 0 ,
         gastritis_hos20m          Int DEFAULT 0 ,
         gastritis_hos20f          Int DEFAULT 0 ,
-        gastritis_death5m         Int DEFAULT 0 ,
-        gastritis_death5f         Int DEFAULT 0 ,
-        gastritis_death19m        Int DEFAULT 0 ,
-        gastritis_death19f        Int DEFAULT 0 ,
-        gastritis_death20m        Int DEFAULT 0 ,
-        gastritis_death20f        Int DEFAULT 0 ,
+        gastritis_deaths5m        Int DEFAULT 0 ,
+        gastritis_deaths5f        Int DEFAULT 0 ,
+        gastritis_deaths19m       Int DEFAULT 0 ,
+        gastritis_deaths19f       Int DEFAULT 0 ,
+        gastritis_deaths20m       Int DEFAULT 0 ,
+        gastritis_deaths20f       Int DEFAULT 0 ,
         ulcer_hos5m               Int DEFAULT 0 ,
         ulcer_hos5f               Int DEFAULT 0 ,
         ulcer_hos19m              Int DEFAULT 0 ,
@@ -3279,7 +3310,6 @@ CREATE TABLE Hospitalization_BCDE(
         gyneco_hos5f              Int DEFAULT 0 ,
         gyneco_hos19f             Int DEFAULT 0 ,
         gyneco_hos20f             Int DEFAULT 0 ,
-        gyneco_deaths5f           Int DEFAULT 0 ,
         gyneco_deaths19f          Int DEFAULT 0 ,
         gyneco_deaths20f          Int DEFAULT 0 ,
         mastoditis_hos5m          Int DEFAULT 0 ,
@@ -3507,9 +3537,6 @@ CREATE TABLE Consultation_FG(
         num_rapport              Int DEFAULT 0
 	,CONSTRAINT Consultation_FG_PK PRIMARY KEY (date_consultation_fg)
 )ENGINE=InnoDB;
-
-
-
 
 ALTER TABLE Postnatal_Care
 	ADD CONSTRAINT Postnatal_Care_Rapport0_FK

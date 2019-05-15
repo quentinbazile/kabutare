@@ -1259,12 +1259,12 @@
 			            <td><input type="number" min="0" name="gastritis_hos19f" class="form-control" value="<?php echo $table3->gastritis_hos19f; ?>"></td>
 			            <td><input type="number" min="0" name="gastritis_hos20m" class="form-control" value="<?php echo $table3->gastritis_hos20m; ?>"></td>
 			            <td><input type="number" min="0" name="gastritis_hos20f" class="form-control" value="<?php echo $table3->gastritis_hos20f; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death5m" class="form-control" value="<?php echo $table3->gastritis_death5m; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death5f" class="form-control" value="<?php echo $table3->gastritis_death5f; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death19m" class="form-control" value="<?php echo $table3->gastritis_death19m; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death19f" class="form-control" value="<?php echo $table3->gastritis_death19f; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death20m" class="form-control" value="<?php echo $table3->gastritis_death20m; ?>"></td>
-			            <td><input type="number" min="0" name="gastritis_death20f" class="form-control" value="<?php echo $table3->gastritis_death20f; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths5m" class="form-control" value="<?php echo $table3->gastritis_deaths5m; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths5f" class="form-control" value="<?php echo $table3->gastritis_deaths5f; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths19m" class="form-control" value="<?php echo $table3->gastritis_deaths19m; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths19f" class="form-control" value="<?php echo $table3->gastritis_deaths19f; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths20m" class="form-control" value="<?php echo $table3->gastritis_deaths20m; ?>"></td>
+			            <td><input type="number" min="0" name="gastritis_deaths20f" class="form-control" value="<?php echo $table3->gastritis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
 			            <td class="center">33</td>

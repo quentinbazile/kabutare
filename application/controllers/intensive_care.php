@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class internal_medicine extends CI_Controller
+class intensive_care extends CI_Controller
 {
     public function index()
     {
-        $this->load->model('internal_medicine_model');
+        $this->load->model('intensive_care_model');
         if ($this->session->userdata('num_user') != '') {
             $this->fetch();
         } else {
@@ -451,11 +451,11 @@ class internal_medicine extends CI_Controller
             $cancer_deaths20m = $this->input->post('cancer_deaths20m');
             $cancer_deaths20f = $this->input->post('cancer_deaths20f');
 
-            $this->internal_medicine_model->new_report();
+            $this->intensive_care_model->new_report();
 
-            $num_rapport = $this->internal_medicine_model->num_rapport()->num_rapport;
+            $num_rapport = $this->intensive_care_model->num_rapport()->num_rapport;
 
-            $this->internal_medicine_model->fetch_data1(
+            $this->intensive_care_model->fetch_data1(
               $e_beds,
               $e_present_start,
               $e_admissions,
@@ -472,7 +472,7 @@ class internal_medicine extends CI_Controller
               $e_actual,
               $num_rapport
                 );
-            $this->internal_medicine_model->fetch_data2(
+                $this->intensive_care_model->fetch_data2(
                   $hosp_19m,
                   $hosp_19f,
                   $hosp_20m,
@@ -895,7 +895,7 @@ class internal_medicine extends CI_Controller
             $this->session->unset_userdata('add_date');
             redirect('home', 'refresh');
         } else {
-            $this->load->view('internal_medicine_add_view');
+            $this->load->view('intensive_care_add_view');
         }
     }
 }

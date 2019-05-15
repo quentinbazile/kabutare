@@ -1,5 +1,5 @@
 <?php
-class emergency_model extends CI_Model
+class surgery_model extends CI_Model
 {
     public function new_report()
     {
@@ -12,539 +12,40 @@ class emergency_model extends CI_Model
     }
 
     public function fetch_data1(
-      $nc5m,
-        $nc5f,
-        $nc19f,
-        $nc19m,
-      $nc20m,
-        $nc20f,
-      $oc5m,
-        $oc5f,
-        $oc19f,
-        $oc19m,
-      $oc20m,
-        $oc20f,
-      $insured,
-        $nc_non_paying,
-        $nc_indigent,
-      $other_levels,
-        $counter_received,
-      $nc_catch,
-        $nc,
-        $international,
-      $diar_w_dehy_5f,
-        $diar_w_dehy_5m,
-        $diar_w_dehy_19m,
-        $diar_w_dehy_19f,
-        $diar_w_dehy_20m,
-        $diar_w_dehy_20f,
-      $diar_no_dehy_5f,
-        $diar_no_dehy_5m,
-        $diar_no_dehy_19m,
-        $diar_no_dehy_19f,
-        $diar_no_dehy_20m,
-        $diar_no_dehy_20f,
-      $blood_diar_5f,
-        $blood_diar_5m,
-        $blood_diar_19m,
-        $blood_diar_19f,
-        $blood_diar_20m,
-        $blood_diar_20f,
-      $food_poison_5f,
-        $food_poison_5m,
-        $food_poison_19m,
-        $food_poison_19f,
-        $food_poison_20m,
-        $food_poison_20f,
-      $ear_infect_5f,
-        $ear_infect_5m,
-        $ear_infect_19m,
-        $ear_infect_19f,
-        $ear_infect_20m,
-        $ear_infect_20f,
-      $schisto_5f,
-        $schisto_5m,
-        $schisto_19m,
-        $schisto_19f,
-        $schisto_20m,
-        $schisto_20f,
-      $ascaris_5f,
-        $ascaris_5m,
-        $ascaris_19m,
-        $ascaris_19f,
-        $ascaris_20m,
-        $ascaris_20f,
-      $trichu_5m,
-        $trichu_5f,
-        $trichu_19m,
-        $trichu_19f,
-        $trichu_20m,
-        $trichu_20f,
-      $hook_5m,
-        $hook_5f,
-        $hook_19f,
-        $hook_19m,
-        $hook_20m,
-        $hook_20f,
-      $entam_5f,
-        $entam_5m,
-        $entam_19m,
-        $entam_19f,
-        $entam_20m,
-        $entam_20f,
-      $giardia_5f,
-        $giardia_5m,
-        $giardia_19m,
-        $giardia_19f,
-        $giardia_20m,
-        $giardia_20f,
-      $taenia_5f,
-        $taenia_5m,
-        $taenia_19m,
-        $taenia_19f,
-        $taenia_20m,
-        $taenia_20f,
-      $malaria_s_5f,
-        $malaria_s_5m,
-        $malaria_s_19m,
-        $malaria_s_19f,
-        $malaria_s_20m,
-        $malaria_s_20f,
-      $malaria_dig_5f,
-        $malaria_dig_5m,
-        $malaria_dig_19m,
-        $malaria_dig_19f,
-        $malaria_dig_20m,
-        $malaria_dig_20f,
-      $herpes_s_5f,
-        $herpes_s_5m,
-        $herpes_s_19m,
-        $herpes_s_19f,
-        $herpes_s_20m,
-        $herpes_s_20f,
-      $mening_5f,
-        $mening_5m,
-        $mening_19m,
-        $mening_19f,
-        $mening_20m,
-        $mening_20f,
-      $pneumonia_simp_5m,
-        $pneumonia_simp_5f,
-        $pneumonia_simp_19m,
-        $pneumonia_simp_19f,
-        $pneumonia_simp_20m,
-        $pneumonia_simp_20f,
-      $pneumonia_sev_5m,
-        $pneumonia_sev_5f,
-        $pneumonia_sev_19f,
-        $pneumonia_sev_19m,
-        $pneumonia_sev_20m,
-        $pneumonia_sev_20f,
-      $grip_5f,
-        $grip_5m,
-        $grip_19m,
-        $grip_19f,
-        $grip_20m,
-        $grip_20f,
-      $ari_5f,
-        $ari_5m,
-        $ari_19m,
-        $ari_19f,
-        $ari_20m,
-        $ari_20f,
-      $gast_duoden_5f,
-        $gast_duoden_5m,
-        $gast_duoden_19m,
-        $gast_duoden_19f,
-        $gast_duoden_20m,
-        $gast_duoden_20f,
-      $absces_5m,
-        $absces_5f,
-        $absces_19m,
-        $absces_19f,
-        $absces_20m,
-        $absces_20f,
-      $ulcers_5m,
-        $ulcers_5f,
-        $ulcers_19f,
-        $ulcers_19m,
-        $ulcers_20m,
-        $ulcers_20f,
-      $scabies_5f,
-        $scabies_5m,
-        $scabies_19m,
-        $scabies_19f,
-        $scabies_20m,
-        $scabies_20f,
-      $mycoses_5f,
-        $mycoses_5m,
-        $mycoses_19m,
-        $mycoses_19f,
-        $mycoses_20m,
-        $mycoses_20f,
-      $si_others_5f,
-        $si_others_5m,
-        $si_others_19m,
-        $si_others_19f,
-        $si_others_20m,
-        $si_others_20f,
-      $urinary_ti_5f,
-        $urinary_ti_5m,
-        $urinary_ti_19m,
-        $urinary_ti_19f,
-        $urinary_ti_20m,
-        $urinary_ti_20f,
-      $anemia_5f,
-        $anemia_5m,
-        $anemia_19m,
-        $anemia_19f,
-        $anemia_20m,
-        $anemia_20f,
-      $measles_susp_5f,
-        $measles_susp_5m,
-        $measles_susp_19m,
-        $measles_susp_19f,
-        $measles_susp_20m,
-        $measles_susp_20f,
-      $measles_conf_5f,
-        $measles_conf_5m,
-        $measles_conf_19m,
-        $measles_conf_19f,
-        $measles_conf_20m,
-        $measles_conf_20f,
-      $rubella_conf_5f,
-        $rubella_conf_5m,
-        $rubella_conf_19m,
-        $rubella_conf_19f,
-        $rubella_conf_20m,
-        $rubella_conf_20f,
-      $flaccid_paraly_5f,
-        $flaccid_paraly_5m,
-        $flaccid_paraly_19m,
-        $flaccid_paraly_19f,
-        $flaccid_paraly_20m,
-        $flaccid_paraly_20f,
-      $tetanus_5f,
-        $tetanus_5m,
-        $tetanus_19m,
-        $tetanus_19f,
-        $tetanus_20m,
-        $tetanus_20f,
-      $hepatitis_5f,
-        $hepatitis_5m,
-        $hepatitis_19m,
-        $hepatitis_19f,
-        $hepatitis_20m,
-        $hepatitis_20f,
-
-        $num_rapport
-    ) {
-        return $this->db->set(array(
-      'nc5m' => $nc5m,
-      'nc5f' => $nc5f,
-      'nc19m' => $nc19m,
-      'nc19f' => $nc19f,
-      'nc20m' => $nc20m,
-      'nc20f' => $nc20f,
-
-      'oc5m' => $oc5m,
-      'oc5f' => $oc5f,
-      'oc19m' => $oc19m,
-      'oc19f' => $oc19f,
-      'oc20m' => $oc20m,
-      'oc20f' => $oc20f,
-
-      'insured' => $insured,
-      'nc_non_paying' => $nc_non_paying,
-      'nc_indigent' => $nc_indigent,
-
-      'other_levels' => $other_levels,
-      'counter_received' => $counter_received,
-
-      'nc_catch' => $nc_catch,
-      'nc' => $nc,
-      'international' => $international,
-
-      'diar_w_dehy_5m' => $diar_w_dehy_5m,
-      'diar_w_dehy_5f' => $diar_w_dehy_5f,
-      'diar_w_dehy_19m' => $diar_w_dehy_19m,
-      'diar_w_dehy_19f' => $diar_w_dehy_19f,
-      'diar_w_dehy_20m' => $diar_w_dehy_20m,
-      'diar_w_dehy_20f' => $diar_w_dehy_20f,
-
-      'diar_no_dehy_5m' => $diar_no_dehy_5m,
-      'diar_no_dehy_5f' => $diar_no_dehy_5f,
-      'diar_no_dehy_19m' => $diar_no_dehy_19m,
-      'diar_no_dehy_19f' => $diar_no_dehy_19f,
-      'diar_no_dehy_20m' => $diar_no_dehy_20m,
-      'diar_no_dehy_20f' => $diar_no_dehy_20f,
-
-      'blood_diar_5m' => $blood_diar_5m,
-      'blood_diar_5f' => $blood_diar_5f,
-      'blood_diar_19m' => $blood_diar_19m,
-      'blood_diar_19f' => $blood_diar_19f,
-      'blood_diar_20m' => $blood_diar_20m,
-      'blood_diar_20f' => $blood_diar_20f,
-
-      'food_poison_5m' => $food_poison_5m,
-      'food_poison_5f' => $food_poison_5f,
-      'food_poison_19m' => $food_poison_19m,
-      'food_poison_19f' => $food_poison_19f,
-      'food_poison_20m' => $food_poison_20m,
-      'food_poison_20f' => $food_poison_20f,
-
-      'ear_infect_5m' => $ear_infect_5m,
-      'ear_infect_5f' => $ear_infect_5f,
-      'ear_infect_19m' => $ear_infect_19m,
-      'ear_infect_19f' => $ear_infect_19f,
-      'ear_infect_20m' => $ear_infect_20m,
-      'ear_infect_20f' => $ear_infect_20f,
-
-      'schisto_5m' => $schisto_5m,
-      'schisto_5f' => $schisto_5f,
-      'schisto_19m' => $schisto_19m,
-      'schisto_19f' => $schisto_19f,
-      'schisto_20m' => $schisto_20m,
-      'schisto_20f' => $schisto_20f,
-
-      'ascaris_5m' => $ascaris_5m,
-      'ascaris_5f' => $ascaris_5f,
-      'ascaris_19m' => $ascaris_19m,
-      'ascaris_19f' => $ascaris_19f,
-      'ascaris_20m' => $ascaris_20m,
-      'ascaris_20f' => $ascaris_20f,
-
-      'trichu_5m' => $trichu_5m,
-      'trichu_5f' => $trichu_5f,
-      'trichu_19m' => $trichu_19m,
-      'trichu_19f' => $trichu_19f,
-      'trichu_20m' => $trichu_20m,
-      'trichu_20f' => $trichu_20f,
-
-      'hook_5m' => $hook_5m,
-      'hook_5f' => $hook_5f,
-      'hook_19m' => $hook_19m,
-      'hook_19f' => $hook_19f,
-      'hook_20m' => $hook_20m,
-      'hook_20f' => $hook_20f,
-
-      'entam_5m' => $entam_5m,
-      'entam_5f' => $entam_5f,
-      'entam_19m' => $entam_19m,
-      'entam_19f' => $entam_19f,
-      'entam_20m' => $entam_20m,
-      'entam_20f' => $entam_20f,
-
-      'giardia_5m' => $giardia_5m,
-      'giardia_5f' => $giardia_5f,
-      'giardia_19m' => $giardia_19m,
-      'giardia_19f' => $giardia_19f,
-      'giardia_20m' => $giardia_20m,
-      'giardia_20f' => $giardia_20f,
-
-      'taenia_5m' => $taenia_5m,
-      'taenia_5f' => $taenia_5f,
-      'taenia_19m' => $taenia_19m,
-      'taenia_19f' => $taenia_19f,
-      'taenia_20m' => $taenia_20m,
-      'taenia_20f' => $taenia_20f,
-
-      'malaria_s_5m' => $malaria_s_5m,
-      'malaria_s_5f' => $malaria_s_5f,
-      'malaria_s_19m' => $malaria_s_19m,
-      'malaria_s_19f' => $malaria_s_19f,
-      'malaria_s_20m' => $malaria_s_20m,
-      'malaria_s_20f' => $malaria_s_20f,
-
-      'malaria_dig_5m' => $malaria_dig_5m,
-      'malaria_dig_5f' => $malaria_dig_5f,
-      'malaria_dig_19m' => $malaria_dig_19m,
-      'malaria_dig_19f' => $malaria_dig_19f,
-      'malaria_dig_20m' => $malaria_dig_20m,
-      'malaria_dig_20f' => $malaria_dig_20f,
-
-      'herpes_s_5m' => $herpes_s_5m,
-      'herpes_s_5f' => $herpes_s_5f,
-      'herpes_s_19m' => $herpes_s_19m,
-      'herpes_s_19f' => $herpes_s_19f,
-      'herpes_s_20m' => $herpes_s_20m,
-      'herpes_s_20f' => $herpes_s_20f,
-
-      'mening_5m' => $mening_5m,
-      'mening_5f' => $mening_5f,
-      'mening_19m' => $mening_19m,
-      'mening_19f' => $mening_19f,
-      'mening_20m' => $mening_20m,
-      'mening_20f' => $mening_20f,
-
-      'pneumonia_simp_5m' => $pneumonia_simp_5m,
-      'pneumonia_simp_5f' => $pneumonia_simp_5f,
-      'pneumonia_simp_19m' => $pneumonia_simp_19m,
-      'pneumonia_simp_19f' => $pneumonia_simp_19f,
-      'pneumonia_simp_20m' => $pneumonia_simp_20m,
-      'pneumonia_simp_20f' => $pneumonia_simp_20f,
-
-      'pneumonia_sev_5m' => $pneumonia_sev_5m,
-      'pneumonia_sev_5f' => $pneumonia_sev_5f,
-      'pneumonia_sev_19m' => $pneumonia_sev_19m,
-      'pneumonia_sev_19f' => $pneumonia_sev_19f,
-      'pneumonia_sev_20m' => $pneumonia_sev_20m,
-      'pneumonia_sev_20f' => $pneumonia_sev_20f,
-
-      'grip_5m' => $grip_5m,
-      'grip_5f' => $grip_5f,
-      'grip_19m' => $grip_19m,
-      'grip_19f' => $grip_19f,
-      'grip_20m' => $grip_20m,
-      'grip_20f' => $grip_20f,
-
-      'ari_5m' => $ari_5m,
-      'ari_5f' => $ari_5f,
-      'ari_19m' => $ari_19m,
-      'ari_19f' => $ari_19f,
-      'ari_20m' => $ari_20m,
-      'ari_20f' => $ari_20f,
-
-      'gast_duoden_5m' => $gast_duoden_5m,
-      'gast_duoden_5f' => $gast_duoden_5f,
-      'gast_duoden_19m' => $gast_duoden_19m,
-      'gast_duoden_19f' => $gast_duoden_19f,
-      'gast_duoden_20m' => $gast_duoden_20m,
-      'gast_duoden_20f' => $gast_duoden_20f,
-
-      'absces_5m' => $absces_5m,
-      'absces_5f' => $absces_5f,
-      'absces_19m' => $absces_19m,
-      'absces_19f' => $absces_19f,
-      'absces_20m' => $absces_20m,
-      'absces_20f' => $absces_20f,
-
-      'ulcers_5m' => $ulcers_5m,
-      'ulcers_5f' => $ulcers_5f,
-      'ulcers_19m' => $ulcers_19m,
-      'ulcers_19f' => $ulcers_19f,
-      'ulcers_20m' => $ulcers_20m,
-      'ulcers_20f' => $ulcers_20f,
-
-      'scabies_5m' => $scabies_5m,
-      'scabies_5f' => $scabies_5f,
-      'scabies_19m' => $scabies_19m,
-      'scabies_19f' => $scabies_19f,
-      'scabies_20m' => $scabies_20m,
-      'scabies_20f' => $scabies_20f,
-
-      'mycoses_5m' => $mycoses_5m,
-      'mycoses_5f' => $mycoses_5f,
-      'mycoses_19m' => $mycoses_19m,
-      'mycoses_19f' => $mycoses_19f,
-      'mycoses_20m' => $mycoses_20m,
-      'mycoses_20f' => $mycoses_20f,
-
-      'si_others_5m' => $si_others_5m,
-      'si_others_5f' => $si_others_5f,
-      'si_others_19m' => $si_others_19m,
-      'si_others_19f' => $si_others_19f,
-      'si_others_20m' => $si_others_20m,
-      'si_others_20f' => $si_others_20f,
-
-      'urinary_ti_5m' => $urinary_ti_5m,
-      'urinary_ti_5f' => $urinary_ti_5f,
-      'urinary_ti_19m' => $urinary_ti_19m,
-      'urinary_ti_19f' => $urinary_ti_19f,
-      'urinary_ti_20m' => $urinary_ti_20m,
-      'urinary_ti_20f' => $urinary_ti_20f,
-
-      'anemia_5m' => $anemia_5m,
-      'anemia_5f' => $anemia_5f,
-      'anemia_19m' => $anemia_19m,
-      'anemia_19f' => $anemia_19f,
-      'anemia_20m' => $anemia_20m,
-      'anemia_20f' => $anemia_20f,
-
-      'measles_susp_5m' => $measles_susp_5m,
-      'measles_susp_5f' => $measles_susp_5f,
-      'measles_susp_19m' => $measles_susp_19m,
-      'measles_susp_19f' => $measles_susp_19f,
-      'measles_susp_20m' => $measles_susp_20m,
-      'measles_susp_20f' => $measles_susp_20f,
-
-      'measles_conf_5m' => $measles_conf_5m,
-      'measles_conf_5f' => $measles_conf_5f,
-      'measles_conf_19m' => $measles_conf_19m,
-      'measles_conf_19f' => $measles_conf_19f,
-      'measles_conf_20m' => $measles_conf_20m,
-      'measles_conf_20f' => $measles_conf_20f,
-
-      'rubella_conf_5m' => $rubella_conf_5m,
-      'rubella_conf_5f' => $rubella_conf_5f,
-      'rubella_conf_19m' => $rubella_conf_19m,
-      'rubella_conf_19f' => $rubella_conf_19f,
-      'rubella_conf_20m' => $rubella_conf_20m,
-      'rubella_conf_20f' => $rubella_conf_20f,
-
-      'flaccid_paraly_5m' => $flaccid_paraly_5m,
-      'flaccid_paraly_5f' => $flaccid_paraly_5f,
-      'flaccid_paraly_19m' => $flaccid_paraly_19m,
-      'flaccid_paraly_19f' => $flaccid_paraly_19f,
-      'flaccid_paraly_20m' => $flaccid_paraly_20m,
-      'flaccid_paraly_20f' => $flaccid_paraly_20f,
-
-      'tetanus_5m' => $tetanus_5m,
-      'tetanus_5f' => $tetanus_5f,
-      'tetanus_19m' => $tetanus_19m,
-      'tetanus_19f' => $tetanus_19f,
-      'tetanus_20m' => $tetanus_20m,
-      'tetanus_20f' => $tetanus_20f,
-
-      'hepatitis_5m' => $hepatitis_5m,
-      'hepatitis_5f' => $hepatitis_5f,
-      'hepatitis_19m' => $hepatitis_19m,
-      'hepatitis_19f' => $hepatitis_19f,
-      'hepatitis_20m' => $hepatitis_20m,
-      'hepatitis_20f' => $hepatitis_20f,
-
-      'num_rapport' => $num_rapport,
-      'num_user' => $this->session->userdata('num_user')
-    ))
-            ->set('date_consultation_abcde', $this->session->userdata('add_date'))
-            ->insert('Consultation_abcde');
-    }
-
-    public function fetch_data2(
-      $e_beds,
-      $e_present_start,
-      $e_admissions,
-      $e_referred,
-      $e_no_referred,
-      $e_discharges,
-      $e_authorized,
-      $e_abandoned,
-      $e_deaths,
-      $e_dis_referred,
-      $e_counter,
-      $e_present_end,
-      $e_total,
-      $e_actual,
+      $s_beds,
+      $s_present_start,
+      $s_admissions,
+      $s_referred,
+      $s_no_referred,
+      $s_discharges,
+      $s_authorized,
+      $s_abandoned,
+      $s_deaths,
+      $s_dis_referred,
+      $s_counter,
+      $s_present_end,
+      $s_total,
+      $s_actual,
       $num_rapport
     ) {
         $this->db->where('date_hospitalization_a', $this->session->userdata('add_date'));
         $q = $this->db->get('Hospitalization_a');
         if ($q->num_rows() == 0) {
             return $this->db->set(array(
-          'e_beds' => $e_beds,
-          'e_present_start' => $e_present_start,
-          'e_admissions' => $e_admissions,
-          'e_referred' => $e_referred,
-          'e_no_referred' => $e_no_referred,
-          'e_discharges' => $e_discharges,
-          'e_authorized' => $e_authorized,
-          'e_abandoned' => $e_abandoned,
-          'e_deaths' => $e_deaths,
-          'e_dis_referred' => $e_dis_referred,
-          'e_counter' => $e_counter,
-          'e_present_end' => $e_present_end,
-          'e_total' => $e_total,
-          'e_actual' => $e_actual,
+          's_beds' => $s_beds,
+          's_present_start' => $s_present_start,
+          's_admissions' => $s_admissions,
+          's_referred' => $s_referred,
+          's_no_referred' => $s_no_referred,
+          's_discharges' => $s_discharges,
+          's_authorized' => $s_authorized,
+          's_abandoned' => $s_abandoned,
+          's_deaths' => $s_deaths,
+          's_dis_referred' => $s_dis_referred,
+          's_counter' => $s_counter,
+          's_present_end' => $s_present_end,
+          's_total' => $s_total,
+          's_actual' => $s_actual,
 
       'num_rapport' => $num_rapport
     ))
@@ -552,20 +53,20 @@ class emergency_model extends CI_Model
             ->insert('Hospitalization_a');
         } else {
             $this->db->set(array(
-                'e_beds' => $e_beds,
-                'e_present_start' => $e_present_start,
-                'e_admissions' => $e_admissions,
-                'e_referred' => $e_referred,
-                'e_no_referred' => $e_no_referred,
-                'e_discharges' => $e_discharges,
-                'e_authorized' => $e_authorized,
-                'e_abandoned' => $e_abandoned,
-                'e_deaths' => $e_deaths,
-                'e_dis_referred' => $e_dis_referred,
-                'e_counter' => $e_counter,
-                'e_present_end' => $e_present_end,
-                'e_total' => $e_total,
-                'e_actual' => $e_actual,
+                's_beds' => $s_beds,
+                's_present_start' => $s_present_start,
+                's_admissions' => $s_admissions,
+                's_referred' => $s_referred,
+                's_no_referred' => $s_no_referred,
+                's_discharges' => $s_discharges,
+                's_authorized' => $s_authorized,
+                's_abandoned' => $s_abandoned,
+                's_deaths' => $s_deaths,
+                's_dis_referred' => $s_dis_referred,
+                's_counter' => $s_counter,
+                's_present_end' => $s_present_end,
+                's_total' => $s_total,
+                's_actual' => $s_actual,
 
             'num_rapport' => $num_rapport
           ))
@@ -574,7 +75,7 @@ class emergency_model extends CI_Model
         }
     }
 
-    public function fetch_data3(
+    public function fetch_data2(
       $hosp_1m,
       $hosp_1f,
       $hosp_4m,
@@ -1786,20 +1287,12 @@ class emergency_model extends CI_Model
 
     public function show_table1()
     {
-        return $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'))
-                        ->where('num_user', $this->session->userdata('num_user'))
-                        ->get('Consultation_abcde')
-                        ->row();
-    }
-
-    public function show_table2()
-    {
         return $this->db->where('date_hospitalization_a', $this->session->userdata('update_date'))
                         ->get('Hospitalization_a')
                         ->row();
     }
 
-    public function show_table3()
+    public function show_table2()
     {
         return $this->db->where('date_hospitalization_bcde', $this->session->userdata('update_date'))
                         ->get('Hospitalization_bcde')
@@ -1814,535 +1307,41 @@ class emergency_model extends CI_Model
     }
 
     public function update_data1(
-      $nc5m,
-        $nc5f,
-        $nc19f,
-        $nc19m,
-      $nc20m,
-        $nc20f,
-      $oc5m,
-        $oc5f,
-        $oc19f,
-        $oc19m,
-      $oc20m,
-        $oc20f,
-      $insured,
-        $nc_non_paying,
-        $nc_indigent,
-      $other_levels,
-        $counter_received,
-      $nc_catch,
-        $nc,
-        $international,
-        $diar_w_dehy_5f,
-          $diar_w_dehy_5m,
-          $diar_w_dehy_19m,
-          $diar_w_dehy_19f,
-          $diar_w_dehy_20m,
-          $diar_w_dehy_20f,
-        $diar_no_dehy_5f,
-          $diar_no_dehy_5m,
-          $diar_no_dehy_19m,
-          $diar_no_dehy_19f,
-          $diar_no_dehy_20m,
-          $diar_no_dehy_20f,
-        $blood_diar_5f,
-          $blood_diar_5m,
-          $blood_diar_19m,
-          $blood_diar_19f,
-          $blood_diar_20m,
-          $blood_diar_20f,
-        $food_poison_5f,
-          $food_poison_5m,
-          $food_poison_19m,
-          $food_poison_19f,
-          $food_poison_20m,
-          $food_poison_20f,
-        $ear_infect_5f,
-          $ear_infect_5m,
-          $ear_infect_19m,
-          $ear_infect_19f,
-          $ear_infect_20m,
-          $ear_infect_20f,
-        $schisto_5f,
-          $schisto_5m,
-          $schisto_19m,
-          $schisto_19f,
-          $schisto_20m,
-          $schisto_20f,
-        $ascaris_5f,
-          $ascaris_5m,
-          $ascaris_19m,
-          $ascaris_19f,
-          $ascaris_20m,
-          $ascaris_20f,
-        $trichu_5m,
-          $trichu_5f,
-          $trichu_19m,
-          $trichu_19f,
-          $trichu_20m,
-          $trichu_20f,
-        $hook_5m,
-          $hook_5f,
-          $hook_19f,
-          $hook_19m,
-          $hook_20m,
-          $hook_20f,
-        $entam_5f,
-          $entam_5m,
-          $entam_19m,
-          $entam_19f,
-          $entam_20m,
-          $entam_20f,
-        $giardia_5f,
-          $giardia_5m,
-          $giardia_19m,
-          $giardia_19f,
-          $giardia_20m,
-          $giardia_20f,
-        $taenia_5f,
-          $taenia_5m,
-          $taenia_19m,
-          $taenia_19f,
-          $taenia_20m,
-          $taenia_20f,
-        $malaria_s_5f,
-          $malaria_s_5m,
-          $malaria_s_19m,
-          $malaria_s_19f,
-          $malaria_s_20m,
-          $malaria_s_20f,
-        $malaria_dig_5f,
-          $malaria_dig_5m,
-          $malaria_dig_19m,
-          $malaria_dig_19f,
-          $malaria_dig_20m,
-          $malaria_dig_20f,
-        $herpes_s_5f,
-          $herpes_s_5m,
-          $herpes_s_19m,
-          $herpes_s_19f,
-          $herpes_s_20m,
-          $herpes_s_20f,
-        $mening_5f,
-          $mening_5m,
-          $mening_19m,
-          $mening_19f,
-          $mening_20m,
-          $mening_20f,
-        $pneumonia_simp_5m,
-          $pneumonia_simp_5f,
-          $pneumonia_simp_19m,
-          $pneumonia_simp_19f,
-          $pneumonia_simp_20m,
-          $pneumonia_simp_20f,
-        $pneumonia_sev_5m,
-          $pneumonia_sev_5f,
-          $pneumonia_sev_19f,
-          $pneumonia_sev_19m,
-          $pneumonia_sev_20m,
-          $pneumonia_sev_20f,
-        $grip_5f,
-          $grip_5m,
-          $grip_19m,
-          $grip_19f,
-          $grip_20m,
-          $grip_20f,
-        $ari_5f,
-          $ari_5m,
-          $ari_19m,
-          $ari_19f,
-          $ari_20m,
-          $ari_20f,
-        $gast_duoden_5f,
-          $gast_duoden_5m,
-          $gast_duoden_19m,
-          $gast_duoden_19f,
-          $gast_duoden_20m,
-          $gast_duoden_20f,
-        $absces_5m,
-          $absces_5f,
-          $absces_19m,
-          $absces_19f,
-          $absces_20m,
-          $absces_20f,
-        $ulcers_5m,
-          $ulcers_5f,
-          $ulcers_19f,
-          $ulcers_19m,
-          $ulcers_20m,
-          $ulcers_20f,
-        $scabies_5f,
-          $scabies_5m,
-          $scabies_19m,
-          $scabies_19f,
-          $scabies_20m,
-          $scabies_20f,
-        $mycoses_5f,
-          $mycoses_5m,
-          $mycoses_19m,
-          $mycoses_19f,
-          $mycoses_20m,
-          $mycoses_20f,
-        $si_others_5f,
-          $si_others_5m,
-          $si_others_19m,
-          $si_others_19f,
-          $si_others_20m,
-          $si_others_20f,
-        $urinary_ti_5f,
-          $urinary_ti_5m,
-          $urinary_ti_19m,
-          $urinary_ti_19f,
-          $urinary_ti_20m,
-          $urinary_ti_20f,
-        $anemia_5f,
-          $anemia_5m,
-          $anemia_19m,
-          $anemia_19f,
-          $anemia_20m,
-          $anemia_20f,
-        $measles_susp_5f,
-          $measles_susp_5m,
-          $measles_susp_19m,
-          $measles_susp_19f,
-          $measles_susp_20m,
-          $measles_susp_20f,
-        $measles_conf_5f,
-          $measles_conf_5m,
-          $measles_conf_19m,
-          $measles_conf_19f,
-          $measles_conf_20m,
-          $measles_conf_20f,
-        $rubella_conf_5f,
-          $rubella_conf_5m,
-          $rubella_conf_19m,
-          $rubella_conf_19f,
-          $rubella_conf_20m,
-          $rubella_conf_20f,
-        $flaccid_paraly_5f,
-          $flaccid_paraly_5m,
-          $flaccid_paraly_19m,
-          $flaccid_paraly_19f,
-          $flaccid_paraly_20m,
-          $flaccid_paraly_20f,
-        $tetanus_5f,
-          $tetanus_5m,
-          $tetanus_19m,
-          $tetanus_19f,
-          $tetanus_20m,
-          $tetanus_20f,
-        $hepatitis_5f,
-          $hepatitis_5m,
-          $hepatitis_19m,
-          $hepatitis_19f,
-          $hepatitis_20m,
-          $hepatitis_20f
+      $s_beds,
+      $s_present_start,
+      $s_admissions,
+      $s_referred,
+      $s_no_referred,
+      $s_discharges,
+      $s_authorized,
+      $s_abandoned,
+      $s_deaths,
+      $s_dis_referred,
+      $s_counter,
+      $s_present_end,
+      $s_total,
+      $s_actual
     ) {
-        $this->db->set('nc5m', $nc5m);
-        $this->db->set('nc5f', $nc5f);
-        $this->db->set('nc19m', $nc19m);
-        $this->db->set('nc19f', $nc19f);
-        $this->db->set('nc20m', $nc20m);
-        $this->db->set('nc20f', $nc20f);
-
-        $this->db->set('oc5m', $oc5m);
-        $this->db->set('oc5f', $oc5f);
-        $this->db->set('oc19m', $oc19m);
-        $this->db->set('oc19f', $oc19f);
-        $this->db->set('oc20m', $oc20m);
-        $this->db->set('oc20f', $oc20f);
-
-        $this->db->set('insured', $insured);
-        $this->db->set('nc_non_paying', $nc_non_paying);
-        $this->db->set('nc_indigent', $nc_indigent);
-
-        $this->db->set('other_levels', $other_levels);
-        $this->db->set('counter_received', $counter_received);
-
-        $this->db->set('nc_catch', $nc_catch);
-        $this->db->set('nc', $nc);
-        $this->db->set('international', $international);
-
-        $this->db->set('diar_w_dehy_5m', $diar_w_dehy_5m);
-        $this->db->set('diar_w_dehy_5f', $diar_w_dehy_5f);
-        $this->db->set('diar_w_dehy_19m', $diar_w_dehy_19m);
-        $this->db->set('diar_w_dehy_19f', $diar_w_dehy_19f);
-        $this->db->set('diar_w_dehy_20m', $diar_w_dehy_20m);
-        $this->db->set('diar_w_dehy_20f', $diar_w_dehy_20f);
-
-        $this->db->set('diar_no_dehy_5m', $diar_no_dehy_5m);
-        $this->db->set('diar_no_dehy_5f', $diar_no_dehy_5f);
-        $this->db->set('diar_no_dehy_19m', $diar_no_dehy_19m);
-        $this->db->set('diar_no_dehy_19f', $diar_no_dehy_19f);
-        $this->db->set('diar_no_dehy_20m', $diar_no_dehy_20m);
-        $this->db->set('diar_no_dehy_20f', $diar_no_dehy_20f);
-
-        $this->db->set('blood_diar_5m', $blood_diar_5m);
-        $this->db->set('blood_diar_5f', $blood_diar_5f);
-        $this->db->set('blood_diar_19m', $blood_diar_19m);
-        $this->db->set('blood_diar_19f', $blood_diar_19f);
-        $this->db->set('blood_diar_20m', $blood_diar_20m);
-        $this->db->set('blood_diar_20f', $blood_diar_20f);
-
-        $this->db->set('food_poison_5m', $food_poison_5m);
-        $this->db->set('food_poison_5f', $food_poison_5f);
-        $this->db->set('food_poison_19m', $food_poison_19m);
-        $this->db->set('food_poison_19f', $food_poison_19f);
-        $this->db->set('food_poison_20m', $food_poison_20m);
-        $this->db->set('food_poison_20f', $food_poison_20f);
-
-        $this->db->set('ear_infect_5m', $ear_infect_5m);
-        $this->db->set('ear_infect_5f', $ear_infect_5f);
-        $this->db->set('ear_infect_19m', $ear_infect_19m);
-        $this->db->set('ear_infect_19f', $ear_infect_19f);
-        $this->db->set('ear_infect_20m', $ear_infect_20m);
-        $this->db->set('ear_infect_20f', $ear_infect_20f);
-
-        $this->db->set('schisto_5m', $schisto_5m);
-        $this->db->set('schisto_5f', $schisto_5f);
-        $this->db->set('schisto_19m', $schisto_19m);
-        $this->db->set('schisto_19f', $schisto_19f);
-        $this->db->set('schisto_20m', $schisto_20m);
-        $this->db->set('schisto_20f', $schisto_20f);
-
-        $this->db->set('ascaris_5m', $ascaris_5m);
-        $this->db->set('ascaris_5f', $ascaris_5f);
-        $this->db->set('ascaris_19m', $ascaris_19m);
-        $this->db->set('ascaris_19f', $ascaris_19f);
-        $this->db->set('ascaris_20m', $ascaris_20m);
-        $this->db->set('ascaris_20f', $ascaris_20f);
-
-        $this->db->set('trichu_5m', $trichu_5m);
-        $this->db->set('trichu_5f', $trichu_5f);
-        $this->db->set('trichu_19m', $trichu_19m);
-        $this->db->set('trichu_19f', $trichu_19f);
-        $this->db->set('trichu_20m', $trichu_20m);
-        $this->db->set('trichu_20f', $trichu_20f);
-
-        $this->db->set('hook_5m', $hook_5m);
-        $this->db->set('hook_5f', $hook_5f);
-        $this->db->set('hook_19m', $hook_19m);
-        $this->db->set('hook_19f', $hook_19f);
-        $this->db->set('hook_20m', $hook_20m);
-        $this->db->set('hook_20f', $hook_20f);
-
-        $this->db->set('entam_5m', $entam_5m);
-        $this->db->set('entam_5f', $entam_5f);
-        $this->db->set('entam_19m', $entam_19m);
-        $this->db->set('entam_19f', $entam_19f);
-        $this->db->set('entam_20m', $entam_20m);
-        $this->db->set('entam_20f', $entam_20f);
-
-        $this->db->set('giardia_5m', $giardia_5m);
-        $this->db->set('giardia_5f', $giardia_5f);
-        $this->db->set('giardia_19m', $giardia_19m);
-        $this->db->set('giardia_19f', $giardia_19f);
-        $this->db->set('giardia_20m', $giardia_20m);
-        $this->db->set('giardia_20f', $giardia_20f);
-
-        $this->db->set('taenia_5m', $taenia_5m);
-        $this->db->set('taenia_5f', $taenia_5f);
-        $this->db->set('taenia_19m', $taenia_19m);
-        $this->db->set('taenia_19f', $taenia_19f);
-        $this->db->set('taenia_20m', $taenia_20m);
-        $this->db->set('taenia_20f', $taenia_20f);
-
-        $this->db->set('malaria_s_5m', $malaria_s_5m);
-        $this->db->set('malaria_s_5f', $malaria_s_5f);
-        $this->db->set('malaria_s_19m', $malaria_s_19m);
-        $this->db->set('malaria_s_19f', $malaria_s_19f);
-        $this->db->set('malaria_s_20m', $malaria_s_20m);
-        $this->db->set('malaria_s_20f', $malaria_s_20f);
-
-        $this->db->set('malaria_dig_5m', $malaria_dig_5m);
-        $this->db->set('malaria_dig_5f', $malaria_dig_5f);
-        $this->db->set('malaria_dig_19m', $malaria_dig_19m);
-        $this->db->set('malaria_dig_19f', $malaria_dig_19f);
-        $this->db->set('malaria_dig_20m', $malaria_dig_20m);
-        $this->db->set('malaria_dig_20f', $malaria_dig_20f);
-
-        $this->db->set('herpes_s_5m', $herpes_s_5m);
-        $this->db->set('herpes_s_5f', $herpes_s_5f);
-        $this->db->set('herpes_s_19m', $herpes_s_19m);
-        $this->db->set('herpes_s_19f', $herpes_s_19f);
-        $this->db->set('herpes_s_20m', $herpes_s_20m);
-        $this->db->set('herpes_s_20f', $herpes_s_20f);
-
-        $this->db->set('mening_5m', $mening_5m);
-        $this->db->set('mening_5f', $mening_5f);
-        $this->db->set('mening_19m', $mening_19m);
-        $this->db->set('mening_19f', $mening_19f);
-        $this->db->set('mening_20m', $mening_20m);
-        $this->db->set('mening_20f', $mening_20f);
-
-        $this->db->set('pneumonia_simp_5m', $pneumonia_simp_5m);
-        $this->db->set('pneumonia_simp_5f', $pneumonia_simp_5f);
-        $this->db->set('pneumonia_simp_19m', $pneumonia_simp_19m);
-        $this->db->set('pneumonia_simp_19f', $pneumonia_simp_19f);
-        $this->db->set('pneumonia_simp_20m', $pneumonia_simp_20m);
-        $this->db->set('pneumonia_simp_20f', $pneumonia_simp_20f);
-
-        $this->db->set('pneumonia_sev_5m', $pneumonia_sev_5m);
-        $this->db->set('pneumonia_sev_5f', $pneumonia_sev_5f);
-        $this->db->set('pneumonia_sev_19m', $pneumonia_sev_19m);
-        $this->db->set('pneumonia_sev_19f', $pneumonia_sev_19f);
-        $this->db->set('pneumonia_sev_20m', $pneumonia_sev_20m);
-        $this->db->set('pneumonia_sev_20f', $pneumonia_sev_20f);
-
-        $this->db->set('grip_5m', $grip_5m);
-        $this->db->set('grip_5f', $grip_5f);
-        $this->db->set('grip_19m', $grip_19m);
-        $this->db->set('grip_19f', $grip_19f);
-        $this->db->set('grip_20m', $grip_20m);
-        $this->db->set('grip_20f', $grip_20f);
-
-        $this->db->set('ari_5m', $ari_5m);
-        $this->db->set('ari_5f', $ari_5f);
-        $this->db->set('ari_19m', $ari_19m);
-        $this->db->set('ari_19f', $ari_19f);
-        $this->db->set('ari_20m', $ari_20m);
-        $this->db->set('ari_20f', $ari_20f);
-
-        $this->db->set('gast_duoden_5m', $gast_duoden_5m);
-        $this->db->set('gast_duoden_5f', $gast_duoden_5f);
-        $this->db->set('gast_duoden_19m', $gast_duoden_19m);
-        $this->db->set('gast_duoden_19f', $gast_duoden_19f);
-        $this->db->set('gast_duoden_20m', $gast_duoden_20m);
-        $this->db->set('gast_duoden_20f', $gast_duoden_20f);
-
-        $this->db->set('absces_5m', $absces_5m);
-        $this->db->set('absces_5f', $absces_5f);
-        $this->db->set('absces_19m', $absces_19m);
-        $this->db->set('absces_19f', $absces_19f);
-        $this->db->set('absces_20m', $absces_20m);
-        $this->db->set('absces_20f', $absces_20f);
-
-        $this->db->set('ulcers_5m', $ulcers_5m);
-        $this->db->set('ulcers_5f', $ulcers_5f);
-        $this->db->set('ulcers_19m', $ulcers_19m);
-        $this->db->set('ulcers_19f', $ulcers_19f);
-        $this->db->set('ulcers_20m', $ulcers_20m);
-        $this->db->set('ulcers_20f', $ulcers_20f);
-
-        $this->db->set('scabies_5m', $scabies_5m);
-        $this->db->set('scabies_5f', $scabies_5f);
-        $this->db->set('scabies_19m', $scabies_19m);
-        $this->db->set('scabies_19f', $scabies_19f);
-        $this->db->set('scabies_20m', $scabies_20m);
-        $this->db->set('scabies_20f', $scabies_20f);
-
-        $this->db->set('mycoses_5m', $mycoses_5m);
-        $this->db->set('mycoses_5f', $mycoses_5f);
-        $this->db->set('mycoses_19m', $mycoses_19m);
-        $this->db->set('mycoses_19f', $mycoses_19f);
-        $this->db->set('mycoses_20m', $mycoses_20m);
-        $this->db->set('mycoses_20f', $mycoses_20f);
-
-        $this->db->set('si_others_5m', $si_others_5m);
-        $this->db->set('si_others_5f', $si_others_5f);
-        $this->db->set('si_others_19m', $si_others_19m);
-        $this->db->set('si_others_19f', $si_others_19f);
-        $this->db->set('si_others_20m', $si_others_20m);
-        $this->db->set('si_others_20f', $si_others_20f);
-
-        $this->db->set('urinary_ti_5m', $urinary_ti_5m);
-        $this->db->set('urinary_ti_5f', $urinary_ti_5f);
-        $this->db->set('urinary_ti_19m', $urinary_ti_19m);
-        $this->db->set('urinary_ti_19f', $urinary_ti_19f);
-        $this->db->set('urinary_ti_20m', $urinary_ti_20m);
-        $this->db->set('urinary_ti_20f', $urinary_ti_20f);
-
-        $this->db->set('anemia_5m', $anemia_5m);
-        $this->db->set('anemia_5f', $anemia_5f);
-        $this->db->set('anemia_19m', $anemia_19m);
-        $this->db->set('anemia_19f', $anemia_19f);
-        $this->db->set('anemia_20m', $anemia_20m);
-        $this->db->set('anemia_20f', $anemia_20f);
-
-        $this->db->set('measles_susp_5m', $measles_susp_5m);
-        $this->db->set('measles_susp_5f', $measles_susp_5f);
-        $this->db->set('measles_susp_19m', $measles_susp_19m);
-        $this->db->set('measles_susp_19f', $measles_susp_19f);
-        $this->db->set('measles_susp_20m', $measles_susp_20m);
-        $this->db->set('measles_susp_20f', $measles_susp_20f);
-
-        $this->db->set('measles_conf_5m', $measles_conf_5m);
-        $this->db->set('measles_conf_5f', $measles_conf_5f);
-        $this->db->set('measles_conf_19m', $measles_conf_19m);
-        $this->db->set('measles_conf_19f', $measles_conf_19f);
-        $this->db->set('measles_conf_20m', $measles_conf_20m);
-        $this->db->set('measles_conf_20f', $measles_conf_20f);
-
-        $this->db->set('rubella_conf_5m', $rubella_conf_5m);
-        $this->db->set('rubella_conf_5f', $rubella_conf_5f);
-        $this->db->set('rubella_conf_19m', $rubella_conf_19m);
-        $this->db->set('rubella_conf_19f', $rubella_conf_19f);
-        $this->db->set('rubella_conf_20m', $rubella_conf_20m);
-        $this->db->set('rubella_conf_20f', $rubella_conf_20f);
-
-        $this->db->set('flaccid_paraly_5m', $flaccid_paraly_5m);
-        $this->db->set('flaccid_paraly_5f', $flaccid_paraly_5f);
-        $this->db->set('flaccid_paraly_19m', $flaccid_paraly_19m);
-        $this->db->set('flaccid_paraly_19f', $flaccid_paraly_19f);
-        $this->db->set('flaccid_paraly_20m', $flaccid_paraly_20m);
-        $this->db->set('flaccid_paraly_20f', $flaccid_paraly_20f);
-
-        $this->db->set('tetanus_5m', $tetanus_5m);
-        $this->db->set('tetanus_5f', $tetanus_5f);
-        $this->db->set('tetanus_19m', $tetanus_19m);
-        $this->db->set('tetanus_19f', $tetanus_19f);
-        $this->db->set('tetanus_20m', $tetanus_20m);
-        $this->db->set('tetanus_20f', $tetanus_20f);
-
-        $this->db->set('hepatitis_5m', $hepatitis_5m);
-        $this->db->set('hepatitis_5f', $hepatitis_5f);
-        $this->db->set('hepatitis_19m', $hepatitis_19m);
-        $this->db->set('hepatitis_19f', $hepatitis_19f);
-        $this->db->set('hepatitis_20m', $hepatitis_20m);
-        $this->db->set('hepatitis_20f', $hepatitis_20f);
-
-        $this->db->where('date_consultation_abcde', $this->session->userdata('update_date'));
-        $this->db->where('num_user', $this->session->userdata('num_user'));
-        return $this->db->update('Consultation_abcde');
-    }
-
-    public function update_data2(
-      $e_beds,
-      $e_present_start,
-      $e_admissions,
-      $e_referred,
-      $e_no_referred,
-      $e_discharges,
-      $e_authorized,
-      $e_abandoned,
-      $e_deaths,
-      $e_dis_referred,
-      $e_counter,
-      $e_present_end,
-      $e_total,
-      $e_actual
-    ) {
-        $this->db->set('e_beds', $e_beds);
-        $this->db->set('e_present_start', $e_present_start);
-        $this->db->set('e_admissions', $e_admissions);
-        $this->db->set('e_referred', $e_referred);
-        $this->db->set('e_no_referred', $e_no_referred);
-        $this->db->set('e_discharges', $e_discharges);
-        $this->db->set('e_authorized', $e_authorized);
-        $this->db->set('e_abandoned', $e_abandoned);
-        $this->db->set('e_deaths', $e_deaths);
-        $this->db->set('e_dis_referred', $e_dis_referred);
-        $this->db->set('e_counter', $e_counter);
-        $this->db->set('e_present_end', $e_present_end);
-        $this->db->set('e_total', $e_total);
-        $this->db->set('e_actual', $e_actual);
+        $this->db->set('s_beds', $s_beds);
+        $this->db->set('s_present_start', $s_present_start);
+        $this->db->set('s_admissions', $s_admissions);
+        $this->db->set('s_referred', $s_referred);
+        $this->db->set('s_no_referred', $s_no_referred);
+        $this->db->set('s_discharges', $s_discharges);
+        $this->db->set('s_authorized', $s_authorized);
+        $this->db->set('s_abandoned', $s_abandoned);
+        $this->db->set('s_deaths', $s_deaths);
+        $this->db->set('s_dis_referred', $s_dis_referred);
+        $this->db->set('s_counter', $s_counter);
+        $this->db->set('s_present_end', $s_present_end);
+        $this->db->set('s_total', $s_total);
+        $this->db->set('s_actual', $s_actual);
 
         $this->db->where('date_hospitalization_a', $this->session->userdata('update_date'));
         return $this->db->update('Hospitalization_a');
     }
 
-    public function update_data3(
+    public function update_data2(
       $hosp_1m,
       $hosp_1f,
       $hosp_4m,

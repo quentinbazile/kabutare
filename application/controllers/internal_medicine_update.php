@@ -333,10 +333,10 @@ class internal_medicine_update extends CI_Controller
             $gastritis_hos19f = $this->input->post('gastritis_hos19f');
             $gastritis_hos20m = $this->input->post('gastritis_hos20m');
             $gastritis_hos20f = $this->input->post('gastritis_hos20f');
-            $gastritis_death19m = $this->input->post('gastritis_death19m');
-            $gastritis_death19f = $this->input->post('gastritis_death19f');
-            $gastritis_death20m = $this->input->post('gastritis_death20m');
-            $gastritis_death20f = $this->input->post('gastritis_death20f');
+            $gastritis_deaths19m = $this->input->post('gastritis_deaths19m');
+            $gastritis_deaths19f = $this->input->post('gastritis_deaths19f');
+            $gastritis_deaths20m = $this->input->post('gastritis_deaths20m');
+            $gastritis_deaths20f = $this->input->post('gastritis_deaths20f');
 
             $ulcer_hos19m = $this->input->post('ulcer_hos19m');
             $ulcer_hos19f = $this->input->post('ulcer_hos19f');
@@ -467,7 +467,7 @@ class internal_medicine_update extends CI_Controller
               $e_total,
               $e_actual
                 );
-                $this->internal_medicine_model->update_data2(
+            $this->internal_medicine_model->update_data2(
                   $hosp_19m,
                   $hosp_19f,
                   $hosp_20m,
@@ -768,10 +768,10 @@ class internal_medicine_update extends CI_Controller
                   $gastritis_hos19f,
                   $gastritis_hos20m,
                   $gastritis_hos20f,
-                  $gastritis_death19m,
-                  $gastritis_death19f,
-                  $gastritis_death20m,
-                  $gastritis_death20f,
+                  $gastritis_deaths19m,
+                  $gastritis_deaths19f,
+                  $gastritis_deaths20m,
+                  $gastritis_deaths20f,
 
                   $ulcer_hos19m,
                   $ulcer_hos19f,
@@ -889,9 +889,9 @@ class internal_medicine_update extends CI_Controller
             $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');
         } else {
-          $data['table1'] = $this->internal_medicine_model->show_table1();
-          $data['table2'] = $this->internal_medicine_model->show_table2();
-          $this->load->view('internal_medicine_update_view', $data);
+            $data['table1'] = $this->internal_medicine_model->show_table1();
+            $data['table2'] = $this->internal_medicine_model->show_table2();
+            $this->load->view('internal_medicine_update_view', $data);
         }
     }
 }

@@ -38,9 +38,16 @@
                            unset($array[$val]);
                        }
                     endforeach;
-                } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology')) {
+                } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
+                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care')) {
                     foreach ($dates_im as $d):
                                              if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
+                                                 unset($array[$val]);
+                                             }
+                    endforeach;
+                } elseif ($this->home_model->check_service('family_planning')) {
+                    foreach ($dates_fp as $d):
+                                             if (($val = array_search($d->date_family_planning, $array)) !== false) {
                                                  unset($array[$val]);
                                              }
                     endforeach;
@@ -51,7 +58,7 @@
                        }
                     endforeach;
                 }
-								foreach ($array as $value):?>
+                                foreach ($array as $value):?>
 					<option value="<?php echo $value; ?>"><?php echo date('d/m/Y', strtotime($value)); ?></option>
 				<?php endforeach; ?>
 			</select>
@@ -70,18 +77,23 @@
 
 				<select name="update" id="update" class="form-control" required>
 					<?php if ($this->home_model->check_service('minor_surgery') || $this->home_model->check_service('operating_room')) {
-              foreach ($dates_surgery as $d):?>
+                                    foreach ($dates_surgery as $d):?>
 								<option value="<?php echo $d->date_surgery; ?>"><?php echo date('d/m/Y', strtotime($d->date_surgery)); ?></option>
 							<?php endforeach;
-          } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology')) {
-              foreach ($dates_im as $d):?>
+                                } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
+                                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care')) {
+                                    foreach ($dates_im as $d):?>
 										<option value="<?php echo $d->date_hospitalization_bcde; ?>"><?php echo date('d/m/Y', strtotime($d->date_hospitalization_bcde)); ?></option>
 									<?php endforeach;
-          } else {
-              foreach ($dates as $date):?>
+                                } elseif ($this->home_model->check_service('family_planning')) {
+                                    foreach ($dates_fp as $d):?>
+										<option value="<?php echo $d->date_family_planning; ?>"><?php echo date('d/m/Y', strtotime($d->date_family_planning)); ?></option>
+									<?php endforeach;
+                                } else {
+                                    foreach ($dates as $date):?>
 								<option value="<?php echo $date->date_consultation_abcde; ?>"><?php echo date('d/m/Y', strtotime($date->date_consultation_abcde)); ?></option>
 							<?php endforeach;
-          }?>
+                                }?>
 				</select>
 	</div>
 	<div class="col-xs-2">
