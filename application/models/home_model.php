@@ -24,6 +24,16 @@ class home_model extends CI_Model
               ->result();
     }
 
+    public function show_dates_pharm()
+    {
+        return $this->db->select('date_pharmacy')
+              ->from('Pharmacy')
+              ->where('date_pharmacy >', date('Y-m-d', strtotime('-5 days')))
+              ->where('date_pharmacy <=', date('Y-m-d'))
+              ->get()
+              ->result();
+    }
+
     public function show_dates_im()
     {
         return $this->db->select('date_hospitalization_bcde')
@@ -35,7 +45,7 @@ class home_model extends CI_Model
               ->result();
     }
 
-    public function show_dates_fp() 
+    public function show_dates_fp()
     {
         return $this->db->select('date_family_planning')
               ->from('family_planning')

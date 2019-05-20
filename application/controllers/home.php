@@ -70,6 +70,15 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('nut_rehab')) {
                     redirect('nut_rehab', 'refresh');
                 }
+                if ($this->home_model->check_service('pharmacy')) {
+                    redirect('pharmacy', 'refresh');
+                }
+                if ($this->home_model->check_service('opd')) {
+                    redirect('opd', 'refresh');
+                }
+                if ($this->home_model->check_service('ncds')) {
+                    redirect('ncds', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -124,12 +133,22 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('nut_rehab')) {
                     redirect('nut_rehab_update', 'refresh');
                 }
+                if ($this->home_model->check_service('pharmacy')) {
+                    redirect('pharmacy_update', 'refresh');
+                }
+                if ($this->home_model->check_service('opd')) {
+                    redirect('opd_update', 'refresh');
+                }
+                if ($this->home_model->check_service('ncds')) {
+                    redirect('ncds_update', 'refresh');
+                }
             }
         } else {
             $data['dates'] = $this->home_model->show_dates();
             $data['dates_surgery'] = $this->home_model->show_dates_surgery();
             $data['dates_im'] = $this->home_model->show_dates_im();
             $data['dates_fp'] = $this->home_model->show_dates_fp();
+            $data['dates_pharm'] = $this->home_model->show_dates_pharm();
             $this->load->view('home_view', $data);
         }
     }

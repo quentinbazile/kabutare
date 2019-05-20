@@ -440,7 +440,6 @@ class family_planning_model extends CI_Model
       $acceptors_prog_34,
       $acceptors_prog_35
     ) {
-        $this->db->set('nc5m', $nc5m);
         $this->db->set('oral_contra_proges_accep', $oral_contra_proges_accep);
         $this->db->set('oral_contra_proges_ppfp', $oral_contra_proges_ppfp);
         $this->db->set('oral_contra_proges_users', $oral_contra_proges_users);

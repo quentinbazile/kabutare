@@ -422,12 +422,12 @@
                 <tr>
                   <td>39</td>
                   <td class="left">Captopril tab 10 mg</td>
-									<td><input type="number" min="0" name="captopril_begin" class="form-control" value="<?php echo $table1->catopril_begin; ?>"></td>
-									<td><input type="number" min="0" name="captopril_received" class="form-control" value="<?php echo $table1->catopril_received; ?>"></td>
-									<td><input type="number" min="0" name="captopril_dispensed" class="form-control" value="<?php echo $table1->catopril_dispensed; ?>"></td>
-									<td><input type="number" min="0" name="captopril_expired" class="form-control" value="<?php echo $table1->catopril_expired; ?>"></td>
-									<td><input type="number" min="0" name="captopril_end" class="form-control" value="<?php echo $table1->catopril_end; ?>"></td>
-									<td><input type="number" min="0" name="captopril_stock" class="form-control" value="<?php echo $table1->catopril_stock; ?>"></td>
+									<td><input type="number" min="0" name="captopril_begin" class="form-control" value="<?php echo $table1->captopril_begin; ?>"></td>
+									<td><input type="number" min="0" name="captopril_received" class="form-control" value="<?php echo $table1->captopril_received; ?>"></td>
+									<td><input type="number" min="0" name="captopril_dispensed" class="form-control" value="<?php echo $table1->captopril_dispensed; ?>"></td>
+									<td><input type="number" min="0" name="captopril_expired" class="form-control" value="<?php echo $table1->captopril_expired; ?>"></td>
+									<td><input type="number" min="0" name="captopril_end" class="form-control" value="<?php echo $table1->captopril_end; ?>"></td>
+									<td><input type="number" min="0" name="captopril_stock" class="form-control" value="<?php echo $table1->captopril_stock; ?>"></td>
                 </tr>
                 <tr>
                   <td>40</td>
