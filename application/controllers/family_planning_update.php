@@ -156,7 +156,7 @@ class family_planning_update extends CI_Controller
             $acceptors_prog_34 = $this->input->post('acceptors_prog_34');
             $acceptors_prog_35 = $this->input->post('acceptors_prog_35');
 
-            $this->family_planning_model->fetch_data1(
+            $this->family_planning_model->update_data1(
           $oral_contra_proges_accep,
             $oral_contra_proges_ppfp,
             $oral_contra_proges_stop,
@@ -281,7 +281,7 @@ class family_planning_update extends CI_Controller
             $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');
         } else {
-            $data['table1'] = $this->emergency_model->show_table1();
+            $data['table1'] = $this->family_planning_model->show_table1();
             $this->load->view('family_planning_update_view', $data);
         }
     }

@@ -35,7 +35,7 @@ class home_model extends CI_Model
               ->result();
     }
 
-    public function show_dates_fp()
+    public function show_dates_fp() 
     {
         return $this->db->select('date_family_planning')
               ->from('family_planning')

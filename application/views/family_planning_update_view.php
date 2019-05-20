@@ -225,11 +225,11 @@
               <tr>
                 <td>15</td>
                 <td class="left">Vasectomy</td>
-                <td><input type="number" min="0" name="vasectomy_accep" class="form-control" value="<?php echo $table1->vesectomy_accep; ?>"></td>
-                <td><input type="number" min="0" name="vasectomy_ppfp" class="form-control" value="<?php echo $table1->vesectomy_ppfp; ?>"></td>
-                <td><input type="number" min="0" name="vasectomy_users" class="form-control" value="<?php echo $table1->vesectomy_users; ?>"></td>
+                <td><input type="number" min="0" name="vasectomy_accep" class="form-control" value="<?php echo $table1->vasectomy_accep; ?>"></td>
+                <td><input type="number" min="0" name="vasectomy_ppfp" class="form-control" value="<?php echo $table1->vasectomy_ppfp; ?>"></td>
+                <td><input type="number" min="0" name="vasectomy_users" class="form-control" value="<?php echo $table1->vasectomy_users; ?>"></td>
                 <td class="grey"></td>
-                <td><input type="number" min="0" name="vasectomy_active" class="form-control" value="<?php echo $table1->vesectomy_active; ?>"></td>
+                <td><input type="number" min="0" name="vasectomy_active" class="form-control" value="<?php echo $table1->vasectomy_active; ?>"></td>
                 <td class="grey"></td>
                 <td class="grey"></td>
                 <td class="grey"></td>
@@ -310,6 +310,7 @@
               </tr>
             </tbody>
           </table>
+					<br>
     			<center><button type="submit">Validate</button></center>
     		</form>
     	</div>
@@ -321,40 +322,29 @@
   </body>
 </html>
 <script>
-	$('#A2').DataTable({
+	$('#A22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
 	    });
-	$('#B2').DataTable({
+	$('#B22').DataTable({
 		"bPaginate": false,
 	 	"bLengthChange": false,
 	 	"bInfo": false,
 	 	"searching": false
 	    });
-	$('#C2').DataTable({
+	$('#C22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
 	    });
-	$('#D2').DataTable({
+	$('#D22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
-	    });
-	$('#A3').DataTable({
-		"bPaginate": false,
-		"bLengthChange": false,
-		"bInfo": false,
-		"searching": false
-	    });
-	$('#B3').DataTable({
-		"bPaginate": false,
-		"bLengthChange": false,
-		"bInfo": false
 	    });
 	$('.dataTables_length').addClass('bs-select');
 </script>

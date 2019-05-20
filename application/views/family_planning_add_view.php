@@ -310,6 +310,7 @@
               </tr>
             </tbody>
           </table>
+					<br>
     			<center><button type="submit">Validate</button></center>
     		</form>
     	</div>
@@ -321,40 +322,29 @@
   </body>
 </html>
 <script>
-	$('#A2').DataTable({
+	$('#A22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
 	    });
-	$('#B2').DataTable({
+	$('#B22').DataTable({
 		"bPaginate": false,
 	 	"bLengthChange": false,
 	 	"bInfo": false,
 	 	"searching": false
 	    });
-	$('#C2').DataTable({
+	$('#C22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
 	    });
-	$('#D2').DataTable({
+	$('#D22').DataTable({
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bInfo": false,
 		"searching": false
-	    });
-	$('#A3').DataTable({
-		"bPaginate": false,
-		"bLengthChange": false,
-		"bInfo": false,
-		"searching": false
-	    });
-	$('#B3').DataTable({
-		"bPaginate": false,
-		"bLengthChange": false,
-		"bInfo": false
 	    });
 	$('.dataTables_length').addClass('bs-select');
 </script>

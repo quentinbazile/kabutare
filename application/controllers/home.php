@@ -67,6 +67,9 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('intensive_care')) {
                     redirect('intensive_care', 'refresh');
                 }
+                if ($this->home_model->check_service('nut_rehab')) {
+                    redirect('nut_rehab', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -117,6 +120,9 @@ class home extends CI_Controller
                 }
                 if ($this->home_model->check_service('intensive_care')) {
                     redirect('intensive_care_update', 'refresh');
+                }
+                if ($this->home_model->check_service('nut_rehab')) {
+                    redirect('nut_rehab_update', 'refresh');
                 }
             }
         } else {

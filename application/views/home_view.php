@@ -39,7 +39,7 @@
                        }
                     endforeach;
                 } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
-                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care')) {
+                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care') || $this->home_model->check_service('nut_rehab')) {
                     foreach ($dates_im as $d):
                                              if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
                                                  unset($array[$val]);
@@ -81,7 +81,7 @@
 								<option value="<?php echo $d->date_surgery; ?>"><?php echo date('d/m/Y', strtotime($d->date_surgery)); ?></option>
 							<?php endforeach;
                                 } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
-                                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care')) {
+                                          $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care') || $this->home_model->check_service('nut_rehab')) {
                                     foreach ($dates_im as $d):?>
 										<option value="<?php echo $d->date_hospitalization_bcde; ?>"><?php echo date('d/m/Y', strtotime($d->date_hospitalization_bcde)); ?></option>
 									<?php endforeach;

@@ -307,7 +307,6 @@ class family_planning_model extends CI_Model
     public function show_table1()
     {
         return $this->db->where('date_family_planning', $this->session->userdata('update_date'))
-                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Family_Planning')
                         ->row();
     }

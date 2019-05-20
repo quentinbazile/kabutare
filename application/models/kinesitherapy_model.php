@@ -1,5 +1,5 @@
 <?php
-class gbv_model extends CI_Model
+class kinesitherapy_model extends CI_Model
 {
     public function new_report()
     {

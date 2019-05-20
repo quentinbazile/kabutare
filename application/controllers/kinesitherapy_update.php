@@ -47,7 +47,7 @@ class kinesitherapy_update extends CI_Controller
             $audiology = $this->input->post('audiology');
             $speech_therapy = $this->input->post('speech_therapy');
 
-            $this->kinesitherapy_model->fetch_data1(
+            $this->kinesitherapy_model->update_data1(
           $nc5m,
             $nc5f,
             $nc19f,
@@ -69,7 +69,7 @@ class kinesitherapy_update extends CI_Controller
             $nc,
             $international
         );
-            $this->kinesitherapy_model->fetch_data2(
+            $this->kinesitherapy_model->update_data2(
               $physical_therapy,
               $audiology,
               $speech_therapy

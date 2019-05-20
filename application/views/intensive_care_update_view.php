@@ -216,8 +216,8 @@
   	          <tr>
   	            <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
   	            <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  	            <th colspan="6">Hospitalization<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  	            <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  	            <th colspan="4">Hospitalization<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  	            <th colspan="4">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
   	          </tr>
               <tr>
   	            <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
