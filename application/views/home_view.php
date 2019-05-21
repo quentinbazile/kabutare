@@ -57,7 +57,13 @@
                                                  unset($array[$val]);
                                              }
                     endforeach;
-                }else {
+                } elseif ($this->home_model->check_service('hr')) {
+                    foreach ($dates_hr as $d):
+                                             if (($val = array_search($d->date_staff, $array)) !== false) {
+                                                 unset($array[$val]);
+                                             }
+                    endforeach;
+                } else {
                     foreach ($dates as $date):
                        if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
                            unset($array[$val]);
@@ -95,9 +101,13 @@
                                     foreach ($dates_fp as $d):?>
 										<option value="<?php echo $d->date_family_planning; ?>"><?php echo date('d/m/Y', strtotime($d->date_family_planning)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('pharmacy')) {
+                                } elseif ($this->home_model->check_service('pharmacy')) {
                                     foreach ($dates_pharm as $d):?>
 										<option value="<?php echo $d->date_pharmacy; ?>"><?php echo date('d/m/Y', strtotime($d->date_pharmacy)); ?></option>
+									<?php endforeach;
+                                } elseif ($this->home_model->check_service('hr')) {
+                                    foreach ($dates_hr as $d):?>
+										<option value="<?php echo $d->date_staff; ?>"><?php echo date('d/m/Y', strtotime($d->date_staff)); ?></option>
 									<?php endforeach;
                                 } else {
                                     foreach ($dates as $date):?>

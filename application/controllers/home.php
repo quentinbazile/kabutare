@@ -79,6 +79,9 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('ncds')) {
                     redirect('ncds', 'refresh');
                 }
+                if ($this->home_model->check_service('hr')) {
+                    redirect('hr', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -142,6 +145,9 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('ncds')) {
                     redirect('ncds_update', 'refresh');
                 }
+                if ($this->home_model->check_service('hr')) {
+                    redirect('hr_update', 'refresh');
+                }
             }
         } else {
             $data['dates'] = $this->home_model->show_dates();
@@ -149,6 +155,7 @@ class home extends CI_Controller
             $data['dates_im'] = $this->home_model->show_dates_im();
             $data['dates_fp'] = $this->home_model->show_dates_fp();
             $data['dates_pharm'] = $this->home_model->show_dates_pharm();
+            $data['dates_hr'] = $this->home_model->show_dates_hr();
             $this->load->view('home_view', $data);
         }
     }

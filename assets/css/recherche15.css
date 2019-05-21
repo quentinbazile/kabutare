@@ -162,6 +162,10 @@ td {
   min-width: 385px;
 }
 
+.cat {
+  min-width: 200px;
+}
+
 .grey {
   background-color: rgba(185, 185, 185, 1);
 }

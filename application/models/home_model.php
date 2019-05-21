@@ -55,6 +55,16 @@ class home_model extends CI_Model
               ->result();
     }
 
+    public function show_dates_hr()
+    {
+        return $this->db->select('date_staff')
+              ->from('Staff')
+              ->where('date_staff >', date('Y-m-d', strtotime('-5 days')))
+              ->where('date_staff <=', date('Y-m-d'))
+              ->get()
+              ->result();
+    }
+
     public function check_service($service)
     {
         $this->db->select('*')
