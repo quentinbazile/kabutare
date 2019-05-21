@@ -44,72 +44,72 @@
 				          <tr>
                     <td>1</td>
 				            <td class="left">Number of beds</td>
-				            <td><input type="number" min="0" name="e_beds" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_beds" class="form-control"></td>
 				          </tr>
 				          <tr>
                     <td>2</td>
 				            <td class="left">Present at the beginning of the month</td>
-				            <td><input type="number" min="0" name="e_present_start" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_present_start" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>3</td>
 				            <td class="left">Admissions during the month of wich</td>
-				            <td><input type="number" min="0" name="e_admissions" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_admissions" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>3.1</td>
 				            <td class="left">Referred from the Health Center</td>
-				            <td><input type="number" min="0" name="e_referred" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_referred" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>3.2</td>
 				            <td class="left">Non-referred patients</td>
-				            <td><input type="number" min="0" name="e_no_referred" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_no_referred" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4</td>
 				            <td class="left">Discharges during the month of which</td>
-				            <td><input type="number" min="0" name="e_discharges" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_discharges" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4.1</td>
 				            <td class="left">Authorized/Cured</td>
-				            <td><input type="number" min="0" name="e_authorized" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_authorized" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4.2</td>
 				            <td class="left">Abandoned</td>
-				            <td><input type="number" min="0" name="e_abandoned" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_abandoned" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4.3</td>
 				            <td class="left">Deaths</td>
-				            <td><input type="number" min="0" name="e_deaths" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_deaths" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4.4</td>
 				            <td class="left">Referred</td>
-				            <td><input type="number" min="0" name="e_dis_referred" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_dis_referred" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>4.5</td>
 				            <td class="left">Counter-referred</td>
-				            <td><input type="number" min="0" name="e_counter" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_counter" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>5</td>
 				            <td class="left">Present at the end of the month</td>
-				            <td><input type="number" min="0" name="e_present_end" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_present_end" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>6</td>
 				            <td class="left">Total hospitalization days for discharged patients</td>
-				            <td><input type="number" min="0" name="e_total" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_total" class="form-control"></td>
 				          </tr>
                   <tr>
                     <td>7</td>
 				            <td class="left">Actual hospitalization days</td>
-				            <td><input type="number" min="0" name="e_actual" class="form-control"></td>
+				            <td><input type="number" min="0" name="n_actual" class="form-control"></td>
 				          </tr>
 				        </tbody>
 				      </table>

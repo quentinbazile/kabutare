@@ -16,22 +16,22 @@ class internal_medicine_update extends CI_Controller
     public function fetch()
     {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('e_beds', '"e_beds"', 'numeric');
+        $this->form_validation->set_rules('im_beds', '"im_beds"', 'numeric');
         if ($this->form_validation->run()) {
-            $e_beds = $this->input->post('e_beds');
-            $e_present_start = $this->input->post('e_present_start');
-            $e_admissions = $this->input->post('e_admissions');
-            $e_referred = $this->input->post('e_referred');
-            $e_no_referred = $this->input->post('e_no_referred');
-            $e_discharges = $this->input->post('e_discharges');
-            $e_authorized = $this->input->post('e_authorized');
-            $e_abandoned = $this->input->post('e_abandoned');
-            $e_deaths = $this->input->post('e_deaths');
-            $e_dis_referred = $this->input->post('e_dis_referred');
-            $e_counter = $this->input->post('e_counter');
-            $e_present_end = $this->input->post('e_present_end');
-            $e_total = $this->input->post('e_total');
-            $e_actual = $this->input->post('e_actual');
+            $im_beds = $this->input->post('im_beds');
+            $im_present_start = $this->input->post('im_present_start');
+            $im_admissions = $this->input->post('im_admissions');
+            $im_referred = $this->input->post('im_referred');
+            $im_no_referred = $this->input->post('im_no_referred');
+            $im_discharges = $this->input->post('im_discharges');
+            $im_authorized = $this->input->post('im_authorized');
+            $im_abandoned = $this->input->post('im_abandoned');
+            $im_deaths = $this->input->post('im_deaths');
+            $im_dis_referred = $this->input->post('im_dis_referred');
+            $im_counter = $this->input->post('im_counter');
+            $im_present_end = $this->input->post('im_present_end');
+            $im_total = $this->input->post('im_total');
+            $im_actual = $this->input->post('im_actual');
 
             $hosp_19m = $this->input->post('hosp_19m');
             $hosp_19f = $this->input->post('hosp_19f');
@@ -452,20 +452,20 @@ class internal_medicine_update extends CI_Controller
             $cancer_deaths20f = $this->input->post('cancer_deaths20f');
 
             $this->internal_medicine_model->update_data1(
-              $e_beds,
-              $e_present_start,
-              $e_admissions,
-              $e_referred,
-              $e_no_referred,
-              $e_discharges,
-              $e_authorized,
-              $e_abandoned,
-              $e_deaths,
-              $e_dis_referred,
-              $e_counter,
-              $e_present_end,
-              $e_total,
-              $e_actual
+              $im_beds,
+              $im_present_start,
+              $im_admissions,
+              $im_referred,
+              $im_no_referred,
+              $im_discharges,
+              $im_authorized,
+              $im_abandoned,
+              $im_deaths,
+              $im_dis_referred,
+              $im_counter,
+              $im_present_end,
+              $im_total,
+              $im_actual
                 );
             $this->internal_medicine_model->update_data2(
                   $hosp_19m,

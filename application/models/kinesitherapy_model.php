@@ -73,9 +73,6 @@ class kinesitherapy_model extends CI_Model
       $speech_therapy,
       $num_rapport
     ) {
-      $this->db->where('date_physiotherapy', $this->session->userdata('add_date'));
-      $q = $this->db->get('Physiotherapy');
-      if ($q->num_rows() == 0) {
         return $this->db->set(array(
           'physical_therapy' => $physical_therapy,
           'audiology' => $audiology,
@@ -85,17 +82,6 @@ class kinesitherapy_model extends CI_Model
     ))
             ->set('date_physiotherapy', $this->session->userdata('add_date'))
             ->insert('Physiotherapy');
-          } else {
-              $this->db->set(array(
-                'physical_therapy' => $physical_therapy,
-                'audiology' => $audiology,
-                'speech_therapy' => $speech_therapy,
-
-            'num_rapport' => $num_rapport
-          ))
-          ->where('date_physiotherapy', $this->session->userdata('add_date'));
-        return $this->db->update('Physiotherapy');
-      }
     }
 
     public function show_table1()

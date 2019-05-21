@@ -134,9 +134,6 @@ class family_planning_model extends CI_Model
       $acceptors_prog_35,
       $num_rapport
     ) {
-        $this->db->where('date_hospitalization_a', $this->session->userdata('add_date'));
-        $q = $this->db->get('Hospitalization_a');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'oral_contra_proges_accep' => $oral_contra_proges_accep,
           'oral_contra_proges_ppfp' => $oral_contra_proges_ppfp,
@@ -280,28 +277,7 @@ class family_planning_model extends CI_Model
     ))
             ->set('date_family_planning', $this->session->userdata('add_date'))
             ->insert('Family_Planning');
-        } else {
-            $this->db->set(array(
-                'e_beds' => $e_beds,
-                'e_present_start' => $e_present_start,
-                'e_admissions' => $e_admissions,
-                'e_referred' => $e_referred,
-                'e_no_referred' => $e_no_referred,
-                'e_discharges' => $e_discharges,
-                'e_authorized' => $e_authorized,
-                'e_abandoned' => $e_abandoned,
-                'e_deaths' => $e_deaths,
-                'e_dis_referred' => $e_dis_referred,
-                'e_counter' => $e_counter,
-                'e_present_end' => $e_present_end,
-                'e_total' => $e_total,
-                'e_actual' => $e_actual,
 
-            'num_rapport' => $num_rapport
-          ))
-          ->where('date_family_planning', $this->session->userdata('add_date'));
-            return $this->db->update('Family_Planning');
-        }
     }
 
     public function show_table1()

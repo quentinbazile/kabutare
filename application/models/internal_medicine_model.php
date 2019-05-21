@@ -12,40 +12,40 @@ class internal_medicine_model extends CI_Model
     }
 
     public function fetch_data1(
-      $e_beds,
-      $e_present_start,
-      $e_admissions,
-      $e_referred,
-      $e_no_referred,
-      $e_discharges,
-      $e_authorized,
-      $e_abandoned,
-      $e_deaths,
-      $e_dis_referred,
-      $e_counter,
-      $e_present_end,
-      $e_total,
-      $e_actual,
+      $im_beds,
+      $im_present_start,
+      $im_admissions,
+      $im_referred,
+      $im_no_referred,
+      $im_discharges,
+      $im_authorized,
+      $im_abandoned,
+      $im_deaths,
+      $im_dis_referred,
+      $im_counter,
+      $im_present_end,
+      $im_total,
+      $im_actual,
       $num_rapport
     ) {
         $this->db->where('date_hospitalization_a', $this->session->userdata('add_date'));
         $q = $this->db->get('Hospitalization_a');
         if ($q->num_rows() == 0) {
             return $this->db->set(array(
-          'e_beds' => $e_beds,
-          'e_present_start' => $e_present_start,
-          'e_admissions' => $e_admissions,
-          'e_referred' => $e_referred,
-          'e_no_referred' => $e_no_referred,
-          'e_discharges' => $e_discharges,
-          'e_authorized' => $e_authorized,
-          'e_abandoned' => $e_abandoned,
-          'e_deaths' => $e_deaths,
-          'e_dis_referred' => $e_dis_referred,
-          'e_counter' => $e_counter,
-          'e_present_end' => $e_present_end,
-          'e_total' => $e_total,
-          'e_actual' => $e_actual,
+          'im_beds' => $im_beds,
+          'im_present_start' => $im_present_start,
+          'im_admissions' => $im_admissions,
+          'im_referred' => $im_referred,
+          'im_no_referred' => $im_no_referred,
+          'im_discharges' => $im_discharges,
+          'im_authorized' => $im_authorized,
+          'im_abandoned' => $im_abandoned,
+          'im_deaths' => $im_deaths,
+          'im_dis_referred' => $im_dis_referred,
+          'im_counter' => $im_counter,
+          'im_present_end' => $im_present_end,
+          'im_total' => $im_total,
+          'im_actual' => $im_actual,
 
       'num_rapport' => $num_rapport
     ))
@@ -53,24 +53,22 @@ class internal_medicine_model extends CI_Model
             ->insert('Hospitalization_a');
         } else {
             $this->db->set(array(
-                'e_beds' => $e_beds,
-                'e_present_start' => $e_present_start,
-                'e_admissions' => $e_admissions,
-                'e_referred' => $e_referred,
-                'e_no_referred' => $e_no_referred,
-                'e_discharges' => $e_discharges,
-                'e_authorized' => $e_authorized,
-                'e_abandoned' => $e_abandoned,
-                'e_deaths' => $e_deaths,
-                'e_dis_referred' => $e_dis_referred,
-                'e_counter' => $e_counter,
-                'e_present_end' => $e_present_end,
-                'e_total' => $e_total,
-                'e_actual' => $e_actual,
-
-            'num_rapport' => $num_rapport
+                'im_beds' => $im_beds,
+                'im_present_start' => $im_present_start,
+                'im_admissions' => $im_admissions,
+                'im_referred' => $im_referred,
+                'im_no_referred' => $im_no_referred,
+                'im_discharges' => $im_discharges,
+                'im_authorized' => $im_authorized,
+                'im_abandoned' => $im_abandoned,
+                'im_deaths' => $im_deaths,
+                'im_dis_referred' => $im_dis_referred,
+                'im_counter' => $im_counter,
+                'im_present_end' => $im_present_end,
+                'im_total' => $im_total,
+                'im_actual' => $im_actual
           ))
-          ->where('date_hospitalization_a', $this->session->userdata('add_date'));
+          ->where('date_hospitalization_a', $this->session->userdata('update_date'));
             return $this->db->update('Hospitalization_a');
         }
     }
@@ -943,35 +941,35 @@ class internal_medicine_model extends CI_Model
     }
 
     public function update_data1(
-      $e_beds,
-      $e_present_start,
-      $e_admissions,
-      $e_referred,
-      $e_no_referred,
-      $e_discharges,
-      $e_authorized,
-      $e_abandoned,
-      $e_deaths,
-      $e_dis_referred,
-      $e_counter,
-      $e_present_end,
-      $e_total,
-      $e_actual
+      $im_beds,
+      $im_present_start,
+      $im_admissions,
+      $im_referred,
+      $im_no_referred,
+      $im_discharges,
+      $im_authorized,
+      $im_abandoned,
+      $im_deaths,
+      $im_dis_referred,
+      $im_counter,
+      $im_present_end,
+      $im_total,
+      $im_actual
     ) {
-        $this->db->set('e_beds', $e_beds);
-        $this->db->set('e_present_start', $e_present_start);
-        $this->db->set('e_admissions', $e_admissions);
-        $this->db->set('e_referred', $e_referred);
-        $this->db->set('e_no_referred', $e_no_referred);
-        $this->db->set('e_discharges', $e_discharges);
-        $this->db->set('e_authorized', $e_authorized);
-        $this->db->set('e_abandoned', $e_abandoned);
-        $this->db->set('e_deaths', $e_deaths);
-        $this->db->set('e_dis_referred', $e_dis_referred);
-        $this->db->set('e_counter', $e_counter);
-        $this->db->set('e_present_end', $e_present_end);
-        $this->db->set('e_total', $e_total);
-        $this->db->set('e_actual', $e_actual);
+        $this->db->set('im_beds', $im_beds);
+        $this->db->set('im_present_start', $im_present_start);
+        $this->db->set('im_admissions', $im_admissions);
+        $this->db->set('im_referred', $im_referred);
+        $this->db->set('im_no_referred', $im_no_referred);
+        $this->db->set('im_discharges', $im_discharges);
+        $this->db->set('im_authorized', $im_authorized);
+        $this->db->set('im_abandoned', $im_abandoned);
+        $this->db->set('im_deaths', $im_deaths);
+        $this->db->set('im_dis_referred', $im_dis_referred);
+        $this->db->set('im_counter', $im_counter);
+        $this->db->set('im_present_end', $im_present_end);
+        $this->db->set('im_total', $im_total);
+        $this->db->set('im_actual', $im_actual);
 
         $this->db->where('date_hospitalization_a', $this->session->userdata('update_date'));
         return $this->db->update('Hospitalization_a');

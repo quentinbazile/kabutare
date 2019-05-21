@@ -16,29 +16,41 @@ class nut_rehab_update extends CI_Controller
     public function fetch()
     {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('e_beds', '"e_beds"', 'numeric');
+        $this->form_validation->set_rules('nr_beds', '"nr_beds"', 'numeric');
         if ($this->form_validation->run()) {
 
-            $e_beds = $this->input->post('e_beds');
-            $e_present_start = $this->input->post('e_present_start');
-            $e_admissions = $this->input->post('e_admissions');
-            $e_referred = $this->input->post('e_referred');
-            $e_no_referred = $this->input->post('e_no_referred');
-            $e_discharges = $this->input->post('e_discharges');
-            $e_authorized = $this->input->post('e_authorized');
-            $e_abandoned = $this->input->post('e_abandoned');
-            $e_deaths = $this->input->post('e_deaths');
-            $e_dis_referred = $this->input->post('e_dis_referred');
-            $e_counter = $this->input->post('e_counter');
-            $e_present_end = $this->input->post('e_present_end');
-            $e_total = $this->input->post('e_total');
-            $e_actual = $this->input->post('e_actual');
+            $nr_beds = $this->input->post('nr_beds');
+            $nr_present_start = $this->input->post('nr_present_start');
+            $nr_admissions = $this->input->post('nr_admissions');
+            $nr_referred = $this->input->post('nr_referred');
+            $nr_no_referred = $this->input->post('nr_no_referred');
+            $nr_discharges = $this->input->post('nr_discharges');
+            $nr_authorized = $this->input->post('nr_authorized');
+            $nr_abandoned = $this->input->post('nr_abandoned');
+            $nr_deaths = $this->input->post('nr_deaths');
+            $nr_dis_referred = $this->input->post('nr_dis_referred');
+            $nr_counter = $this->input->post('nr_counter');
+            $nr_present_end = $this->input->post('nr_present_end');
+            $nr_total = $this->input->post('nr_total');
+            $nr_actual = $this->input->post('nr_actual');
 
             $hosp_1m = $this->input->post('hosp_1m');
             $hosp_1f = $this->input->post('hosp_1f');
+            $hosp_4m = $this->input->post('hosp_4m');
+            $hosp_4f = $this->input->post('hosp_4f');
+            $hosp_19m = $this->input->post('hosp_19m');
+            $hosp_19f = $this->input->post('hosp_19f');
+            $hosp_20m = $this->input->post('hosp_20m');
+            $hosp_20f = $this->input->post('hosp_20f');
 
             $deaths_1m = $this->input->post('deaths_1m');
             $deaths_1f = $this->input->post('deaths_1f');
+            $deaths_4m = $this->input->post('deaths_4m');
+            $deaths_4f = $this->input->post('deaths_4f');
+            $deaths_19m = $this->input->post('deaths_19m');
+            $deaths_19f = $this->input->post('deaths_19f');
+            $deaths_20m = $this->input->post('deaths_20m');
+            $deaths_20f = $this->input->post('deaths_20f');
 
             $insured_dis = $this->input->post('insured_dis');
             $no_paying_dis = $this->input->post('no_paying_dis');
@@ -164,27 +176,39 @@ class nut_rehab_update extends CI_Controller
             $present_end_lw = $this->input->post('present_end_lw');
 
             $this->nut_rehab_model->update_data1(
-              $e_beds,
-              $e_present_start,
-              $e_admissions,
-              $e_referred,
-              $e_no_referred,
-              $e_discharges,
-              $e_authorized,
-              $e_abandoned,
-              $e_deaths,
-              $e_dis_referred,
-              $e_counter,
-              $e_present_end,
-              $e_total,
-              $e_actual
+              $nr_beds,
+              $nr_present_start,
+              $nr_admissions,
+              $nr_referred,
+              $nr_no_referred,
+              $nr_discharges,
+              $nr_authorized,
+              $nr_abandoned,
+              $nr_deaths,
+              $nr_dis_referred,
+              $nr_counter,
+              $nr_present_end,
+              $nr_total,
+              $nr_actual
             );
             $this->nut_rehab_model->update_data2(
               $hosp_1m,
               $hosp_1f,
+              $hosp_4m,
+              $hosp_4f,
+              $hosp_19m,
+              $hosp_19f,
+              $hosp_20m,
+              $hosp_20f,
 
               $deaths_1m,
               $deaths_1f,
+              $deaths_4m,
+              $deaths_4f,
+              $deaths_19m,
+              $deaths_19f,
+              $deaths_20m,
+              $deaths_20f,
 
               $insured_dis,
               $no_paying_dis,

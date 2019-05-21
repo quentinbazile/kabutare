@@ -44,72 +44,72 @@
 				          <tr>
                     <td>1</td>
 				            <td class="left">Number of beds</td>
-				            <td><input type="number" min="0" name="e_beds" class="form-control" value="<?php echo $table1->e_beds; ?>"></td>
+				            <td><input type="number" min="0" name="nr_beds" class="form-control" value="<?php echo $table1->nr_beds; ?>"></td>
 				          </tr>
 				          <tr>
                     <td>2</td>
 				            <td class="left">Present at the beginning of the month</td>
-				            <td><input type="number" min="0" name="e_present_start" class="form-control" value="<?php echo $table1->e_present_start; ?>"></td>
+				            <td><input type="number" min="0" name="nr_present_start" class="form-control" value="<?php echo $table1->nr_present_start; ?>"></td>
 				          </tr>
                   <tr>
                     <td>3</td>
 				            <td class="left">Admissions during the month of wich</td>
-				            <td><input type="number" min="0" name="e_admissions" class="form-control" value="<?php echo $table1->e_admissions; ?>"></td>
+				            <td><input type="number" min="0" name="nr_admissions" class="form-control" value="<?php echo $table1->nr_admissions; ?>"></td>
 				          </tr>
                   <tr>
                     <td>3.1</td>
 				            <td class="left">Referred from the Health Center</td>
-				            <td><input type="number" min="0" name="e_referred" class="form-control" value="<?php echo $table1->e_referred; ?>"></td>
+				            <td><input type="number" min="0" name="nr_referred" class="form-control" value="<?php echo $table1->nr_referred; ?>"></td>
 				          </tr>
                   <tr>
                     <td>3.2</td>
 				            <td class="left">Non-referred patients</td>
-				            <td><input type="number" min="0" name="e_no_referred" class="form-control" value="<?php echo $table1->e_no_referred; ?>"></td>
+				            <td><input type="number" min="0" name="nr_no_referred" class="form-control" value="<?php echo $table1->nr_no_referred; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4</td>
 				            <td class="left">Discharges during the month of which</td>
-				            <td><input type="number" min="0" name="e_discharges" class="form-control" value="<?php echo $table1->e_discharges; ?>"></td>
+				            <td><input type="number" min="0" name="nr_discharges" class="form-control" value="<?php echo $table1->nr_discharges; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4.1</td>
 				            <td class="left">Authorized/Cured</td>
-				            <td><input type="number" min="0" name="e_authorized" class="form-control" value="<?php echo $table1->e_authorized; ?>"></td>
+				            <td><input type="number" min="0" name="nr_authorized" class="form-control" value="<?php echo $table1->nr_authorized; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4.2</td>
 				            <td class="left">Abandoned</td>
-				            <td><input type="number" min="0" name="e_abandoned" class="form-control" value="<?php echo $table1->e_abandoned; ?>"></td>
+				            <td><input type="number" min="0" name="nr_abandoned" class="form-control" value="<?php echo $table1->nr_abandoned; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4.3</td>
 				            <td class="left">Deaths</td>
-				            <td><input type="number" min="0" name="e_deaths" class="form-control" value="<?php echo $table1->e_deaths; ?>"></td>
+				            <td><input type="number" min="0" name="nr_deaths" class="form-control" value="<?php echo $table1->nr_deaths; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4.4</td>
 				            <td class="left">Referred</td>
-				            <td><input type="number" min="0" name="e_dis_referred" class="form-control" value="<?php echo $table1->e_dis_referred; ?>"></td>
+				            <td><input type="number" min="0" name="nr_dis_referred" class="form-control" value="<?php echo $table1->nr_dis_referred; ?>"></td>
 				          </tr>
                   <tr>
                     <td>4.5</td>
 				            <td class="left">Counter-referred</td>
-				            <td><input type="number" min="0" name="e_counter" class="form-control" value="<?php echo $table1->e_counter; ?>"></td>
+				            <td><input type="number" min="0" name="nr_counter" class="form-control" value="<?php echo $table1->nr_counter; ?>"></td>
 				          </tr>
                   <tr>
                     <td>5</td>
 				            <td class="left">Present at the end of the month</td>
-				            <td><input type="number" min="0" name="e_present_end" class="form-control" value="<?php echo $table1->e_present_end; ?>"></td>
+				            <td><input type="number" min="0" name="nr_present_end" class="form-control" value="<?php echo $table1->nr_present_end; ?>"></td>
 				          </tr>
                   <tr>
                     <td>6</td>
 				            <td class="left">Total hospitalization days for discharged patients</td>
-				            <td><input type="number" min="0" name="e_total" class="form-control" value="<?php echo $table1->e_total; ?>"></td>
+				            <td><input type="number" min="0" name="nr_total" class="form-control" value="<?php echo $table1->nr_total; ?>"></td>
 				          </tr>
                   <tr>
                     <td>7</td>
 				            <td class="left">Actual hospitalization days</td>
-				            <td><input type="number" min="0" name="e_actual" class="form-control" value="<?php echo $table1->e_actual; ?>"></td>
+				            <td><input type="number" min="0" name="nr_actual" class="form-control" value="<?php echo $table1->nr_actual; ?>"></td>
 				          </tr>
 				        </tbody>
 				      </table>
@@ -181,9 +181,18 @@
 		            <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th colspan="2">Age < 1<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+								<th colspan="2">Age 1 to 4<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+								<th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+								<th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		          </tr>
 		          <tr>
 		            <th>M</th>
+		            <th>F</th>
+								<th>M</th>
+		            <th>F</th>
+								<th>M</th>
+		            <th>F</th>
+								<th>M</th>
 		            <th>F</th>
 							</tr>
 		        </thead>
@@ -193,12 +202,24 @@
 		            <td class="left">Hospitalized</td>
 		            <td><input type="number" min="0" name="hosp_1m" class="form-control" value="<?php echo $table2->hosp_1m; ?>"></td>
 		            <td><input type="number" min="0" name="hosp_1f" class="form-control" value="<?php echo $table2->hosp_1f; ?>"></td>
+								<td><input type="number" min="0" name="hosp_4m" class="form-control" value="<?php echo $table2->hosp_4m; ?>"></td>
+								<td><input type="number" min="0" name="hosp_4f" class="form-control" value="<?php echo $table2->hosp_4f; ?>"></td>
+								<td><input type="number" min="0" name="hosp_19m" class="form-control" value="<?php echo $table2->hosp_19m; ?>"></td>
+								<td><input type="number" min="0" name="hosp_19f" class="form-control" value="<?php echo $table2->hosp_19f; ?>"></td>
+								<td><input type="number" min="0" name="hosp_20m" class="form-control" value="<?php echo $table2->hosp_20m; ?>"></td>
+								<td><input type="number" min="0" name="hosp_20f" class="form-control" value="<?php echo $table2->hosp_20f; ?>"></td>
 		          </tr>
 		          <tr>
 		            <td class="center">2</td>
 		            <td class="left">Deaths</td>
 		            <td><input type="number" min="0" name="deaths_1m" class="form-control" value="<?php echo $table2->deaths_1m; ?>"></td>
 		            <td><input type="number" min="0" name="deaths_1f" class="form-control" value="<?php echo $table2->deaths_1f; ?>"></td>
+								<td><input type="number" min="0" name="deaths_4m" class="form-control" value="<?php echo $table2->deaths_4m; ?>"></td>
+								<td><input type="number" min="0" name="deaths_4f" class="form-control" value="<?php echo $table2->deaths_4f; ?>"></td>
+								<td><input type="number" min="0" name="deaths_19m" class="form-control" value="<?php echo $table2->deaths_19m; ?>"></td>
+								<td><input type="number" min="0" name="deaths_19f" class="form-control" value="<?php echo $table2->deaths_19f; ?>"></td>
+								<td><input type="number" min="0" name="deaths_20m" class="form-control" value="<?php echo $table2->deaths_20m; ?>"></td>
+								<td><input type="number" min="0" name="deaths_20f" class="form-control" value="<?php echo $table2->deaths_20f; ?>"></td>
 		          </tr>
 		        </tbody>
 		      </table>

@@ -290,9 +290,6 @@ class pharmacy_model extends CI_Model
       $insulin_l_stock,
       $num_rapport
     ) {
-        $this->db->where('date_pharmacy', $this->session->userdata('add_date'));
-        $q = $this->db->get('Pharmacy');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'amoxycillin_begin' => $amoxycillin_begin,
           'amoxycillin_received' => $amoxycillin_received,
@@ -574,7 +571,7 @@ class pharmacy_model extends CI_Model
     ))
             ->set('date_pharmacy', $this->session->userdata('add_date'))
             ->insert('pharmacy');
-        }
+        
     }
 
     public function show_table1()

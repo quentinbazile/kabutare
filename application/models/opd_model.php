@@ -506,7 +506,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_consultation_abcde', $this->session->userdata('add_date'))
             ->insert('Consultation_abcde');
-        
+
     }
 
     public function fetch_data2(
@@ -689,10 +689,7 @@ class opd_model extends CI_Model
       $other_teeth_40f,
       $num_rapport
     ) {
-        $this->db->where('date_consultation_fg', $this->session->userdata('add_date'));
-        $q = $this->db->get('Consultation_fg');
-        if ($q->num_rows() == 0) {
-            return $this->db->set(array(
+        return $this->db->set(array(
           'fractures_5m' => $fractures_5m,
           'fractures_5f' => $fractures_5f,
           'fractures_19m' => $fractures_19m,
@@ -875,7 +872,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
-        }
+
     }
 
     public function fetch_data3(
@@ -985,10 +982,7 @@ class opd_model extends CI_Model
       $other_neuro_nc40f,
       $num_rapport
     ) {
-        $this->db->where('date_consultation_fg', $this->session->userdata('add_date'));
-        $q = $this->db->get('Consultation_fg');
-        if ($q->num_rows() == 0) {
-            return $this->db->set(array(
+        return $this->db->set(array(
           'anxiety_nc19m' => $anxiety_nc19m,
           'anxiety_nc19f' => $anxiety_nc19f,
           'anxiety_nc39m' => $anxiety_nc39m,
@@ -1098,7 +1092,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_mental_health', $this->session->userdata('add_date'))
             ->insert('Mental_Health');
-        }
+
     }
 
     public function fetch_data4(
@@ -1387,7 +1381,150 @@ class opd_model extends CI_Model
     ))
             ->set('date_chronic_disease', $this->session->userdata('add_date'))
             ->insert('Chronic_Disease');
+        } else {
+            $this->db->set(array(
+              'hyper_nc19m' => $hyper_nc19m,
+              'hyper_nc19f' => $hyper_nc19f,
+              'hyper_nc39m' => $hyper_nc39m,
+              'hyper_nc39f' => $hyper_nc39f,
+              'hyper_nc40m' => $hyper_nc40m,
+              'hyper_nc40f' => $hyper_nc40f,
+
+              'asth_int_nc19m' => $asth_int_nc19m,
+              'asth_int_nc19f' => $asth_int_nc19f,
+              'asth_int_nc39m' => $asth_int_nc39m,
+              'asth_int_nc39f' => $asth_int_nc39f,
+              'asth_int_nc40m' => $asth_int_nc40m,
+              'asth_int_nc40f' => $asth_int_nc40f,
+
+              'asth_mild_nc19m' => $asth_mild_nc19m,
+              'asth_mild_nc19f' => $asth_mild_nc19f,
+              'asth_mild_nc39m' => $asth_mild_nc39m,
+              'asth_mild_nc39f' => $asth_mild_nc39f,
+              'asth_mild_nc40m' => $asth_mild_nc40m,
+              'asth_mild_nc40f' => $asth_mild_nc40f,
+
+              'asth_mod_nc19m' => $asth_mod_nc19m,
+              'asth_mod_nc19f' => $asth_mod_nc19f,
+              'asth_mod_nc39m' => $asth_mod_nc39m,
+              'asth_mod_nc39f' => $asth_mod_nc39f,
+              'asth_mod_nc40m' => $asth_mod_nc40m,
+              'asth_mod_nc40f' => $asth_mod_nc40f,
+
+              'asth_sev_nc19m' => $asth_sev_nc19m,
+              'asth_sev_nc19f' => $asth_sev_nc19f,
+              'asth_sev_nc39m' => $asth_sev_nc39m,
+              'asth_sev_nc39f' => $asth_sev_nc39f,
+              'asth_sev_nc40m' => $asth_sev_nc40m,
+              'asth_sev_nc40f' => $asth_sev_nc40f,
+
+              'bronch_nc19m' => $bronch_nc19m,
+              'bronch_nc19f' => $bronch_nc19f,
+              'bronch_nc39m' => $bronch_nc39m,
+              'bronch_nc39f' => $bronch_nc39f,
+              'bronch_nc40m' => $bronch_nc40m,
+              'bronch_nc40f' => $bronch_nc40f,
+
+              'other_pulm_nc19m' => $other_pulm_nc19m,
+              'other_pulm_nc19f' => $other_pulm_nc19f,
+              'other_pulm_nc39m' => $other_pulm_nc39m,
+              'other_pulm_nc39f' => $other_pulm_nc39f,
+              'other_pulm_nc40m' => $other_pulm_nc40m,
+              'other_pulm_nc40f' => $other_pulm_nc40f,
+
+              'diab1_nc19m' => $diab1_nc19m,
+              'diab1_nc19f' => $diab1_nc19f,
+              'diab1_nc39m' => $diab1_nc39m,
+              'diab1_nc39f' => $diab1_nc39f,
+              'diab1_nc40m' => $diab1_nc40m,
+              'diab1_nc40f' => $diab1_nc40f,
+
+              'diab2_nc19m' => $diab2_nc19m,
+              'diab2_nc19f' => $diab2_nc19f,
+              'diab2_nc39m' => $diab2_nc39m,
+              'diab2_nc39f' => $diab2_nc39f,
+              'diab2_nc40m' => $diab2_nc40m,
+              'diab2_nc40f' => $diab2_nc40f,
+
+              'diab_gest_nc19m' => $diab_gest_nc19m,
+              'diab_gest_nc19f' => $diab_gest_nc19f,
+              'diab_gest_nc39m' => $diab_gest_nc39m,
+              'diab_gest_nc39f' => $diab_gest_nc39f,
+              'diab_gest_nc40m' => $diab_gest_nc40m,
+              'diab_gest_nc40f' => $diab_gest_nc40f,
+
+              'breast_nc19f' => $breast_nc19f,
+              'breast_nc39f' => $breast_nc39f,
+              'breast_nc40f' => $breast_nc40f,
+
+              'cervical_nc19m' => $cervical_nc19m,
+              'cervical_nc19f' => $cervical_nc19f,
+              'cervical_nc39m' => $cervical_nc39m,
+              'cervical_nc39f' => $cervical_nc39f,
+              'cervical_nc40m' => $cervical_nc40m,
+              'cervical_nc40f' => $cervical_nc40f,
+
+              'lympho_nc19m' => $lympho_nc19m,
+              'lympho_nc19f' => $lympho_nc19f,
+              'lympho_nc39m' => $lympho_nc39m,
+              'lympho_nc39f' => $lympho_nc39f,
+              'lympho_nc40m' => $lympho_nc40m,
+              'lympho_nc40f' => $lympho_nc40f,
+
+              'leuca_nc19m' => $leuca_nc19m,
+              'leuca_nc19f' => $leuca_nc19f,
+              'leuca_nc39m' => $leuca_nc39m,
+              'leuca_nc39f' => $leuca_nc39f,
+              'leuca_nc40m' => $leuca_nc40m,
+              'leuca_nc40f' => $leuca_nc40f,
+
+              'colon_nc19m' => $colon_nc19m,
+              'colon_nc19f' => $colon_nc19f,
+              'colon_nc39m' => $colon_nc39m,
+              'colon_nc39f' => $colon_nc39f,
+              'colon_nc40m' => $colon_nc40m,
+              'colon_nc40f' => $colon_nc40f,
+
+              'kaposi_nc19m' => $kaposi_nc19m,
+              'kaposi_nc19f' => $kaposi_nc19f,
+              'kaposi_nc39m' => $kaposi_nc39m,
+              'kaposi_nc39f' => $kaposi_nc39f,
+              'kaposi_nc40m' => $kaposi_nc40m,
+              'kaposi_nc40f' => $kaposi_nc40f,
+
+              'retino_nc19m' => $retino_nc19m,
+              'retino_nc19f' => $retino_nc19f,
+              'retino_nc39m' => $retino_nc39m,
+              'retino_nc39f' => $retino_nc39f,
+              'retino_nc40m' => $retino_nc40m,
+              'retino_nc40f' => $retino_nc40f,
+
+              'nephro_nc19m' => $nephro_nc19m,
+              'nephro_nc19f' => $nephro_nc19f,
+              'nephro_nc39m' => $nephro_nc39m,
+              'nephro_nc39f' => $nephro_nc39f,
+              'nephro_nc40m' => $nephro_nc40m,
+              'nephro_nc40f' => $nephro_nc40f,
+
+              'ovarian_nc19f' => $ovarian_nc19f,
+              'ovarian_nc39f' => $ovarian_nc39f,
+              'ovarian_nc40f' => $ovarian_nc40f,
+
+              'prostate_nc19m' => $prostate_nc19m,
+              'prostate_nc39m' => $prostate_nc39m,
+              'prostate_nc40m' => $prostate_nc40m,
+
+              'cancer_others_nc19m' => $cancer_others_nc19m,
+              'cancer_others_nc19f' => $cancer_others_nc19f,
+              'cancer_others_nc39m' => $cancer_others_nc39m,
+              'cancer_others_nc39f' => $cancer_others_nc39f,
+              'cancer_others_nc40m' => $cancer_others_nc40m,
+              'cancer_others_nc40f' => $cancer_others_nc40f
+          ))
+          ->where('date_chronic_disease', $this->session->userdata('update_date'));
+            return $this->db->update('Chronic_Disease');
         }
+
     }
 
     public function fetch_data5(
@@ -1582,7 +1719,103 @@ class opd_model extends CI_Model
     ))
             ->set('date_other_cardiovascular', $this->session->userdata('add_date'))
             ->insert('Other_Cardiovascular');
+        } else {
+            $this->db->set(array(
+              'cardio_nc19m' => $cardio_nc19m,
+              'cardio_nc19f' => $cardio_nc19f,
+              'cardio_nc39m' => $cardio_nc39m,
+              'cardio_nc39f' => $cardio_nc39f,
+              'cardio_nc40m' => $cardio_nc40m,
+              'cardio_nc40f' => $cardio_nc40f,
+
+              'stroke_nc19m' => $stroke_nc19m,
+              'stroke_nc19f' => $stroke_nc19f,
+              'stroke_nc39m' => $stroke_nc39m,
+              'stroke_nc39f' => $stroke_nc39f,
+              'stroke_nc40m' => $stroke_nc40m,
+              'stroke_nc40f' => $stroke_nc40f,
+
+              'rheumatic_nc19m' => $rheumatic_nc19m,
+              'rheumatic_nc19f' => $rheumatic_nc19f,
+              'rheumatic_nc39m' => $rheumatic_nc39m,
+              'rheumatic_nc39f' => $rheumatic_nc39f,
+              'rheumatic_nc40m' => $rheumatic_nc40m,
+              'rheumatic_nc40f' => $rheumatic_nc40f,
+
+              'cong_nc19m' => $cong_nc19m,
+              'cong_nc19f' => $cong_nc19f,
+              'cong_nc39m' => $cong_nc39m,
+              'cong_nc39f' => $cong_nc39f,
+              'cong_nc40m' => $cong_nc40m,
+              'cong_nc40f' => $cong_nc40f,
+
+              'coronary_nc19m' => $coronary_nc19m,
+              'coronary_nc19f' => $coronary_nc19f,
+              'coronary_nc39m' => $coronary_nc39m,
+              'coronary_nc39f' => $coronary_nc39f,
+              'coronary_nc40m' => $coronary_nc40m,
+              'coronary_nc40f' => $coronary_nc40f,
+
+              'peri_nc19m' => $peri_nc19m,
+              'peri_nc19f' => $peri_nc19f,
+              'peri_nc39m' => $peri_nc39m,
+              'peri_nc39f' => $peri_nc39f,
+              'peri_nc40m' => $peri_nc40m,
+              'peri_nc40f' => $peri_nc40f,
+
+              'heart_nc19m' => $heart_nc19m,
+              'heart_nc19f' => $heart_nc19f,
+              'heart_nc39m' => $heart_nc39m,
+              'heart_nc39f' => $heart_nc39f,
+              'heart_nc40m' => $heart_nc40m,
+              'heart_nc40f' => $heart_nc40f,
+
+              'other_cardio_nc19m' => $other_cardio_nc19m,
+              'other_cardio_nc19f' => $other_cardio_nc19f,
+              'other_cardio_nc39m' => $other_cardio_nc39m,
+              'other_cardio_nc39f' => $other_cardio_nc39f,
+              'other_cardio_nc40m' => $other_cardio_nc40m,
+              'other_cardio_nc40f' => $other_cardio_nc40f,
+
+              'post_heart_nc19m' => $post_heart_nc19m,
+              'post_heart_nc19f' => $post_heart_nc19f,
+              'post_heart_nc39m' => $post_heart_nc39m,
+              'post_heart_nc39f' => $post_heart_nc39f,
+              'post_heart_nc40m' => $post_heart_nc40m,
+              'post_heart_nc40f' => $post_heart_nc40f,
+
+              'renal_nc19m' => $renal_nc19m,
+              'renal_nc19f' => $renal_nc19f,
+              'renal_nc39m' => $renal_nc39m,
+              'renal_nc39f' => $renal_nc39f,
+              'renal_nc40m' => $renal_nc40m,
+              'renal_nc40f' => $renal_nc40f,
+
+              'other_chronic_nc19m' => $other_chronic_nc19m,
+              'other_chronic_nc19f' => $other_chronic_nc19f,
+              'other_chronic_nc39m' => $other_chronic_nc39m,
+              'other_chronic_nc39f' => $other_chronic_nc39f,
+              'other_chronic_nc40m' => $other_chronic_nc40m,
+              'other_chronic_nc40f' => $other_chronic_nc40f,
+
+              'thyroid_nc19m' => $thyroid_nc19m,
+              'thyroid_nc19f' => $thyroid_nc19f,
+              'thyroid_nc39m' => $thyroid_nc39m,
+              'thyroid_nc39f' => $thyroid_nc39f,
+              'thyroid_nc40m' => $thyroid_nc40m,
+              'thyroid_nc40f' => $thyroid_nc40f,
+
+              'other_endo_nc19m' => $other_endo_nc19m,
+              'other_endo_nc19f' => $other_endo_nc19f,
+              'other_endo_nc39m' => $other_endo_nc39m,
+              'other_endo_nc39f' => $other_endo_nc39f,
+              'other_endo_nc40m' => $other_endo_nc40m,
+              'other_endo_nc40f' => $other_endo_nc40f,
+          ))
+          ->where('date_other_cardiovascular', $this->session->userdata('update_date'));
+            return $this->db->update('Other_Cardiovascular');
         }
+
     }
 
     public function fetch_data6(
@@ -1743,9 +1976,6 @@ class opd_model extends CI_Model
       $other_unintent_d40f,
       $num_rapport
     ) {
-        $this->db->where('date_injury', $this->session->userdata('add_date'));
-        $q = $this->db->get('Injury');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'road_nc19m' => $road_nc19m,
           'road_nc19f' => $road_nc19f,
@@ -1907,7 +2137,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_injury', $this->session->userdata('add_date'))
             ->insert('Injury');
-        }
+
     }
 
     public function fetch_data7(
@@ -1942,9 +2172,6 @@ class opd_model extends CI_Model
       $death_20f,
       $num_rapport
     ) {
-        $this->db->where('date_palliative_care', $this->session->userdata('add_date'));
-        $q = $this->db->get('Palliative_Care');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'oc_19m' => $oc_19m,
           'oc_19f' => $oc_19f,
@@ -1980,7 +2207,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_palliative_care', $this->session->userdata('add_date'))
             ->insert('Palliative_Care');
-        }
+
     }
 
     public function fetch_data8(
@@ -1993,9 +2220,6 @@ class opd_model extends CI_Model
       $disability,
       $num_rapport
     ) {
-        $this->db->where('date_community_checkup', $this->session->userdata('add_date'));
-        $q = $this->db->get('community_checkup');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'annual_chekup' => $annual_chekup,
           'cardio' => $cardio,
@@ -2009,7 +2233,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_community_checkup', $this->session->userdata('add_date'))
             ->insert('community_checkup');
-        }
+
     }
 
     public function fetch_data9(
@@ -2024,9 +2248,6 @@ class opd_model extends CI_Model
       $biopsies,
       $num_rapport
     ) {
-        $this->db->where('date_cancer_screening', $this->session->userdata('add_date'));
-        $q = $this->db->get('cancer_screening');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
           'cervical' => $cervical,
           'cervical_viap' => $cervical_viap,
@@ -2042,7 +2263,7 @@ class opd_model extends CI_Model
     ))
             ->set('date_cancer_screening', $this->session->userdata('add_date'))
             ->insert('cancer_screening');
-        }
+
     }
 
     public function show_table1()

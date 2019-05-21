@@ -125,9 +125,6 @@ class ophthalmology_model extends CI_Model
         $eye_pb_40f,
         $num_rapport
     ) {
-        $this->db->where('date_consultation_fg', $this->session->userdata('add_date'));
-        $q = $this->db->get('Consultation_fg');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
 
           'glaucoma_19m' => $glaucoma_19m,
@@ -197,76 +194,6 @@ class ophthalmology_model extends CI_Model
         ))
             ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
-        } else {
-            $this->db->set(array(
-            'glaucoma_19m' => $glaucoma_19m,
-            'glaucoma_19f' => $glaucoma_19f,
-            'glaucoma_39m' => $glaucoma_39m,
-            'glaucoma_39f' => $glaucoma_39f,
-            'glaucoma_40m' => $glaucoma_40m,
-            'glaucoma_40f' => $glaucoma_40f,
-
-            'cataract_19m' => $cataract_19m,
-            'cataract_19f' => $cataract_19f,
-            'cataract_39m' => $cataract_39m,
-            'cataract_39f' => $cataract_39f,
-            'cataract_40m' => $cataract_40m,
-            'cataract_40f' => $cataract_40f,
-
-            'refrac_error_19m' => $refrac_error_19m,
-            'refrac_error_19f' => $refrac_error_19f,
-            'refrac_error_39m' => $refrac_error_39m,
-            'refrac_error_39f' => $refrac_error_39f,
-            'refrac_error_40m' => $refrac_error_40m,
-            'refrac_error_40f' => $refrac_error_40f,
-
-            'diab_retino_19m' => $diab_retino_19m,
-            'diab_retino_19f' => $diab_retino_19f,
-            'diab_retino_39m' => $diab_retino_39m,
-            'diab_retino_39f' => $diab_retino_39f,
-            'diab_retino_40m' => $diab_retino_40m,
-            'diab_retino_40f' => $diab_retino_40f,
-
-            'conjunctivitis_19m' => $conjunctivitis_19m,
-            'conjunctivitis_19f' => $conjunctivitis_19f,
-            'conjunctivitis_39m' => $conjunctivitis_39m,
-            'conjunctivitis_39f' => $conjunctivitis_39f,
-            'conjunctivitis_40m' => $conjunctivitis_40m,
-            'conjunctivitis_40f' => $conjunctivitis_40f,
-
-            'pinguecula_19m' => $pinguecula_19m,
-            'pinguecula_19f' => $pinguecula_19f,
-            'pinguecula_39m' => $pinguecula_39m,
-            'pinguecula_39f' => $pinguecula_39f,
-            'pinguecula_40m' => $pinguecula_40m,
-            'pinguecula_40f' => $pinguecula_40f,
-
-            'uveitis_19m' => $uveitis_19m,
-            'uveitis_19f' => $uveitis_19f,
-            'uveitis_39m' => $uveitis_39m,
-            'uveitis_39f' => $uveitis_39f,
-            'uveitis_40m' => $uveitis_40m,
-            'uveitis_40f' => $uveitis_40f,
-
-            'eye_trauma_19m' => $eye_trauma_19m,
-            'eye_trauma_19f' => $eye_trauma_19f,
-            'eye_trauma_39m' => $eye_trauma_39m,
-            'eye_trauma_39f' => $eye_trauma_39f,
-            'eye_trauma_40m' => $eye_trauma_40m,
-            'eye_trauma_40f' => $eye_trauma_40f,
-
-            'eye_pb_19m' => $eye_pb_19m,
-            'eye_pb_19f' => $eye_pb_19f,
-            'eye_pb_39m' => $eye_pb_39m,
-            'eye_pb_39f' => $eye_pb_39f,
-            'eye_pb_40m' => $eye_pb_40m,
-            'eye_pb_40f' => $eye_pb_40f,
-
-            'num_rapport' => $num_rapport
-          ))
-              ->where('date_consultation_fg', $this->session->userdata('add_date'));
-            return $this->db->update('Consultation_fg');
-        }
     }
 
     public function show_table1()

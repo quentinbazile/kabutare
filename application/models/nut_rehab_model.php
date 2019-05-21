@@ -12,40 +12,40 @@ class nut_rehab_model extends CI_Model
     }
 
     public function fetch_data1(
-      $e_beds,
-      $e_present_start,
-      $e_admissions,
-      $e_referred,
-      $e_no_referred,
-      $e_discharges,
-      $e_authorized,
-      $e_abandoned,
-      $e_deaths,
-      $e_dis_referred,
-      $e_counter,
-      $e_present_end,
-      $e_total,
-      $e_actual,
+      $nr_beds,
+      $nr_present_start,
+      $nr_admissions,
+      $nr_referred,
+      $nr_no_referred,
+      $nr_discharges,
+      $nr_authorized,
+      $nr_abandoned,
+      $nr_deaths,
+      $nr_dis_referred,
+      $nr_counter,
+      $nr_present_end,
+      $nr_total,
+      $nr_actual,
       $num_rapport
     ) {
       $this->db->where('date_hospitalization_a', $this->session->userdata('add_date'));
       $q = $this->db->get('Hospitalization_a');
       if ($q->num_rows() == 0) {
         return $this->db->set(array(
-          'e_beds' => $e_beds,
-          'e_present_start' => $e_present_start,
-          'e_admissions' => $e_admissions,
-          'e_referred' => $e_referred,
-          'e_no_referred' => $e_no_referred,
-          'e_discharges' => $e_discharges,
-          'e_authorized' => $e_authorized,
-          'e_abandoned' => $e_abandoned,
-          'e_deaths' => $e_deaths,
-          'e_dis_referred' => $e_dis_referred,
-          'e_counter' => $e_counter,
-          'e_present_end' => $e_present_end,
-          'e_total' => $e_total,
-          'e_actual' => $e_actual,
+          'nr_beds' => $nr_beds,
+          'nr_present_start' => $nr_present_start,
+          'nr_admissions' => $nr_admissions,
+          'nr_referred' => $nr_referred,
+          'nr_no_referred' => $nr_no_referred,
+          'nr_discharges' => $nr_discharges,
+          'nr_authorized' => $nr_authorized,
+          'nr_abandoned' => $nr_abandoned,
+          'nr_deaths' => $nr_deaths,
+          'nr_dis_referred' => $nr_dis_referred,
+          'nr_counter' => $nr_counter,
+          'nr_present_end' => $nr_present_end,
+          'nr_total' => $nr_total,
+          'nr_actual' => $nr_actual,
 
       'num_rapport' => $num_rapport
     ))
@@ -53,24 +53,24 @@ class nut_rehab_model extends CI_Model
             ->insert('Hospitalization_a');
           } else {
               $this->db->set(array(
-                'e_beds' => $e_beds,
-                'e_present_start' => $e_present_start,
-                'e_admissions' => $e_admissions,
-                'e_referred' => $e_referred,
-                'e_no_referred' => $e_no_referred,
-                'e_discharges' => $e_discharges,
-                'e_authorized' => $e_authorized,
-                'e_abandoned' => $e_abandoned,
-                'e_deaths' => $e_deaths,
-                'e_dis_referred' => $e_dis_referred,
-                'e_counter' => $e_counter,
-                'e_present_end' => $e_present_end,
-                'e_total' => $e_total,
-                'e_actual' => $e_actual,
+                'nr_beds' => $nr_beds,
+                'nr_present_start' => $nr_present_start,
+                'nr_admissions' => $nr_admissions,
+                'nr_referred' => $nr_referred,
+                'nr_no_referred' => $nr_no_referred,
+                'nr_discharges' => $nr_discharges,
+                'nr_authorized' => $nr_authorized,
+                'nr_abandoned' => $nr_abandoned,
+                'nr_deaths' => $nr_deaths,
+                'nr_dis_referred' => $nr_dis_referred,
+                'nr_counter' => $nr_counter,
+                'nr_present_end' => $nr_present_end,
+                'nr_total' => $nr_total,
+                'nr_actual' => $nr_actual,
 
             'num_rapport' => $num_rapport
           ))
-          ->where('date_hospitalization_a', $this->session->userdata('add_date'));
+          ->where('date_hospitalization_a', $this->session->userdata('update_date'));
         return $this->db->update('Hospitalization_a');
       }
     }
@@ -78,9 +78,21 @@ class nut_rehab_model extends CI_Model
     public function fetch_data2(
       $hosp_1m,
       $hosp_1f,
+      $hosp_4m,
+      $hosp_4f,
+      $hosp_19m,
+      $hosp_19f,
+      $hosp_20m,
+      $hosp_20f,
 
       $deaths_1m,
       $deaths_1f,
+      $deaths_4m,
+      $deaths_4f,
+      $deaths_19m,
+      $deaths_19f,
+      $deaths_20m,
+      $deaths_20f,
 
       $insured_dis,
       $no_paying_dis,
@@ -97,9 +109,21 @@ class nut_rehab_model extends CI_Model
         return $this->db->set(array(
           'hosp_1m' => $hosp_1m,
           'hosp_1f' => $hosp_1f,
+          'hosp_4m' => $hosp_4m,
+          'hosp_4f' => $hosp_4f,
+          'hosp_19m' => $hosp_19m,
+          'hosp_19f' => $hosp_19f,
+          'hosp_20m' => $hosp_20m,
+          'hosp_20f' => $hosp_20f,
 
           'deaths_1m' => $deaths_1m,
           'deaths_1f' => $deaths_1f,
+          'deaths_4m' => $deaths_4m,
+          'deaths_4f' => $deaths_4f,
+          'deaths_19m' => $deaths_19m,
+          'deaths_19f' => $deaths_19f,
+          'deaths_20m' => $deaths_20m,
+          'deaths_20f' => $deaths_20f,
 
           'insured_dis' => $insured_dis,
           'no_paying_dis' => $no_paying_dis,
@@ -420,8 +444,21 @@ class nut_rehab_model extends CI_Model
     public function update_data2(
       $hosp_1m,
       $hosp_1f,
+      $hosp_4m,
+      $hosp_4f,
+      $hosp_19m,
+      $hosp_19f,
+      $hosp_20m,
+      $hosp_20f,
+
       $deaths_1m,
       $deaths_1f,
+      $deaths_4m,
+      $deaths_4f,
+      $deaths_19m,
+      $deaths_19f,
+      $deaths_20m,
+      $deaths_20f,
 
       $insured_dis,
       $no_paying_dis,
@@ -436,9 +473,21 @@ class nut_rehab_model extends CI_Model
     ) {
         $this->db->set('hosp_1m', $hosp_1m);
         $this->db->set('hosp_1f', $hosp_1f);
+        $this->db->set('hosp_4m', $hosp_4m);
+        $this->db->set('hosp_4f', $hosp_4f);
+        $this->db->set('hosp_19m', $hosp_19m);
+        $this->db->set('hosp_19f', $hosp_19f);
+        $this->db->set('hosp_20m', $hosp_20m);
+        $this->db->set('hosp_20f', $hosp_20f);
 
         $this->db->set('deaths_1m', $deaths_1m);
         $this->db->set('deaths_1f', $deaths_1f);
+        $this->db->set('deaths_4m', $deaths_4m);
+        $this->db->set('deaths_4f', $deaths_4f);
+        $this->db->set('deaths_19m', $deaths_19m);
+        $this->db->set('deaths_19f', $deaths_19f);
+        $this->db->set('deaths_20m', $deaths_20m);
+        $this->db->set('deaths_20f', $deaths_20f);
 
         $this->db->set('insured_dis', $insured_dis);
         $this->db->set('no_paying_dis', $no_paying_dis);

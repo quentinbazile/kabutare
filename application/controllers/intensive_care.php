@@ -16,22 +16,22 @@ class intensive_care extends CI_Controller
     public function fetch()
     {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('e_beds', '"e_beds"', 'numeric');
+        $this->form_validation->set_rules('ic_beds', '"ic_beds"', 'numeric');
         if ($this->form_validation->run()) {
-            $e_beds = $this->input->post('e_beds');
-            $e_present_start = $this->input->post('e_present_start');
-            $e_admissions = $this->input->post('e_admissions');
-            $e_referred = $this->input->post('e_referred');
-            $e_no_referred = $this->input->post('e_no_referred');
-            $e_discharges = $this->input->post('e_discharges');
-            $e_authorized = $this->input->post('e_authorized');
-            $e_abandoned = $this->input->post('e_abandoned');
-            $e_deaths = $this->input->post('e_deaths');
-            $e_dis_referred = $this->input->post('e_dis_referred');
-            $e_counter = $this->input->post('e_counter');
-            $e_present_end = $this->input->post('e_present_end');
-            $e_total = $this->input->post('e_total');
-            $e_actual = $this->input->post('e_actual');
+            $ic_beds = $this->input->post('ic_beds');
+            $ic_present_start = $this->input->post('ic_present_start');
+            $ic_admissions = $this->input->post('ic_admissions');
+            $ic_referred = $this->input->post('ic_referred');
+            $ic_no_referred = $this->input->post('ic_no_referred');
+            $ic_discharges = $this->input->post('ic_discharges');
+            $ic_authorized = $this->input->post('ic_authorized');
+            $ic_abandoned = $this->input->post('ic_abandoned');
+            $ic_deaths = $this->input->post('ic_deaths');
+            $ic_dis_referred = $this->input->post('ic_dis_referred');
+            $ic_counter = $this->input->post('ic_counter');
+            $ic_present_end = $this->input->post('ic_present_end');
+            $ic_total = $this->input->post('ic_total');
+            $ic_actual = $this->input->post('ic_actual');
 
             $hosp_19m = $this->input->post('hosp_19m');
             $hosp_19f = $this->input->post('hosp_19f');
@@ -456,20 +456,20 @@ class intensive_care extends CI_Controller
             $num_rapport = $this->intensive_care_model->num_rapport()->num_rapport;
 
             $this->intensive_care_model->fetch_data1(
-              $e_beds,
-              $e_present_start,
-              $e_admissions,
-              $e_referred,
-              $e_no_referred,
-              $e_discharges,
-              $e_authorized,
-              $e_abandoned,
-              $e_deaths,
-              $e_dis_referred,
-              $e_counter,
-              $e_present_end,
-              $e_total,
-              $e_actual,
+              $ic_beds,
+              $ic_present_start,
+              $ic_admissions,
+              $ic_referred,
+              $ic_no_referred,
+              $ic_discharges,
+              $ic_authorized,
+              $ic_abandoned,
+              $ic_deaths,
+              $ic_dis_referred,
+              $ic_counter,
+              $ic_present_end,
+              $ic_total,
+              $ic_actual,
               $num_rapport
                 );
                 $this->intensive_care_model->fetch_data2(
