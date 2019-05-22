@@ -189,3 +189,7 @@ h4 {
   text-decoration-style: double;
   text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.pad {
+  padding-left: 10px;
+}
