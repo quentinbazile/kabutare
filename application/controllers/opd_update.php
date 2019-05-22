@@ -959,10 +959,10 @@ class opd_update extends CI_Controller
           $nc_20m = $this->input->post('nc_20m');
           $nc_20f = $this->input->post('nc_20f');
 
-          $4time_19m = $this->input->post('4time_19m');
-          $4time_19f = $this->input->post('4time_19f');
-          $4time_20m = $this->input->post('4time_20m');
-          $4time_20f = $this->input->post('4time_20f');
+          $time_19m = $this->input->post('time_19m');
+          $time_19f = $this->input->post('time_19f');
+          $time_20m = $this->input->post('time_20m');
+          $time_20f = $this->input->post('time_20f');
 
           $morphine_19m = $this->input->post('morphine_19m');
           $morphine_19f = $this->input->post('morphine_19f');
@@ -1913,10 +1913,10 @@ class opd_update extends CI_Controller
             $nc_20m,
             $nc_20f,
 
-            $4time_19m,
-            $4time_19f,
-            $4time_20m,
-            $4time_20f,
+            $time_19m,
+            $time_19f,
+            $time_20m,
+            $time_20f,
 
             $morphine_19m,
             $morphine_19f,

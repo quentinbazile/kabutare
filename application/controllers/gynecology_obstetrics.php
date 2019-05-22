@@ -173,6 +173,24 @@ class gynecology_obstetrics extends CI_Controller
           $complications_higher_level = $this->input->post('complications_higher_level');
           $observation_24 = $this->input->post('observation_24');
 
+          $pnc1_m = $this->input->post('pnc1_m');
+          $pnc1_nb = $this->input->post('pnc1_nb');
+          $anemia_pnc1_m = $this->input->post('anemia_pnc1_m');
+          $iron_pnc1_m = $this->input->post('iron_pnc1_m');
+          $muac_pnc1_m = $this->input->post('muac_pnc1_m');
+          $malnourished_pnc1_m = $this->input->post('malnourished_pnc1_m');
+          $pnc2_m = $this->input->post('pnc2_m');
+          $pnc2_nb = $this->input->post('pnc2_nb');
+          $pnc3_m = $this->input->post('pnc3_m');
+          $pnc3_nb = $this->input->post('pnc3_nb');
+          $anemia_pnc3_m = $this->input->post('anemia_pnc3_m');
+          $anemia_pnc_m = $this->input->post('anemia_pnc_m');
+          $complications_m = $this->input->post('complications_m');
+          $complications_nb = $this->input->post('complications_nb');
+          $referrals_m = $this->input->post('referrals_m');
+          $referrals_nb = $this->input->post('referrals_nb');
+          $ppfp_m = $this->input->post('ppfp_m');
+
             $this->gynecology_obstetrics_model->new_report();
 
             $num_rapport = $this->gynecology_obstetrics_model->num_rapport()->num_rapport;
@@ -343,6 +361,27 @@ class gynecology_obstetrics extends CI_Controller
               $fistula_treatment,
               $complications_higher_level,
               $observation_24,
+              $num_rapport
+            );
+
+            $this->gynecology_obstetrics_model->fetch_data6(
+              $pnc1_m,
+              $pnc1_nb,
+              $anemia_pnc1_m,
+              $iron_pnc1_m,
+              $muac_pnc1_m,
+              $malnourished_pnc1_m,
+              $pnc2_m,
+              $pnc2_nb,
+              $pnc3_m,
+              $pnc3_nb,
+              $anemia_pnc3_m,
+              $anemia_pnc_m,
+              $complications_m,
+              $complications_nb,
+              $referrals_m,
+              $referrals_nb,
+              $ppfp_m,
               $num_rapport
             );
 

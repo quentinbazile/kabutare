@@ -2151,10 +2151,10 @@ class opd_model extends CI_Model
       $nc_20m,
       $nc_20f,
 
-      $4time_19m,
-      $4time_19f,
-      $4time_20m,
-      $4time_20f,
+      $time_19m,
+      $time_19f,
+      $time_20m,
+      $time_20f,
 
       $morphine_19m,
       $morphine_19f,
@@ -2183,10 +2183,10 @@ class opd_model extends CI_Model
           'nc_20m' => $nc_20m,
           'nc_20f' => $nc_20f,
 
-          '4time_19m' => $4time_19m,
-          '4time_19f' => $4time_19f,
-          '4time_20m' => $4time_20m,
-          '4time_20f' => $4time_20f,
+          '4time_19m' => $time_19m,
+          '4time_19f' => $time_19f,
+          '4time_20m' => $time_20m,
+          '4time_20f' => $time_20f,
 
           'morphine_19m' => $morphine_19m,
           'morphine_19f' => $morphine_19f,
@@ -4203,10 +4203,10 @@ class opd_model extends CI_Model
       $nc_20m,
       $nc_20f,
 
-      $4time_19m,
-      $4time_19f,
-      $4time_20m,
-      $4time_20f,
+      $time_19m,
+      $time_19f,
+      $time_20m,
+      $time_20f,
 
       $morphine_19m,
       $morphine_19f,
@@ -4233,10 +4233,10 @@ class opd_model extends CI_Model
         $this->db->set('nc_20m', $nc_20m);
         $this->db->set('nc_20f', $nc_20f);
 
-        $this->db->set('4time_19m', $4time_19m);
-        $this->db->set('4time_19f', $4time_19f);
-        $this->db->set('4time_20m', $4time_20m);
-        $this->db->set('4time_20f', $4time_20f);
+        $this->db->set('4time_19m', $time_19m);
+        $this->db->set('4time_19f', $time_19f);
+        $this->db->set('4time_20m', $time_20m);
+        $this->db->set('4time_20f', $time_20f);
 
         $this->db->set('morphine_19m', $morphine_19m);
         $this->db->set('morphine_19f', $morphine_19f);

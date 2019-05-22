@@ -82,6 +82,12 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('hr')) {
                     redirect('hr', 'refresh');
                 }
+                if ($this->home_model->check_service('gynecology')) {
+                    redirect('gynecology_obstetrics', 'refresh');
+                }
+                if ($this->home_model->check_service('laboratory')) {
+                    redirect('laboratory', 'refresh');
+                }
             }
         } elseif (isset($_POST['btn_update'])) {
             $this->form_validation->set_rules('update', '"update"', 'required');
@@ -148,6 +154,12 @@ class home extends CI_Controller
                 if ($this->home_model->check_service('hr')) {
                     redirect('hr_update', 'refresh');
                 }
+                if ($this->home_model->check_service('gynecology')) {
+                    redirect('gynecology_obstetrics_update', 'refresh');
+                }
+                if ($this->home_model->check_service('laboratory')) {
+                    redirect('laboratory_update', 'refresh');
+                }
             }
         } else {
             $data['dates'] = $this->home_model->show_dates();
@@ -156,6 +168,7 @@ class home extends CI_Controller
             $data['dates_fp'] = $this->home_model->show_dates_fp();
             $data['dates_pharm'] = $this->home_model->show_dates_pharm();
             $data['dates_hr'] = $this->home_model->show_dates_hr();
+            $data['dates_lab'] = $this->home_model->show_dates_lab();
             $this->load->view('home_view', $data);
         }
     }

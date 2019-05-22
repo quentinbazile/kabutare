@@ -1771,10 +1771,10 @@
 	                <tr>
 					          <td>3</td>
 					          <td class="left">Patients seen by the palliative care team at the least four time this month</td>
-					          <td><input type="number" min="0" name="4time_19m" class="form-control"></td>
-					          <td><input type="number" min="0" name="4time_19f" class="form-control"></td>
-					          <td><input type="number" min="0" name="4time_20m" class="form-control"></td>
-					          <td><input type="number" min="0" name="4time_20f" class="form-control"></td>
+					          <td><input type="number" min="0" name="time_19m" class="form-control"></td>
+					          <td><input type="number" min="0" name="time_19f" class="form-control"></td>
+					          <td><input type="number" min="0" name="time_20m" class="form-control"></td>
+					          <td><input type="number" min="0" name="time_20f" class="form-control"></td>
 					        </tr>
 	                <tr>
 					          <td>4</td>

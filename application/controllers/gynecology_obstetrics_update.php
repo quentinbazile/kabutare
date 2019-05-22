@@ -173,7 +173,25 @@ class gynecology_obstetrics_update extends CI_Controller
           $complications_higher_level = $this->input->post('complications_higher_level');
           $observation_24 = $this->input->post('observation_24');
 
-            $this->gynecology_obstetrics_model->fetch_data1(
+          $pnc1_m = $this->input->post('pnc1_m');
+          $pnc1_nb = $this->input->post('pnc1_nb');
+          $anemia_pnc1_m = $this->input->post('anemia_pnc1_m');
+          $iron_pnc1_m = $this->input->post('iron_pnc1_m');
+          $muac_pnc1_m = $this->input->post('muac_pnc1_m');
+          $malnourished_pnc1_m = $this->input->post('malnourished_pnc1_m');
+          $pnc2_m = $this->input->post('pnc2_m');
+          $pnc2_nb = $this->input->post('pnc2_nb');
+          $pnc3_m = $this->input->post('pnc3_m');
+          $pnc3_nb = $this->input->post('pnc3_nb');
+          $anemia_pnc3_m = $this->input->post('anemia_pnc3_m');
+          $anemia_pnc_m = $this->input->post('anemia_pnc_m');
+          $complications_m = $this->input->post('complications_m');
+          $complications_nb = $this->input->post('complications_nb');
+          $referrals_m = $this->input->post('referrals_m');
+          $referrals_nb = $this->input->post('referrals_nb');
+          $ppfp_m = $this->input->post('ppfp_m');
+
+            $this->gynecology_obstetrics_model->update_data1(
               $go_beds,
               $go_present_start,
               $go_admissions,
@@ -190,7 +208,7 @@ class gynecology_obstetrics_update extends CI_Controller
               $go_actual
             );
 
-            $this->gynecology_obstetrics_model->fetch_data2(
+            $this->gynecology_obstetrics_model->update_data2(
               $hosp_19f,
               $hosp_20f,
               $deaths_19f,
@@ -208,7 +226,7 @@ class gynecology_obstetrics_update extends CI_Controller
               $work_inj_deaths
             );
 
-            $this->gynecology_obstetrics_model->fetch_data3(
+            $this->gynecology_obstetrics_model->update_data3(
               $complications_hos19,
               $complications_hos20,
               $complications_deaths19,
@@ -281,7 +299,7 @@ class gynecology_obstetrics_update extends CI_Controller
               $other_ind_obstet_deaths20
             );
 
-            $this->gynecology_obstetrics_model->fetch_data4(
+            $this->gynecology_obstetrics_model->update_data4(
               $intra_antibio,
               $mother_uterotonic,
               $manual_placenta,
@@ -293,7 +311,7 @@ class gynecology_obstetrics_update extends CI_Controller
               $women_w_obste_compli
             );
 
-            $this->gynecology_obstetrics_model->fetch_data5(
+            $this->gynecology_obstetrics_model->update_data5(
               $delive_total,
               $delive_eutocic,
               $delive_dystocic,
@@ -337,6 +355,26 @@ class gynecology_obstetrics_update extends CI_Controller
               $observation_24
             );
 
+            $this->gynecology_obstetrics_model->update_data6(
+              $pnc1_m,
+              $pnc1_nb,
+              $anemia_pnc1_m,
+              $iron_pnc1_m,
+              $muac_pnc1_m,
+              $malnourished_pnc1_m,
+              $pnc2_m,
+              $pnc2_nb,
+              $pnc3_m,
+              $pnc3_nb,
+              $anemia_pnc3_m,
+              $anemia_pnc_m,
+              $complications_m,
+              $complications_nb,
+              $referrals_m,
+              $referrals_nb,
+              $ppfp_m
+            );
+
             $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');
         } else {
@@ -345,7 +383,8 @@ class gynecology_obstetrics_update extends CI_Controller
           $data['table3'] = $this->gynecology_obstetrics_model->show_table3();
           $data['table4'] = $this->gynecology_obstetrics_model->show_table4();
           $data['table5'] = $this->gynecology_obstetrics_model->show_table5();
-            $this->load->view('gynecology_obstetrics_update_view');
+          $data['table6'] = $this->gynecology_obstetrics_model->show_table6();
+            $this->load->view('gynecology_obstetrics_update_view',$data);
         }
     }
 }

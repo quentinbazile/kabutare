@@ -476,7 +476,7 @@
 								<tr>
 			            <td>6</td>
 			            <td class="left">Delivery complicated by perineal tear (second-third-fourth degree)</td>
-			            <td><input type="number" min="0" name="delive_complicated" class="form-control" value="<?php echo $table5->delive_w_complicated; ?>"></td>
+			            <td><input type="number" min="0" name="delive_complicated" class="form-control" value="<?php echo $table5->delive_complicated; ?>"></td>
 			          </tr>
 								<tr>
 			            <td>7</td>
@@ -656,6 +656,92 @@
 			        </tbody>
 			      </table>
 						<br>
+						<h4>Postnatal care</h4>
+	      		<table id="A17" class="center">
+			        <thead>
+			          <tr>
+			            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th>Mother<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th>Newborn<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>1</td>
+			            <td class="left">PNC1 visits within 24 hours of birth</td>
+			            <td><input type="number" min="0" name="pnc1_m" class="form-control" value="<?php echo $table6->pnc1_m; ?>"></td>
+			            <td><input type="number" min="0" name="pnc1_nb" class="form-control" value="<?php echo $table6->pnc1_nb; ?>"></td>
+			          </tr>
+			          <tr>
+			            <td>2</td>
+			            <td class="left">Mothers screened for anemia during PNC1 visit</td>
+			            <td><input type="number" min="0" name="anemia_pnc1_m" class="form-control" value="<?php echo $table6->anemia_pnc1_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+			          <tr>
+			            <td>3</td>
+			            <td class="left">Mothers received iron/folic acid during PNC1 visit</td>
+			            <td><input type="number" min="0" name="iron_pnc1_m" class="form-control" value="<?php echo $table6->iron_pnc1_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+								<tr>
+			            <td>4</td>
+			            <td class="left">Mothers screened by MUAC for malnutrition during PNC1 visit</td>
+			            <td><input type="number" min="0" name="muac_pnc1_m" class="form-control" value="<?php echo $table6->muac_pnc1_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+								<tr>
+			            <td>5</td>
+			            <td class="left">Mothers malnourished (MUAC < 21 cm) during PNC1 visit</td>
+			            <td><input type="number" min="0" name="malnourished_pnc1_m" class="form-control" value="<?php echo $table6->malnourished_pnc1_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+								<tr>
+			            <td>6</td>
+			            <td class="left">PNC2 visits at 3rd day after birth</td>
+			            <td><input type="number" min="0" name="pnc2_m" class="form-control" value="<?php echo $table6->pnc2_m; ?>"></td>
+			            <td><input type="number" min="0" name="pnc2_nb" class="form-control" value="<?php echo $table6->pnc2_nb; ?>"></td>
+			          </tr>
+								<tr>
+			            <td>7</td>
+			            <td class="left">PNC3 visits between 7th and 14th day after birth</td>
+			            <td><input type="number" min="0" name="pnc3_m" class="form-control" value="<?php echo $table6->pnc3_m; ?>"></td>
+			            <td><input type="number" min="0" name="pnc3_nb" class="form-control" value="<?php echo $table6->pnc3_nb; ?>"></td>
+			          </tr>
+								<tr>
+			            <td>8</td>
+			            <td class="left">Screened for nemia during PNC3 visit</td>
+			            <td><input type="number" min="0" name="anemia_pnc3_m" class="form-control" value="<?php echo $table6->anemia_pnc3_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+								<tr>
+			            <td>9</td>
+			            <td class="left">Anemia (Hb < 9.5 gr/dl) detected during PNC visits (PNC1 and PNC3)</td>
+			            <td><input type="number" min="0" name="anemia_pnc_m" class="form-control" value="<?php echo $table6->anemia_pnc_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+								<tr>
+			            <td>10</td>
+			            <td class="left">Complications/denger signs detected during any PNC visit</td>
+			            <td><input type="number" min="0" name="complications_m" class="form-control" value="<?php echo $table6->complications_m; ?>"></td>
+			            <td><input type="number" min="0" name="complications_nb" class="form-control" value="<?php echo $table6->complications_nb; ?>"></td>
+			          </tr>
+								<tr>
+			            <td>11</td>
+			            <td class="left">Referrals done for complcations ar any visit</td>
+			            <td><input type="number" min="0" name="referrals_m" class="form-control" value="<?php echo $table6->referrals_m; ?>"></td>
+			            <td><input type="number" min="0" name="referrals_nb" class="form-control" value="<?php echo $table6->referrals_nb; ?>"></td>
+			          </tr>
+			          <tr>
+			            <td>12</td>
+			            <td class="left">Post-partum family planning (PPFP) within 6 weeks after delivery</td>
+			            <td><input type="number" min="0" name="ppfp_m" class="form-control" value="<?php echo $table6->ppfp_m; ?>"></td>
+									<td class="grey"></td>
+			          </tr>
+			        </tbody>
+			      </table>
+						<br>
 			      <center><button type="submit">Validate</button></center>
 					</div>
     		</form>
@@ -703,6 +789,11 @@
     "bInfo": false
       });
   $('#A16').DataTable({
+    "bPaginate": false,
+    "bLengthChange": false,
+    "bInfo": false
+      });
+	$('#A17').DataTable({
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false
