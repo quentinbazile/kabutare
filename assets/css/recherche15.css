@@ -191,5 +191,9 @@ h4 {
 }
 
 .pad {
-  padding-left: 10px;
+  text-indent: 3em;
+}
+
+.right {
+  text-align: right;
 }

@@ -82,8 +82,8 @@
 								<td><input type="number" min="0" name="malaria_t" class="form-control" value="<?php echo $table1->malaria_t; ?>"></td>
 		          </tr>
 							<tr>
-								<td><b>3</b></td>
-		            <td class="left"><b>Stools Samples Total</b></td>
+								<td>3</td>
+		            <td class="left">Stools Samples Total</td>
 								<td class="grey"></td>
 		            <td><input type="number" min="0" name="stools_n" class="form-control" value="<?php echo $table1->stools_n; ?>"></td>
 		            <td><input type="number" min="0" name="stools_t" class="form-control" value="<?php echo $table1->stools_t; ?>"></td>
@@ -153,7 +153,7 @@
 		          </tr>
 							<tr>
 								<td>4</td>
-		            <td colspan="4" class="left"><b>Urine</b></td>
+		            <td colspan="4" class="left">Urine</td>
 		          </tr>
 							<tr>
 								<td>4.1</td>
@@ -178,7 +178,7 @@
 		          </tr>
 							<tr>
 								<td>5</td>
-		            <td colspan="4" class="left"><b>Sputum (Number of Patients)</b></td>
+		            <td colspan="4" class="left">Sputum (Number of Patients)</td>
 		          </tr>
 							<tr>
 								<td>5.1</td>
@@ -196,7 +196,7 @@
 		          </tr>
 							<tr>
 								<td>6</td>
-		            <td colspan="4" class="left"><b>Bacteriology</b></td>
+		            <td colspan="4" class="left">Bacteriology</td>
 		          </tr>
 							<tr>
 								<td>6.1</td>
@@ -242,7 +242,7 @@
 		          </tr>
 							<tr>
 								<td>7</td>
-		            <td colspan="4" class="left"><b>Blood</b></td>
+		            <td colspan="4" class="left">Blood</td>
 		          </tr>
 							<tr>
 								<td>7.1</td>

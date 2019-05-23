@@ -1591,11 +1591,14 @@ CREATE TABLE Anesthesia(
 #------------------------------------------------------------
 
 CREATE TABLE Physiotherapy(
-        date_physiotherapy Date NOT NULL ,
-        physical_therapy   Int DEFAULT 0 ,
-        audiology          Int DEFAULT 0 ,
-        speech_therapy     Int DEFAULT 0 ,
-        num_rapport        Int DEFAULT 0
+        date_physiotherapy   Date NOT NULL ,
+        physical_therapy     Int DEFAULT 0 ,
+        audiology            Int DEFAULT 0 ,
+        speech_therapy       Int DEFAULT 0 ,
+	physical_therapy_hos Int DEFAULT 0 ,
+        audiology_hos        Int DEFAULT 0 ,
+        speech_therapy_hop   Int DEFAULT 0 ,
+        num_rapport          Int DEFAULT 0
 	,CONSTRAINT Physiotherapy_PK PRIMARY KEY (date_physiotherapy)
 )ENGINE=InnoDB;
 
@@ -3534,7 +3537,8 @@ CREATE TABLE Consultation_FG(
         other_teeth_39f          Int DEFAULT 0 ,
         other_teeth_40m          Int DEFAULT 0 ,
         other_teeth_40f          Int DEFAULT 0 ,
-        num_rapport              Int DEFAULT 0
+        num_rapport              Int DEFAULT 0 ,
+	num_user		 Int DEFAULT 0
 	,CONSTRAINT Consultation_FG_PK PRIMARY KEY (date_consultation_fg)
 )ENGINE=InnoDB;
 
@@ -3813,3 +3817,8 @@ ALTER TABLE Consultation_FG
 ALTER TABLE Consultation_FG 
 	ADD CONSTRAINT Consultation_FG_Rapport0_AK 
 	UNIQUE (num_rapport);
+
+ALTER TABLE Consultation_FG
+	ADD CONSTRAINT Consultation_FG_User1_FK
+	FOREIGN KEY (num_user)
+	REFERENCES User(num_user);

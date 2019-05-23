@@ -26,13 +26,12 @@
 		      <table id="A" class="center">
 		        <thead>
 		          <tr>
-								<td colspan="2" class="grey"></td>
+								<th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+								<th rowspan="2">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 								<th colspan="2">Results</th>
 								<th>Total</th>
 		          </tr>
 		          <tr>
-								<th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-								<th class="cat">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th>Positives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 								<th>Negatives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <td><input type="number" min="0" name="exams_t" class="form-control"></td>
@@ -82,8 +81,8 @@
 								<td><input type="number" min="0" name="malaria_t" class="form-control"></td>
 		          </tr>
 							<tr>
-								<td><b>3</b></td>
-		            <td class="left"><b>Stools Samples Total</b></td>
+								<td>3</td>
+		            <td class="left">Stools Samples Total</td>
 								<td class="grey"></td>
 		            <td><input type="number" min="0" name="stools_n" class="form-control"></td>
 		            <td><input type="number" min="0" name="stools_t" class="form-control"></td>
@@ -153,7 +152,10 @@
 		          </tr>
 							<tr>
 								<td>4</td>
-		            <td colspan="4" class="left"><b>Urine</b></td>
+		            <td class="left">Urine</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>4.1</td>
@@ -178,7 +180,10 @@
 		          </tr>
 							<tr>
 								<td>5</td>
-		            <td colspan="4" class="left"><b>Sputum (Number of Patients)</b></td>
+		            <td class="left">Sputum (Number of Patients)</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>5.1</td>
@@ -196,7 +201,10 @@
 		          </tr>
 							<tr>
 								<td>6</td>
-		            <td colspan="4" class="left"><b>Bacteriology</b></td>
+		            <td class="left">Bacteriology</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>6.1</td>
@@ -242,7 +250,10 @@
 		          </tr>
 							<tr>
 								<td>7</td>
-		            <td colspan="4" class="left"><b>Blood</b></td>
+		            <td class="left">Blood</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>7.1</td>
