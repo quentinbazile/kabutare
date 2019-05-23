@@ -24,18 +24,17 @@
         <form method="post" action="" class="form-inline">
 		     	<br><h4>Examens</h4>
 		      <table id="A" class="center">
-		        <thead>
+						<thead>
 		          <tr>
-								<td colspan="2" class="grey"></td>
+								<th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+								<th rowspan="2">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 								<th colspan="2">Results</th>
 								<th>Total</th>
 		          </tr>
 		          <tr>
-								<th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-								<th class="cat">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th>Positives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 								<th>Negatives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <td><input type="number" min="0" name="exams_t" class="form-control" value="<?php echo $table1->exams_t; ?>"></td>
+		            <td><input type="number" min="0" name="exams_t" class="form-control"></td>
 							</tr>
 		        </thead>
 		        <tbody>
@@ -153,7 +152,10 @@
 		          </tr>
 							<tr>
 								<td>4</td>
-		            <td colspan="4" class="left">Urine</td>
+		            <td class="left">Urine</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>4.1</td>
@@ -178,7 +180,10 @@
 		          </tr>
 							<tr>
 								<td>5</td>
-		            <td colspan="4" class="left">Sputum (Number of Patients)</td>
+		            <td class="left">Sputum (Number of Patients)</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>5.1</td>
@@ -196,7 +201,10 @@
 		          </tr>
 							<tr>
 								<td>6</td>
-		            <td colspan="4" class="left">Bacteriology</td>
+		            <td class="left">Bacteriology</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>6.1</td>
@@ -242,7 +250,10 @@
 		          </tr>
 							<tr>
 								<td>7</td>
-		            <td colspan="4" class="left">Blood</td>
+		            <td class="left">Blood</td>
+								<td class="grey"></td>
+								<td class="grey"></td>
+								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>7.1</td>
@@ -355,21 +366,21 @@
 					<br>
 
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-5">
 							<h4>Transfusions</h4>
 						</div>
-						<div class="col-xs-6">
+						<div class="col-xs-7">
 							<h4>Blood Pack Stock Management</h4>
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-5">
 				      <table id="B" class="center">
 				        <thead>
 				          <tr>
 				            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th class="cat">Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Patients Transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Packs of Blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 				          </tr>
@@ -415,12 +426,12 @@
 				      </table>
 						</div>
 
-						<div class="col-xs-6">
+						<div class="col-xs-7">
 				      <table id="C" class="center">
 				        <thead>
 				          <tr>
 				            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th class="cat">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type A<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type B<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type AB<i class="fa fa-sort float-right" aria-hidden="true"></i></th>

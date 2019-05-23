@@ -366,21 +366,21 @@
 					<br>
 
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-5">
 							<h4>Transfusions</h4>
 						</div>
-						<div class="col-xs-6">
+						<div class="col-xs-7">
 							<h4>Blood Pack Stock Management</h4>
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-5">
 				      <table id="B" class="center">
 				        <thead>
 				          <tr>
 				            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th class="cat">Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Patients Transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Packs of Blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 				          </tr>
@@ -426,12 +426,12 @@
 				      </table>
 						</div>
 
-						<div class="col-xs-6">
+						<div class="col-xs-7">
 				      <table id="C" class="center">
 				        <thead>
 				          <tr>
 				            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th class="cat">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type A<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type B<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Type AB<i class="fa fa-sort float-right" aria-hidden="true"></i></th>

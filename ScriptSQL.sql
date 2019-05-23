@@ -1595,7 +1595,7 @@ CREATE TABLE Physiotherapy(
         physical_therapy     Int DEFAULT 0 ,
         audiology            Int DEFAULT 0 ,
         speech_therapy       Int DEFAULT 0 ,
-	physical_therapy_hos Int DEFAULT 0 ,
+	      physical_therapy_hos Int DEFAULT 0 ,
         audiology_hos        Int DEFAULT 0 ,
         speech_therapy_hop   Int DEFAULT 0 ,
         num_rapport          Int DEFAULT 0
@@ -3547,8 +3547,8 @@ ALTER TABLE Postnatal_Care
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Postnatal_Care 
-	ADD CONSTRAINT Postnatal_Care_Rapport0_AK 
+ALTER TABLE Postnatal_Care
+	ADD CONSTRAINT Postnatal_Care_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Identification
@@ -3556,8 +3556,8 @@ ALTER TABLE Identification
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Identification 
-	ADD CONSTRAINT Identification_Rapport0_AK 
+ALTER TABLE Identification
+	ADD CONSTRAINT Identification_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Consultation_ABCDE
@@ -3585,8 +3585,8 @@ ALTER TABLE Chronic_Disease
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Chronic_Disease 
-	ADD CONSTRAINT Chronic_Disease_Rapport0_AK 
+ALTER TABLE Chronic_Disease
+	ADD CONSTRAINT Chronic_Disease_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Other_Cardiovascular
@@ -3594,8 +3594,8 @@ ALTER TABLE Other_Cardiovascular
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Other_Cardiovascular 
-	ADD CONSTRAINT Other_Cardiovascular_Rapport0_AK 
+ALTER TABLE Other_Cardiovascular
+	ADD CONSTRAINT Other_Cardiovascular_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Injury
@@ -3603,8 +3603,8 @@ ALTER TABLE Injury
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Injury 
-	ADD CONSTRAINT Injury_Rapport0_AK 
+ALTER TABLE Injury
+	ADD CONSTRAINT Injury_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Palliative_Care
@@ -3612,8 +3612,8 @@ ALTER TABLE Palliative_Care
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Palliative_Care 
-	ADD CONSTRAINT Palliative_Care_Rapport0_AK 
+ALTER TABLE Palliative_Care
+	ADD CONSTRAINT Palliative_Care_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Family_Planning
@@ -3621,8 +3621,8 @@ ALTER TABLE Family_Planning
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Family_Planning 
-	ADD CONSTRAINT Family_Planning_Rapport0_AK 
+ALTER TABLE Family_Planning
+	ADD CONSTRAINT Family_Planning_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Cancer_Screening
@@ -3630,8 +3630,8 @@ ALTER TABLE Cancer_Screening
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Cancer_Screening 
-	ADD CONSTRAINT Cancer_Screening_Rapport0_AK 
+ALTER TABLE Cancer_Screening
+	ADD CONSTRAINT Cancer_Screening_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Gender_Based_Violence
@@ -3639,8 +3639,8 @@ ALTER TABLE Gender_Based_Violence
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Gender_Based_Violence 
-	ADD CONSTRAINT Gender_Based_Violence_Rapport0_AK 
+ALTER TABLE Gender_Based_Violence
+	ADD CONSTRAINT Gender_Based_Violence_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Anesthesia
@@ -3658,8 +3658,8 @@ ALTER TABLE Physiotherapy
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Physiotherapy 
-	ADD CONSTRAINT Physiotherapy_Rapport0_AK 
+ALTER TABLE Physiotherapy
+	ADD CONSTRAINT Physiotherapy_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Hospitalization_A
@@ -3667,8 +3667,8 @@ ALTER TABLE Hospitalization_A
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Hospitalization_A 
-	ADD CONSTRAINT Hospitalization_A_Rapport0_AK 
+ALTER TABLE Hospitalization_A
+	ADD CONSTRAINT Hospitalization_A_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Surgery
@@ -3686,8 +3686,8 @@ ALTER TABLE Obstetrical_Complication_A
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Obstetrical_Complication_A 
-	ADD CONSTRAINT Obstetrical_Complication_A_Rapport0_AK 
+ALTER TABLE Obstetrical_Complication_A
+	ADD CONSTRAINT Obstetrical_Complication_A_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Kangaroo_Mother_Care
@@ -3695,8 +3695,8 @@ ALTER TABLE Kangaroo_Mother_Care
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Kangaroo_Mother_Care 
-	ADD CONSTRAINT Kangaroo_Mother_Care_Rapport0_AK 
+ALTER TABLE Kangaroo_Mother_Care
+	ADD CONSTRAINT Kangaroo_Mother_Care_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Neonatal
@@ -3704,8 +3704,8 @@ ALTER TABLE Neonatal
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Neonatal 
-	ADD CONSTRAINT Neonatal_Rapport0_AK 
+ALTER TABLE Neonatal
+	ADD CONSTRAINT Neonatal_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Nutrition_Screening
@@ -3713,8 +3713,8 @@ ALTER TABLE Nutrition_Screening
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Nutrition_Screening 
-	ADD CONSTRAINT Nutrition_Screening_Rapport0_AK 
+ALTER TABLE Nutrition_Screening
+	ADD CONSTRAINT Nutrition_Screening_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Malnourished_Rehabilitation
@@ -3722,8 +3722,8 @@ ALTER TABLE Malnourished_Rehabilitation
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Malnourished_Rehabilitation 
-	ADD CONSTRAINT Malnourished_Rehabilitation_Rapport0_AK 
+ALTER TABLE Malnourished_Rehabilitation
+	ADD CONSTRAINT Malnourished_Rehabilitation_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Community_Checkup
@@ -3731,8 +3731,8 @@ ALTER TABLE Community_Checkup
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Community_Checkup 
-	ADD CONSTRAINT Community_Checkup_Rapport0_AK 
+ALTER TABLE Community_Checkup
+	ADD CONSTRAINT Community_Checkup_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Laboratory
@@ -3740,8 +3740,8 @@ ALTER TABLE Laboratory
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Laboratory 
-	ADD CONSTRAINT Laboratory_Rapport0_AK 
+ALTER TABLE Laboratory
+	ADD CONSTRAINT Laboratory_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Blood_Bank_Security
@@ -3749,8 +3749,8 @@ ALTER TABLE Blood_Bank_Security
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Blood_Bank_Security 
-	ADD CONSTRAINT Blood_Bank_Security_Rapport0_AK 
+ALTER TABLE Blood_Bank_Security
+	ADD CONSTRAINT Blood_Bank_Security_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Medical_Imagery
@@ -3758,8 +3758,8 @@ ALTER TABLE Medical_Imagery
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Medical_Imagery 
-	ADD CONSTRAINT Medical_Imagery_Rapport0_AK 
+ALTER TABLE Medical_Imagery
+	ADD CONSTRAINT Medical_Imagery_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Pharmacy
@@ -3767,8 +3767,8 @@ ALTER TABLE Pharmacy
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Pharmacy 
-	ADD CONSTRAINT Pharmacy_Rapport0_AK 
+ALTER TABLE Pharmacy
+	ADD CONSTRAINT Pharmacy_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Staff
@@ -3776,8 +3776,8 @@ ALTER TABLE Staff
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Staff 
-	ADD CONSTRAINT Staff_Rapport0_AK 
+ALTER TABLE Staff
+	ADD CONSTRAINT Staff_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Delivery_Birth
@@ -3785,8 +3785,8 @@ ALTER TABLE Delivery_Birth
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Delivery_Birth 
-	ADD CONSTRAINT Delivery_Birth_Rapport0_AK 
+ALTER TABLE Delivery_Birth
+	ADD CONSTRAINT Delivery_Birth_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Hospitalization_BCDE
@@ -3814,8 +3814,8 @@ ALTER TABLE Consultation_FG
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
 
-ALTER TABLE Consultation_FG 
-	ADD CONSTRAINT Consultation_FG_Rapport0_AK 
+ALTER TABLE Consultation_FG
+	ADD CONSTRAINT Consultation_FG_Rapport0_AK
 	UNIQUE (num_rapport);
 
 ALTER TABLE Consultation_FG
