@@ -46,6 +46,9 @@ class kinesitherapy_update extends CI_Controller
             $physical_therapy = $this->input->post('physical_therapy');
             $audiology = $this->input->post('audiology');
             $speech_therapy = $this->input->post('speech_therapy');
+            $physical_therapy_hos = $this->input->post('physical_therapy_hos');
+            $audiology_hos = $this->input->post('audiology_hos');
+            $speech_therapy_hos = $this->input->post('speech_therapy_hos');
 
             $this->kinesitherapy_model->update_data1(
           $nc5m,
@@ -72,7 +75,10 @@ class kinesitherapy_update extends CI_Controller
             $this->kinesitherapy_model->update_data2(
               $physical_therapy,
               $audiology,
-              $speech_therapy
+              $speech_therapy,
+              $physical_therapy_hos,
+              $audiology_hos,
+              $speech_therapy_hos
                 );
             $this->session->unset_userdata('update_date');
             redirect('home', 'refresh');

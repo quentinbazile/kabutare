@@ -169,16 +169,19 @@
                     <td>1</td>
                     <td class="left">Physical therapy</td>
                     <td><input type="number" min="0" name="physical_therapy" class="form-control" value="<?php echo $table2->physical_therapy; ?>"></td>
+                    <td><input type="number" min="0" name="physical_therapy_hos" class="form-control" value="<?php echo $table2->physical_therapy_hos; ?>"></td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td class="left">Audiology</td>
                     <td><input type="number" min="0" name="audiology" class="form-control" value="<?php echo $table2->audiology; ?>"></td>
+                    <td><input type="number" min="0" name="audiology_hos" class="form-control" value="<?php echo $table2->audiology_hos; ?>"></td>
                   </tr>
                   <tr>
                     <td>3</td>
                     <td class="left">Speech therapy</td>
                     <td><input type="number" min="0" name="speech_therapy" class="form-control" value="<?php echo $table2->speech_therapy; ?>"></td>
+                    <td><input type="number" min="0" name="speech_therapy_hos" class="form-control" value="<?php echo $table2->speech_therapy_hos; ?>"></td>
                   </tr>
                 </tbody>
               </table>

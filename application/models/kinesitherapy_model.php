@@ -71,12 +71,18 @@ class kinesitherapy_model extends CI_Model
       $physical_therapy,
       $audiology,
       $speech_therapy,
+      $physical_therapy_hos,
+      $audiology_hos,
+      $speech_therapy_hos,
       $num_rapport
     ) {
         return $this->db->set(array(
           'physical_therapy' => $physical_therapy,
           'audiology' => $audiology,
           'speech_therapy' => $speech_therapy,
+          'physical_therapy_hos' => $physical_therapy_hos,
+          'audiology_hos' => $audiology_hos,
+          'speech_therapy_hos' => $speech_therapy_hos,
 
       'num_rapport' => $num_rapport
     ))
@@ -161,11 +167,17 @@ class kinesitherapy_model extends CI_Model
     public function update_data2(
       $physical_therapy,
       $audiology,
-      $speech_therapy
+      $speech_therapy,
+      $physical_therapy_hos,
+      $audiology_hos,
+      $speech_therapy_hos
     ) {
       $this->db->set('physical_therapy', $physical_therapy);
       $this->db->set('audiology', $audiology);
       $this->db->set('speech_therapy', $speech_therapy);
+      $this->db->set('physical_therapy_hos', $physical_therapy_hos);
+      $this->db->set('audiology_hos', $audiology_hos);
+      $this->db->set('speech_therapy_hos', $speech_therapy_hos);
 
         $this->db->where('date_physiotherapy', $this->session->userdata('update_date'));
         return $this->db->update('Physiotherapy');

@@ -46,6 +46,9 @@ class kinesitherapy extends CI_Controller
             $physical_therapy = $this->input->post('physical_therapy');
             $audiology = $this->input->post('audiology');
             $speech_therapy = $this->input->post('speech_therapy');
+            $physical_therapy_hos = $this->input->post('physical_therapy_hos');
+            $audiology_hos = $this->input->post('audiology_hos');
+            $speech_therapy_hos = $this->input->post('speech_therapy_hos');
 
             $this->kinesitherapy_model->new_report();
 
@@ -78,6 +81,9 @@ class kinesitherapy extends CI_Controller
               $physical_therapy,
               $audiology,
               $speech_therapy,
+              $physical_therapy_hos,
+              $audiology_hos,
+              $speech_therapy_hos,
               $num_rapport
                 );
             $this->session->unset_userdata('add_date');
