@@ -1268,10 +1268,10 @@ CREATE TABLE Palliative_Care(
         nc_19f               Int DEFAULT 0 ,
         nc_20m               Int DEFAULT 0 ,
         nc_20f               Int DEFAULT 0 ,
-        4time_19m            Int DEFAULT 0 ,
-        4time_19f            Int DEFAULT 0 ,
-        4time_20m            Int DEFAULT 0 ,
-        4time_20f            Int DEFAULT 0 ,
+        time_19m            Int DEFAULT 0 ,
+        time_19f            Int DEFAULT 0 ,
+        time_20m            Int DEFAULT 0 ,
+        time_20f            Int DEFAULT 0 ,
         morphine_19m         Int DEFAULT 0 ,
         morphine_19f         Int DEFAULT 0 ,
         morphine_20m         Int DEFAULT 0 ,
@@ -1595,9 +1595,9 @@ CREATE TABLE Physiotherapy(
         physical_therapy     Int DEFAULT 0 ,
         audiology            Int DEFAULT 0 ,
         speech_therapy       Int DEFAULT 0 ,
-	      physical_therapy_hos Int DEFAULT 0 ,
+	physical_therapy_hos Int DEFAULT 0 ,
         audiology_hos        Int DEFAULT 0 ,
-        speech_therapy_hop   Int DEFAULT 0 ,
+        speech_therapy_hos   Int DEFAULT 0 ,
         num_rapport          Int DEFAULT 0
 	,CONSTRAINT Physiotherapy_PK PRIMARY KEY (date_physiotherapy)
 )ENGINE=InnoDB;
