@@ -180,7 +180,7 @@
                   <tr>
                     <td>3</td>
                     <td class="left">Speech therapy</td>
-                    <td><input type="number" min="0" name="speech_therapy_hos" class="form-control"></td>
+                    <td><input type="number" min="0" name="speech_therapy" class="form-control"></td>
                     <td><input type="number" min="0" name="speech_therapy_hos" class="form-control"></td>
                   </tr>
                 </tbody>

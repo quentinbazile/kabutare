@@ -338,7 +338,7 @@
                 <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 <th rowspan="3" colspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 <th colspan="4">Acutely malnourished<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                <th rowspan="3">Pregnat women<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th rowspan="3">Pregnant women<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 <th rowspan="3">Lactating women<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
               </tr>
               <tr>
