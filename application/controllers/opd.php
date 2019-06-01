@@ -979,7 +979,7 @@ class opd extends CI_Controller
             $death_20m = $this->input->post('death_20m');
             $death_20f = $this->input->post('death_20f');
 
-            $annual_chekup = $this->input->post('annual_chekup');
+            $annual_checkup = $this->input->post('annual_checkup');
             $cardio = $this->input->post('cardio');
             $respiratory = $this->input->post('respiratory');
             $diabetes = $this->input->post('diabetes');
@@ -1953,7 +1953,7 @@ class opd extends CI_Controller
             );
 
             $this->opd_model->fetch_data8(
-              $annual_chekup,
+              $annual_checkup,
               $cardio,
               $respiratory,
               $diabetes,

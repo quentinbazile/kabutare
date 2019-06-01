@@ -502,7 +502,8 @@ class opd_model extends CI_Model
           'hepatitis_20m' => $hepatitis_20m,
           'hepatitis_20f' => $hepatitis_20f,
 
-      'num_rapport' => $num_rapport
+      'num_rapport' => $num_rapport,
+      'num_user' => $this->session->userdata('num_user')
     ))
             ->set('date_consultation_abcde', $this->session->userdata('add_date'))
             ->insert('Consultation_abcde');
@@ -868,7 +869,8 @@ class opd_model extends CI_Model
           'other_teeth_40m' => $other_teeth_40m,
           'other_teeth_40f' => $other_teeth_40f,
 
-      'num_rapport' => $num_rapport
+      'num_rapport' => $num_rapport,
+      'num_user' => $this->session->userdata('num_user')
     ))
             ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
@@ -1088,7 +1090,8 @@ class opd_model extends CI_Model
           'other_neuro_nc40m' => $other_neuro_nc40m,
           'other_neuro_nc40f' => $other_neuro_nc40f,
 
-      'num_rapport' => $num_rapport
+      'num_rapport' => $num_rapport,
+      'num_user' => $this->session->userdata('num_user')
     ))
             ->set('date_mental_health', $this->session->userdata('add_date'))
             ->insert('Mental_Health');
@@ -2183,10 +2186,10 @@ class opd_model extends CI_Model
           'nc_20m' => $nc_20m,
           'nc_20f' => $nc_20f,
 
-          '4time_19m' => $time_19m,
-          '4time_19f' => $time_19f,
-          '4time_20m' => $time_20m,
-          '4time_20f' => $time_20f,
+          'time_19m' => $time_19m,
+          'time_19f' => $time_19f,
+          'time_20m' => $time_20m,
+          'time_20f' => $time_20f,
 
           'morphine_19m' => $morphine_19m,
           'morphine_19f' => $morphine_19f,
@@ -2211,7 +2214,7 @@ class opd_model extends CI_Model
     }
 
     public function fetch_data8(
-      $annual_chekup,
+      $annual_checkup,
       $cardio,
       $respiratory,
       $diabetes,
@@ -2221,7 +2224,7 @@ class opd_model extends CI_Model
       $num_rapport
     ) {
             return $this->db->set(array(
-          'annual_chekup' => $annual_chekup,
+          'annual_checkup' => $annual_checkup,
           'cardio' => $cardio,
           'respiratory' => $respiratory,
           'diabetes' => $diabetes,
@@ -4233,10 +4236,10 @@ class opd_model extends CI_Model
         $this->db->set('nc_20m', $nc_20m);
         $this->db->set('nc_20f', $nc_20f);
 
-        $this->db->set('4time_19m', $time_19m);
-        $this->db->set('4time_19f', $time_19f);
-        $this->db->set('4time_20m', $time_20m);
-        $this->db->set('4time_20f', $time_20f);
+        $this->db->set('time_19m', $time_19m);
+        $this->db->set('time_19f', $time_19f);
+        $this->db->set('time_20m', $time_20m);
+        $this->db->set('time_20f', $time_20f);
 
         $this->db->set('morphine_19m', $morphine_19m);
         $this->db->set('morphine_19f', $morphine_19f);
@@ -4258,7 +4261,7 @@ class opd_model extends CI_Model
     }
 
     public function update_data8(
-      $annual_chekup,
+      $annual_checkup,
       $cardio,
       $respiratory,
       $diabetes,
@@ -4266,8 +4269,7 @@ class opd_model extends CI_Model
       $cancer,
       $disability
     ) {
-        $this->db->set('oc_19m', $oc_19m);
-        $this->db->set('annual_chekup', $annual_chekup);
+        $this->db->set('annual_checkup', $annual_checkup);
         $this->db->set('cardio', $cardio);
         $this->db->set('respiratory', $respiratory);
         $this->db->set('diabetes', $diabetes);
@@ -4290,7 +4292,6 @@ class opd_model extends CI_Model
       $cervical_otherlevel,
       $biopsies
     ) {
-        $this->db->set('oc_19m', $oc_19m);
         $this->db->set('cervical', $cervical);
         $this->db->set('cervical_viap', $cervical_viap);
         $this->db->set('cervical_viap_hivp', $cervical_viap_hivp);

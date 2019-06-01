@@ -213,7 +213,7 @@ class research_model extends CI_Model
         return $this->db->get_where('Cancer_Screening', array('date_cancer_screening' => $date))->row();
     }
 
-    /*public function hospitalization_a($date)
+    public function hospitalization_a($date)
     {
         return $this->db->get_where('Hospitalization_A', array('date_hospitalization_a' => $date))->row();
     }
@@ -777,7 +777,7 @@ class research_model extends CI_Model
         $this->db->from('Hospitalization_BCDE');
         $this->db->where('date_hospitalization_bcde', $date);
         return $this->db->get()->row();
-    }*/
+    }
 
     public function physiotherapy($date)
     {

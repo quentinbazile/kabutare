@@ -13,6 +13,14 @@ class home extends CI_Controller
         }
     }
 
+    public function logout(){
+      $user_data = $this->session->all_userdata();
+      foreach ($user_data as $key => $value){
+        $this->session->unset_userdata($key);
+      }
+      $this->session->sess_destroy();
+      redirect('login', 'refresh');
+    }
     public function fetch()
     {
         $this->load->library('form_validation');

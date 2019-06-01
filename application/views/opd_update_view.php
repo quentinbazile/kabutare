@@ -18,20 +18,20 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>OPD - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('update_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
 					<div class="row">
-						<div class="col-xs-7">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+						<div class="col-xs-8">
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
-						<div class="col-xs-5">
-					  	<h4>Health Insurance Status of New Cases</h4>
+						<div class="col-xs-4">
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-7">
+						<div class="col-xs-8">
 				      <table id="A2" class="center">
 				        <thead>
 				          <tr>
@@ -71,7 +71,7 @@
 				        </tbody>
 				      </table>
 						</div>
-						<div class="col-xs-5">
+						<div class="col-xs-4">
 				      <table id="B2" class="center" style="width:100%;">
 				        <thead>
 				          <tr>
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control" value="<?php echo $table1->insured; ?>"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -154,7 +154,7 @@
 						</div>
 						<br>
 						<div class="row">
-							<h4>New cases of priority health problems in General OPD</h4>
+							<h4>New cases of priority health problems in general OPD</h4>
 						</div>
 						<div class="row">
 							<table id="E2" class="center">
@@ -287,7 +287,7 @@
 				          </tr>
 				          <tr>
 				            <td>12</td>
-				            <td>Taenia</td>
+				            <td class="left">Taenia</td>
 				            <td><input type="number" min="0" name="taenia_5m" class="form-control" value="<?php echo $table1->taenia_5m; ?>"></td>
 				            <td><input type="number" min="0" name="taenia_5f" class="form-control" value="<?php echo $table1->taenia_5f; ?>"></td>
 				            <td><input type="number" min="0" name="taenia_19m" class="form-control" value="<?php echo $table1->taenia_19m; ?>"></td>
@@ -520,7 +520,7 @@
 						</div>
 						<br>
             <div class="row">
-              <h4>New cases of HIV/AIDS/and Non-Communicable diseases</h4>
+              <h4>New cases of HIV/AIDS/STI and non-communicable diseases</h4>
             </div>
             <div class="row">
               <table id="F2" class="center">
@@ -686,178 +686,171 @@
             </div>
             <br>
             <div class="row">
-              <div class="col-xs-6">
-                <h4>Eye diseases</h4>
-              </div>
-              <div class="col-xs-6">
-                <h4>Oral diseases</h4>
-              </div>
+              <h4>Eye diseases</h4>
+							<table id="Ga" class="center">
+								<thead>
+									<tr>
+										<th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+									</tr>
+									<tr>
+										<th>M</th>
+										<th>F</th>
+										<th>M</th>
+										<th>F</th>
+										<th>M</th>
+										<th>F</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="center">1</td>
+										<td class="left">Glaucoma</td>
+										<td><input type="number" min="0" name="glaucoma_19m" class="form-control" value="<?php echo $table2->glaucoma_19m; ?>"></td>
+										<td><input type="number" min="0" name="glaucoma_19f" class="form-control" value="<?php echo $table2->glaucoma_19f; ?>"></td>
+										<td><input type="number" min="0" name="glaucoma_39m" class="form-control" value="<?php echo $table2->glaucoma_39m; ?>"></td>
+										<td><input type="number" min="0" name="glaucoma_39f" class="form-control" value="<?php echo $table2->glaucoma_39f; ?>"></td>
+										<td><input type="number" min="0" name="glaucoma_40m" class="form-control" value="<?php echo $table2->glaucoma_40m; ?>"></td>
+										<td><input type="number" min="0" name="glaucoma_40f" class="form-control" value="<?php echo $table2->glaucoma_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">2</td>
+										<td class="left">Cataract</td>
+										<td><input type="number" min="0" name="cataract_19m" class="form-control" value="<?php echo $table2->cataract_19m; ?>"></td>
+										<td><input type="number" min="0" name="cataract_19f" class="form-control" value="<?php echo $table2->cataract_19f; ?>"></td>
+										<td><input type="number" min="0" name="cataract_39m" class="form-control" value="<?php echo $table2->cataract_39m; ?>"></td>
+										<td><input type="number" min="0" name="cataract_39f" class="form-control" value="<?php echo $table2->cataract_39f; ?>"></td>
+										<td><input type="number" min="0" name="cataract_40m" class="form-control" value="<?php echo $table2->cataract_40m; ?>"></td>
+										<td><input type="number" min="0" name="cataract_40f" class="form-control" value="<?php echo $table2->cataract_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">3</td>
+										<td class="left">Refractive error</td>
+										<td><input type="number" min="0" name="refrac_error_19m" class="form-control" value="<?php echo $table2->refrac_error_19m; ?>"></td>
+										<td><input type="number" min="0" name="refrac_error_19f" class="form-control" value="<?php echo $table2->refrac_error_19f; ?>"></td>
+										<td><input type="number" min="0" name="refrac_error_39m" class="form-control" value="<?php echo $table2->refrac_error_39m; ?>"></td>
+										<td><input type="number" min="0" name="refrac_error_39f" class="form-control" value="<?php echo $table2->refrac_error_39f; ?>"></td>
+										<td><input type="number" min="0" name="refrac_error_40m" class="form-control" value="<?php echo $table2->refrac_error_40m; ?>"></td>
+										<td><input type="number" min="0" name="refrac_error_40f" class="form-control" value="<?php echo $table2->refrac_error_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">4</td>
+										<td class="left">Diabetic retinopathy</td>
+										<td><input type="number" min="0" name="diab_retino_19m" class="form-control" value="<?php echo $table2->diab_retino_19m; ?>"></td>
+										<td><input type="number" min="0" name="diab_retino_19f" class="form-control" value="<?php echo $table2->diab_retino_19f; ?>"></td>
+										<td><input type="number" min="0" name="diab_retino_39m" class="form-control" value="<?php echo $table2->diab_retino_39m; ?>"></td>
+										<td><input type="number" min="0" name="diab_retino_39f" class="form-control" value="<?php echo $table2->diab_retino_39f; ?>"></td>
+										<td><input type="number" min="0" name="diab_retino_40m" class="form-control" value="<?php echo $table2->diab_retino_40m; ?>"></td>
+										<td><input type="number" min="0" name="diab_retino_40f" class="form-control" value="<?php echo $table2->diab_retino_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">5</td>
+										<td class="left">Conjunctivitis</td>
+										<td><input type="number" min="0" name="conjunctivitis_19m" class="form-control" value="<?php echo $table2->conjunctivitis_19m; ?>"></td>
+										<td><input type="number" min="0" name="conjunctivitis_19f" class="form-control" value="<?php echo $table2->conjunctivitis_19f; ?>"></td>
+										<td><input type="number" min="0" name="conjunctivitis_39m" class="form-control" value="<?php echo $table2->conjunctivitis_39m; ?>"></td>
+										<td><input type="number" min="0" name="conjunctivitis_39f" class="form-control" value="<?php echo $table2->conjunctivitis_39f; ?>"></td>
+										<td><input type="number" min="0" name="conjunctivitis_40m" class="form-control" value="<?php echo $table2->conjunctivitis_40m; ?>"></td>
+										<td><input type="number" min="0" name="conjunctivitis_40f" class="form-control" value="<?php echo $table2->conjunctivitis_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">6</td>
+										<td class="left">Pinguecula</td>
+										<td><input type="number" min="0" name="pinguecula_19m" class="form-control" value="<?php echo $table2->pinguecula_19m; ?>"></td>
+										<td><input type="number" min="0" name="pinguecula_19f" class="form-control" value="<?php echo $table2->pinguecula_19f; ?>"></td>
+										<td><input type="number" min="0" name="pinguecula_39m" class="form-control" value="<?php echo $table2->pinguecula_39m; ?>"></td>
+										<td><input type="number" min="0" name="pinguecula_39f" class="form-control" value="<?php echo $table2->pinguecula_39f; ?>"></td>
+										<td><input type="number" min="0" name="pinguecula_40m" class="form-control" value="<?php echo $table2->pinguecula_40m; ?>"></td>
+										<td><input type="number" min="0" name="pinguecula_40f" class="form-control" value="<?php echo $table2->pinguecula_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">7</td>
+										<td class="left">Uveitis</td>
+										<td><input type="number" min="0" name="uveitis_19m" class="form-control" value="<?php echo $table2->uveitis_19m; ?>"></td>
+										<td><input type="number" min="0" name="uveitis_19f" class="form-control" value="<?php echo $table2->uveitis_19f; ?>"></td>
+										<td><input type="number" min="0" name="uveitis_39m" class="form-control" value="<?php echo $table2->uveitis_39m; ?>"></td>
+										<td><input type="number" min="0" name="uveitis_39f" class="form-control" value="<?php echo $table2->uveitis_39f; ?>"></td>
+										<td><input type="number" min="0" name="uveitis_40m" class="form-control" value="<?php echo $table2->uveitis_40m; ?>"></td>
+										<td><input type="number" min="0" name="uveitis_40f" class="form-control" value="<?php echo $table2->uveitis_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">8</td>
+										<td class="left">Eye trauma</td>
+										<td><input type="number" min="0" name="eye_trauma_19m" class="form-control" value="<?php echo $table2->eye_trauma_19m; ?>"></td>
+										<td><input type="number" min="0" name="eye_trauma_19f" class="form-control" value="<?php echo $table2->eye_trauma_19f; ?>"></td>
+										<td><input type="number" min="0" name="eye_trauma_39m" class="form-control" value="<?php echo $table2->eye_trauma_39m; ?>"></td>
+										<td><input type="number" min="0" name="eye_trauma_39f" class="form-control" value="<?php echo $table2->eye_trauma_39f; ?>"></td>
+										<td><input type="number" min="0" name="eye_trauma_40m" class="form-control" value="<?php echo $table2->eye_trauma_40m; ?>"></td>
+										<td><input type="number" min="0" name="eye_trauma_40f" class="form-control" value="<?php echo $table2->eye_trauma_40f; ?>"></td>
+									</tr>
+									<tr>
+										<td class="center">9</td>
+										<td class="left">Eye problem other</td>
+										<td><input type="number" min="0" name="eye_pb_19m" class="form-control" value="<?php echo $table2->eye_pb_19m; ?>"></td>
+										<td><input type="number" min="0" name="eye_pb_19f" class="form-control" value="<?php echo $table2->eye_pb_19f; ?>"></td>
+										<td><input type="number" min="0" name="eye_pb_39m" class="form-control" value="<?php echo $table2->eye_pb_39m; ?>"></td>
+										<td><input type="number" min="0" name="eye_pb_39f" class="form-control" value="<?php echo $table2->eye_pb_39f; ?>"></td>
+										<td><input type="number" min="0" name="eye_pb_40m" class="form-control" value="<?php echo $table2->eye_pb_40m; ?>"></td>
+										<td><input type="number" min="0" name="eye_pb_40f" class="form-control" value="<?php echo $table2->eye_pb_40f; ?>"></td>
+									</tr>
+								</tbody>
+							</table>
             </div>
+						<br>
             <div class="row">
-              <div class="col-xs-6">
-                <table id="Ga" class="center">
-                  <thead>
-                    <tr>
-                      <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    </tr>
-                    <tr>
-                      <th>M</th>
-                      <th>F</th>
-                      <th>M</th>
-                      <th>F</th>
-                      <th>M</th>
-                      <th>F</th>
-                  </thead>
-                  <tbody>
-										<tr>
-					            <td class="center">1</td>
-					            <td class="left">Glaucoma</td>
-					            <td><input type="number" min="0" name="glaucoma_19m" class="form-control" value="<?php echo $table2->glaucoma_19m; ?>"></td>
-					            <td><input type="number" min="0" name="glaucoma_19f" class="form-control" value="<?php echo $table2->glaucoma_19f; ?>"></td>
-					            <td><input type="number" min="0" name="glaucoma_39m" class="form-control" value="<?php echo $table2->glaucoma_39m; ?>"></td>
-					            <td><input type="number" min="0" name="glaucoma_39f" class="form-control" value="<?php echo $table2->glaucoma_39f; ?>"></td>
-					            <td><input type="number" min="0" name="glaucoma_40m" class="form-control" value="<?php echo $table2->glaucoma_40m; ?>"></td>
-					            <td><input type="number" min="0" name="glaucoma_40f" class="form-control" value="<?php echo $table2->glaucoma_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">2</td>
-					            <td class="left">Cataract</td>
-					            <td><input type="number" min="0" name="cataract_19m" class="form-control" value="<?php echo $table2->cataract_19m; ?>"></td>
-					            <td><input type="number" min="0" name="cataract_19f" class="form-control" value="<?php echo $table2->cataract_19f; ?>"></td>
-					            <td><input type="number" min="0" name="cataract_39m" class="form-control" value="<?php echo $table2->cataract_39m; ?>"></td>
-					            <td><input type="number" min="0" name="cataract_39f" class="form-control" value="<?php echo $table2->cataract_39f; ?>"></td>
-					            <td><input type="number" min="0" name="cataract_40m" class="form-control" value="<?php echo $table2->cataract_40m; ?>"></td>
-					            <td><input type="number" min="0" name="cataract_40f" class="form-control" value="<?php echo $table2->cataract_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">3</td>
-					            <td class="left">Refractive error</td>
-					            <td><input type="number" min="0" name="refrac_error_19m" class="form-control" value="<?php echo $table2->refrac_error_19m; ?>"></td>
-					            <td><input type="number" min="0" name="refrac_error_19f" class="form-control" value="<?php echo $table2->refrac_error_19f; ?>"></td>
-					            <td><input type="number" min="0" name="refrac_error_39m" class="form-control" value="<?php echo $table2->refrac_error_39m; ?>"></td>
-					            <td><input type="number" min="0" name="refrac_error_39f" class="form-control" value="<?php echo $table2->refrac_error_39f; ?>"></td>
-					            <td><input type="number" min="0" name="refrac_error_40m" class="form-control" value="<?php echo $table2->refrac_error_40m; ?>"></td>
-					            <td><input type="number" min="0" name="refrac_error_40f" class="form-control" value="<?php echo $table2->refrac_error_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">4</td>
-					            <td class="left">Diabetic retinopathy</td>
-					            <td><input type="number" min="0" name="diab_retino_19m" class="form-control" value="<?php echo $table2->diab_retino_19m; ?>"></td>
-					            <td><input type="number" min="0" name="diab_retino_19f" class="form-control" value="<?php echo $table2->diab_retino_19f; ?>"></td>
-					            <td><input type="number" min="0" name="diab_retino_39m" class="form-control" value="<?php echo $table2->diab_retino_39m; ?>"></td>
-					            <td><input type="number" min="0" name="diab_retino_39f" class="form-control" value="<?php echo $table2->diab_retino_39f; ?>"></td>
-					            <td><input type="number" min="0" name="diab_retino_40m" class="form-control" value="<?php echo $table2->diab_retino_40m; ?>"></td>
-					            <td><input type="number" min="0" name="diab_retino_40f" class="form-control" value="<?php echo $table2->diab_retino_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">5</td>
-					            <td class="left">Conjunctivitis</td>
-					            <td><input type="number" min="0" name="conjunctivitis_19m" class="form-control" value="<?php echo $table2->conjunctivitis_19m; ?>"></td>
-					            <td><input type="number" min="0" name="conjunctivitis_19f" class="form-control" value="<?php echo $table2->conjunctivitis_19f; ?>"></td>
-					            <td><input type="number" min="0" name="conjunctivitis_39m" class="form-control" value="<?php echo $table2->conjunctivitis_39m; ?>"></td>
-					            <td><input type="number" min="0" name="conjunctivitis_39f" class="form-control" value="<?php echo $table2->conjunctivitis_39f; ?>"></td>
-					            <td><input type="number" min="0" name="conjunctivitis_40m" class="form-control" value="<?php echo $table2->conjunctivitis_40m; ?>"></td>
-					            <td><input type="number" min="0" name="conjunctivitis_40f" class="form-control" value="<?php echo $table2->conjunctivitis_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">6</td>
-					            <td class="left">Pinguecula</td>
-					            <td><input type="number" min="0" name="pinguecula_19m" class="form-control" value="<?php echo $table2->pinguecula_19m; ?>"></td>
-					            <td><input type="number" min="0" name="pinguecula_19f" class="form-control" value="<?php echo $table2->pinguecula_19f; ?>"></td>
-					            <td><input type="number" min="0" name="pinguecula_39m" class="form-control" value="<?php echo $table2->pinguecula_39m; ?>"></td>
-					            <td><input type="number" min="0" name="pinguecula_39f" class="form-control" value="<?php echo $table2->pinguecula_39f; ?>"></td>
-					            <td><input type="number" min="0" name="pinguecula_40m" class="form-control" value="<?php echo $table2->pinguecula_40m; ?>"></td>
-					            <td><input type="number" min="0" name="pinguecula_40f" class="form-control" value="<?php echo $table2->pinguecula_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">7</td>
-					            <td class="left">Uveitis</td>
-					            <td><input type="number" min="0" name="uveitis_19m" class="form-control" value="<?php echo $table2->uveitis_19m; ?>"></td>
-					            <td><input type="number" min="0" name="uveitis_19f" class="form-control" value="<?php echo $table2->uveitis_19f; ?>"></td>
-					            <td><input type="number" min="0" name="uveitis_39m" class="form-control" value="<?php echo $table2->uveitis_39m; ?>"></td>
-					            <td><input type="number" min="0" name="uveitis_39f" class="form-control" value="<?php echo $table2->uveitis_39f; ?>"></td>
-					            <td><input type="number" min="0" name="uveitis_40m" class="form-control" value="<?php echo $table2->uveitis_40m; ?>"></td>
-					            <td><input type="number" min="0" name="uveitis_40f" class="form-control" value="<?php echo $table2->uveitis_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">8</td>
-					            <td class="left">Eye trauma</td>
-					            <td><input type="number" min="0" name="eye_trauma_19m" class="form-control" value="<?php echo $table2->eye_trauma_19m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_trauma_19f" class="form-control" value="<?php echo $table2->eye_trauma_19f; ?>"></td>
-					            <td><input type="number" min="0" name="eye_trauma_39m" class="form-control" value="<?php echo $table2->eye_trauma_39m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_trauma_39f" class="form-control" value="<?php echo $table2->eye_trauma_39f; ?>"></td>
-					            <td><input type="number" min="0" name="eye_trauma_40m" class="form-control" value="<?php echo $table2->eye_trauma_40m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_trauma_40f" class="form-control" value="<?php echo $table2->eye_trauma_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td class="center">9</td>
-					            <td class="left">Eye problem other</td>
-					            <td><input type="number" min="0" name="eye_pb_19m" class="form-control" value="<?php echo $table2->eye_pb_19m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_pb_19f" class="form-control" value="<?php echo $table2->eye_pb_19f; ?>"></td>
-					            <td><input type="number" min="0" name="eye_pb_39m" class="form-control" value="<?php echo $table2->eye_pb_39m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_pb_39f" class="form-control" value="<?php echo $table2->eye_pb_39f; ?>"></td>
-					            <td><input type="number" min="0" name="eye_pb_40m" class="form-control" value="<?php echo $table2->eye_pb_40m; ?>"></td>
-					            <td><input type="number" min="0" name="eye_pb_40f" class="form-control" value="<?php echo $table2->eye_pb_40f; ?>"></td>
-					          </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="col-xs-6">
-                <table id="Gb" class="center">
-                  <thead>
-                    <tr>
-                      <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    </tr>
-                    <tr>
-                      <th>M</th>
-                      <th>F</th>
-                      <th>M</th>
-                      <th>F</th>
-                      <th>M</th>
-                      <th>F</th>
-                  </thead>
-                  <tbody>
-										<tr>
-					            <td>10</td>
-					            <td class="left">Dental Caries</td>
-					            <td><input type="number" min="0" name="dent_caries_19m" class="form-control" value="<?php echo $table2->dent_caries_19m; ?>"></td>
-					            <td><input type="number" min="0" name="dent_caries_19f" class="form-control" value="<?php echo $table2->dent_caries_19f; ?>"></td>
-					            <td><input type="number" min="0" name="dent_caries_39m" class="form-control" value="<?php echo $table2->dent_caries_39m; ?>"></td>
-					            <td><input type="number" min="0" name="dent_caries_39f" class="form-control" value="<?php echo $table2->dent_caries_39f; ?>"></td>
-					            <td><input type="number" min="0" name="dent_caries_40m" class="form-control" value="<?php echo $table2->dent_caries_40m; ?>"></td>
-					            <td><input type="number" min="0" name="dent_caries_40f" class="form-control" value="<?php echo $table2->dent_caries_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td>11</td>
-					            <td class="left">Periodontal Disease</td>
-					            <td><input type="number" min="0" name="perio_diseas_19m" class="form-control" value="<?php echo $table2->perio_diseas_19m; ?>"></td>
-					            <td><input type="number" min="0" name="perio_diseas_19f" class="form-control" value="<?php echo $table2->perio_diseas_19f; ?>"></td>
-					            <td><input type="number" min="0" name="perio_diseas_39m" class="form-control" value="<?php echo $table2->perio_diseas_39m; ?>"></td>
-					            <td><input type="number" min="0" name="perio_diseas_39f" class="form-control" value="<?php echo $table2->perio_diseas_39f; ?>"></td>
-					            <td><input type="number" min="0" name="perio_diseas_40m" class="form-control" value="<?php echo $table2->perio_diseas_40m; ?>"></td>
-					            <td><input type="number" min="0" name="perio_diseas_40f" class="form-control" value="<?php echo $table2->perio_diseas_40f; ?>"></td>
-					          </tr>
-					          <tr>
-					            <td>12</td>
-					            <td class="left">Other Teeth and Gum Infections</td>
-					            <td><input type="number" min="0" name="other_teeth_19m" class="form-control" value="<?php echo $table2->other_teeth_19m; ?>"></td>
-					            <td><input type="number" min="0" name="other_teeth_19f" class="form-control" value="<?php echo $table2->other_teeth_19f; ?>"></td>
-					            <td><input type="number" min="0" name="other_teeth_39m" class="form-control" value="<?php echo $table2->other_teeth_39m; ?>"></td>
-					            <td><input type="number" min="0" name="other_teeth_39f" class="form-control" value="<?php echo $table2->other_teeth_39f; ?>"></td>
-					            <td><input type="number" min="0" name="other_teeth_40m" class="form-control" value="<?php echo $table2->other_teeth_40m; ?>"></td>
-					            <td><input type="number" min="0" name="other_teeth_40f" class="form-control" value="<?php echo $table2->other_teeth_40f; ?>"></td>
-					          </tr>
-                  </tbody>
-                </table>
-              </div>
+              <h4>Oral diseases</h4>
+              <table id="Gb" class="center">
+                <thead>
+                  <tr>
+                    <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                  <tr>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                </thead>
+                <tbody>
+									<tr>
+				            <td>10</td>
+				            <td class="left">Dental caries</td>
+				            <td><input type="number" min="0" name="dent_caries_19m" class="form-control" value="<?php echo $table2->dent_caries_19m; ?>"></td>
+				            <td><input type="number" min="0" name="dent_caries_19f" class="form-control" value="<?php echo $table2->dent_caries_19f; ?>"></td>
+				            <td><input type="number" min="0" name="dent_caries_39m" class="form-control" value="<?php echo $table2->dent_caries_39m; ?>"></td>
+				            <td><input type="number" min="0" name="dent_caries_39f" class="form-control" value="<?php echo $table2->dent_caries_39f; ?>"></td>
+				            <td><input type="number" min="0" name="dent_caries_40m" class="form-control" value="<?php echo $table2->dent_caries_40m; ?>"></td>
+				            <td><input type="number" min="0" name="dent_caries_40f" class="form-control" value="<?php echo $table2->dent_caries_40f; ?>"></td>
+				          </tr>
+				          <tr>
+				            <td>11</td>
+				            <td class="left">Periodontal disease</td>
+				            <td><input type="number" min="0" name="perio_diseas_19m" class="form-control" value="<?php echo $table2->perio_diseas_19m; ?>"></td>
+				            <td><input type="number" min="0" name="perio_diseas_19f" class="form-control" value="<?php echo $table2->perio_diseas_19f; ?>"></td>
+				            <td><input type="number" min="0" name="perio_diseas_39m" class="form-control" value="<?php echo $table2->perio_diseas_39m; ?>"></td>
+				            <td><input type="number" min="0" name="perio_diseas_39f" class="form-control" value="<?php echo $table2->perio_diseas_39f; ?>"></td>
+				            <td><input type="number" min="0" name="perio_diseas_40m" class="form-control" value="<?php echo $table2->perio_diseas_40m; ?>"></td>
+				            <td><input type="number" min="0" name="perio_diseas_40f" class="form-control" value="<?php echo $table2->perio_diseas_40f; ?>"></td>
+				          </tr>
+				          <tr>
+				            <td>12</td>
+				            <td class="left">Other teeth and gum infections</td>
+				            <td><input type="number" min="0" name="other_teeth_19m" class="form-control" value="<?php echo $table2->other_teeth_19m; ?>"></td>
+				            <td><input type="number" min="0" name="other_teeth_19f" class="form-control" value="<?php echo $table2->other_teeth_19f; ?>"></td>
+				            <td><input type="number" min="0" name="other_teeth_39m" class="form-control" value="<?php echo $table2->other_teeth_39m; ?>"></td>
+				            <td><input type="number" min="0" name="other_teeth_39f" class="form-control" value="<?php echo $table2->other_teeth_39f; ?>"></td>
+				            <td><input type="number" min="0" name="other_teeth_40m" class="form-control" value="<?php echo $table2->other_teeth_40m; ?>"></td>
+				            <td><input type="number" min="0" name="other_teeth_40f" class="form-control" value="<?php echo $table2->other_teeth_40f; ?>"></td>
+				          </tr>
+                </tbody>
+              </table>
             </div>
             <br>
             <h4>Diagnosis</h4>
@@ -1063,7 +1056,7 @@
 					      </thead>
 					      <tbody>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>1</td>
 					          <td class="left">Medical condition</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1073,7 +1066,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 					        <tr>
-					          <td>1</td>
+					          <td>1.1</td>
 					          <td class="left">Hypertension</td>
 					          <td><input type="number" min="0" name="hyper_nc19m" class="form-control" value="<?php echo $table4->hyper_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="hyper_nc19f" class="form-control" value="<?php echo $table4->hyper_nc19f; ?>"></td>
@@ -1083,7 +1076,7 @@
 					          <td><input type="number" min="0" name="hyper_nc40f" class="form-control" value="<?php echo $table4->hyper_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>2</td>
 					          <td class="left">Respiratory diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1093,7 +1086,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>2.1</td>
 					          <td class="left">Asthma intermittant</td>
 					          <td><input type="number" min="0" name="asth_int_nc19m" class="form-control" value="<?php echo $table4->asth_int_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="asth_int_nc19f" class="form-control" value="<?php echo $table4->asth_int_nc19f; ?>"></td>
@@ -1103,7 +1096,7 @@
 					          <td><input type="number" min="0" name="asth_int_nc40f" class="form-control" value="<?php echo $table4->asth_int_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>2.2</td>
 					          <td class="left">Asthma persintent mild</td>
 					          <td><input type="number" min="0" name="asth_mild_nc19m" class="form-control" value="<?php echo $table4->asth_mild_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="asth_mild_nc19f" class="form-control" value="<?php echo $table4->asth_mild_nc19f; ?>"></td>
@@ -1113,7 +1106,7 @@
 					          <td><input type="number" min="0" name="asth_mild_nc40f" class="form-control" value="<?php echo $table4->asth_mild_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>2.3</td>
 					          <td class="left">Asthma persintent modarate</td>
 					          <td><input type="number" min="0" name="asth_mod_nc19m" class="form-control" value="<?php echo $table4->asth_mod_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="asth_mod_nc19f" class="form-control" value="<?php echo $table4->asth_mod_nc19f; ?>"></td>
@@ -1123,7 +1116,7 @@
 					          <td><input type="number" min="0" name="asth_mod_nc40f" class="form-control" value="<?php echo $table4->asth_mod_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>4</td>
+					          <td>2.4</td>
 					          <td class="left">Asthma persintent severe</td>
 					          <td><input type="number" min="0" name="asth_sev_nc19m" class="form-control" value="<?php echo $table4->asth_sev_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="asth_sev_nc19f" class="form-control" value="<?php echo $table4->asth_sev_nc19f; ?>"></td>
@@ -1133,7 +1126,7 @@
 					          <td><input type="number" min="0" name="asth_sev_nc40f" class="form-control" value="<?php echo $table4->asth_sev_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>5</td>
+					          <td>2.5</td>
 					          <td class="left">Bronchitis</td>
 					          <td><input type="number" min="0" name="bronch_nc19m" class="form-control" value="<?php echo $table4->bronch_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="bronch_nc19f" class="form-control" value="<?php echo $table4->bronch_nc19f; ?>"></td>
@@ -1143,8 +1136,8 @@
 					          <td><input type="number" min="0" name="bronch_nc40f" class="form-control" value="<?php echo $table4->bronch_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>6</td>
-					          <td class="left">Other Chronic obstructive pulmonary diseases</td>
+					          <td>2.6</td>
+					          <td class="left">Other chronic obstructive pulmonary diseases</td>
 					          <td><input type="number" min="0" name="other_pulm_nc19m" class="form-control" value="<?php echo $table4->other_pulm_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="other_pulm_nc19f" class="form-control" value="<?php echo $table4->other_pulm_nc19f; ?>"></td>
 					          <td><input type="number" min="0" name="other_pulm_nc39m" class="form-control" value="<?php echo $table4->other_pulm_nc39m; ?>"></td>
@@ -1153,7 +1146,7 @@
 					          <td><input type="number" min="0" name="other_pulm_nc40f" class="form-control" value="<?php echo $table4->other_pulm_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>3</td>
 					          <td class="left">Diabetes</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1163,7 +1156,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>3.1</td>
 					          <td class="left">Diabetes - Type 1</td>
 					          <td><input type="number" min="0" name="diab1_nc19m" class="form-control" value="<?php echo $table4->diab1_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="diab1_nc19f" class="form-control" value="<?php echo $table4->diab1_nc19f; ?>"></td>
@@ -1173,7 +1166,7 @@
 					          <td><input type="number" min="0" name="diab1_nc40f" class="form-control" value="<?php echo $table4->diab1_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>3.2</td>
 					          <td class="left">Diabetes - Type 2</td>
 					          <td><input type="number" min="0" name="diab2_nc19m" class="form-control" value="<?php echo $table4->diab2_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="diab2_nc19f" class="form-control" value="<?php echo $table4->diab2_nc19f; ?>"></td>
@@ -1183,7 +1176,7 @@
 					          <td><input type="number" min="0" name="diab2_nc40f" class="form-control" value="<?php echo $table4->diab2_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>3.3</td>
 					          <td class="left">Diabetes gestational</td>
 					          <td><input type="number" min="0" name="diab_gest_nc19m" class="form-control" value="<?php echo $table4->diab_gest_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="diab_gest_nc19f" class="form-control" value="<?php echo $table4->diab_gest_nc19f; ?>"></td>
@@ -1193,7 +1186,7 @@
 					          <td><input type="number" min="0" name="diab_gest_nc40f" class="form-control" value="<?php echo $table4->diab_gest_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>4</td>
 					          <td class="left">Cancer</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1203,8 +1196,8 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
-					          <td class="left">Breast Cancer</td>
+					          <td>4.01</td>
+					          <td class="left">Breast cancer</td>
 	                  <td class="grey"></td>
 					          <td><input type="number" min="0" name="breast_nc19f" class="form-control" value="<?php echo $table4->breast_nc19f; ?>"></td>
 	                  <td class="grey"></td>
@@ -1213,7 +1206,7 @@
 					          <td><input type="number" min="0" name="breast_nc40f" class="form-control" value="<?php echo $table4->breast_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>4.02</td>
 					          <td class="left">Cervical cancer</td>
 					          <td><input type="number" min="0" name="cervical_nc19m" class="form-control" value="<?php echo $table4->cervical_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="cervical_nc19f" class="form-control" value="<?php echo $table4->cervical_nc19f; ?>"></td>
@@ -1223,7 +1216,7 @@
 					          <td><input type="number" min="0" name="cervical_nc40f" class="form-control" value="<?php echo $table4->cervical_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>4.03</td>
 					          <td class="left">Lymphoma</td>
 					          <td><input type="number" min="0" name="lympho_nc19m" class="form-control" value="<?php echo $table4->lympho_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="lympho_nc19f" class="form-control" value="<?php echo $table4->lympho_nc19f; ?>"></td>
@@ -1233,7 +1226,7 @@
 					          <td><input type="number" min="0" name="lympho_nc40f" class="form-control" value="<?php echo $table4->lympho_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>4</td>
+					          <td>4.04</td>
 					          <td class="left">Leucamia</td>
 					          <td><input type="number" min="0" name="leuca_nc19m" class="form-control" value="<?php echo $table4->leuca_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="leuca_nc19f" class="form-control" value="<?php echo $table4->leuca_nc19f; ?>"></td>
@@ -1243,7 +1236,7 @@
 					          <td><input type="number" min="0" name="leuca_nc40f" class="form-control" value="<?php echo $table4->leuca_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>5</td>
+					          <td>4.05</td>
 					          <td class="left">Colon recto cancer</td>
 					          <td><input type="number" min="0" name="colon_nc19m" class="form-control" value="<?php echo $table4->colon_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="colon_nc19f" class="form-control" value="<?php echo $table4->colon_nc19f; ?>"></td>
@@ -1253,7 +1246,7 @@
 					          <td><input type="number" min="0" name="colon_nc40f" class="form-control" value="<?php echo $table4->colon_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>6</td>
+					          <td>4.06</td>
 					          <td class="left">Kaposi sarcoma</td>
 					          <td><input type="number" min="0" name="kaposi_nc19m" class="form-control" value="<?php echo $table4->kaposi_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="kaposi_nc19f" class="form-control" value="<?php echo $table4->kaposi_nc19f; ?>"></td>
@@ -1263,7 +1256,7 @@
 					          <td><input type="number" min="0" name="kaposi_nc40f" class="form-control" value="<?php echo $table4->kaposi_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>7</td>
+					          <td>4.07</td>
 					          <td class="left">Retinoblastoma</td>
 					          <td><input type="number" min="0" name="retino_nc19m" class="form-control" value="<?php echo $table4->retino_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="retino_nc19f" class="form-control" value="<?php echo $table4->retino_nc19f; ?>"></td>
@@ -1273,7 +1266,7 @@
 					          <td><input type="number" min="0" name="retino_nc40f" class="form-control" value="<?php echo $table4->retino_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>8</td>
+					          <td>4.08</td>
 					          <td class="left">Nephroblastoma</td>
 					          <td><input type="number" min="0" name="nephro_nc19m" class="form-control" value="<?php echo $table4->nephro_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="nephro_nc19f" class="form-control" value="<?php echo $table4->nephro_nc19f; ?>"></td>
@@ -1283,7 +1276,7 @@
 					          <td><input type="number" min="0" name="nephro_nc40f" class="form-control" value="<?php echo $table4->nephro_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>9</td>
+					          <td>4.09</td>
 					          <td class="left">Ovarian cancer</td>
 	                  <td class="grey"></td>
 					          <td><input type="number" min="0" name="ovarian_nc19f" class="form-control" value="<?php echo $table4->ovarian_nc19f; ?>"></td>
@@ -1293,7 +1286,7 @@
 					          <td><input type="number" min="0" name="ovarian_nc40f" class="form-control" value="<?php echo $table4->ovarian_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>10</td>
+					          <td>4.10</td>
 					          <td class="left">Prostate cancer</td>
 					          <td><input type="number" min="0" name="prostate_nc19m" class="form-control" value="<?php echo $table4->prostate_nc19m; ?>"></td>
 	                  <td class="grey"></td>
@@ -1303,7 +1296,7 @@
 	                  <td class="grey"></td>
 					        </tr>
 					        <tr>
-					          <td>11</td>
+					          <td>4.11</td>
 					          <td class="left">Cancer others</td>
 					          <td><input type="number" min="0" name="cancer_others_nc19m" class="form-control" value="<?php echo $table4->cancer_others_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="cancer_others_nc19f" class="form-control" value="<?php echo $table4->cancer_others_nc19f; ?>"></td>
@@ -1341,7 +1334,7 @@
 					      </thead>
 					      <tbody>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>1</td>
 					          <td class="left">Medical condition</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1351,7 +1344,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 					        <tr>
-					          <td>1</td>
+					          <td>1.1</td>
 					          <td class="left">Cardiomyopathies</td>
 					          <td><input type="number" min="0" name="cardio_nc19m" class="form-control" value="<?php echo $table5->cardio_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="cardio_nc19f" class="form-control" value="<?php echo $table5->cardio_nc19f; ?>"></td>
@@ -1361,7 +1354,7 @@
 					          <td><input type="number" min="0" name="cardio_nc40f" class="form-control" value="<?php echo $table5->cardio_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>2</td>
+					          <td>1.2</td>
 					          <td class="left">Stroke/TIA</td>
 					          <td><input type="number" min="0" name="stroke_nc19m" class="form-control" value="<?php echo $table5->stroke_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="stroke_nc19f" class="form-control" value="<?php echo $table5->stroke_nc19f; ?>"></td>
@@ -1371,7 +1364,7 @@
 					          <td><input type="number" min="0" name="stroke_nc40f" class="form-control" value="<?php echo $table5->stroke_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>3</td>
+					          <td>1.3</td>
 					          <td class="left">Rheumatic heart disease</td>
 					          <td><input type="number" min="0" name="rheumatic_nc19m" class="form-control" value="<?php echo $table5->rheumatic_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="rheumatic_nc19f" class="form-control" value="<?php echo $table5->rheumatic_nc19f; ?>"></td>
@@ -1381,7 +1374,7 @@
 					          <td><input type="number" min="0" name="rheumatic_nc40f" class="form-control" value="<?php echo $table5->rheumatic_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>4</td>
+					          <td>1.4</td>
 					          <td class="left">Congenital heart disease</td>
 					          <td><input type="number" min="0" name="cong_nc19m" class="form-control" value="<?php echo $table5->cong_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="cong_nc19f" class="form-control" value="<?php echo $table5->cong_nc19f; ?>"></td>
@@ -1391,7 +1384,7 @@
 					          <td><input type="number" min="0" name="cong_nc40f" class="form-control" value="<?php echo $table5->cong_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>5</td>
+					          <td>1.5</td>
 					          <td class="left">Coronary artery disease</td>
 					          <td><input type="number" min="0" name="coronary_nc19m" class="form-control" value="<?php echo $table5->coronary_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="coronary_nc19f" class="form-control" value="<?php echo $table5->coronary_nc19f; ?>"></td>
@@ -1401,7 +1394,7 @@
 					          <td><input type="number" min="0" name="coronary_nc40f" class="form-control" value="<?php echo $table5->coronary_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>6</td>
+					          <td>1.6</td>
 					          <td class="left">Pericardial disease</td>
 					          <td><input type="number" min="0" name="peri_nc19m" class="form-control" value="<?php echo $table5->peri_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="peri_nc19f" class="form-control" value="<?php echo $table5->peri_nc19f; ?>"></td>
@@ -1411,7 +1404,7 @@
 					          <td><input type="number" min="0" name="peri_nc40f" class="form-control" value="<?php echo $table5->peri_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>7</td>
+					          <td>1.7</td>
 					          <td class="left">Heart failure</td>
 					          <td><input type="number" min="0" name="heart_nc19m" class="form-control" value="<?php echo $table5->heart_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="heart_nc19f" class="form-control" value="<?php echo $table5->heart_nc19f; ?>"></td>
@@ -1421,7 +1414,7 @@
 					          <td><input type="number" min="0" name="heart_nc40f" class="form-control" value="<?php echo $table5->heart_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>8</td>
+					          <td>1.8</td>
 					          <td class="left">Other cardiovascular</td>
 					          <td><input type="number" min="0" name="other_cardio_nc19m" class="form-control" value="<?php echo $table5->other_cardio_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="other_cardio_nc19f" class="form-control" value="<?php echo $table5->other_cardio_nc19f; ?>"></td>
@@ -1431,7 +1424,7 @@
 					          <td><input type="number" min="0" name="other_cardio_nc40f" class="form-control" value="<?php echo $table5->other_cardio_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td>9</td>
+					          <td>1.9</td>
 					          <td class="left">Post heart surgery</td>
 					          <td><input type="number" min="0" name="post_heart_nc19m" class="form-control" value="<?php echo $table5->post_heart_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="post_heart_nc19f" class="form-control" value="<?php echo $table5->post_heart_nc19f; ?>"></td>
@@ -1441,7 +1434,7 @@
 					          <td><input type="number" min="0" name="post_heart_nc40f" class="form-control" value="<?php echo $table5->post_heart_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>2</td>
 					          <td class="left">Kidney diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1451,7 +1444,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>2.1</td>
 					          <td class="left">Renal failure</td>
 					          <td><input type="number" min="0" name="renal_nc19m" class="form-control" value="<?php echo $table5->renal_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="renal_nc19f" class="form-control" value="<?php echo $table5->renal_nc19f; ?>"></td>
@@ -1461,7 +1454,7 @@
 					          <td><input type="number" min="0" name="renal_nc40f" class="form-control" value="<?php echo $table5->renal_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>2.2</td>
 					          <td class="left">Other chonic kidney diseases</td>
 					          <td><input type="number" min="0" name="other_chronic_nc19m" class="form-control" value="<?php echo $table5->other_chronic_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="other_chronic_nc19f" class="form-control" value="<?php echo $table5->other_chronic_nc19f; ?>"></td>
@@ -1471,7 +1464,7 @@
 					          <td><input type="number" min="0" name="other_chronic_nc40f" class="form-control" value="<?php echo $table5->other_chronic_nc40f; ?>"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>3</td>
 					          <td class="left">Metabolic diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -1481,7 +1474,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>3.1</td>
 					          <td class="left">Thyroid disease</td>
 					          <td><input type="number" min="0" name="thyroid_nc19m" class="form-control" value="<?php echo $table5->thyroid_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="thyroid_nc19f" class="form-control" value="<?php echo $table5->thyroid_nc19f; ?>"></td>
@@ -1491,7 +1484,7 @@
 					          <td><input type="number" min="0" name="thyroid_nc40f" class="form-control" value="<?php echo $table5->thyroid_nc40f; ?>"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>3.2</td>
 					          <td class="left">Other endocrine and metabolic diseases</td>
 					          <td><input type="number" min="0" name="other_endo_nc19m" class="form-control" value="<?php echo $table5->other_endo_nc19m; ?>"></td>
 					          <td><input type="number" min="0" name="other_endo_nc19f" class="form-control" value="<?php echo $table5->other_endo_nc19f; ?>"></td>
@@ -1771,10 +1764,10 @@
 	                <tr>
 					          <td>3</td>
 					          <td class="left">Patients seen by the palliative care team at the least four time this month</td>
-					          <td><input type="number" min="0" name="time_19m" class="form-control" value="<?php echo $table7->4time_19m; ?>"></td>
-					          <td><input type="number" min="0" name="time_19f" class="form-control" value="<?php echo $table7->4time_19f; ?>"></td>
-					          <td><input type="number" min="0" name="time_20m" class="form-control" value="<?php echo $table7->4time_20m; ?>"></td>
-					          <td><input type="number" min="0" name="time_20f" class="form-control" value="<?php echo $table7->4time_20f; ?>"></td>
+					          <td><input type="number" min="0" name="time_19m" class="form-control" value="<?php echo $table7->time_19m; ?>"></td>
+					          <td><input type="number" min="0" name="time_19f" class="form-control" value="<?php echo $table7->time_19f; ?>"></td>
+					          <td><input type="number" min="0" name="time_20m" class="form-control" value="<?php echo $table7->time_20m; ?>"></td>
+					          <td><input type="number" min="0" name="time_20f" class="form-control" value="<?php echo $table7->time_20f; ?>"></td>
 					        </tr>
 	                <tr>
 					          <td>4</td>
@@ -1818,7 +1811,7 @@
 					        <tr>
 					          <td>1</td>
 					          <td class="left">Total number of people who consulted for annual medical checkup during the reportins period</td>
-					          <td><input type="number" min="0" name="annual_chekup" class="form-control" value="<?php echo $table8->annual_chekup; ?>"></td>
+					          <td><input type="number" min="0" name="annual_checkup" class="form-control" value="<?php echo $table8->annual_checkup; ?>"></td>
 					        </tr>
 									<tr>
                     <td class="grey"></td>

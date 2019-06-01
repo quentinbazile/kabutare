@@ -14,3181 +14,17 @@ class research extends CI_Controller
         $output = '';
         $date = $this->input->post('date');
 
-        $mental_health = $this->research_model->mental_health($date);
-
-        if ($mental_health->anxiety_nc19m_total != null) {
-            $output .= '
-              <h4>III. Mental Health - Summary</h4>
-              <table id="IIIA" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th >Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="center">1</td>
-                    <td class="left">Mental patients under follow up</td>
-                    <td>'.$mental_health->follow_up_total.'</td>
-                    </tr>
-                  <tr>
-                    <td class="center">2</td>
-                    <td class="left">Mental problems referred to higher level</td>
-                    <td>'.$mental_health->higher_level_total.'</td>
-                    </tr>
-                  <tr>
-                    <td class="center">3</td>
-                    <td class="left">Mental problems hospitalized</td>
-                    <td>'.$mental_health->hospitalized_total.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
-        			<h4>III Mental Health - Diagnosis</h4>
-  				    <table id="IIIB" class="center">
-  				      <thead>
-  				        <tr>
-  				          <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				          <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				          <th colspan="6">New cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				          <th colspan="6">Old cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				        </tr>
-  				        <tr>
-  				          <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  			            <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  			            <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  			            <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-  				        </tr>
-  				        <tr>
-  				          <th>M</th>
-  				          <th>F</th>
-  				          <th>M</th>
-  				          <th>F</th>
-  				          <th>M</th>
-  				          <th>F</th>
-  				          <th>M</th>
-  				          <th>F</th>
-  				          <th>M</th>
-  				          <th>F</th>
-  				          <th>M</th>
-  				          <th>F</th>
-  								</tr>
-  				      </thead>
-  				      <tbody>
-  				        <tr>
-  				          <td class="center">1</td>
-  				          <td class="left">Anxiety disorders</td>
-  				          <td>'.$mental_health->anxiety_nc19m_total.'</td>
-  				          <td>'.$mental_health->anxiety_nc19f_total.'</td>
-  				          <td>'.$mental_health->anxiety_nc39m_total.'</td>
-  				          <td>'.$mental_health->anxiety_nc39f_total.'</td>
-  				          <td>'.$mental_health->anxiety_nc40m_total.'</td>
-  				          <td>'.$mental_health->anxiety_nc40f_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc19m_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc19f_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc39m_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc39f_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc40m_total.'</td>
-  				          <td>'.$mental_health->anxiety_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">2</td>
-  				          <td class="left">Post-traumatic stress disorders</td>
-  				          <td>'.$mental_health->stress_nc19m_total.'</td>
-  				          <td>'.$mental_health->stress_nc19f_total.'</td>
-  				          <td>'.$mental_health->stress_nc39m_total.'</td>
-  				          <td>'.$mental_health->stress_nc39f_total.'</td>
-  				          <td>'.$mental_health->stress_nc40m_total.'</td>
-  				          <td>'.$mental_health->stress_nc40f_total.'</td>
-  				          <td>'.$mental_health->stress_oc19m_total.'</td>
-  				          <td>'.$mental_health->stress_oc19f_total.'</td>
-  				          <td>'.$mental_health->stress_oc39m_total.'</td>
-  				          <td>'.$mental_health->stress_oc39f_total.'</td>
-  				          <td>'.$mental_health->stress_oc40m_total.'</td>
-  				          <td>'.$mental_health->stress_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">3</td>
-  				          <td class="left">Schizophrenia and other psychoses</td>
-  				          <td>'.$mental_health->schizo_nc19m_total.'</td>
-  				          <td>'.$mental_health->schizo_nc19f_total.'</td>
-  				          <td>'.$mental_health->schizo_nc39m_total.'</td>
-  				          <td>'.$mental_health->schizo_nc39f_total.'</td>
-  				          <td>'.$mental_health->schizo_nc40m_total.'</td>
-  				          <td>'.$mental_health->schizo_nc40f_total.'</td>
-  				          <td>'.$mental_health->schizo_oc19m_total.'</td>
-  				          <td>'.$mental_health->schizo_oc19f_total.'</td>
-  				          <td>'.$mental_health->schizo_oc39m_total.'</td>
-  				          <td>'.$mental_health->schizo_oc39f_total.'</td>
-  				          <td>'.$mental_health->schizo_oc40m_total.'</td>
-  				          <td>'.$mental_health->schizo_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">4</td>
-  				          <td class="left">Somatoform disorders</td>
-  				          <td>'.$mental_health->soma_nc19m_total.'</td>
-  				          <td>'.$mental_health->soma_nc19f_total.'</td>
-  				          <td>'.$mental_health->soma_nc39m_total.'</td>
-  				          <td>'.$mental_health->soma_nc39f_total.'</td>
-  				          <td>'.$mental_health->soma_nc40m_total.'</td>
-  				          <td>'.$mental_health->soma_nc40f_total.'</td>
-  				          <td>'.$mental_health->soma_oc19m_total.'</td>
-  				          <td>'.$mental_health->soma_oc19f_total.'</td>
-  				          <td>'.$mental_health->soma_oc39m_total.'</td>
-  				          <td>'.$mental_health->soma_oc39f_total.'</td>
-  				          <td>'.$mental_health->soma_oc40m_total.'</td>
-  				          <td>'.$mental_health->soma_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">5</td>
-  				          <td class="left">Behavioral and emotional disorders with onset usually occurring in childhood and adolescence</td>
-  				          <td>'.$mental_health->child_nc19m_total.'</td>
-  				          <td>'.$mental_health->child_nc19f_total.'</td>
-  				          <td>'.$mental_health->child_nc39m_total.'</td>
-  				          <td>'.$mental_health->child_nc39f_total.'</td>
-  				          <td>'.$mental_health->child_nc40m_total.'</td>
-  				          <td>'.$mental_health->child_nc40f_total.'</td>
-  				          <td>'.$mental_health->child_oc19m_total.'</td>
-  				          <td>'.$mental_health->child_oc19f_total.'</td>
-  				          <td>'.$mental_health->child_oc39m_total.'</td>
-  				          <td>'.$mental_health->child_oc39f_total.'</td>
-  				          <td>'.$mental_health->child_oc40m_total.'</td>
-  				          <td>'.$mental_health->child_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">6</td>
-  				          <td class="left">Mental and behavioral disorder due to use of alcohol</td>
-  				          <td>'.$mental_health->alcohol_nc19m_total.'</td>
-  				          <td>'.$mental_health->alcohol_nc19f_total.'</td>
-  				          <td>'.$mental_health->alcohol_nc39m_total.'</td>
-  				          <td>'.$mental_health->alcohol_nc39f_total.'</td>
-  				          <td>'.$mental_health->alcohol_nc40m_total.'</td>
-  				          <td>'.$mental_health->alcohol_nc40f_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc19m_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc19f_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc39m_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc39f_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc40m_total.'</td>
-  				          <td>'.$mental_health->alcohol_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">7</td>
-  				          <td class="left">Mental and behavioral disorder due to substance abuse</td>
-  				          <td>'.$mental_health->drugs_nc19m_total.'</td>
-  				          <td>'.$mental_health->drugs_nc19f_total.'</td>
-  				          <td>'.$mental_health->drugs_nc39m_total.'</td>
-  				          <td>'.$mental_health->drugs_nc39f_total.'</td>
-  				          <td>'.$mental_health->drugs_nc40m_total.'</td>
-  				          <td>'.$mental_health->drugs_nc40f_total.'</td>
-  				          <td>'.$mental_health->drugs_oc19m_total.'</td>
-  				          <td>'.$mental_health->drugs_oc19f_total.'</td>
-  				          <td>'.$mental_health->drugs_oc39m_total.'</td>
-  				          <td>'.$mental_health->drugs_oc39f_total.'</td>
-  				          <td>'.$mental_health->drugs_oc40m_total.'</td>
-  				          <td>'.$mental_health->drugs_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">8</td>
-  				          <td class="left">Depression</td>
-  				          <td>'.$mental_health->dep_nc19m_total.'</td>
-  				          <td>'.$mental_health->dep_nc19f_total.'</td>
-  				          <td>'.$mental_health->dep_nc39m_total.'</td>
-  				          <td>'.$mental_health->dep_nc39f_total.'</td>
-  				          <td>'.$mental_health->dep_nc40m_total.'</td>
-  				          <td>'.$mental_health->dep_nc40f_total.'</td>
-  				          <td>'.$mental_health->dep_oc19m_total.'</td>
-  				          <td>'.$mental_health->dep_oc19f_total.'</td>
-  				          <td>'.$mental_health->dep_oc39m_total.'</td>
-  				          <td>'.$mental_health->dep_oc39f_total.'</td>
-  				          <td>'.$mental_health->dep_oc40m_total.'</td>
-  				          <td>'.$mental_health->dep_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">9</td>
-  				          <td class="left">Suicide attempted</td>
-  				          <td>'.$mental_health->suicid_att_nc19m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_nc19f_total.'</td>
-  				          <td>'.$mental_health->suicid_att_nc39m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_nc39f_total.'</td>
-  				          <td>'.$mental_health->suicid_att_nc40m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_nc40f_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc19m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc19f_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc39m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc39f_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc40m_total.'</td>
-  				          <td>'.$mental_health->suicid_att_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">10</td>
-  				          <td class="left">Suicide deaths</td>
-  				          <td>'.$mental_health->suicid_d_nc19m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_nc19f_total.'</td>
-  				          <td>'.$mental_health->suicid_d_nc39m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_nc39f_total.'</td>
-  				          <td>'.$mental_health->suicid_d_nc40m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_nc40f_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc19m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc19f_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc39m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc39f_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc40m_total.'</td>
-  				          <td>'.$mental_health->suicid_d_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">11</td>
-  				          <td class="left">Maniac episode</td>
-  				          <td>'.$mental_health->maniac_nc19m_total.'</td>
-  				          <td>'.$mental_health->maniac_nc19f_total.'</td>
-  				          <td>'.$mental_health->maniac_nc39m_total.'</td>
-  				          <td>'.$mental_health->maniac_nc39f_total.'</td>
-  				          <td>'.$mental_health->maniac_nc40m_total.'</td>
-  				          <td>'.$mental_health->maniac_nc40f_total.'</td>
-  				          <td>'.$mental_health->maniac_oc19m_total.'</td>
-  				          <td>'.$mental_health->maniac_oc19f_total.'</td>
-  				          <td>'.$mental_health->maniac_oc39m_total.'</td>
-  				          <td>'.$mental_health->maniac_oc39f_total.'</td>
-  				          <td>'.$mental_health->maniac_oc40m_total.'</td>
-  				          <td>'.$mental_health->maniac_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">12</td>
-  				          <td class="left">Bipolar disorders</td>
-  				          <td>'.$mental_health->bipolar_nc19m_total.'</td>
-  				          <td>'.$mental_health->bipolar_nc19f_total.'</td>
-  				          <td>'.$mental_health->bipolar_nc39m_total.'</td>
-  				          <td>'.$mental_health->bipolar_nc39f_total.'</td>
-  				          <td>'.$mental_health->bipolar_nc40m_total.'</td>
-  				          <td>'.$mental_health->bipolar_nc40f_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc19m_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc19f_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc39m_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc39f_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc40m_total.'</td>
-  				          <td>'.$mental_health->bipolar_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">13</td>
-  				          <td class="left">Other psychological / Mental behavioral disorders</td>
-  				          <td>'.$mental_health->other_psy_nc19m_total.'</td>
-  				          <td>'.$mental_health->other_psy_nc19f_total.'</td>
-  				          <td>'.$mental_health->other_psy_nc39m_total.'</td>
-  				          <td>'.$mental_health->other_psy_nc39f_total.'</td>
-  				          <td>'.$mental_health->other_psy_nc40m_total.'</td>
-  				          <td>'.$mental_health->other_psy_nc40f_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc19m_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc19f_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc39m_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc39f_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc40m_total.'</td>
-  				          <td>'.$mental_health->other_psy_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">14</td>
-  				          <td class="left">Epilepsy</td>
-  				          <td>'.$mental_health->epilepsy_nc19m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_nc19f_total.'</td>
-  				          <td>'.$mental_health->epilepsy_nc39m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_nc39f_total.'</td>
-  				          <td>'.$mental_health->epilepsy_nc40m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_nc40f_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc19m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc19f_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc39m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc39f_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc40m_total.'</td>
-  				          <td>'.$mental_health->epilepsy_oc40f_total.'</td>
-  				        </tr>
-  				        <tr>
-  				          <td class="center">15</td>
-  				          <td class="left">Other neurological disorders</td>
-  				          <td>'.$mental_health->other_neuro_nc19m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_nc19f_total.'</td>
-  				          <td>'.$mental_health->other_neuro_nc39m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_nc39f_total.'</td>
-  				          <td>'.$mental_health->other_neuro_nc40m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_nc40f_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc19m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc19f_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc39m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc39f_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc40m_total.'</td>
-  				          <td>'.$mental_health->other_neuro_oc40f_total.'</td>
-  				        </tr>
-  				      </tbody>
-  				    </table>
-              <br>';
-        }
-
-        $other_cardiovascular = $this->research_model->other_cardiovascular($date);
-
-        if ($other_cardiovascular) {
-            $output .= '
-              <h4>V. Other Cardiovascular and Kindney Diseases</h4>
-              <table id="V" class="center">
-                <thead>
-                  <tr>
-                    <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="6">New Cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="6">Old Cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                  <tr>
-                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                  <tr>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                    <th>M</th>
-                    <th>F</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Medical condition</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>1.1</td>
-                    <td class="left">Cardiomyopathies</td>
-                    <td>'.$other_cardiovascular->cardio_nc19m.'</td>
-                    <td>'.$other_cardiovascular->cardio_nc19f.'</td>
-                    <td>'.$other_cardiovascular->cardio_nc39m.'</td>
-                    <td>'.$other_cardiovascular->cardio_nc39f.'</td>
-                    <td>'.$other_cardiovascular->cardio_nc40m.'</td>
-                    <td>'.$other_cardiovascular->cardio_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->cardio_oc19m.'</td>
-                    <td>'.$other_cardiovascular->cardio_oc19f.'</td>
-                    <td>'.$other_cardiovascular->cardio_oc39m.'</td>
-                    <td>'.$other_cardiovascular->cardio_oc39f.'</td>
-                    <td>'.$other_cardiovascular->cardio_oc40m.'</td>
-                    <td>'.$other_cardiovascular->cardio_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->cardio_d19m.'</td>
-                    <td>'.$other_cardiovascular->cardio_d19f.'</td>
-                    <td>'.$other_cardiovascular->cardio_d39m.'</td>
-                    <td>'.$other_cardiovascular->cardio_d39f.'</td>
-                    <td>'.$other_cardiovascular->cardio_d40m.'</td>
-                    <td>'.$other_cardiovascular->cardio_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.2</td>
-                    <td class="left">Stroke/TIA</td>
-                    <td>'.$other_cardiovascular->stroke_nc19m.'</td>
-                    <td>'.$other_cardiovascular->stroke_nc19f.'</td>
-                    <td>'.$other_cardiovascular->stroke_nc39m.'</td>
-                    <td>'.$other_cardiovascular->stroke_nc39f.'</td>
-                    <td>'.$other_cardiovascular->stroke_nc40m.'</td>
-                    <td>'.$other_cardiovascular->stroke_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->stroke_oc19m.'</td>
-                    <td>'.$other_cardiovascular->stroke_oc19f.'</td>
-                    <td>'.$other_cardiovascular->stroke_oc39m.'</td>
-                    <td>'.$other_cardiovascular->stroke_oc39f.'</td>
-                    <td>'.$other_cardiovascular->stroke_oc40m.'</td>
-                    <td>'.$other_cardiovascular->stroke_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->stroke_d19m.'</td>
-                    <td>'.$other_cardiovascular->stroke_d19f.'</td>
-                    <td>'.$other_cardiovascular->stroke_d39m.'</td>
-                    <td>'.$other_cardiovascular->stroke_d39f.'</td>
-                    <td>'.$other_cardiovascular->stroke_d40m.'</td>
-                    <td>'.$other_cardiovascular->stroke_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.3</td>
-                    <td class="left">Rheumatic heart disease</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc19m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc19f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc39m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc39f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc40m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->rheumatic_oc19m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_oc19f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_oc39m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_oc39f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_oc40m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->rheumatic_d19m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_d19f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_d39m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_d39f.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_d40m.'</td>
-                    <td>'.$other_cardiovascular->rheumatic_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.4</td>
-                    <td class="left">Congenital heart disease</td>
-                    <td>'.$other_cardiovascular->cong_nc19m.'</td>
-                    <td>'.$other_cardiovascular->cong_nc19f.'</td>
-                    <td>'.$other_cardiovascular->cong_nc39m.'</td>
-                    <td>'.$other_cardiovascular->cong_nc39f.'</td>
-                    <td>'.$other_cardiovascular->cong_nc40m.'</td>
-                    <td>'.$other_cardiovascular->cong_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->cong_oc19m.'</td>
-                    <td>'.$other_cardiovascular->cong_oc19f.'</td>
-                    <td>'.$other_cardiovascular->cong_oc39m.'</td>
-                    <td>'.$other_cardiovascular->cong_oc39f.'</td>
-                    <td>'.$other_cardiovascular->cong_oc40m.'</td>
-                    <td>'.$other_cardiovascular->cong_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->cong_d19m.'</td>
-                    <td>'.$other_cardiovascular->cong_d19f.'</td>
-                    <td>'.$other_cardiovascular->cong_d39m.'</td>
-                    <td>'.$other_cardiovascular->cong_d39f.'</td>
-                    <td>'.$other_cardiovascular->cong_d40m.'</td>
-                    <td>'.$other_cardiovascular->cong_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.5</td>
-                    <td class="left">Coronary artery disease</td>
-                    <td>'.$other_cardiovascular->coronary_nc19m.'</td>
-                    <td>'.$other_cardiovascular->coronary_nc19f.'</td>
-                    <td>'.$other_cardiovascular->coronary_nc39m.'</td>
-                    <td>'.$other_cardiovascular->coronary_nc39f.'</td>
-                    <td>'.$other_cardiovascular->coronary_nc40m.'</td>
-                    <td>'.$other_cardiovascular->coronary_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->coronary_oc19m.'</td>
-                    <td>'.$other_cardiovascular->coronary_oc19f.'</td>
-                    <td>'.$other_cardiovascular->coronary_oc39m.'</td>
-                    <td>'.$other_cardiovascular->coronary_oc39f.'</td>
-                    <td>'.$other_cardiovascular->coronary_oc40m.'</td>
-                    <td>'.$other_cardiovascular->coronary_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->coronary_d19m.'</td>
-                    <td>'.$other_cardiovascular->coronary_d19f.'</td>
-                    <td>'.$other_cardiovascular->coronary_d39m.'</td>
-                    <td>'.$other_cardiovascular->coronary_d39f.'</td>
-                    <td>'.$other_cardiovascular->coronary_d40m.'</td>
-                    <td>'.$other_cardiovascular->coronary_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.6</td>
-                    <td class="left">Pericardial disease</td>
-                    <td>'.$other_cardiovascular->peri_nc19m.'</td>
-                    <td>'.$other_cardiovascular->peri_nc19f.'</td>
-                    <td>'.$other_cardiovascular->peri_nc39m.'</td>
-                    <td>'.$other_cardiovascular->peri_nc39f.'</td>
-                    <td>'.$other_cardiovascular->peri_nc40m.'</td>
-                    <td>'.$other_cardiovascular->peri_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->peri_oc19m.'</td>
-                    <td>'.$other_cardiovascular->peri_oc19f.'</td>
-                    <td>'.$other_cardiovascular->peri_oc39m.'</td>
-                    <td>'.$other_cardiovascular->peri_oc39f.'</td>
-                    <td>'.$other_cardiovascular->peri_oc40m.'</td>
-                    <td>'.$other_cardiovascular->peri_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->peri_d19m.'</td>
-                    <td>'.$other_cardiovascular->peri_d19f.'</td>
-                    <td>'.$other_cardiovascular->peri_d39m.'</td>
-                    <td>'.$other_cardiovascular->peri_d39f.'</td>
-                    <td>'.$other_cardiovascular->peri_d40m.'</td>
-                    <td>'.$other_cardiovascular->peri_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.7</td>
-                    <td class="left">Heart failure</td>
-                    <td>'.$other_cardiovascular->heart_nc19m.'</td>
-                    <td>'.$other_cardiovascular->heart_nc19f.'</td>
-                    <td>'.$other_cardiovascular->heart_nc39m.'</td>
-                    <td>'.$other_cardiovascular->heart_nc39f.'</td>
-                    <td>'.$other_cardiovascular->heart_nc40m.'</td>
-                    <td>'.$other_cardiovascular->heart_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->heart_oc19m.'</td>
-                    <td>'.$other_cardiovascular->heart_oc19f.'</td>
-                    <td>'.$other_cardiovascular->heart_oc39m.'</td>
-                    <td>'.$other_cardiovascular->heart_oc39f.'</td>
-                    <td>'.$other_cardiovascular->heart_oc40m.'</td>
-                    <td>'.$other_cardiovascular->heart_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->heart_d19m.'</td>
-                    <td>'.$other_cardiovascular->heart_d19f.'</td>
-                    <td>'.$other_cardiovascular->heart_d39m.'</td>
-                    <td>'.$other_cardiovascular->heart_d39f.'</td>
-                    <td>'.$other_cardiovascular->heart_d40m.'</td>
-                    <td>'.$other_cardiovascular->heart_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.8</td>
-                    <td class="left">Other cardiovascular</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc19m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc19f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc39m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc39f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc40m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_cardio_oc19m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_oc19f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_oc39m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_oc39f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_oc40m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_cardio_d19m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_d19f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_d39m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_d39f.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_d40m.'</td>
-                    <td>'.$other_cardiovascular->other_cardio_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.9</td>
-                    <td class="left">Post heart surgery</td>
-                    <td>'.$other_cardiovascular->post_heart_nc19m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_nc19f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_nc39m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_nc39f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_nc40m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->post_heart_oc19m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_oc19f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_oc39m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_oc39f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_oc40m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->post_heart_d19m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_d19f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_d39m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_d39f.'</td>
-                    <td>'.$other_cardiovascular->post_heart_d40m.'</td>
-                    <td>'.$other_cardiovascular->post_heart_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Kidney diseases</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>2.1</td>
-                    <td class="left">Renal failure</td>
-                    <td>'.$other_cardiovascular->renal_nc19m.'</td>
-                    <td>'.$other_cardiovascular->renal_nc19f.'</td>
-                    <td>'.$other_cardiovascular->renal_nc39m.'</td>
-                    <td>'.$other_cardiovascular->renal_nc39f.'</td>
-                    <td>'.$other_cardiovascular->renal_nc40m.'</td>
-                    <td>'.$other_cardiovascular->renal_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->renal_oc19m.'</td>
-                    <td>'.$other_cardiovascular->renal_oc19f.'</td>
-                    <td>'.$other_cardiovascular->renal_oc39m.'</td>
-                    <td>'.$other_cardiovascular->renal_oc39f.'</td>
-                    <td>'.$other_cardiovascular->renal_oc40m.'</td>
-                    <td>'.$other_cardiovascular->renal_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->renal_d19m.'</td>
-                    <td>'.$other_cardiovascular->renal_d19f.'</td>
-                    <td>'.$other_cardiovascular->renal_d39m.'</td>
-                    <td>'.$other_cardiovascular->renal_d39f.'</td>
-                    <td>'.$other_cardiovascular->renal_d40m.'</td>
-                    <td>'.$other_cardiovascular->renal_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>2.2</td>
-                    <td class="left">Other chonic kidney diseases</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc19m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc19f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc39m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc39f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc40m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_chronic_oc19m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_oc19f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_oc39m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_oc39f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_oc40m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_chronic_d19m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_d19f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_d39m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_d39f.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_d40m.'</td>
-                    <td>'.$other_cardiovascular->other_chronic_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Metabolic diseases</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.1</td>
-                    <td class="left">Thyroid disease</td>
-                    <td>'.$other_cardiovascular->thyroid_nc19m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_nc19f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_nc39m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_nc39f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_nc40m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->thyroid_oc19m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_oc19f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_oc39m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_oc39f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_oc40m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->thyroid_d19m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_d19f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_d39m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_d39f.'</td>
-                    <td>'.$other_cardiovascular->thyroid_d40m.'</td>
-                    <td>'.$other_cardiovascular->thyroid_d40f.'</td>
-                  </tr>
-                  <tr>
-                    <td>3.2</td>
-                    <td class="left">Other endocrine and metabolic diseases</td>
-                    <td>'.$other_cardiovascular->other_endo_nc19m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_nc19f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_nc39m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_nc39f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_nc40m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_nc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_endo_oc19m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_oc19f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_oc39m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_oc39f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_oc40m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_oc40f.'</td>
-
-                    <td>'.$other_cardiovascular->other_endo_d19m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_d19f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_d39m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_d39f.'</td>
-                    <td>'.$other_cardiovascular->other_endo_d40m.'</td>
-                    <td>'.$other_cardiovascular->other_endo_d40f.'</td>
-                  </tr>
-                </tbody>
-              </table><br>';
-        }
-
-        $palliative_care = $this->research_model->palliative_care($date);
-
-        if ($palliative_care) {
-            $output .= '
-              <h4>VII. Palliative Care</h4>
-              <table id="VII" class="center">
-					      <thead>
-					        <tr>
-					          <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="2">Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					        </tr>
-					        <tr>
-					          <th>M</th>
-					          <th>F</th>
-					          <th>M</th>
-					          <th>F</th>
-									</tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td>1</td>
-					          <td class="left">Total patients in palliative care at the beginning of the month (old cases)</td>
-					          <td>'.$palliative_care->oc_19m.'</td>
-					          <td>'.$palliative_care->oc_19f.'</td>
-					          <td>'.$palliative_care->oc_20m.'</td>
-					          <td>'.$palliative_care->oc_20f.'</td>
-					        </tr>
-	                <tr>
-					          <td>2</td>
-					          <td class="left">Patients in palliative care new cases this month (new cases)</td>
-					          <td>'.$palliative_care->nc_19m.'</td>
-					          <td>'.$palliative_care->nc_19f.'</td>
-					          <td>'.$palliative_care->nc_20m.'</td>
-					          <td>'.$palliative_care->nc_20f.'</td>
-					        </tr>
-	                <tr>
-					          <td>3</td>
-					          <td class="left">Patients seen by the palliative care team at the least four time this month</td>
-					          <td>'.$palliative_care->time_19m.'</td>
-					          <td>'.$palliative_care->time_19f.'</td>
-					          <td>'.$palliative_care->time_20m.'</td>
-					          <td>'.$palliative_care->time_20f.'</td>
-					        </tr>
-	                <tr>
-					          <td>4</td>
-					          <td class="left">Severe pain patients that receive morphine</td>
-					          <td>'.$palliative_care->morphine_19m.'</td>
-					          <td>'.$palliative_care->morphine_19f.'</td>
-					          <td>'.$palliative_care->morphine_20m.'</td>
-					          <td>'.$palliative_care->morphine_20f.'</td>
-					        </tr>
-	                <tr>
-					          <td>5</td>
-					          <td class="left">Died received end of life care and bereavement support</td>
-					          <td>'.$palliative_care->end_life_19m.'</td>
-					          <td>'.$palliative_care->end_life_19f.'</td>
-					          <td>'.$palliative_care->end_life_20m.'</td>
-					          <td>'.$palliative_care->end_life_20f.'</td>
-					        </tr>
-	                <tr>
-					          <td>6</td>
-					          <td class="left">Total death in palliative care</td>
-					          <td>'.$palliative_care->death_19m.'</td>
-					          <td>'.$palliative_care->death_19f.'</td>
-					          <td>'.$palliative_care->death_20m.'</td>
-					          <td>'.$palliative_care->death_20f.'</td>
-					        </tr>
-					      </tbody>
-					    </table>
-              <br>';
-        }
-
-        $community_checkup = $this->research_model->community_checkup($date);
-
-        if ($community_checkup) {
-            $output .= '
-              <h4>VIII. Community Checkup</h4>
-              <table id="VIII" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Total number of people who consulted for annual medical checkup during the reportins period</td>
-                    <td>'.$community_checkup->annual_checkup.'</td>
-                  </tr>
-                  <tr>
-                    <td class="grey"></td>
-                    <td class="left">Suspected positive at medical checkup who were referred for further diagnosis for the following diseases:</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Cardio vascular diseases</td>
-                    <td>'.$community_checkup->cardio.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Chronic respiratory diseases</td>
-                    <td>'.$community_checkup->respiratory.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Diabetes</td>
-                    <td>'.$community_checkup->diabetes.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Renal disease</td>
-                    <td>'.$community_checkup->renal.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Cancer</td>
-                    <td>'.$community_checkup->cancer.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">Disability</td>
-                    <td>'.$community_checkup->disability.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $cancer_screening = $this->research_model->cancer_screening($date);
-
-        if ($cancer_screening) {
-            $output .= '
-              <h4>IX. Cancer Screening</h4>
-              <table id="IX" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Women screened for cervical cancer</td>
-                    <td>'.$cancer_screening->cervical.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Women tested VIA positive during cervical cancer screening</td>
-                    <td>'.$cancer_screening->cervical_viap.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Women tested VIA positive during cervical cancer screening and HIV positive</td>
-                    <td>'.$cancer_screening->cervical_viap_hivp.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Women tested VIA positive and treated with cryotherapy</td>
-                    <td>'.$cancer_screening->cryo_viap.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Women tested VIA positive and referred for treatment</td>
-                    <td>'.$cancer_screening->treatement_viap.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Women screened for breast cancer</td>
-                    <td>'.$cancer_screening->breast_screened.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">Women referred for breast cancer</td>
-                    <td>'.$cancer_screening->breast_referred.'</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td class="left">Women suspected for cervical cancer referred to other level</td>
-                    <td>'.$cancer_screening->cervical_otherlevel.'</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td class="left">Biopsies collected for all types of cancer</td>
-                    <td>'.$cancer_screening->biopsies.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        /*$hospitalization_a = $this->research_model->hospitalization_a($date);
-        $hospitalization_bcde = $this->research_model->hospitalization_bcde($date);
-
-        if ($hospitalization_a) {
-            $output .= '
-              <h4>X. Hospitalizations - Summary by Service</h4>
-              <table id="XA" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Internal Medicine<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Pediatrics<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Surgery<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Gyn. Obst<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Nut. Rehab<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Intensive Care<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Neonatology<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Emergency<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Number of beds</td>
-                    <td>'.$hospitalization_a->im_beds.'</td>
-                    <td>'.$hospitalization_a->p_beds.'</td>
-                    <td>'.$hospitalization_a->s_beds.'</td>
-                    <td>'.$hospitalization_a->go_beds.'</td>
-                    <td>'.$hospitalization_a->nr_beds.'</td>
-                    <td>'.$hospitalization_a->ic_beds.'</td>
-                    <td>'.$hospitalization_a->n_beds.'</td>
-                    <td>'.$hospitalization_a->e_beds.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Present at the beginning of the month</td>
-                    <td>'.$hospitalization_a->im_present_start.'</td>
-                    <td>'.$hospitalization_a->p_present_start.'</td>
-                    <td>'.$hospitalization_a->s_present_start.'</td>
-                    <td>'.$hospitalization_a->go_present_start.'</td>
-                    <td>'.$hospitalization_a->nr_present_start.'</td>
-                    <td>'.$hospitalization_a->ic_present_start.'</td>
-                    <td>'.$hospitalization_a->n_present_start.'</td>
-                    <td>'.$hospitalization_a->e_present_start.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Admissions during the month of wich</td>
-                    <td>'.$hospitalization_a->im_admissions.'</td>
-                    <td>'.$hospitalization_a->p_admissions.'</td>
-                    <td>'.$hospitalization_a->s_admissions.'</td>
-                    <td>'.$hospitalization_a->go_admissions.'</td>
-                    <td>'.$hospitalization_a->nr_admissions.'</td>
-                    <td>'.$hospitalization_a->ic_admissions.'</td>
-                    <td>'.$hospitalization_a->n_admissions.'</td>
-                    <td>'.$hospitalization_a->e_admissions.'</td>
-                  </tr>
-                  <tr>
-                    <td>3.1</td>
-                    <td class="left">Referred from the Health Center</td>
-                    <td>'.$hospitalization_a->im_referred.'</td>
-                    <td>'.$hospitalization_a->p_referred.'</td>
-                    <td>'.$hospitalization_a->s_referred.'</td>
-                    <td>'.$hospitalization_a->go_referred.'</td>
-                    <td>'.$hospitalization_a->nr_referred.'</td>
-                    <td>'.$hospitalization_a->ic_referred.'</td>
-                    <td>'.$hospitalization_a->n_referred.'</td>
-                    <td>'.$hospitalization_a->e_referred.'</td>
-                  </tr>
-                  <tr>
-                    <td>3.2</td>
-                    <td class="left">Non-referred patients</td>
-                    <td>'.$hospitalization_a->im_no_referred.'</td>
-                    <td>'.$hospitalization_a->p_no_referred.'</td>
-                    <td>'.$hospitalization_a->s_no_referred.'</td>
-                    <td>'.$hospitalization_a->go_no_referred.'</td>
-                    <td>'.$hospitalization_a->nr_no_referred.'</td>
-                    <td>'.$hospitalization_a->ic_no_referred.'</td>
-                    <td>'.$hospitalization_a->n_no_referred.'</td>
-                    <td>'.$hospitalization_a->e_no_referred.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Discharges during the month of which</td>
-                    <td>'.$hospitalization_a->im_discharges.'</td>
-                    <td>'.$hospitalization_a->p_discharges.'</td>
-                    <td>'.$hospitalization_a->s_discharges.'</td>
-                    <td>'.$hospitalization_a->go_discharges.'</td>
-                    <td>'.$hospitalization_a->nr_discharges.'</td>
-                    <td>'.$hospitalization_a->ic_discharges.'</td>
-                    <td>'.$hospitalization_a->n_discharges.'</td>
-                    <td>'.$hospitalization_a->e_discharges.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.1</td>
-                    <td class="left">Authorized/Cured</td>
-                    <td>'.$hospitalization_a->im_authorized.'</td>
-                    <td>'.$hospitalization_a->p_authorized.'</td>
-                    <td>'.$hospitalization_a->s_authorized.'</td>
-                    <td>'.$hospitalization_a->go_authorized.'</td>
-                    <td>'.$hospitalization_a->nr_authorized.'</td>
-                    <td>'.$hospitalization_a->ic_authorized.'</td>
-                    <td>'.$hospitalization_a->n_authorized.'</td>
-                    <td>'.$hospitalization_a->e_authorized.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.2</td>
-                    <td class="left">Abandoned</td>
-                    <td>'.$hospitalization_a->im_abandoned.'</td>
-                    <td>'.$hospitalization_a->p_abandoned.'</td>
-                    <td>'.$hospitalization_a->s_abandoned.'</td>
-                    <td>'.$hospitalization_a->go_abandoned.'</td>
-                    <td>'.$hospitalization_a->nr_abandoned.'</td>
-                    <td>'.$hospitalization_a->ic_abandoned.'</td>
-                    <td>'.$hospitalization_a->n_abandoned.'</td>
-                    <td>'.$hospitalization_a->e_abandoned.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.3</td>
-                    <td class="left">Deaths</td>
-                    <td>'.$hospitalization_a->im_deaths.'</td>
-                    <td>'.$hospitalization_a->p_deaths.'</td>
-                    <td>'.$hospitalization_a->s_deaths.'</td>
-                    <td>'.$hospitalization_a->go_deaths.'</td>
-                    <td>'.$hospitalization_a->nr_deaths.'</td>
-                    <td>'.$hospitalization_a->ic_deaths.'</td>
-                    <td>'.$hospitalization_a->n_deaths.'</td>
-                    <td>'.$hospitalization_a->e_deaths.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.4</td>
-                    <td class="left">Referred</td>
-                    <td>'.$hospitalization_a->im_dis_referred.'</td>
-                    <td>'.$hospitalization_a->p_dis_referred.'</td>
-                    <td>'.$hospitalization_a->s_dis_referred.'</td>
-                    <td>'.$hospitalization_a->go_dis_referred.'</td>
-                    <td>'.$hospitalization_a->nr_dis_referred.'</td>
-                    <td>'.$hospitalization_a->ic_dis_referred.'</td>
-                    <td>'.$hospitalization_a->n_dis_referred.'</td>
-                    <td>'.$hospitalization_a->e_dis_referred.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.5</td>
-                    <td class="left">Counter-referred</td>
-                    <td>'.$hospitalization_a->im_counter.'</td>
-                    <td>'.$hospitalization_a->p_counter.'</td>
-                    <td>'.$hospitalization_a->s_counter.'</td>
-                    <td>'.$hospitalization_a->go_counter.'</td>
-                    <td>'.$hospitalization_a->nr_counter.'</td>
-                    <td>'.$hospitalization_a->ic_counter.'</td>
-                    <td>'.$hospitalization_a->n_counter.'</td>
-                    <td>'.$hospitalization_a->e_counter.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Present at the end of the month</td>
-                    <td>'.$hospitalization_a->im_present_end.'</td>
-                    <td>'.$hospitalization_a->p_present_end.'</td>
-                    <td>'.$hospitalization_a->s_present_end.'</td>
-                    <td>'.$hospitalization_a->go_present_end.'</td>
-                    <td>'.$hospitalization_a->nr_present_end.'</td>
-                    <td>'.$hospitalization_a->ic_present_end.'</td>
-                    <td>'.$hospitalization_a->n_present_end.'</td>
-                    <td>'.$hospitalization_a->e_present_end.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Total hospitalization days for discharged patients</td>
-                    <td>'.$hospitalization_a->im_total.'</td>
-                    <td>'.$hospitalization_a->p_total.'</td>
-                    <td>'.$hospitalization_a->s_total.'</td>
-                    <td>'.$hospitalization_a->go_total.'</td>
-                    <td>'.$hospitalization_a->nr_total.'</td>
-                    <td>'.$hospitalization_a->ic_total.'</td>
-                    <td>'.$hospitalization_a->n_total.'</td>
-                    <td>'.$hospitalization_a->e_total.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">Actual hospitalization days</td>
-                    <td>'.$hospitalization_a->im_actual.'</td>
-                    <td>'.$hospitalization_a->p_actual.'</td>
-                    <td>'.$hospitalization_a->s_actual.'</td>
-                    <td>'.$hospitalization_a->go_actual.'</td>
-                    <td>'.$hospitalization_a->nr_actual.'</td>
-                    <td>'.$hospitalization_a->ic_actual.'</td>
-                    <td>'.$hospitalization_a->n_actual.'</td>
-                    <td>'.$hospitalization_a->e_actual.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
-                        <h4>X. Hospitalizations - Summary by Age</h4>
-                  <table id="XB" class="center">
-                    <thead>
-                      <tr>
-                        <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age < 1<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age 1 to 4<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                      <tr>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                                </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="center">1</td>
-                        <td class="left">Hospitalized</td>
-                        <td>'.$hospitalization_bcde->hosp_1m_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_1f_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_4m_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_4f_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hosp_20f_total.'</td>
-                      </tr>
-                      <tr>
-                        <td class="center">2</td>
-                        <td class="left">Deaths</td>
-                        <td>'.$hospitalization_bcde->deaths_1m_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_1f_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_4m_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_4f_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_19m_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_19f_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_20m_total.'</td>
-                        <td>'.$hospitalization_bcde->deaths_20f_total.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              <br>
-              <h4>X. Hospitalizations - Payment</h4>
-              <table id="XC" class="center">
-                <thead>
-                  <tr>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="left">Insured discharges(mutuelle, etc)</td>
-                    <td>'.$hospitalization_bcde->insured_dis_total.'</td>
-                  </tr>
-                  <tr>
-                    <td class="left">Non-paying discharges</td>
-                    <td>'.$hospitalization_bcde->no_paying_dis_total.'</td>
-                  </tr>
-                  <tr>
-                    <td class="left">Non-paying indigents discharged</td>
-                    <td>'.$hospitalization_bcde->no_paying_ind_total.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
-              <h4>X. Hospitalizations - Special Causes of Admissions and Deaths</h4>
-              <table id="XD" class="center">
-                <thead>
-                  <tr>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Admissions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="left">Road traffic accidents</td>
-                    <td>'.$hospitalization_bcde->road_acc_ad_total.'</td>
-                    <td>'.$hospitalization_bcde->road_acc_deaths_total.'</td>
-                  </tr>
-                  <tr>
-                    <td class="left">Natural or man-made disasters (epidemic, earthquake, etc)</td>
-                    <td>'.$hospitalization_bcde->natural_disa_ad_total.'</td>
-                    <td>'.$hospitalization_bcde->natural_disa_deaths_total.'</td>
-                  </tr>
-                  <tr>
-                    <td class="left">Workplace injuries</td>
-                    <td>'.$hospitalization_bcde->work_inj_ad_total.'</td>
-                    <td>'.$hospitalization_bcde->work_inj_deaths_total.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
-              <h4>X. Hospitalizations - Causes of Hospitalization and Death at Discharge</h4>
-              <table id="XE" class="center">
-                    <thead>
-                      <tr>
-                        <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="6">Hospitalization<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                  <tr>
-                        <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                      <tr>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                    <th>M</th>
-                        <th>F</th>
-                        <th>M</th>
-                        <th>F</th>
-                                </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="center">1</td>
-                        <td class="left">Malaria simple</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sim_hos20f_total.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                      </tr>
-                      <tr>
-                        <td class="center">2</td>
-                        <td class="left">Malaria severe</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->malaria_sev_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">3</td>
-                        <td class="left">Borreliosis</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->borreliosis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">4</td>
-                        <td class="left">Pneumonia simple</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sim_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">5</td>
-                        <td class="left">Pneumonia severe</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pneumonia_sev_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">6</td>
-                        <td class="left">Pleurisy (non-tuberculosis)</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->pleurisy_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">7</td>
-                        <td class="left">Respratory infection acute (ARI) Other</td>
-                        <td>'.$hospitalization_bcde->ari_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->ari_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">8</td>
-                        <td class="left">Diarrhea bloody (dysentery)</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_bloody_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">9</td>
-                        <td class="left">Diarrhea with dehydration</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_dehy_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">10</td>
-                        <td class="left">Diarrhea no dehydration</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_no_dehy_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">11</td>
-                        <td class="left">Cholera</td>
-                        <td>'.$hospitalization_bcde->cholera_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cholera_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">12</td>
-                        <td class="left">Typhoid fever (salmonellosis)</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->typhoid_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">13</td>
-                        <td class="left">Meningitis</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->meningitis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">14</td>
-                        <td class="left">Measles</td>
-                        <td>'.$hospitalization_bcde->measles_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->measles_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">15</td>
-                        <td class="left">TB bacteriologically confirmed</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_conf_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">16</td>
-                        <td class="left">TB clinically diagnosed</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tb_diag_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">17</td>
-                        <td class="left">Fever chronic (>1 month)</td>
-                        <td>'.$hospitalization_bcde->fever_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->fever_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">18</td>
-                        <td class="left">Encephalitis</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->encephalitis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">19</td>
-                        <td class="left">Meningitis cryptococal</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->mening_crypto_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">20</td>
-                        <td class="left">Skin infections</td>
-                        <td>'.$hospitalization_bcde->skin_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->skin_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">21</td>
-                        <td class="left">Diarrhea chronic opportunistic infection</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->diarr_chronic_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">22</td>
-                        <td class="left">HIV oppotunistic infections Other</td>
-                        <td>'.$hospitalization_bcde->hiv_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hiv_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">23</td>
-                        <td class="left">Trauma head</td>
-                        <td>'.$hospitalization_bcde->trauma_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">24</td>
-                        <td class="left">Ruptured spleen</td>
-                        <td>'.$hospitalization_bcde->spleen_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->spleen_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">25</td>
-                        <td class="left">Fractures, open</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_open_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">26</td>
-                        <td class="left">Fractures, internal</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->frac_int_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">27</td>
-                        <td class="left">Trauma other</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->trauma_other_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">28</td>
-                        <td class="left">Burns</td>
-                        <td>'.$hospitalization_bcde->burns_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->burns_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">29</td>
-                        <td class="left">Hepatitis</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hepatitis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">30</td>
-                        <td class="left">Cirrhosis of the liver</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cirrhosis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">31</td>
-                        <td class="left">Digestive tract hemorrhages</td>
-                        <td>'.$hospitalization_bcde->digestive_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->digestive_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">32</td>
-                        <td class="left">Gastritis</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->gastritis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">33</td>
-                        <td class="left">Ulcer, gastro-duodenal</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->ulcer_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">34</td>
-                        <td class="left">Appendicitis</td>
-                        <td>'.$hospitalization_bcde->appendi_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->appendi_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">35</td>
-                        <td class="left">Hernia</td>
-                        <td>'.$hospitalization_bcde->hernia_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->hernia_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">36</td>
-                        <td class="left">Peritonitis (non-tuberculosis)</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->peritonitis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">37</td>
-                        <td class="left">Intestinal occlusion</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->intestinal_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">38</td>
-                        <td class="left">Urinary tract infections</td>
-                        <td>'.$hospitalization_bcde->urinary_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->urinary_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">39</td>
-                        <td class="left">Bone infections (including osteomyelitis)</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_inf_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">40</td>
-                        <td class="left">Bone and joint disease other</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->bone_other_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">41</td>
-                        <td class="left">Acute flaccid paralysis (polio)</td>
-                        <td>'.$hospitalization_bcde->acute_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->acute_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">42</td>
-                        <td class="left">Gynecological problems</td>
-                        <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                        <td>'.$hospitalization_bcde->gyneco_hos19f_total.'</td>
-                    <td class="grey"></td>
-                        <td>'.$hospitalization_bcde->gyneco_hos20f_total.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                        <td>'.$hospitalization_bcde->gyneco_deaths19f_total.'</td>
-                    <td class="grey"></td>
-                        <td>'.$hospitalization_bcde->gyneco_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">43</td>
-                        <td class="left">Mastoditis</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->mastoditis_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">44</td>
-                        <td class="left">Tetanus</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->tetanus_deaths20f_total.'</td>
-                      </tr>
-                  <tr>
-                        <td class="center">45</td>
-                        <td class="left">Cancer all</td>
-                        <td>'.$hospitalization_bcde->cancer_hos5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_hos5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_hos19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_hos19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_hos20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_hos20f_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths5m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths5f_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths19m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths19f_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths20m_total.'</td>
-                        <td>'.$hospitalization_bcde->cancer_deaths20f_total.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              <br>';
-        }*/
-
-        $physiotherapy = $this->research_model->physiotherapy($date);
-
-        if ($physiotherapy) {
-            $output .= '
-              <h4>XIV. Physiotherapy</h4>
-              <table id="XIV" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Outpatients<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Hospitalized<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Physical therapy</td>
-                    <td>'.$physiotherapy->physical_therapy.'</td>
-                    <td>'.$physiotherapy->physical_therapy_hos.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Audiology</td>
-                    <td>'.$physiotherapy->audiology.'</td>
-                    <td>'.$physiotherapy->audiology_hos.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Speech therapy</td>
-                    <td>'.$physiotherapy->speech_therapy.'</td>
-                    <td>'.$physiotherapy->speech_therapy_hos.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $delivery_birth = $this->research_model->delivery_birth($date);
-
-        if ($delivery_birth) {
-            $output .= '
-              <h4>XVI. Deliveries and Births at Health Facility</h4>
-              <table id="XVI" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Deliveries, total</td>
-                    <td>'.$delivery_birth->delive_total.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Deliveries eutocic</td>
-                    <td>'.$delivery_birth->delive_eutocic.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Deliveries dystocic</td>
-                    <td>'.$delivery_birth->delive_dystocic.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Delivery with episiotomy</td>
-                    <td>'.$delivery_birth->delive_w_episiotomy.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Delivery with oxytocin stimulation</td>
-                    <td>'.$delivery_birth->delive_w_oxytocin.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Delivery complicated by perineal tear (second-third-fourth degree)</td>
-                    <td>'.$delivery_birth->delive_complicated.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">Birth trauma to newborn</td>
-                    <td>'.$delivery_birth->birth_trauma.'</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td class="left">Cleft palate or cleft lip</td>
-                    <td>'.$delivery_birth->cleft_palate.'</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td class="left">Omphalocel</td>
-                    <td>'.$delivery_birth->omphalocel.'</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td class="left">Laparoschisis</td>
-                    <td>'.$delivery_birth->laparoschisis.'</td>
-                  </tr>
-                  <tr>
-                    <td>11</td>
-                    <td class="left">Spina bifida</td>
-                    <td>'.$delivery_birth->spina_bifida.'</td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td class="left">hydrocephalus</td>
-                    <td>'.$delivery_birth->hydrocephalus.'</td>
-                  </tr>
-                  <tr>
-                    <td>13</td>
-                    <td class="left">Deliveries 15 years and under</td>
-                    <td>'.$delivery_birth->delive_15.'</td>
-                  </tr>
-                  <tr>
-                    <td>14</td>
-                    <td class="left">Deliveries 16 to 19 years</td>
-                    <td>'.$delivery_birth->delive_19.'</td>
-                  </tr>
-                  <tr>
-                    <td>15</td>
-                    <td class="left">Deliveries 20 to 24 years</td>
-                    <td>'.$delivery_birth->delive_24.'</td>
-                  </tr>
-                  <tr>
-                    <td>16</td>
-                    <td class="left">Deliveries 35 years and above</td>
-                    <td>'.$delivery_birth->delive_35.'</td>
-                  </tr>
-                  <tr>
-                    <td>17</td>
-                    <td class="left">Women who received oxytocin IM immediately after birth for active management of third stage of labor</td>
-                    <td>'.$delivery_birth->received_oxytocin.'</td>
-                  </tr>
-                  <tr>
-                    <td>18</td>
-                    <td class="left">Multiple pregnancies (women who delivered twins, triplets, etc.)</td>
-                    <td>'.$delivery_birth->multi_pregnancies.'</td>
-                  </tr>
-                  <tr>
-                    <td>19</td>
-                    <td class="left">Women consulted for risk of premature delivery</td>
-                    <td>'.$delivery_birth->women_cons_risk_prema.'</td>
-                  </tr>
-                  <tr>
-                    <td>20</td>
-                    <td class="left">Mother who received corticosteroid in management of risk of premature delivery</td>
-                    <td>'.$delivery_birth->received_corticosteroid.'</td>
-                  </tr>
-                  <tr>
-                    <td>21</td>
-                    <td class="left">Women consulted with preterm premature rupture membranes (PPROM)</td>
-                    <td>'.$delivery_birth->cons_preterm_ruptu_memb.'</td>
-                  </tr>
-                  <tr>
-                    <td>22</td>
-                    <td class="left">Women consulted with preterm premature rupture membranes who received prophylactic antibiotics</td>
-                    <td>'.$delivery_birth->cons_preterm_ruptu_memb_prophylactic.'</td>
-                  </tr>
-                  <tr>
-                    <td>23</td>
-                    <td class="left">Maternal deaths during labor, delivery and 24 hours after delivery (=subsets of all deaths in table above)</td>
-                    <td>'.$delivery_birth->maternal_deaths.'</td>
-                  </tr>
-                  <tr>
-                    <td>24</td>
-                    <td class="left">Births, live</td>
-                    <td>'.$delivery_birth->births_live.'</td>
-                  </tr>
-                  <tr>
-                    <td>25</td>
-                    <td class="left">Birth weight < 2500 gr (alive)</td>
-                    <td>'.$delivery_birth->births_weight2500.'</td>
-                  </tr>
-                  <tr>
-                    <td>26</td>
-                    <td class="left">Premature newborns (alive) 22-37 weeks</td>
-                    <td>'.$delivery_birth->premature_newborn.'</td>
-                  </tr>
-                  <tr>
-                    <td>27</td>
-                    <td class="left">Birth weight < 2 kg (alive newborns) all</td>
-                    <td>'.$delivery_birth->births_weight2000.'</td>
-                  </tr>
-                  <tr>
-                    <td>28</td>
-                    <td class="left">Still births macerated (≥ 28 weeks or ≥ 1000 gr)</td>
-                    <td>'.$delivery_birth->births_macerated.'</td>
-                  </tr>
-                  <tr>
-                    <td>29</td>
-                    <td class="left">Still births fresh (≥ 28 weeks or ≥ 1000 gr) all</td>
-                    <td>'.$delivery_birth->births_fresh_1000.'</td>
-                  </tr>
-                  <tr>
-                    <td>30</td>
-                    <td class="left">Still births freash (≥ 2500 gr)</td>
-                    <td>'.$delivery_birth->births_fresh_2500.'</td>
-                  </tr>
-                  <tr>
-                    <td>31</td>
-                    <td class="left">Deaths at birth of live born bebies (within 30 minutes)</td>
-                    <td>'.$delivery_birth->deaths_birth.'</td>
-                  </tr>
-                  <tr>
-                    <td>32</td>
-                    <td class="left">Deaths at birth of live born babies with ≥ 2,5 kg (within 30 minutes)</td>
-                    <td>'.$delivery_birth->deaths_birth_2500.'</td>
-                  </tr>
-                  <tr>
-                    <td>33</td>
-                    <td class="left">Newborns breastfed within 1 hour of delivery</td>
-                    <td>'.$delivery_birth->newborns_breastfed.'</td>
-                  </tr>
-                  <tr>
-                    <td>34</td>
-                    <td class="left">Newborns who were placed skin to skin after birth for at least one hour after birth</td>
-                    <td>'.$delivery_birth->newborns_skintoskin.'</td>
-                  </tr>
-                  <tr>
-                    <td>35</td>
-                    <td class="left">Live newborns who didn\'t cry/breath at birth</td>
-                    <td>'.$delivery_birth->newborns_no_cry.'</td>
-                  </tr>
-                  <tr>
-                    <td>36</td>
-                    <td class="left">Live newborns who didn\'t cry at birth and for whom newborn resuscitation was performed using ambu bag</td>
-                    <td>'.$delivery_birth->newborns_no_cry_ambubag.'</td>
-                  </tr>
-                  <tr>
-                    <td>37</td>
-                    <td class="left">Live newborns who didn\'t cry/breth at birth and were resuscitated successfully (cry/breath within 5 min APGAR > 5 at 5 min)</td>
-                    <td>'.$delivery_birth->newborns_no_cry_success.'</td>
-                  </tr>
-                  <tr>
-                    <td>38</td>
-                    <td class="left">Women suspected to develop obstetrical fistula (during labor)</td>
-                    <td>'.$delivery_birth->fistula.'</td>
-                  </tr>
-                  <tr>
-                    <td>39</td>
-                    <td class="left">Women suspected to develop obstetrical fistula received conservative treatment (foley catheter)</td>
-                    <td>'.$delivery_birth->fistula_treatment.'</td>
-                  </tr>
-                  <tr>
-                    <td>40</td>
-                    <td class="left">Newborns with complications at birth referred to higher level for emergency care</td>
-                    <td>'.$delivery_birth->complications_higher_level.'</td>
-                  </tr>
-                  <tr>
-                    <td>41</td>
-                    <td class="left">Women placed under observation for at least 24 hours before discharge</td>
-                    <td>'.$delivery_birth->observation_24.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $postnatal_care = $this->research_model->postnatal_care($date);
-
-        if ($postnatal_care) {
-            $output .= '
-              <h4>XVII. Postnatal Care</h4>
-              <table id="XVII" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Mother<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Newborn<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">PNC1 visits within 24 hours of birth</td>
-                    <td>'.$postnatal_care->pnc1_m.'</td>
-                    <td>'.$postnatal_care->pnc1_nb.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Mothers screened for anemia during PNC1 visit</td>
-                    <td>'.$postnatal_care->anemia_pnc1_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Mothers received iron/folic acid during PNC1 visit</td>
-                    <td>'.$postnatal_care->iron_pnc1_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Mothers screened by MUAC for malnutrition during PNC1 visit</td>
-                    <td>'.$postnatal_care->muac_pnc1_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Mothers malnourished (MUAC < 21 cm) during PNC1 visit</td>
-                    <td>'.$postnatal_care->malnourished_pnc1_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">PNC2 visits at 3rd day after birth</td>
-                    <td>'.$postnatal_care->pnc2_m.'</td>
-                    <td>'.$postnatal_care->pnc2_nb.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">PNC3 visits between 7th and 14th day after birth</td>
-                    <td>'.$postnatal_care->pnc3_m.'</td>
-                    <td>'.$postnatal_care->pnc3_nb.'</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td class="left">Screened for nemia during PNC3 visit</td>
-                    <td>'.$postnatal_care->anemia_pnc3_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td class="left">Anemia (Hb < 9.5 gr/dl) detected during PNC visits (PNC1 and PNC3)</td>
-                    <td>'.$postnatal_care->anemia_pnc_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td class="left">Complications/denger signs detected during any PNC visit</td>
-                    <td>'.$postnatal_care->complications_m.'</td>
-                    <td>'.$postnatal_care->complications_nb.'</td>
-                  </tr>
-                  <tr>
-                    <td>11</td>
-                    <td class="left">Referrals done for complcations ar any visit</td>
-                    <td>'.$postnatal_care->referrals_m.'</td>
-                    <td>'.$postnatal_care->referrals_nb.'</td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td class="left">Post-partum family planning (PPFP) within 6 weeks after delivery</td>
-                    <td>'.$postnatal_care->ppfp_m.'</td>
-                    <td class="grey"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $kangaroo_mother_care = $this->research_model->kangaroo_mother_care($date);
-
-        if ($kangaroo_mother_care) {
-            $output .= '
-              <h4>XVIII. Kangaroo Mother Care</h4>
-              <table id="XVIII" class="center">
-                <thead>
-                  <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Low birth weight < 2000 grams babies admitted in KMC</td>
-                    <td>'.$kangaroo_mother_care->low_birth.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Newborns discharged from KMC unit</td>
-                    <td>'.$kangaroo_mother_care->newborns.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">KMC deaths among KMC admissions</td>
-                    <td>'.$kangaroo_mother_care->kmc_deaths.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">KMC standars follow up visit after discharge within 2 weeks</td>
-                    <td>'.$kangaroo_mother_care->kmc_standard.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        } else {
-            $output .= '
-              <h4>XVIII. Kangaroo Mother Care</h4>
-              <h2>This part has not been filled yet</h2>
-              <br>';
-        }
-
-        $family_planning = $this->research_model->family_planning($date);
-
-        if ($family_planning) {
-            $output .= '
-              <h4>XXII. Family Planning - Methods</h4>
-              <table id="XXIIA" class="center">
-                <thead>
-                  <tr>
-                    <th>N°</th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>New acceptors in the program</th>
-                    <th>PPFP uptake (Before discharge)</th>
-                    <th>New users of FP method</th>
-                    <th>Stopped FP method</th>
-                    <th>Active users at end of month</th>
-                    <th>FP users referred to CHWs</th>
-                    <th>Quantity distributed</th>
-                    <th>Stock at end of the month</th>
-                    <th>Days of stock-out</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Oral contraceptives, progestative</td>
-                    <td>'.$family_planning->oral_contra_proges_accep.'</td>
-                    <td>'.$family_planning->oral_contra_proges_ppfp.'</td>
-                    <td>'.$family_planning->oral_contra_proges_users.'</td>
-                    <td>'.$family_planning->oral_contra_proges_stop.'</td>
-                    <td>'.$family_planning->oral_contra_proges_active.'</td>
-                    <td>'.$family_planning->oral_contra_proges_refer.'</td>
-                    <td>'.$family_planning->oral_contra_proges_quant.'</td>
-                    <td>'.$family_planning->oral_contra_proges_stock.'</td>
-                    <td>'.$family_planning->oral_contra_proges_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Oral contraceptives, combined</td>
-                    <td>'.$family_planning->oral_contra_comb_accep.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->oral_contra_comb_users.'</td>
-                    <td>'.$family_planning->oral_contra_comb_stop.'</td>
-                    <td>'.$family_planning->oral_contra_comb_active.'</td>
-                    <td>'.$family_planning->oral_contra_comb_refer.'</td>
-                    <td>'.$family_planning->oral_contra_comb_quant.'</td>
-                    <td>'.$family_planning->oral_contra_comb_stock.'</td>
-                    <td>'.$family_planning->oral_contra_comb_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Injectables (Depo-Provera)</td>
-                    <td>'.$family_planning->inject_depo_accep.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->inject_depo_users.'</td>
-                    <td>'.$family_planning->inject_depo_stop.'</td>
-                    <td>'.$family_planning->inject_depo_active.'</td>
-                    <td>'.$family_planning->inject_depo_refer.'</td>
-                    <td>'.$family_planning->inject_depo_quant.'</td>
-                    <td>'.$family_planning->inject_depo_stock.'</td>
-                    <td>'.$family_planning->inject_depo_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Injectables (Norristerat)</td>
-                    <td>'.$family_planning->inject_nor_accep.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->inject_nor_users.'</td>
-                    <td>'.$family_planning->inject_nor_stop.'</td>
-                    <td>'.$family_planning->inject_nor_active.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->inject_nor_quant.'</td>
-                    <td>'.$family_planning->inject_nor_stock.'</td>
-                    <td>'.$family_planning->inject_nor_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Implants NXT</td>
-                    <td>'.$family_planning->implants_nxt_accep.'</td>
-                    <td>'.$family_planning->implants_nxt_ppfp.'</td>
-                    <td>'.$family_planning->implants_nxt_users.'</td>
-                    <td>'.$family_planning->implants_nxt_stop.'</td>
-                    <td>'.$family_planning->implants_nxt_active.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->implants_nxt_quant.'</td>
-                    <td>'.$family_planning->implants_nxt_stock.'</td>
-                    <td>'.$family_planning->implants_nxt_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Implants Jadelle</td>
-                    <td>'.$family_planning->implants_jad_accep.'</td>
-                    <td>'.$family_planning->implants_jad_ppfp.'</td>
-                    <td>'.$family_planning->implants_jad_users.'</td>
-                    <td>'.$family_planning->implants_jad_stop.'</td>
-                    <td>'.$family_planning->implants_jad_active.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->implants_jad_quant.'</td>
-                    <td>'.$family_planning->implants_jad_stock.'</td>
-                    <td>'.$family_planning->implants_jad_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">IUD</td>
-                    <td>'.$family_planning->iud_accep.'</td>
-                    <td>'.$family_planning->iud_ppfp.'</td>
-                    <td>'.$family_planning->iud_users.'</td>
-                    <td>'.$family_planning->iud_stop.'</td>
-                    <td>'.$family_planning->iud_active.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->iud_quant.'</td>
-                    <td>'.$family_planning->iud_stock.'</td>
-                    <td>'.$family_planning->iud_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td class="left">Male condoms</td>
-                    <td>'.$family_planning->m_condoms_accep.'</td>
-                    <td>'.$family_planning->m_condoms_ppfp.'</td>
-                    <td>'.$family_planning->m_condoms_users.'</td>
-                    <td>'.$family_planning->m_condoms_stop.'</td>
-                    <td>'.$family_planning->m_condoms_active.'</td>
-                    <td>'.$family_planning->m_condoms_refer.'</td>
-                    <td>'.$family_planning->m_condoms_quant.'</td>
-                    <td>'.$family_planning->m_condoms_stock.'</td>
-                    <td>'.$family_planning->m_condoms_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td class="left">Female condoms</td>
-                    <td>'.$family_planning->f_condoms_accep.'</td>
-                    <td>'.$family_planning->f_condoms_ppfp.'</td>
-                    <td>'.$family_planning->f_condoms_users.'</td>
-                    <td>'.$family_planning->f_condoms_stop.'</td>
-                    <td>'.$family_planning->f_condoms_active.'</td>
-                    <td>'.$family_planning->f_condoms_refer.'</td>
-                    <td>'.$family_planning->f_condoms_quant.'</td>
-                    <td>'.$family_planning->f_condoms_stock.'</td>
-                    <td>'.$family_planning->f_condoms_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td class="left">Other barrier methods</td>
-                    <td>'.$family_planning->other_method_accep.'</td>
-                    <td>'.$family_planning->other_method_ppfp.'</td>
-                    <td>'.$family_planning->other_method_users.'</td>
-                    <td>'.$family_planning->other_method_stop.'</td>
-                    <td>'.$family_planning->other_method_active.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->other_method_quant.'</td>
-                    <td>'.$family_planning->other_method_stock.'</td>
-                    <td>'.$family_planning->other_method_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>11</td>
-                    <td class="left">Cycle beads</td>
-                    <td>'.$family_planning->cycle_accep.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->cycle_users.'</td>
-                    <td>'.$family_planning->cycle_stop.'</td>
-                    <td>'.$family_planning->cycle_active.'</td>
-                    <td>'.$family_planning->cycle_refer.'</td>
-                    <td>'.$family_planning->cycle_quant.'</td>
-                    <td>'.$family_planning->cycle_stock.'</td>
-                    <td>'.$family_planning->cycle_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>12</td>
-                    <td class="left">Lactational amenorrhea</td>
-                    <td>'.$family_planning->lam_accep.'</td>
-                    <td>'.$family_planning->lam_ppfp.'</td>
-                    <td>'.$family_planning->lam_users.'</td>
-                    <td>'.$family_planning->lam_stop.'</td>
-                    <td>'.$family_planning->lam_active.'</td>
-                    <td>'.$family_planning->lam_refer.'</td>
-                    <td>'.$family_planning->lam_quant.'</td>
-                    <td>'.$family_planning->lam_stock.'</td>
-                    <td>'.$family_planning->lam_day.'</td>
-                  </tr>
-                  <tr>
-                    <td>13</td>
-                    <td class="left">Auto-observation</td>
-                    <td>'.$family_planning->auto_obs_accep.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->auto_obs_users.'</td>
-                    <td>'.$family_planning->auto_obs_stop.'</td>
-                    <td>'.$family_planning->auto_obs_active.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>14</td>
-                    <td class="left">Tubal ligations</td>
-                    <td>'.$family_planning->tubal_accep.'</td>
-                    <td>'.$family_planning->tubal_ppfp.'</td>
-                    <td>'.$family_planning->tubal_users.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->tubal_active.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>15</td>
-                    <td class="left">Vasectomy</td>
-                    <td>'.$family_planning->vasectomy_accep.'</td>
-                    <td>'.$family_planning->vasectomy_ppfp.'</td>
-                    <td>'.$family_planning->vasectomy_users.'</td>
-                    <td class="grey"></td>
-                    <td>'.$family_planning->vasectomy_active.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="row">
-                <div class="col-xs-4">
-                  <h4>XXII. Family Planning - New FP Users</h4>
-                </div>
-                <div class="col-xs-8">
-                  <h4>XXII. Family Planning - Sperm Control</h4>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-xs-4">
-                  <table id="XXIIB" class="center">
-                    <thead>
-                      <tr>
-                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="left">FP new acceptors to the program accompanied by partner</td>
-                        <td>'.$family_planning->fp_new_acceptors.'</td>
-                      </tr>
-                      <tr>
-                        <td class="left">New FP users referred by CHWs for modern family planning method</td>
-                        <td>'.$family_planning->new_fp_users.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-xs-8">
-                  <table id="XXIIC" class="center">
-                    <thead>
-                      <tr>
-                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Test taken<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Positive<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Negative (no spermatozoids)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="left">Sperm control of vasectomized clients</td>
-                        <td>'.$family_planning->sperm_control_test.'</td>
-                        <td>'.$family_planning->sperm_control_positive.'</td>
-                        <td>'.$family_planning->sperm_control_negative.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <br>
-              <h4>XXII. Family Planning - Summary by Age</h4>
-              <table id="XXIID" class="center">
-                <thead>
-                  <tr>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Age 15 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Age 20 to 24<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Age 25 to 34<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Age > 35<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="left">New acceptors in the program by age group</td>
-                    <td>'.$family_planning->acceptors_prog_19.'</td>
-                    <td>'.$family_planning->acceptors_prog_24.'</td>
-                    <td>'.$family_planning->acceptors_prog_34.'</td>
-                    <td>'.$family_planning->acceptors_prog_35.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $laboratory = $this->research_model->laboratory($date);
-
-        if ($laboratory) {
-            $output .= '
-              <h4>XXIII. Laboratory</h4>
-              <table id="XXIII" class="center">
-                <thead>
-                  <tr>
-                    <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th rowspan="2">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th colspan="2">Results</th>
-                    <th>Total</th>
-                  </tr>
-                  <tr>
-                    <th>Positives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Negatives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <td>'.$laboratory->exams_t.'</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="left">Blood Smears</td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->blood_n.'</td>
-                    <td>'.$laboratory->blood_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>1.1</td>
-                    <td class="left">Plasmodium</td>
-                    <td>'.$laboratory->plasmodium_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>1.2</td>
-                    <td class="left">Micro-filaria</td>
-                    <td>'.$laboratory->micro_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>1.3</td>
-                    <td class="left">Borellia</td>
-                    <td>'.$laboratory->borellia_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>1.4</td>
-                    <td class="left">Trypanosoma</td>
-                    <td>'.$laboratory->trypa_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="left">Rapid Diagnostic Tests for Malaria</td>
-                    <td>'.$laboratory->malaria_p.'</td>
-                    <td>'.$laboratory->malaria_n.'</td>
-                    <td>'.$laboratory->malaria_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="left">Stools Samples Total</td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->stools_n.'</td>
-                    <td>'.$laboratory->stools_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>3.1</td>
-                    <td class="left pad">Entamoebahistolytica</td>
-                    <td>'.$laboratory->entamo_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.2</td>
-                    <td class="left pad">Entamoeba Coli</td>
-                    <td>'.$laboratory->coli_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.3</td>
-                    <td class="left pad">Giardia</td>
-                    <td>'.$laboratory->giardia_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.4</td>
-                    <td class="left pad">Ascariasis</td>
-                    <td>'.$laboratory->asca_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.5</td>
-                    <td class="left pad">Ankylostomiasis</td>
-                    <td>'.$laboratory->anky_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.6</td>
-                    <td class="left pad">Schistosoma</td>
-                    <td>'.$laboratory->schisto_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.7</td>
-                    <td class="left pad">Trichuris</td>
-                    <td>'.$laboratory->trichuris_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.8</td>
-                    <td class="left pad">Taenia</td>
-                    <td>'.$laboratory->taenia_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>3.9</td>
-                    <td class="left pad">Other Parasites in Stools</td>
-                    <td>'.$laboratory->other_stools_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="left">Urine</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>4.1</td>
-                    <td class="left pad">Sugar</td>
-                    <td>'.$laboratory->sugar_p.'</td>
-                    <td>'.$laboratory->sugar_n.'</td>
-                    <td>'.$laboratory->sugar_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.2</td>
-                    <td class="left pad">Albumin</td>
-                    <td>'.$laboratory->albumin_p.'</td>
-                    <td>'.$laboratory->albumin_n.'</td>
-                    <td>'.$laboratory->albumin_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>4.3</td>
-                    <td class="left pad">Pregnancy Test</td>
-                    <td>'.$laboratory->pregnancy_p.'</td>
-                    <td>'.$laboratory->pregnancy_n.'</td>
-                    <td>'.$laboratory->pregnancy_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td class="left">Sputum (Number of Patients)</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>5.1</td>
-                    <td class="left pad">Diagnosis of TB by Microscopy</td>
-                    <td>'.$laboratory->diag_tb_p.'</td>
-                    <td>'.$laboratory->diag_tb_n.'</td>
-                    <td>'.$laboratory->diag_tb_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>5.2</td>
-                    <td class="left pad">Control of TB Positive Patients</td>
-                    <td>'.$laboratory->control_tb_p.'</td>
-                    <td>'.$laboratory->control_tb_n.'</td>
-                    <td>'.$laboratory->control_tb_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td class="left">Bacteriology</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>6.1</td>
-                    <td class="left pad">Vaginal Swab Fresh</td>
-                    <td>'.$laboratory->vag_fresh_p.'</td>
-                    <td>'.$laboratory->vag_fresh_n.'</td>
-                    <td>'.$laboratory->vag_fresh_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>6.2</td>
-                    <td class="left pad">Vaginal Swab Gram</td>
-                    <td>'.$laboratory->vag_gram_p.'</td>
-                    <td>'.$laboratory->vag_gram_n.'</td>
-                    <td>'.$laboratory->vag_gram_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>6.3</td>
-                    <td class="left pad">Vaginal Swab Diplococcus Gram</td>
-                    <td>'.$laboratory->vag_diplo_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>6.4</td>
-                    <td class="left pad">Urethral Swab Fresh</td>
-                    <td>'.$laboratory->ure_fresh_p.'</td>
-                    <td>'.$laboratory->ure_fresh_n.'</td>
-                    <td>'.$laboratory->ure_fresh_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>6.5</td>
-                    <td class="left pad">Urethral Swab Gram</td>
-                    <td>'.$laboratory->ure_gram_p.'</td>
-                    <td>'.$laboratory->ure_gram_n.'</td>
-                    <td>'.$laboratory->ure_gram_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>6.6</td>
-                    <td class="left pad">Urethral Swab Diplococcus Gram</td>
-                    <td>'.$laboratory->ure_diplo_p.'</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td class="left">Blood</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                  </tr>
-                  <tr>
-                    <td>7.1</td>
-                    <td class="left pad">Hemoglobin</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->hemo_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.2</td>
-                    <td class="left pad">RPR</td>
-                    <td>'.$laboratory->rpr_p.'</td>
-                    <td>'.$laboratory->rpr_n.'</td>
-                    <td>'.$laboratory->rpr_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.3</td>
-                    <td class="left pad">HIV Final Result</td>
-                    <td>'.$laboratory->hiv_p.'</td>
-                    <td>'.$laboratory->hiv_n.'</td>
-                    <td>'.$laboratory->hiv_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.4</td>
-                    <td class="left pad">ESR</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->esr_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.5</td>
-                    <td class="left pad">Full Blood Count (FBC/NFS)</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->full_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.6</td>
-                    <td class="left pad">ALAT (GPT)</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->alat_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.7</td>
-                    <td class="left pad">Creatinine</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->crea_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.8</td>
-                    <td class="left pad">Blood Glucose</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->glucose_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.9</td>
-                    <td class="left pad">Amylase</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->amylase_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.10</td>
-                    <td class="left pad">CD<sub>4</sub></td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->cd4_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.11</td>
-                    <td class="left pad">Widal</td>
-                    <td>'.$laboratory->widal_p.'</td>
-                    <td>'.$laboratory->widal_n.'</td>
-                    <td>'.$laboratory->widal_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>7.12</td>
-                    <td class="left pad">Pregnancy Test</td>
-                    <td>'.$laboratory->blood_preg_p.'</td>
-                    <td>'.$laboratory->blood_preg_n.'</td>
-                    <td>'.$laboratory->blood_preg_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td class="left">CerebroSpinal Fluid</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->cerebro_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td class="left">Other Lab Tests</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->other_lab_t.'</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td class="left">Total Tests Conducted in the Laboratory</td>
-                    <td class="grey"></td>
-                    <td class="grey"></td>
-                    <td>'.$laboratory->total.'</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>';
-        }
-
-        $blood_bank_security = $this->research_model->blood_bank_security($date);
-
-        if ($blood_bank_security) {
-            $output .= '
-              <div class="row">
-                <div class="col-xs-5">
-                  <h4>XXIV. Blood Bank Security - Transfusions</h4>
-                </div>
-                <div class="col-xs-7">
-                  <h4>XXIV. Blood Bank Security - Blood Pack Stock Management</h4>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-5">
-                  <table id="XXIVA" class="center">
-                    <thead>
-                      <tr>
-                        <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Patients Transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Packs of Blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td class="left">Internal Medicine</td>
-                        <td>'.$blood_bank_security->im_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->im_packs.'</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td class="left">Pediatrics</td>
-                        <td>'.$blood_bank_security->p_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->p_packs.'</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td class="left">Surgery</td>
-                        <td>'.$blood_bank_security->s_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->s_packs.'</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td class="left">Gyneco - Obstetrical</td>
-                        <td>'.$blood_bank_security->go_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->go_packs.'</td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td class="left">Intensive Care / Emergency</td>
-                        <td>'.$blood_bank_security->ic_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->ic_packs.'</td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td class="left">Neonatology</td>
-                        <td>'.$blood_bank_security->n_patient_transfused.'</td>
-                        <td>'.$blood_bank_security->n_packs.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="col-xs-7">
-                  <table id="XXIVB" class="center">
-                    <thead>
-                      <tr>
-                        <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Type A<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Type B<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Type AB<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                        <th>Type O<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td class="left">Blood Pack Received</td>
-                        <td>'.$blood_bank_security->a_received.'</td>
-                        <td>'.$blood_bank_security->b_received.'</td>
-                        <td>'.$blood_bank_security->ab_received.'</td>
-                        <td>'.$blood_bank_security->o_received.'</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td class="left">Blood Pack Used</td>
-                        <td>'.$blood_bank_security->a_used.'</td>
-                        <td>'.$blood_bank_security->b_used.'</td>
-                        <td>'.$blood_bank_security->ab_used.'</td>
-                        <td>'.$blood_bank_security->o_used.'</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td class="left">Blood Pack Destroyed or Damaged</td>
-                        <td>'.$blood_bank_security->a_destroyed.'</td>
-                        <td>'.$blood_bank_security->b_destroyed.'</td>
-                        <td>'.$blood_bank_security->ab_destroyed.'</td>
-                        <td>'.$blood_bank_security->o_destroyed.'</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td class="left">Blood Pack Remaining in Stock</td>
-                        <td>'.$blood_bank_security->a_stock.'</td>
-                        <td>'.$blood_bank_security->b_stock.'</td>
-                        <td>'.$blood_bank_security->ab_stock.'</td>
-                        <td>'.$blood_bank_security->o_stock.'</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <br>';
-        }
-
-
-
-
-
-
         $consultation_abcde=$this->research_model->consultation_abcde($date);
-        $consultation_fg=$this->research_model->consultation_fg($date);
-        $chronic_disease=$this->research_model->chronic_disease($date);
-        $injury=$this->research_model->injury($date);
-        $GBV=$this->research_model->GBV($date);
-        $anesthesia=$this->research_model->anesthesia($date);
-        $obstetrical_a=$this->research_model->obstetrical_a($date);
-        $obstetrical_bc=$this->research_model->obstetrical_bc($date);
-        $surgery=$this->research_model->surgery($date);
-        $neonatal=$this->research_model->neonatal($date);
-        $nutrition=$this->research_model->nutrition($date);
-        $malnourished=$this->research_model->malnourished($date);
-        $imagery=$this->research_model->imagery($date);
-        $stock=$this->research_model->stock($date);
-        $staff=$this->research_model->staff($date);
-        if ($consultation_abcde) {
+
+        if ($consultation_abcde->nc5m_total != null) {
             $output.='
-            <h3 class="center">II] Outpatient consultation</h3>
+            <h3 class="center">II] Outpatient consultations</h3>
             <div class="row">
               <div class="col-xs-8">
-                <h4>A) Outpatient Morbidity Summary Table</h4>
+                <h4>A) Outpatient morbidity summary table</h4>
               </div>
               <div class="col-xs-4">
-                <h4>B) Health Insurance Status of New Cases</h4>
+                <h4>B) Health insurance status of new cases</h4>
               </div>
             </div>
             <div class="row">
@@ -3242,7 +78,7 @@ class research extends CI_Controller
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="left">Insured (Mutuelle or other insurance members)</td>
+                      <td class="left">Insured (mutuelle or other insurance members)</td>
                       <td>'.$consultation_abcde->insured_total.'</td>
                     </tr>
                     <tr>
@@ -3263,7 +99,7 @@ class research extends CI_Controller
                 <h4>C) Referrals</h4>
               </div>
               <div class="col-xs-6">
-                <h4>D) Origin of Outpatients</h4>
+                <h4>D) Origin of outpatients</h4>
               </div>
             </div>
             <div class="row">
@@ -3314,7 +150,7 @@ class research extends CI_Controller
             </div>
             <br>
             <div class="row">
-              <h4>E) New cases of priority health problems in General OPD</h4>
+              <h4>E) New cases of priority health problems in general OPD</h4>
             </div>
             <div class="row">
               <table id="E2" class="center">
@@ -3679,11 +515,19 @@ class research extends CI_Controller
               </table>
             </div>
             <br>';
+        } else {
+            $output .= '
+              <h3 class="center">II] Outpatient consultations</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $consultation_fg=$this->research_model->consultation_fg($date);
+
         if ($consultation_fg->fractures_5m_total != null) {
             $output.='
           <div class="row">
-            <h4>F) New cases of HIV/AIDS/and Non-Communicable diseases</h4>
+            <h4>F) New cases of HIV/AIDS/STI/ and non-communicable diseases</h4>
           </div>
           <div class="row">
             <table id="F2" class="center">
@@ -4023,6 +867,325 @@ class research extends CI_Controller
             </div>
           </div>';
         }
+
+        $mental_health = $this->research_model->mental_health($date);
+
+        if ($mental_health->anxiety_nc19m_total != null) {
+            $output .= '
+              <h3 class="center">III] Mental health</h3>
+              <h4>A) Summary</h4>
+              <table id="A3" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th >Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="center">1</td>
+                    <td class="left">Mental patients under follow up</td>
+                    <td>'.$mental_health->follow_up_total.'</td>
+                    </tr>
+                  <tr>
+                    <td class="center">2</td>
+                    <td class="left">Mental problems referred to higher level</td>
+                    <td>'.$mental_health->higher_level_total.'</td>
+                    </tr>
+                  <tr>
+                    <td class="center">3</td>
+                    <td class="left">Mental problems hospitalized</td>
+                    <td>'.$mental_health->hospitalized_total.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+        			<h4>B) Diagnosis</h4>
+  				    <table id="B3" class="center">
+  				      <thead>
+  				        <tr>
+  				          <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				          <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				          <th colspan="6">New cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				          <th colspan="6">Old cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				        </tr>
+  				        <tr>
+  				          <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  			            <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  			            <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  			            <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+  				        </tr>
+  				        <tr>
+  				          <th>M</th>
+  				          <th>F</th>
+  				          <th>M</th>
+  				          <th>F</th>
+  				          <th>M</th>
+  				          <th>F</th>
+  				          <th>M</th>
+  				          <th>F</th>
+  				          <th>M</th>
+  				          <th>F</th>
+  				          <th>M</th>
+  				          <th>F</th>
+  								</tr>
+  				      </thead>
+  				      <tbody>
+  				        <tr>
+  				          <td class="center">1</td>
+  				          <td class="left">Anxiety disorders</td>
+  				          <td>'.$mental_health->anxiety_nc19m_total.'</td>
+  				          <td>'.$mental_health->anxiety_nc19f_total.'</td>
+  				          <td>'.$mental_health->anxiety_nc39m_total.'</td>
+  				          <td>'.$mental_health->anxiety_nc39f_total.'</td>
+  				          <td>'.$mental_health->anxiety_nc40m_total.'</td>
+  				          <td>'.$mental_health->anxiety_nc40f_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc19m_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc19f_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc39m_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc39f_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc40m_total.'</td>
+  				          <td>'.$mental_health->anxiety_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">2</td>
+  				          <td class="left">Post-traumatic stress disorders</td>
+  				          <td>'.$mental_health->stress_nc19m_total.'</td>
+  				          <td>'.$mental_health->stress_nc19f_total.'</td>
+  				          <td>'.$mental_health->stress_nc39m_total.'</td>
+  				          <td>'.$mental_health->stress_nc39f_total.'</td>
+  				          <td>'.$mental_health->stress_nc40m_total.'</td>
+  				          <td>'.$mental_health->stress_nc40f_total.'</td>
+  				          <td>'.$mental_health->stress_oc19m_total.'</td>
+  				          <td>'.$mental_health->stress_oc19f_total.'</td>
+  				          <td>'.$mental_health->stress_oc39m_total.'</td>
+  				          <td>'.$mental_health->stress_oc39f_total.'</td>
+  				          <td>'.$mental_health->stress_oc40m_total.'</td>
+  				          <td>'.$mental_health->stress_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">3</td>
+  				          <td class="left">Schizophrenia and other psychoses</td>
+  				          <td>'.$mental_health->schizo_nc19m_total.'</td>
+  				          <td>'.$mental_health->schizo_nc19f_total.'</td>
+  				          <td>'.$mental_health->schizo_nc39m_total.'</td>
+  				          <td>'.$mental_health->schizo_nc39f_total.'</td>
+  				          <td>'.$mental_health->schizo_nc40m_total.'</td>
+  				          <td>'.$mental_health->schizo_nc40f_total.'</td>
+  				          <td>'.$mental_health->schizo_oc19m_total.'</td>
+  				          <td>'.$mental_health->schizo_oc19f_total.'</td>
+  				          <td>'.$mental_health->schizo_oc39m_total.'</td>
+  				          <td>'.$mental_health->schizo_oc39f_total.'</td>
+  				          <td>'.$mental_health->schizo_oc40m_total.'</td>
+  				          <td>'.$mental_health->schizo_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">4</td>
+  				          <td class="left">Somatoform disorders</td>
+  				          <td>'.$mental_health->soma_nc19m_total.'</td>
+  				          <td>'.$mental_health->soma_nc19f_total.'</td>
+  				          <td>'.$mental_health->soma_nc39m_total.'</td>
+  				          <td>'.$mental_health->soma_nc39f_total.'</td>
+  				          <td>'.$mental_health->soma_nc40m_total.'</td>
+  				          <td>'.$mental_health->soma_nc40f_total.'</td>
+  				          <td>'.$mental_health->soma_oc19m_total.'</td>
+  				          <td>'.$mental_health->soma_oc19f_total.'</td>
+  				          <td>'.$mental_health->soma_oc39m_total.'</td>
+  				          <td>'.$mental_health->soma_oc39f_total.'</td>
+  				          <td>'.$mental_health->soma_oc40m_total.'</td>
+  				          <td>'.$mental_health->soma_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">5</td>
+  				          <td class="left">Behavioral and emotional disorders with onset usually occurring in childhood and adolescence</td>
+  				          <td>'.$mental_health->child_nc19m_total.'</td>
+  				          <td>'.$mental_health->child_nc19f_total.'</td>
+  				          <td>'.$mental_health->child_nc39m_total.'</td>
+  				          <td>'.$mental_health->child_nc39f_total.'</td>
+  				          <td>'.$mental_health->child_nc40m_total.'</td>
+  				          <td>'.$mental_health->child_nc40f_total.'</td>
+  				          <td>'.$mental_health->child_oc19m_total.'</td>
+  				          <td>'.$mental_health->child_oc19f_total.'</td>
+  				          <td>'.$mental_health->child_oc39m_total.'</td>
+  				          <td>'.$mental_health->child_oc39f_total.'</td>
+  				          <td>'.$mental_health->child_oc40m_total.'</td>
+  				          <td>'.$mental_health->child_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">6</td>
+  				          <td class="left">Mental and behavioral disorder due to use of alcohol</td>
+  				          <td>'.$mental_health->alcohol_nc19m_total.'</td>
+  				          <td>'.$mental_health->alcohol_nc19f_total.'</td>
+  				          <td>'.$mental_health->alcohol_nc39m_total.'</td>
+  				          <td>'.$mental_health->alcohol_nc39f_total.'</td>
+  				          <td>'.$mental_health->alcohol_nc40m_total.'</td>
+  				          <td>'.$mental_health->alcohol_nc40f_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc19m_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc19f_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc39m_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc39f_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc40m_total.'</td>
+  				          <td>'.$mental_health->alcohol_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">7</td>
+  				          <td class="left">Mental and behavioral disorder due to substance abuse</td>
+  				          <td>'.$mental_health->drugs_nc19m_total.'</td>
+  				          <td>'.$mental_health->drugs_nc19f_total.'</td>
+  				          <td>'.$mental_health->drugs_nc39m_total.'</td>
+  				          <td>'.$mental_health->drugs_nc39f_total.'</td>
+  				          <td>'.$mental_health->drugs_nc40m_total.'</td>
+  				          <td>'.$mental_health->drugs_nc40f_total.'</td>
+  				          <td>'.$mental_health->drugs_oc19m_total.'</td>
+  				          <td>'.$mental_health->drugs_oc19f_total.'</td>
+  				          <td>'.$mental_health->drugs_oc39m_total.'</td>
+  				          <td>'.$mental_health->drugs_oc39f_total.'</td>
+  				          <td>'.$mental_health->drugs_oc40m_total.'</td>
+  				          <td>'.$mental_health->drugs_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">8</td>
+  				          <td class="left">Depression</td>
+  				          <td>'.$mental_health->dep_nc19m_total.'</td>
+  				          <td>'.$mental_health->dep_nc19f_total.'</td>
+  				          <td>'.$mental_health->dep_nc39m_total.'</td>
+  				          <td>'.$mental_health->dep_nc39f_total.'</td>
+  				          <td>'.$mental_health->dep_nc40m_total.'</td>
+  				          <td>'.$mental_health->dep_nc40f_total.'</td>
+  				          <td>'.$mental_health->dep_oc19m_total.'</td>
+  				          <td>'.$mental_health->dep_oc19f_total.'</td>
+  				          <td>'.$mental_health->dep_oc39m_total.'</td>
+  				          <td>'.$mental_health->dep_oc39f_total.'</td>
+  				          <td>'.$mental_health->dep_oc40m_total.'</td>
+  				          <td>'.$mental_health->dep_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">9</td>
+  				          <td class="left">Suicide attempted</td>
+  				          <td>'.$mental_health->suicid_att_nc19m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_nc19f_total.'</td>
+  				          <td>'.$mental_health->suicid_att_nc39m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_nc39f_total.'</td>
+  				          <td>'.$mental_health->suicid_att_nc40m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_nc40f_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc19m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc19f_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc39m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc39f_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc40m_total.'</td>
+  				          <td>'.$mental_health->suicid_att_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">10</td>
+  				          <td class="left">Suicide deaths</td>
+  				          <td>'.$mental_health->suicid_d_nc19m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_nc19f_total.'</td>
+  				          <td>'.$mental_health->suicid_d_nc39m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_nc39f_total.'</td>
+  				          <td>'.$mental_health->suicid_d_nc40m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_nc40f_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc19m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc19f_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc39m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc39f_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc40m_total.'</td>
+  				          <td>'.$mental_health->suicid_d_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">11</td>
+  				          <td class="left">Maniac episode</td>
+  				          <td>'.$mental_health->maniac_nc19m_total.'</td>
+  				          <td>'.$mental_health->maniac_nc19f_total.'</td>
+  				          <td>'.$mental_health->maniac_nc39m_total.'</td>
+  				          <td>'.$mental_health->maniac_nc39f_total.'</td>
+  				          <td>'.$mental_health->maniac_nc40m_total.'</td>
+  				          <td>'.$mental_health->maniac_nc40f_total.'</td>
+  				          <td>'.$mental_health->maniac_oc19m_total.'</td>
+  				          <td>'.$mental_health->maniac_oc19f_total.'</td>
+  				          <td>'.$mental_health->maniac_oc39m_total.'</td>
+  				          <td>'.$mental_health->maniac_oc39f_total.'</td>
+  				          <td>'.$mental_health->maniac_oc40m_total.'</td>
+  				          <td>'.$mental_health->maniac_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">12</td>
+  				          <td class="left">Bipolar disorders</td>
+  				          <td>'.$mental_health->bipolar_nc19m_total.'</td>
+  				          <td>'.$mental_health->bipolar_nc19f_total.'</td>
+  				          <td>'.$mental_health->bipolar_nc39m_total.'</td>
+  				          <td>'.$mental_health->bipolar_nc39f_total.'</td>
+  				          <td>'.$mental_health->bipolar_nc40m_total.'</td>
+  				          <td>'.$mental_health->bipolar_nc40f_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc19m_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc19f_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc39m_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc39f_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc40m_total.'</td>
+  				          <td>'.$mental_health->bipolar_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">13</td>
+  				          <td class="left">Other psychological / Mental behavioral disorders</td>
+  				          <td>'.$mental_health->other_psy_nc19m_total.'</td>
+  				          <td>'.$mental_health->other_psy_nc19f_total.'</td>
+  				          <td>'.$mental_health->other_psy_nc39m_total.'</td>
+  				          <td>'.$mental_health->other_psy_nc39f_total.'</td>
+  				          <td>'.$mental_health->other_psy_nc40m_total.'</td>
+  				          <td>'.$mental_health->other_psy_nc40f_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc19m_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc19f_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc39m_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc39f_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc40m_total.'</td>
+  				          <td>'.$mental_health->other_psy_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">14</td>
+  				          <td class="left">Epilepsy</td>
+  				          <td>'.$mental_health->epilepsy_nc19m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_nc19f_total.'</td>
+  				          <td>'.$mental_health->epilepsy_nc39m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_nc39f_total.'</td>
+  				          <td>'.$mental_health->epilepsy_nc40m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_nc40f_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc19m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc19f_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc39m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc39f_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc40m_total.'</td>
+  				          <td>'.$mental_health->epilepsy_oc40f_total.'</td>
+  				        </tr>
+  				        <tr>
+  				          <td class="center">15</td>
+  				          <td class="left">Other neurological disorders</td>
+  				          <td>'.$mental_health->other_neuro_nc19m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_nc19f_total.'</td>
+  				          <td>'.$mental_health->other_neuro_nc39m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_nc39f_total.'</td>
+  				          <td>'.$mental_health->other_neuro_nc40m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_nc40f_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc19m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc19f_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc39m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc39f_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc40m_total.'</td>
+  				          <td>'.$mental_health->other_neuro_oc40f_total.'</td>
+  				        </tr>
+  				      </tbody>
+  				    </table>
+              <br>';
+            } else {
+            $output .= '
+              <h3 class="center">III] Mental health</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+            }
+
+        $chronic_disease=$this->research_model->chronic_disease($date);
+
         if ($chronic_disease) {
             $output.='
           <br>
@@ -4623,11 +1786,453 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">IV] Chronic diseases</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $other_cardiovascular = $this->research_model->other_cardiovascular($date);
+
+        if ($other_cardiovascular) {
+            $output .= '
+              <h3 class="center">V] Other cardiovascular and kindney diseases</h3>
+              <table id="A5" class="center">
+                <thead>
+                  <tr>
+                    <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="6">New cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="6">Old cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                  <tr>
+                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                  <tr>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Medical condition</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>1.1</td>
+                    <td class="left">Cardiomyopathies</td>
+                    <td>'.$other_cardiovascular->cardio_nc19m.'</td>
+                    <td>'.$other_cardiovascular->cardio_nc19f.'</td>
+                    <td>'.$other_cardiovascular->cardio_nc39m.'</td>
+                    <td>'.$other_cardiovascular->cardio_nc39f.'</td>
+                    <td>'.$other_cardiovascular->cardio_nc40m.'</td>
+                    <td>'.$other_cardiovascular->cardio_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->cardio_oc19m.'</td>
+                    <td>'.$other_cardiovascular->cardio_oc19f.'</td>
+                    <td>'.$other_cardiovascular->cardio_oc39m.'</td>
+                    <td>'.$other_cardiovascular->cardio_oc39f.'</td>
+                    <td>'.$other_cardiovascular->cardio_oc40m.'</td>
+                    <td>'.$other_cardiovascular->cardio_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->cardio_d19m.'</td>
+                    <td>'.$other_cardiovascular->cardio_d19f.'</td>
+                    <td>'.$other_cardiovascular->cardio_d39m.'</td>
+                    <td>'.$other_cardiovascular->cardio_d39f.'</td>
+                    <td>'.$other_cardiovascular->cardio_d40m.'</td>
+                    <td>'.$other_cardiovascular->cardio_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.2</td>
+                    <td class="left">Stroke/TIA</td>
+                    <td>'.$other_cardiovascular->stroke_nc19m.'</td>
+                    <td>'.$other_cardiovascular->stroke_nc19f.'</td>
+                    <td>'.$other_cardiovascular->stroke_nc39m.'</td>
+                    <td>'.$other_cardiovascular->stroke_nc39f.'</td>
+                    <td>'.$other_cardiovascular->stroke_nc40m.'</td>
+                    <td>'.$other_cardiovascular->stroke_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->stroke_oc19m.'</td>
+                    <td>'.$other_cardiovascular->stroke_oc19f.'</td>
+                    <td>'.$other_cardiovascular->stroke_oc39m.'</td>
+                    <td>'.$other_cardiovascular->stroke_oc39f.'</td>
+                    <td>'.$other_cardiovascular->stroke_oc40m.'</td>
+                    <td>'.$other_cardiovascular->stroke_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->stroke_d19m.'</td>
+                    <td>'.$other_cardiovascular->stroke_d19f.'</td>
+                    <td>'.$other_cardiovascular->stroke_d39m.'</td>
+                    <td>'.$other_cardiovascular->stroke_d39f.'</td>
+                    <td>'.$other_cardiovascular->stroke_d40m.'</td>
+                    <td>'.$other_cardiovascular->stroke_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.3</td>
+                    <td class="left">Rheumatic heart disease</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc19m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc19f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc39m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc39f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc40m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->rheumatic_oc19m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_oc19f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_oc39m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_oc39f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_oc40m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->rheumatic_d19m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_d19f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_d39m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_d39f.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_d40m.'</td>
+                    <td>'.$other_cardiovascular->rheumatic_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.4</td>
+                    <td class="left">Congenital heart disease</td>
+                    <td>'.$other_cardiovascular->cong_nc19m.'</td>
+                    <td>'.$other_cardiovascular->cong_nc19f.'</td>
+                    <td>'.$other_cardiovascular->cong_nc39m.'</td>
+                    <td>'.$other_cardiovascular->cong_nc39f.'</td>
+                    <td>'.$other_cardiovascular->cong_nc40m.'</td>
+                    <td>'.$other_cardiovascular->cong_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->cong_oc19m.'</td>
+                    <td>'.$other_cardiovascular->cong_oc19f.'</td>
+                    <td>'.$other_cardiovascular->cong_oc39m.'</td>
+                    <td>'.$other_cardiovascular->cong_oc39f.'</td>
+                    <td>'.$other_cardiovascular->cong_oc40m.'</td>
+                    <td>'.$other_cardiovascular->cong_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->cong_d19m.'</td>
+                    <td>'.$other_cardiovascular->cong_d19f.'</td>
+                    <td>'.$other_cardiovascular->cong_d39m.'</td>
+                    <td>'.$other_cardiovascular->cong_d39f.'</td>
+                    <td>'.$other_cardiovascular->cong_d40m.'</td>
+                    <td>'.$other_cardiovascular->cong_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.5</td>
+                    <td class="left">Coronary artery disease</td>
+                    <td>'.$other_cardiovascular->coronary_nc19m.'</td>
+                    <td>'.$other_cardiovascular->coronary_nc19f.'</td>
+                    <td>'.$other_cardiovascular->coronary_nc39m.'</td>
+                    <td>'.$other_cardiovascular->coronary_nc39f.'</td>
+                    <td>'.$other_cardiovascular->coronary_nc40m.'</td>
+                    <td>'.$other_cardiovascular->coronary_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->coronary_oc19m.'</td>
+                    <td>'.$other_cardiovascular->coronary_oc19f.'</td>
+                    <td>'.$other_cardiovascular->coronary_oc39m.'</td>
+                    <td>'.$other_cardiovascular->coronary_oc39f.'</td>
+                    <td>'.$other_cardiovascular->coronary_oc40m.'</td>
+                    <td>'.$other_cardiovascular->coronary_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->coronary_d19m.'</td>
+                    <td>'.$other_cardiovascular->coronary_d19f.'</td>
+                    <td>'.$other_cardiovascular->coronary_d39m.'</td>
+                    <td>'.$other_cardiovascular->coronary_d39f.'</td>
+                    <td>'.$other_cardiovascular->coronary_d40m.'</td>
+                    <td>'.$other_cardiovascular->coronary_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.6</td>
+                    <td class="left">Pericardial disease</td>
+                    <td>'.$other_cardiovascular->peri_nc19m.'</td>
+                    <td>'.$other_cardiovascular->peri_nc19f.'</td>
+                    <td>'.$other_cardiovascular->peri_nc39m.'</td>
+                    <td>'.$other_cardiovascular->peri_nc39f.'</td>
+                    <td>'.$other_cardiovascular->peri_nc40m.'</td>
+                    <td>'.$other_cardiovascular->peri_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->peri_oc19m.'</td>
+                    <td>'.$other_cardiovascular->peri_oc19f.'</td>
+                    <td>'.$other_cardiovascular->peri_oc39m.'</td>
+                    <td>'.$other_cardiovascular->peri_oc39f.'</td>
+                    <td>'.$other_cardiovascular->peri_oc40m.'</td>
+                    <td>'.$other_cardiovascular->peri_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->peri_d19m.'</td>
+                    <td>'.$other_cardiovascular->peri_d19f.'</td>
+                    <td>'.$other_cardiovascular->peri_d39m.'</td>
+                    <td>'.$other_cardiovascular->peri_d39f.'</td>
+                    <td>'.$other_cardiovascular->peri_d40m.'</td>
+                    <td>'.$other_cardiovascular->peri_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.7</td>
+                    <td class="left">Heart failure</td>
+                    <td>'.$other_cardiovascular->heart_nc19m.'</td>
+                    <td>'.$other_cardiovascular->heart_nc19f.'</td>
+                    <td>'.$other_cardiovascular->heart_nc39m.'</td>
+                    <td>'.$other_cardiovascular->heart_nc39f.'</td>
+                    <td>'.$other_cardiovascular->heart_nc40m.'</td>
+                    <td>'.$other_cardiovascular->heart_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->heart_oc19m.'</td>
+                    <td>'.$other_cardiovascular->heart_oc19f.'</td>
+                    <td>'.$other_cardiovascular->heart_oc39m.'</td>
+                    <td>'.$other_cardiovascular->heart_oc39f.'</td>
+                    <td>'.$other_cardiovascular->heart_oc40m.'</td>
+                    <td>'.$other_cardiovascular->heart_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->heart_d19m.'</td>
+                    <td>'.$other_cardiovascular->heart_d19f.'</td>
+                    <td>'.$other_cardiovascular->heart_d39m.'</td>
+                    <td>'.$other_cardiovascular->heart_d39f.'</td>
+                    <td>'.$other_cardiovascular->heart_d40m.'</td>
+                    <td>'.$other_cardiovascular->heart_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.8</td>
+                    <td class="left">Other cardiovascular</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc19m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc19f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc39m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc39f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc40m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_cardio_oc19m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_oc19f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_oc39m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_oc39f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_oc40m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_cardio_d19m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_d19f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_d39m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_d39f.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_d40m.'</td>
+                    <td>'.$other_cardiovascular->other_cardio_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.9</td>
+                    <td class="left">Post heart surgery</td>
+                    <td>'.$other_cardiovascular->post_heart_nc19m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_nc19f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_nc39m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_nc39f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_nc40m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->post_heart_oc19m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_oc19f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_oc39m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_oc39f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_oc40m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->post_heart_d19m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_d19f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_d39m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_d39f.'</td>
+                    <td>'.$other_cardiovascular->post_heart_d40m.'</td>
+                    <td>'.$other_cardiovascular->post_heart_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Kidney diseases</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>2.1</td>
+                    <td class="left">Renal failure</td>
+                    <td>'.$other_cardiovascular->renal_nc19m.'</td>
+                    <td>'.$other_cardiovascular->renal_nc19f.'</td>
+                    <td>'.$other_cardiovascular->renal_nc39m.'</td>
+                    <td>'.$other_cardiovascular->renal_nc39f.'</td>
+                    <td>'.$other_cardiovascular->renal_nc40m.'</td>
+                    <td>'.$other_cardiovascular->renal_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->renal_oc19m.'</td>
+                    <td>'.$other_cardiovascular->renal_oc19f.'</td>
+                    <td>'.$other_cardiovascular->renal_oc39m.'</td>
+                    <td>'.$other_cardiovascular->renal_oc39f.'</td>
+                    <td>'.$other_cardiovascular->renal_oc40m.'</td>
+                    <td>'.$other_cardiovascular->renal_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->renal_d19m.'</td>
+                    <td>'.$other_cardiovascular->renal_d19f.'</td>
+                    <td>'.$other_cardiovascular->renal_d39m.'</td>
+                    <td>'.$other_cardiovascular->renal_d39f.'</td>
+                    <td>'.$other_cardiovascular->renal_d40m.'</td>
+                    <td>'.$other_cardiovascular->renal_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>2.2</td>
+                    <td class="left">Other chonic kidney diseases</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc19m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc19f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc39m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc39f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc40m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_chronic_oc19m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_oc19f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_oc39m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_oc39f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_oc40m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_chronic_d19m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_d19f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_d39m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_d39f.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_d40m.'</td>
+                    <td>'.$other_cardiovascular->other_chronic_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Metabolic diseases</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.1</td>
+                    <td class="left">Thyroid disease</td>
+                    <td>'.$other_cardiovascular->thyroid_nc19m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_nc19f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_nc39m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_nc39f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_nc40m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->thyroid_oc19m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_oc19f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_oc39m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_oc39f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_oc40m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->thyroid_d19m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_d19f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_d39m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_d39f.'</td>
+                    <td>'.$other_cardiovascular->thyroid_d40m.'</td>
+                    <td>'.$other_cardiovascular->thyroid_d40f.'</td>
+                  </tr>
+                  <tr>
+                    <td>3.2</td>
+                    <td class="left">Other endocrine and metabolic diseases</td>
+                    <td>'.$other_cardiovascular->other_endo_nc19m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_nc19f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_nc39m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_nc39f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_nc40m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_nc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_endo_oc19m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_oc19f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_oc39m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_oc39f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_oc40m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_oc40f.'</td>
+
+                    <td>'.$other_cardiovascular->other_endo_d19m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_d19f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_d39m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_d39f.'</td>
+                    <td>'.$other_cardiovascular->other_endo_d40m.'</td>
+                    <td>'.$other_cardiovascular->other_endo_d40f.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">V] Other cardiovascular and kindney diseases</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $injury=$this->research_model->injury($date);
+
         if ($injury) {
             $output.='
-          <br>
-          <h4>VI] Injuries</h4>
+          <h3 class="center">VI] Injuries</h3>
           <div class="row">
             <table id="A6" class="center">
               <thead>
@@ -4856,13 +2461,1297 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">VI] Injuries</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $palliative_care = $this->research_model->palliative_care($date);
+
+        if ($palliative_care) {
+            $output .= '
+              <h3 class="center">VII] Palliative care</h3>
+              <table id="A7" class="center">
+					      <thead>
+					        <tr>
+					          <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					        </tr>
+					        <tr>
+					          <th>M</th>
+					          <th>F</th>
+					          <th>M</th>
+					          <th>F</th>
+									</tr>
+					      </thead>
+					      <tbody>
+					        <tr>
+					          <td>1</td>
+					          <td class="left">Total patients in palliative care at the beginning of the month (old cases)</td>
+					          <td>'.$palliative_care->oc_19m.'</td>
+					          <td>'.$palliative_care->oc_19f.'</td>
+					          <td>'.$palliative_care->oc_20m.'</td>
+					          <td>'.$palliative_care->oc_20f.'</td>
+					        </tr>
+	                <tr>
+					          <td>2</td>
+					          <td class="left">Patients in palliative care new cases this month (new cases)</td>
+					          <td>'.$palliative_care->nc_19m.'</td>
+					          <td>'.$palliative_care->nc_19f.'</td>
+					          <td>'.$palliative_care->nc_20m.'</td>
+					          <td>'.$palliative_care->nc_20f.'</td>
+					        </tr>
+	                <tr>
+					          <td>3</td>
+					          <td class="left">Patients seen by the palliative care team at the least four time this month</td>
+					          <td>'.$palliative_care->time_19m.'</td>
+					          <td>'.$palliative_care->time_19f.'</td>
+					          <td>'.$palliative_care->time_20m.'</td>
+					          <td>'.$palliative_care->time_20f.'</td>
+					        </tr>
+	                <tr>
+					          <td>4</td>
+					          <td class="left">Severe pain patients that receive morphine</td>
+					          <td>'.$palliative_care->morphine_19m.'</td>
+					          <td>'.$palliative_care->morphine_19f.'</td>
+					          <td>'.$palliative_care->morphine_20m.'</td>
+					          <td>'.$palliative_care->morphine_20f.'</td>
+					        </tr>
+	                <tr>
+					          <td>5</td>
+					          <td class="left">Died received end of life care and bereavement support</td>
+					          <td>'.$palliative_care->end_life_19m.'</td>
+					          <td>'.$palliative_care->end_life_19f.'</td>
+					          <td>'.$palliative_care->end_life_20m.'</td>
+					          <td>'.$palliative_care->end_life_20f.'</td>
+					        </tr>
+	                <tr>
+					          <td>6</td>
+					          <td class="left">Total death in palliative care</td>
+					          <td>'.$palliative_care->death_19m.'</td>
+					          <td>'.$palliative_care->death_19f.'</td>
+					          <td>'.$palliative_care->death_20m.'</td>
+					          <td>'.$palliative_care->death_20f.'</td>
+					        </tr>
+					      </tbody>
+					    </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">VII] Palliative care</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $community_checkup = $this->research_model->community_checkup($date);
+
+        if ($community_checkup) {
+            $output .= '
+              <h3 class="center">VIII] Community checkup</h3>
+              <table id="A8" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Total number of people who consulted for annual medical checkup during the reportins period</td>
+                    <td>'.$community_checkup->annual_checkup.'</td>
+                  </tr>
+                  <tr>
+                    <td class="grey"></td>
+                    <td class="left">Suspected positive at medical checkup who were referred for further diagnosis for the following diseases:</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Cardio vascular diseases</td>
+                    <td>'.$community_checkup->cardio.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Chronic respiratory diseases</td>
+                    <td>'.$community_checkup->respiratory.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Diabetes</td>
+                    <td>'.$community_checkup->diabetes.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Renal disease</td>
+                    <td>'.$community_checkup->renal.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Cancer</td>
+                    <td>'.$community_checkup->cancer.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">Disability</td>
+                    <td>'.$community_checkup->disability.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">VIII] Community checkup</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $cancer_screening = $this->research_model->cancer_screening($date);
+
+        if ($cancer_screening) {
+            $output .= '
+              <h3 class="center">IX] Cancer screening</h3>
+              <table id="A9" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Women screened for cervical cancer</td>
+                    <td>'.$cancer_screening->cervical.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Women tested VIA positive during cervical cancer screening</td>
+                    <td>'.$cancer_screening->cervical_viap.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Women tested VIA positive during cervical cancer screening and HIV positive</td>
+                    <td>'.$cancer_screening->cervical_viap_hivp.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Women tested VIA positive and treated with cryotherapy</td>
+                    <td>'.$cancer_screening->cryo_viap.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Women tested VIA positive and referred for treatment</td>
+                    <td>'.$cancer_screening->treatement_viap.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Women screened for breast cancer</td>
+                    <td>'.$cancer_screening->breast_screened.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">Women referred for breast cancer</td>
+                    <td>'.$cancer_screening->breast_referred.'</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="left">Women suspected for cervical cancer referred to other level</td>
+                    <td>'.$cancer_screening->cervical_otherlevel.'</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="left">Biopsies collected for all types of cancer</td>
+                    <td>'.$cancer_screening->biopsies.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">IX] Cancer screening</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $hospitalization_a = $this->research_model->hospitalization_a($date);
+
+        if ($hospitalization_a) {
+            $output .= '
+              <h3 class="center">X] Hospitalizations</h3>
+              <h4>A) Summary by service</h4>
+              <table id="A10" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Internal medicine<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Pediatrics<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Surgery<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Gyn. Obst<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Nut. Rehab<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Intensive care<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Neonatology<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Emergency<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Number of beds</td>
+                    <td>'.$hospitalization_a->im_beds.'</td>
+                    <td>'.$hospitalization_a->p_beds.'</td>
+                    <td>'.$hospitalization_a->s_beds.'</td>
+                    <td>'.$hospitalization_a->go_beds.'</td>
+                    <td>'.$hospitalization_a->nr_beds.'</td>
+                    <td>'.$hospitalization_a->ic_beds.'</td>
+                    <td>'.$hospitalization_a->n_beds.'</td>
+                    <td>'.$hospitalization_a->e_beds.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Present at the beginning of the month</td>
+                    <td>'.$hospitalization_a->im_present_start.'</td>
+                    <td>'.$hospitalization_a->p_present_start.'</td>
+                    <td>'.$hospitalization_a->s_present_start.'</td>
+                    <td>'.$hospitalization_a->go_present_start.'</td>
+                    <td>'.$hospitalization_a->nr_present_start.'</td>
+                    <td>'.$hospitalization_a->ic_present_start.'</td>
+                    <td>'.$hospitalization_a->n_present_start.'</td>
+                    <td>'.$hospitalization_a->e_present_start.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Admissions during the month of wich</td>
+                    <td>'.$hospitalization_a->im_admissions.'</td>
+                    <td>'.$hospitalization_a->p_admissions.'</td>
+                    <td>'.$hospitalization_a->s_admissions.'</td>
+                    <td>'.$hospitalization_a->go_admissions.'</td>
+                    <td>'.$hospitalization_a->nr_admissions.'</td>
+                    <td>'.$hospitalization_a->ic_admissions.'</td>
+                    <td>'.$hospitalization_a->n_admissions.'</td>
+                    <td>'.$hospitalization_a->e_admissions.'</td>
+                  </tr>
+                  <tr>
+                    <td>3.1</td>
+                    <td class="left">Referred from the health center</td>
+                    <td>'.$hospitalization_a->im_referred.'</td>
+                    <td>'.$hospitalization_a->p_referred.'</td>
+                    <td>'.$hospitalization_a->s_referred.'</td>
+                    <td>'.$hospitalization_a->go_referred.'</td>
+                    <td>'.$hospitalization_a->nr_referred.'</td>
+                    <td>'.$hospitalization_a->ic_referred.'</td>
+                    <td>'.$hospitalization_a->n_referred.'</td>
+                    <td>'.$hospitalization_a->e_referred.'</td>
+                  </tr>
+                  <tr>
+                    <td>3.2</td>
+                    <td class="left">Non-referred patients</td>
+                    <td>'.$hospitalization_a->im_no_referred.'</td>
+                    <td>'.$hospitalization_a->p_no_referred.'</td>
+                    <td>'.$hospitalization_a->s_no_referred.'</td>
+                    <td>'.$hospitalization_a->go_no_referred.'</td>
+                    <td>'.$hospitalization_a->nr_no_referred.'</td>
+                    <td>'.$hospitalization_a->ic_no_referred.'</td>
+                    <td>'.$hospitalization_a->n_no_referred.'</td>
+                    <td>'.$hospitalization_a->e_no_referred.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Discharges during the month of which</td>
+                    <td>'.$hospitalization_a->im_discharges.'</td>
+                    <td>'.$hospitalization_a->p_discharges.'</td>
+                    <td>'.$hospitalization_a->s_discharges.'</td>
+                    <td>'.$hospitalization_a->go_discharges.'</td>
+                    <td>'.$hospitalization_a->nr_discharges.'</td>
+                    <td>'.$hospitalization_a->ic_discharges.'</td>
+                    <td>'.$hospitalization_a->n_discharges.'</td>
+                    <td>'.$hospitalization_a->e_discharges.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.1</td>
+                    <td class="left">Authorized/Cured</td>
+                    <td>'.$hospitalization_a->im_authorized.'</td>
+                    <td>'.$hospitalization_a->p_authorized.'</td>
+                    <td>'.$hospitalization_a->s_authorized.'</td>
+                    <td>'.$hospitalization_a->go_authorized.'</td>
+                    <td>'.$hospitalization_a->nr_authorized.'</td>
+                    <td>'.$hospitalization_a->ic_authorized.'</td>
+                    <td>'.$hospitalization_a->n_authorized.'</td>
+                    <td>'.$hospitalization_a->e_authorized.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.2</td>
+                    <td class="left">Abandoned</td>
+                    <td>'.$hospitalization_a->im_abandoned.'</td>
+                    <td>'.$hospitalization_a->p_abandoned.'</td>
+                    <td>'.$hospitalization_a->s_abandoned.'</td>
+                    <td>'.$hospitalization_a->go_abandoned.'</td>
+                    <td>'.$hospitalization_a->nr_abandoned.'</td>
+                    <td>'.$hospitalization_a->ic_abandoned.'</td>
+                    <td>'.$hospitalization_a->n_abandoned.'</td>
+                    <td>'.$hospitalization_a->e_abandoned.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.3</td>
+                    <td class="left">Deaths</td>
+                    <td>'.$hospitalization_a->im_deaths.'</td>
+                    <td>'.$hospitalization_a->p_deaths.'</td>
+                    <td>'.$hospitalization_a->s_deaths.'</td>
+                    <td>'.$hospitalization_a->go_deaths.'</td>
+                    <td>'.$hospitalization_a->nr_deaths.'</td>
+                    <td>'.$hospitalization_a->ic_deaths.'</td>
+                    <td>'.$hospitalization_a->n_deaths.'</td>
+                    <td>'.$hospitalization_a->e_deaths.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.4</td>
+                    <td class="left">Referred</td>
+                    <td>'.$hospitalization_a->im_dis_referred.'</td>
+                    <td>'.$hospitalization_a->p_dis_referred.'</td>
+                    <td>'.$hospitalization_a->s_dis_referred.'</td>
+                    <td>'.$hospitalization_a->go_dis_referred.'</td>
+                    <td>'.$hospitalization_a->nr_dis_referred.'</td>
+                    <td>'.$hospitalization_a->ic_dis_referred.'</td>
+                    <td>'.$hospitalization_a->n_dis_referred.'</td>
+                    <td>'.$hospitalization_a->e_dis_referred.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.5</td>
+                    <td class="left">Counter-referred</td>
+                    <td>'.$hospitalization_a->im_counter.'</td>
+                    <td>'.$hospitalization_a->p_counter.'</td>
+                    <td>'.$hospitalization_a->s_counter.'</td>
+                    <td>'.$hospitalization_a->go_counter.'</td>
+                    <td>'.$hospitalization_a->nr_counter.'</td>
+                    <td>'.$hospitalization_a->ic_counter.'</td>
+                    <td>'.$hospitalization_a->n_counter.'</td>
+                    <td>'.$hospitalization_a->e_counter.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Present at the end of the month</td>
+                    <td>'.$hospitalization_a->im_present_end.'</td>
+                    <td>'.$hospitalization_a->p_present_end.'</td>
+                    <td>'.$hospitalization_a->s_present_end.'</td>
+                    <td>'.$hospitalization_a->go_present_end.'</td>
+                    <td>'.$hospitalization_a->nr_present_end.'</td>
+                    <td>'.$hospitalization_a->ic_present_end.'</td>
+                    <td>'.$hospitalization_a->n_present_end.'</td>
+                    <td>'.$hospitalization_a->e_present_end.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Total hospitalization days for discharged patients</td>
+                    <td>'.$hospitalization_a->im_total.'</td>
+                    <td>'.$hospitalization_a->p_total.'</td>
+                    <td>'.$hospitalization_a->s_total.'</td>
+                    <td>'.$hospitalization_a->go_total.'</td>
+                    <td>'.$hospitalization_a->nr_total.'</td>
+                    <td>'.$hospitalization_a->ic_total.'</td>
+                    <td>'.$hospitalization_a->n_total.'</td>
+                    <td>'.$hospitalization_a->e_total.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">Actual hospitalization days</td>
+                    <td>'.$hospitalization_a->im_actual.'</td>
+                    <td>'.$hospitalization_a->p_actual.'</td>
+                    <td>'.$hospitalization_a->s_actual.'</td>
+                    <td>'.$hospitalization_a->go_actual.'</td>
+                    <td>'.$hospitalization_a->nr_actual.'</td>
+                    <td>'.$hospitalization_a->ic_actual.'</td>
+                    <td>'.$hospitalization_a->n_actual.'</td>
+                    <td>'.$hospitalization_a->e_actual.'</td>
+                  </tr>
+                </tbody>
+              </table>';
+        } else {
+            $output .= '
+              <h3 class="center">X] Hospitalizations</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $hospitalization_bcde = $this->research_model->hospitalization_bcde($date);
+
+        if ($hospitalization_bcde->hosp_1m_total != null) {
+          $output.='
+              <br>
+              <h4>B) Summary by age</h4>
+              <table id="B10" class="center">
+                <thead>
+                  <tr>
+                    <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age < 1<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 1 to 4<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                  <tr>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="center">1</td>
+                    <td class="left">Hospitalized</td>
+                    <td>'.$hospitalization_bcde->hosp_1m_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_1f_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_4m_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_4f_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hosp_20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">2</td>
+                    <td class="left">Deaths</td>
+                    <td>'.$hospitalization_bcde->deaths_1m_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_1f_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_4m_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_4f_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_19m_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_19f_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_20m_total.'</td>
+                    <td>'.$hospitalization_bcde->deaths_20f_total.'</td>
+                  </tr>
+                </tbody>
+              </table>
+          <br>
+          <h4>C) Payment</h4>
+          <table id="C10" class="center">
+            <thead>
+              <tr>
+                <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="left">Insured discharges(mutuelle, etc)</td>
+                <td>'.$hospitalization_bcde->insured_dis_total.'</td>
+              </tr>
+              <tr>
+                <td class="left">Non-paying discharges</td>
+                <td>'.$hospitalization_bcde->no_paying_dis_total.'</td>
+              </tr>
+              <tr>
+                <td class="left">Non-paying indigents discharged</td>
+                <td>'.$hospitalization_bcde->no_paying_ind_total.'</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <h4>D) Special Causes of Admissions and Deaths</h4>
+          <table id="D10" class="center">
+            <thead>
+              <tr>
+                <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Admissions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="left">Road traffic accidents</td>
+                <td>'.$hospitalization_bcde->road_acc_ad_total.'</td>
+                <td>'.$hospitalization_bcde->road_acc_deaths_total.'</td>
+              </tr>
+              <tr>
+                <td class="left">Natural or man-made disasters (epidemic, earthquake, etc)</td>
+                <td>'.$hospitalization_bcde->natural_disa_ad_total.'</td>
+                <td>'.$hospitalization_bcde->natural_disa_deaths_total.'</td>
+              </tr>
+              <tr>
+                <td class="left">Workplace injuries</td>
+                <td>'.$hospitalization_bcde->work_inj_ad_total.'</td>
+                <td>'.$hospitalization_bcde->work_inj_deaths_total.'</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <h4>E) Causes of hospitalization and death at discharge</h4>
+          <table id="E10" class="center">
+                <thead>
+                  <tr>
+                    <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="6">Hospitalization<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+              <tr>
+                    <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                  <tr>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                    <th>M</th>
+                    <th>F</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="center">1</td>
+                    <td class="left">Malaria simple</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sim_hos20f_total.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td class="center">2</td>
+                    <td class="left">Malaria severe</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->malaria_sev_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">3</td>
+                    <td class="left">Borreliosis</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->borreliosis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">4</td>
+                    <td class="left">Pneumonia simple</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sim_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">5</td>
+                    <td class="left">Pneumonia severe</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pneumonia_sev_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">6</td>
+                    <td class="left">Pleurisy (non-tuberculosis)</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->pleurisy_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">7</td>
+                    <td class="left">Respratory infection acute (ARI) Other</td>
+                    <td>'.$hospitalization_bcde->ari_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->ari_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">8</td>
+                    <td class="left">Diarrhea bloody (dysentery)</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_bloody_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">9</td>
+                    <td class="left">Diarrhea with dehydration</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_dehy_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">10</td>
+                    <td class="left">Diarrhea no dehydration</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_no_dehy_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">11</td>
+                    <td class="left">Cholera</td>
+                    <td>'.$hospitalization_bcde->cholera_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cholera_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">12</td>
+                    <td class="left">Typhoid fever (salmonellosis)</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->typhoid_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">13</td>
+                    <td class="left">Meningitis</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->meningitis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">14</td>
+                    <td class="left">Measles</td>
+                    <td>'.$hospitalization_bcde->measles_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->measles_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">15</td>
+                    <td class="left">TB bacteriologically confirmed</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_conf_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">16</td>
+                    <td class="left">TB clinically diagnosed</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tb_diag_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">17</td>
+                    <td class="left">Fever chronic (>1 month)</td>
+                    <td>'.$hospitalization_bcde->fever_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->fever_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">18</td>
+                    <td class="left">Encephalitis</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->encephalitis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">19</td>
+                    <td class="left">Meningitis cryptococal</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->mening_crypto_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">20</td>
+                    <td class="left">Skin infections</td>
+                    <td>'.$hospitalization_bcde->skin_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->skin_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">21</td>
+                    <td class="left">Diarrhea chronic opportunistic infection</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->diarr_chronic_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">22</td>
+                    <td class="left">HIV oppotunistic infections Other</td>
+                    <td>'.$hospitalization_bcde->hiv_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hiv_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">23</td>
+                    <td class="left">Trauma head</td>
+                    <td>'.$hospitalization_bcde->trauma_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">24</td>
+                    <td class="left">Ruptured spleen</td>
+                    <td>'.$hospitalization_bcde->spleen_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->spleen_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">25</td>
+                    <td class="left">Fractures, open</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_open_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">26</td>
+                    <td class="left">Fractures, internal</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->frac_int_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">27</td>
+                    <td class="left">Trauma other</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->trauma_other_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">28</td>
+                    <td class="left">Burns</td>
+                    <td>'.$hospitalization_bcde->burns_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->burns_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">29</td>
+                    <td class="left">Hepatitis</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hepatitis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">30</td>
+                    <td class="left">Cirrhosis of the liver</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cirrhosis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">31</td>
+                    <td class="left">Digestive tract hemorrhages</td>
+                    <td>'.$hospitalization_bcde->digestive_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->digestive_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">32</td>
+                    <td class="left">Gastritis</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->gastritis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">33</td>
+                    <td class="left">Ulcer, gastro-duodenal</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->ulcer_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">34</td>
+                    <td class="left">Appendicitis</td>
+                    <td>'.$hospitalization_bcde->appendi_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->appendi_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">35</td>
+                    <td class="left">Hernia</td>
+                    <td>'.$hospitalization_bcde->hernia_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->hernia_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">36</td>
+                    <td class="left">Peritonitis (non-tuberculosis)</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->peritonitis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">37</td>
+                    <td class="left">Intestinal occlusion</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->intestinal_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">38</td>
+                    <td class="left">Urinary tract infections</td>
+                    <td>'.$hospitalization_bcde->urinary_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->urinary_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">39</td>
+                    <td class="left">Bone infections (including osteomyelitis)</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_inf_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">40</td>
+                    <td class="left">Bone and joint disease other</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->bone_other_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">41</td>
+                    <td class="left">Acute flaccid paralysis (polio)</td>
+                    <td>'.$hospitalization_bcde->acute_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->acute_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">42</td>
+                    <td class="left">Gynecological problems</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$hospitalization_bcde->gyneco_hos19f_total.'</td>
+                    <td class="grey"></td>
+                    <td>'.$hospitalization_bcde->gyneco_hos20f_total.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$hospitalization_bcde->gyneco_deaths19f_total.'</td>
+                    <td class="grey"></td>
+                    <td>'.$hospitalization_bcde->gyneco_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">43</td>
+                    <td class="left">Mastoditis</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->mastoditis_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">44</td>
+                    <td class="left">Tetanus</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->tetanus_deaths20f_total.'</td>
+                  </tr>
+                  <tr>
+                    <td class="center">45</td>
+                    <td class="left">Cancer all</td>
+                    <td>'.$hospitalization_bcde->cancer_hos5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_hos5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_hos19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_hos19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_hos20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_hos20f_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths5m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths5f_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths19m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths19f_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths20m_total.'</td>
+                    <td>'.$hospitalization_bcde->cancer_deaths20f_total.'</td>
+                  </tr>
+                </tbody>
+              </table>
+          <br>';
+        }
+
+        $GBV=$this->research_model->GBV($date);
+
         if ($GBV) {
             $output.='
           <br>
-          <h4>XI] Gender Based Violence</h4>
+          <h3 class="center">XI] Gender based violence</h3>
           <div class="row">
-            <table id="GBV" class="center">
+            <table id="A11" class="center">
               <thead>
                 <tr>
                   <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -5072,352 +3961,29 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XI] Gender based violence</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
-        if ($anesthesia) {
+
+        $surgery=$this->research_model->surgery($date);
+
+        if ($surgery->appendice_urg_total != null) {
             $output.='
           <br>
-          <h4>XIII] Anesthesia</h4>
+          <h3 class="center">XII] Surgery</h3>
           <div class="row">
-            <table id="XIII" class="center">
-              <thead>
-                <tr>
-                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td class="left">General Anesthesia</td>
-                  <td>'.$anesthesia->general_total.'</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td class="left">Regional Anesthesia</td>
-                  <td>'.$anesthesia->regional_total.'</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="left">Local Anesthesia</td>
-                  <td>'.$anesthesia->local_total.'</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td class="left">Other Types of Anesthesia</td>
-                  <td>'.$anesthesia->other_type_total.'</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>';
-        }
-        if ($obstetrical_a) {
-            $output.='
-          <br>
-          <h3 class="center">XV] Obstetrical complications</h3>
-          <br>
-          <h4>A) Cases and Deaths</h4>
-          <div class="row">
-            <table id="A15" class="center">
-              <thead>
-                <tr>
-                  <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th colspan="2">OPD NC<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th colspan="2">Hospitalized<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th colspan="2">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                </tr>
-                <tr>
-                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td class="left">Complications of Abortions(Spontaneous and Induced)</td>
-                  <td>'.$obstetrical_a->complications_opd19.'</td>
-                  <td>'.$obstetrical_a->complications_opd20.'</td>
-                  <td>'.$obstetrical_a->complications_hos19.'</td>
-                  <td>'.$obstetrical_a->complications_hos20.'</td>
-                  <td>'.$obstetrical_a->complications_deaths19.'</td>
-                  <td>'.$obstetrical_a->complications_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td class="left">Ectopic Pregnancy</td>
-                  <td>'.$obstetrical_a->ectopic_opd19.'</td>
-                  <td>'.$obstetrical_a->ectopic_opd20.'</td>
-                  <td>'.$obstetrical_a->ectopic_hos19.'</td>
-                  <td>'.$obstetrical_a->ectopic_hos20.'</td>
-                  <td>'.$obstetrical_a->ectopic_deaths19.'</td>
-                  <td>'.$obstetrical_a->ectopic_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="left">Antepartum Hemorrhage (APH)</td>
-                  <td>'.$obstetrical_a->antepartum_opd19.'</td>
-                  <td>'.$obstetrical_a->antepartum_opd20.'</td>
-                  <td>'.$obstetrical_a->antepartum_hos19.'</td>
-                  <td>'.$obstetrical_a->antepartum_hos20.'</td>
-                  <td>'.$obstetrical_a->antepartum_deaths19.'</td>
-                  <td>'.$obstetrical_a->antepartum_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td class="left">Post-Partum Hemorrhage (PPH)</td>
-                  <td>'.$obstetrical_a->postpartum_opd19.'</td>
-                  <td>'.$obstetrical_a->postpartum_opd20.'</td>
-                  <td>'.$obstetrical_a->postpartum_hos19.'</td>
-                  <td>'.$obstetrical_a->postpartum_hos20.'</td>
-                  <td>'.$obstetrical_a->postpartum_deaths19.'</td>
-                  <td>'.$obstetrical_a->postpartum_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td class="left">Eclampsia / Severe Pre Eclampsia</td>
-                  <td>'.$obstetrical_a->eclampsia_opd19.'</td>
-                  <td>'.$obstetrical_a->eclampsia_opd20.'</td>
-                  <td>'.$obstetrical_a->eclampsia_hos19.'</td>
-                  <td>'.$obstetrical_a->eclampsia_hos20.'</td>
-                  <td>'.$obstetrical_a->eclampsia_deaths19.'</td>
-                  <td>'.$obstetrical_a->eclampsia_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td class="left">Post C/Section Infection</td>
-                  <td>'.$obstetrical_a->postc_opd19.'</td>
-                  <td>'.$obstetrical_a->postc_opd20.'</td>
-                  <td>'.$obstetrical_a->postc_hos19.'</td>
-                  <td>'.$obstetrical_a->postc_hos20.'</td>
-                  <td>'.$obstetrical_a->postc_deaths19.'</td>
-                  <td>'.$obstetrical_a->postc_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td class="left">Other Postpartum Infections</td>
-                  <td>'.$obstetrical_a->postpartum_other_opd19.'</td>
-                  <td>'.$obstetrical_a->postpartum_other_opd20.'</td>
-                  <td>'.$obstetrical_a->postpartum_other_hos19.'</td>
-                  <td>'.$obstetrical_a->postpartum_other_hos20.'</td>
-                  <td>'.$obstetrical_a->postpartum_other_deaths19.'</td>
-                  <td>'.$obstetrical_a->postpartum_other_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td class="left">Prolonged or Obstructed Labor</td>
-                  <td>'.$obstetrical_a->prolonged_opd19.'</td>
-                  <td>'.$obstetrical_a->prolonged_opd20.'</td>
-                  <td>'.$obstetrical_a->prolonged_hos19.'</td>
-                  <td>'.$obstetrical_a->prolonged_hos20.'</td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td class="left">Uterine Rupture</td>
-                  <td>'.$obstetrical_a->uterine_rup_opd19.'</td>
-                  <td>'.$obstetrical_a->uterine_rup_opd20.'</td>
-                  <td>'.$obstetrical_a->uterine_rup_hos19.'</td>
-                  <td>'.$obstetrical_a->uterine_rup_hos20.'</td>
-                  <td>'.$obstetrical_a->uterine_rup_deaths19.'</td>
-                  <td>'.$obstetrical_a->uterine_rup_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td class="left">Amniotic embolism</td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>11</td>
-                  <td class="left">Complication of anesthesia</td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>12</td>
-                  <td class="left">Other Direct Obstetrical Complication</td>
-                  <td>'.$obstetrical_a->other_direct_obste_opd19.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_opd20.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_hos19.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_hos20.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
-                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>13</td>
-                  <td class="left">Anemia Severe (< 7gm/dl)</td>
-                  <td>'.$obstetrical_a->anemia_sev_opd19.'</td>
-                  <td>'.$obstetrical_a->anemia_sev_opd20.'</td>
-                  <td>'.$obstetrical_a->anemia_sev_hos19.'</td>
-                  <td>'.$obstetrical_a->anemia_sev_hos20.'</td>
-                  <td>'.$obstetrical_a->anemia_sev_deaths19.'</td>
-                  <td>'.$obstetrical_a->anemia_sev_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>14</td>
-                  <td class="left">Malaria Simple in Pregnancy</td>
-                  <td>'.$obstetrical_a->malaria_sim_opd19.'</td>
-                  <td>'.$obstetrical_a->malaria_sim_opd20.'</td>
-                  <td>'.$obstetrical_a->malaria_sim_hos19.'</td>
-                  <td>'.$obstetrical_a->malaria_sim_hos20.'</td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                </tr>
-                <tr>
-                  <td>15</td>
-                  <td class="left">Malaria with Minor Digestive Symptoms in Pregnancy</td>
-                  <td>'.$obstetrical_a->malaria_dig_opd19.'</td>
-                  <td>'.$obstetrical_a->malaria_dig_opd20.'</td>
-                  <td>'.$obstetrical_a->malaria_dig_hos19.'</td>
-                  <td>'.$obstetrical_a->malaria_dig_hos20.'</td>
-                  <td class="grey"></td>
-                  <td class="grey"></td>
-                </tr>
-                <tr>
-                  <td>16</td>
-                  <td class="left">Severe Malaria in Pregnancy</td>
-                  <td>'.$obstetrical_a->malaria_sev_opd19.'</td>
-                  <td>'.$obstetrical_a->malaria_sev_opd20.'</td>
-                  <td>'.$obstetrical_a->malaria_sev_hos19.'</td>
-                  <td>'.$obstetrical_a->malaria_sev_hos20.'</td>
-                  <td>'.$obstetrical_a->malaria_sev_deaths19.'</td>
-                  <td>'.$obstetrical_a->malaria_sev_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>17</td>
-                  <td class="left">HIV/Opportunistic Infections</td>
-                  <td>'.$obstetrical_a->hiv_opd19.'</td>
-                  <td>'.$obstetrical_a->hiv_opd20.'</td>
-                  <td>'.$obstetrical_a->hiv_hos19.'</td>
-                  <td>'.$obstetrical_a->hiv_hos20.'</td>
-                  <td>'.$obstetrical_a->hiv_deaths19.'</td>
-                  <td>'.$obstetrical_a->hiv_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>18</td>
-                  <td class="left">Pulmonary Embolism</td>
-                  <td>'.$obstetrical_a->pulmonary_opd19.'</td>
-                  <td>'.$obstetrical_a->pulmonary_opd20.'</td>
-                  <td>'.$obstetrical_a->pulmonary_hos19.'</td>
-                  <td>'.$obstetrical_a->pulmonary_hos20.'</td>
-                  <td>'.$obstetrical_a->pulmonary_deaths19.'</td>
-                  <td>'.$obstetrical_a->pulmonary_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>19</td>
-                  <td class="left">Pneumonia on Pregnancy</td>
-                  <td>'.$obstetrical_a->pneumonia_opd19.'</td>
-                  <td>'.$obstetrical_a->pneumonia_opd20.'</td>
-                  <td>'.$obstetrical_a->pneumonia_hos19.'</td>
-                  <td>'.$obstetrical_a->pneumonia_hos20.'</td>
-                  <td>'.$obstetrical_a->pneumonia_deaths19.'</td>
-                  <td>'.$obstetrical_a->pneumonia_deaths20.'</td>
-                </tr>
-                <tr>
-                  <td>20</td>
-                  <td class="left">Other Indirect Obstetrical Complication</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_opd19.'</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_opd20.'</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_hos19.'</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_hos20.'</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_deaths19.'</td>
-                  <td>'.$obstetrical_a->other_ind_obstet_deaths20.'</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>';
-        }
-        if ($obstetrical_bc) {
-            $output.='
-          <br>
-          <h4>B) Emergency obstetric and neonatal care interventions (basic and comprehensive)</h4>
-          <div class="row">
-            <table id="B15" class="center">
-              <thead>
-                <tr>
-                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td class="left">Intravenous antibiotics to manage obstetrical infections</td>
-                  <td>'.$obstetrical_bc->intra_antibio_total.'</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td class="left">Mother received parenteral uterotonic drugd (oxytocin) to manage PPH</td>
-                  <td>'.$obstetrical_bc->mother_uterotonic_total.'</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="left">Manual removal of placenta</td>
-                  <td>'.$obstetrical_bc->manual_placenta_total.'</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td class="left">Post-abortion care (manual vacuum aspiration)</td>
-                  <td>'.$obstetrical_bc->post_abortion_total.'</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td class="left">Delivery by vacuum extraction</td>
-                  <td>'.$obstetrical_bc->vacuum_extraction_total.'</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td class="left">(Pre) eclampsia cases receiving magnesium sulfate</td>
-                  <td>'.$obstetrical_bc->Preeclampsia_total.'</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td class="left">Caesarean</td>
-                  <td>'.$obstetrical_bc->caesarean_total.'</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td class="left">Blood transfusion for obstetrical complications</td>
-                  <td>'.$obstetrical_bc->blood_tranf_total.'</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td class="left">Women with obstetrical complications referred for emerhency care to higher levels</td>
-                  <td>'.$obstetrical_bc->women_w_obste_compli_total.'</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>';
-        }
-        if ($surgery) {
-            $output.='
-          <br>
-          <h4>Surgery</h4>
-          <div class="row">
-            <table id="XII" class="center">
+            <table id="A12" class="center">
               <thead>
                 <tr>
                   <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                   <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Type of Surgical Intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Urgent Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Planned Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Post-Surgical Infection Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Type of surgical intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Urgent interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Planned interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Post-surgical infection total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 </tr>
               </thead>
               <tbody class="center">
@@ -5602,11 +4168,782 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XII] Surgery</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $anesthesia=$this->research_model->anesthesia($date);
+
+        if ($anesthesia->general_total != null) {
+            $output.='
+          <br>
+          <h3 class="center">XIII] Anesthesia</h3>
+          <div class="row">
+            <table id="A13" class="center">
+              <thead>
+                <tr>
+                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="left">General anesthesia</td>
+                  <td>'.$anesthesia->general_total.'</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="left">Regional anesthesia</td>
+                  <td>'.$anesthesia->regional_total.'</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="left">Local anesthesia</td>
+                  <td>'.$anesthesia->local_total.'</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="left">Other types of anesthesia</td>
+                  <td>'.$anesthesia->other_type_total.'</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XIII] Anesthesia</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $physiotherapy = $this->research_model->physiotherapy($date);
+
+        if ($physiotherapy) {
+            $output .= '
+              <h3 class="center">XIV] Physiotherapy</h3>
+              <table id="A14" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Outpatients<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Hospitalized<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Physical therapy</td>
+                    <td>'.$physiotherapy->physical_therapy.'</td>
+                    <td>'.$physiotherapy->physical_therapy_hos.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Audiology</td>
+                    <td>'.$physiotherapy->audiology.'</td>
+                    <td>'.$physiotherapy->audiology_hos.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Speech therapy</td>
+                    <td>'.$physiotherapy->speech_therapy.'</td>
+                    <td>'.$physiotherapy->speech_therapy_hos.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XIV] Physiotherapy</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $obstetrical_a=$this->research_model->obstetrical_a($date);
+
+        if ($obstetrical_a) {
+            $output.='
+          <br>
+          <h3 class="center">XV] Obstetrical complications</h3>
+          <br>
+          <h4>A) Cases and Deaths</h4>
+          <div class="row">
+            <table id="A15" class="center">
+              <thead>
+                <tr>
+                  <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th colspan="2">OPD NC<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th colspan="2">Hospitalized<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th colspan="2">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+                <tr>
+                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Age ≥ 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="left">Complications of abortions(spontaneous and induced)</td>
+                  <td>'.$obstetrical_a->complications_opd19.'</td>
+                  <td>'.$obstetrical_a->complications_opd20.'</td>
+                  <td>'.$obstetrical_a->complications_hos19.'</td>
+                  <td>'.$obstetrical_a->complications_hos20.'</td>
+                  <td>'.$obstetrical_a->complications_deaths19.'</td>
+                  <td>'.$obstetrical_a->complications_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="left">Ectopic pregnancy</td>
+                  <td>'.$obstetrical_a->ectopic_opd19.'</td>
+                  <td>'.$obstetrical_a->ectopic_opd20.'</td>
+                  <td>'.$obstetrical_a->ectopic_hos19.'</td>
+                  <td>'.$obstetrical_a->ectopic_hos20.'</td>
+                  <td>'.$obstetrical_a->ectopic_deaths19.'</td>
+                  <td>'.$obstetrical_a->ectopic_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="left">Antepartum hemorrhage (APH)</td>
+                  <td>'.$obstetrical_a->antepartum_opd19.'</td>
+                  <td>'.$obstetrical_a->antepartum_opd20.'</td>
+                  <td>'.$obstetrical_a->antepartum_hos19.'</td>
+                  <td>'.$obstetrical_a->antepartum_hos20.'</td>
+                  <td>'.$obstetrical_a->antepartum_deaths19.'</td>
+                  <td>'.$obstetrical_a->antepartum_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="left">Post-partum hemorrhage (PPH)</td>
+                  <td>'.$obstetrical_a->postpartum_opd19.'</td>
+                  <td>'.$obstetrical_a->postpartum_opd20.'</td>
+                  <td>'.$obstetrical_a->postpartum_hos19.'</td>
+                  <td>'.$obstetrical_a->postpartum_hos20.'</td>
+                  <td>'.$obstetrical_a->postpartum_deaths19.'</td>
+                  <td>'.$obstetrical_a->postpartum_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="left">Eclampsia / Severe pre eclampsia</td>
+                  <td>'.$obstetrical_a->eclampsia_opd19.'</td>
+                  <td>'.$obstetrical_a->eclampsia_opd20.'</td>
+                  <td>'.$obstetrical_a->eclampsia_hos19.'</td>
+                  <td>'.$obstetrical_a->eclampsia_hos20.'</td>
+                  <td>'.$obstetrical_a->eclampsia_deaths19.'</td>
+                  <td>'.$obstetrical_a->eclampsia_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td class="left">Post C / Section infection</td>
+                  <td>'.$obstetrical_a->postc_opd19.'</td>
+                  <td>'.$obstetrical_a->postc_opd20.'</td>
+                  <td>'.$obstetrical_a->postc_hos19.'</td>
+                  <td>'.$obstetrical_a->postc_hos20.'</td>
+                  <td>'.$obstetrical_a->postc_deaths19.'</td>
+                  <td>'.$obstetrical_a->postc_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="left">Other postpartum infections</td>
+                  <td>'.$obstetrical_a->postpartum_other_opd19.'</td>
+                  <td>'.$obstetrical_a->postpartum_other_opd20.'</td>
+                  <td>'.$obstetrical_a->postpartum_other_hos19.'</td>
+                  <td>'.$obstetrical_a->postpartum_other_hos20.'</td>
+                  <td>'.$obstetrical_a->postpartum_other_deaths19.'</td>
+                  <td>'.$obstetrical_a->postpartum_other_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="left">Prolonged or obstructed labor</td>
+                  <td>'.$obstetrical_a->prolonged_opd19.'</td>
+                  <td>'.$obstetrical_a->prolonged_opd20.'</td>
+                  <td>'.$obstetrical_a->prolonged_hos19.'</td>
+                  <td>'.$obstetrical_a->prolonged_hos20.'</td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="left">Uterine rupture</td>
+                  <td>'.$obstetrical_a->uterine_rup_opd19.'</td>
+                  <td>'.$obstetrical_a->uterine_rup_opd20.'</td>
+                  <td>'.$obstetrical_a->uterine_rup_hos19.'</td>
+                  <td>'.$obstetrical_a->uterine_rup_hos20.'</td>
+                  <td>'.$obstetrical_a->uterine_rup_deaths19.'</td>
+                  <td>'.$obstetrical_a->uterine_rup_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td class="left">Amniotic embolism</td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td class="left">Complication of anesthesia</td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td class="left">Other direct obstetrical complication</td>
+                  <td>'.$obstetrical_a->other_direct_obste_opd19.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_opd20.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_hos19.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_hos20.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths19.'</td>
+                  <td>'.$obstetrical_a->other_direct_obste_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td class="left">Anemia severe (< 7gm/dl)</td>
+                  <td>'.$obstetrical_a->anemia_sev_opd19.'</td>
+                  <td>'.$obstetrical_a->anemia_sev_opd20.'</td>
+                  <td>'.$obstetrical_a->anemia_sev_hos19.'</td>
+                  <td>'.$obstetrical_a->anemia_sev_hos20.'</td>
+                  <td>'.$obstetrical_a->anemia_sev_deaths19.'</td>
+                  <td>'.$obstetrical_a->anemia_sev_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td class="left">Malaria simple in pregnancy</td>
+                  <td>'.$obstetrical_a->malaria_sim_opd19.'</td>
+                  <td>'.$obstetrical_a->malaria_sim_opd20.'</td>
+                  <td>'.$obstetrical_a->malaria_sim_hos19.'</td>
+                  <td>'.$obstetrical_a->malaria_sim_hos20.'</td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td class="left">Malaria with minor digestive symptoms in pregnancy</td>
+                  <td>'.$obstetrical_a->malaria_dig_opd19.'</td>
+                  <td>'.$obstetrical_a->malaria_dig_opd20.'</td>
+                  <td>'.$obstetrical_a->malaria_dig_hos19.'</td>
+                  <td>'.$obstetrical_a->malaria_dig_hos20.'</td>
+                  <td class="grey"></td>
+                  <td class="grey"></td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td class="left">Severe malaria in pregnancy</td>
+                  <td>'.$obstetrical_a->malaria_sev_opd19.'</td>
+                  <td>'.$obstetrical_a->malaria_sev_opd20.'</td>
+                  <td>'.$obstetrical_a->malaria_sev_hos19.'</td>
+                  <td>'.$obstetrical_a->malaria_sev_hos20.'</td>
+                  <td>'.$obstetrical_a->malaria_sev_deaths19.'</td>
+                  <td>'.$obstetrical_a->malaria_sev_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td class="left">HIV/Opportunistic infections</td>
+                  <td>'.$obstetrical_a->hiv_opd19.'</td>
+                  <td>'.$obstetrical_a->hiv_opd20.'</td>
+                  <td>'.$obstetrical_a->hiv_hos19.'</td>
+                  <td>'.$obstetrical_a->hiv_hos20.'</td>
+                  <td>'.$obstetrical_a->hiv_deaths19.'</td>
+                  <td>'.$obstetrical_a->hiv_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td class="left">Pulmonary embolism</td>
+                  <td>'.$obstetrical_a->pulmonary_opd19.'</td>
+                  <td>'.$obstetrical_a->pulmonary_opd20.'</td>
+                  <td>'.$obstetrical_a->pulmonary_hos19.'</td>
+                  <td>'.$obstetrical_a->pulmonary_hos20.'</td>
+                  <td>'.$obstetrical_a->pulmonary_deaths19.'</td>
+                  <td>'.$obstetrical_a->pulmonary_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td class="left">Pneumonia on pregnancy</td>
+                  <td>'.$obstetrical_a->pneumonia_opd19.'</td>
+                  <td>'.$obstetrical_a->pneumonia_opd20.'</td>
+                  <td>'.$obstetrical_a->pneumonia_hos19.'</td>
+                  <td>'.$obstetrical_a->pneumonia_hos20.'</td>
+                  <td>'.$obstetrical_a->pneumonia_deaths19.'</td>
+                  <td>'.$obstetrical_a->pneumonia_deaths20.'</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td class="left">Other indirect obstetrical complication</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_opd19.'</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_opd20.'</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_hos19.'</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_hos20.'</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_deaths19.'</td>
+                  <td>'.$obstetrical_a->other_ind_obstet_deaths20.'</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XV] Obstetrical complications</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $obstetrical_bc=$this->research_model->obstetrical_bc($date);
+
+        if ($obstetrical_bc->intra_antibio_total != null) {
+            $output.='
+          <br>
+          <h4>B) Emergency obstetric and neonatal care interventions (basic and comprehensive)</h4>
+          <div class="row">
+            <table id="B15" class="center">
+              <thead>
+                <tr>
+                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="left">Intravenous antibiotics to manage obstetrical infections</td>
+                  <td>'.$obstetrical_bc->intra_antibio_total.'</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="left">Mother received parenteral uterotonic drugd (oxytocin) to manage PPH</td>
+                  <td>'.$obstetrical_bc->mother_uterotonic_total.'</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="left">Manual removal of placenta</td>
+                  <td>'.$obstetrical_bc->manual_placenta_total.'</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="left">Post-abortion care (manual vacuum aspiration)</td>
+                  <td>'.$obstetrical_bc->post_abortion_total.'</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="left">Delivery by vacuum extraction</td>
+                  <td>'.$obstetrical_bc->vacuum_extraction_total.'</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td class="left">(Pre) eclampsia cases receiving magnesium sulfate</td>
+                  <td>'.$obstetrical_bc->Preeclampsia_total.'</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="left">Caesarean</td>
+                  <td>'.$obstetrical_bc->caesarean_total.'</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="left">Blood transfusion for obstetrical complications</td>
+                  <td>'.$obstetrical_bc->blood_tranf_total.'</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="left">Women with obstetrical complications referred for emerhency care to higher levels</td>
+                  <td>'.$obstetrical_bc->women_w_obste_compli_total.'</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>';
+        }
+
+        $delivery_birth = $this->research_model->delivery_birth($date);
+
+        if ($delivery_birth) {
+            $output .= '
+              <h3 class="center">XVI] Deliveries and births at health facility</h3>
+              <table id="A16" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Deliveries, total</td>
+                    <td>'.$delivery_birth->delive_total.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Deliveries eutocic</td>
+                    <td>'.$delivery_birth->delive_eutocic.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Deliveries dystocic</td>
+                    <td>'.$delivery_birth->delive_dystocic.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Delivery with episiotomy</td>
+                    <td>'.$delivery_birth->delive_w_episiotomy.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Delivery with oxytocin stimulation</td>
+                    <td>'.$delivery_birth->delive_w_oxytocin.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Delivery complicated by perineal tear (second-third-fourth degree)</td>
+                    <td>'.$delivery_birth->delive_complicated.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">Birth trauma to newborn</td>
+                    <td>'.$delivery_birth->birth_trauma.'</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="left">Cleft palate or cleft lip</td>
+                    <td>'.$delivery_birth->cleft_palate.'</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="left">Omphalocel</td>
+                    <td>'.$delivery_birth->omphalocel.'</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td class="left">Laparoschisis</td>
+                    <td>'.$delivery_birth->laparoschisis.'</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td class="left">Spina bifida</td>
+                    <td>'.$delivery_birth->spina_bifida.'</td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td class="left">Hydrocephalus</td>
+                    <td>'.$delivery_birth->hydrocephalus.'</td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td class="left">Deliveries 15 years and under</td>
+                    <td>'.$delivery_birth->delive_15.'</td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td class="left">Deliveries 16 to 19 years</td>
+                    <td>'.$delivery_birth->delive_19.'</td>
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td class="left">Deliveries 20 to 24 years</td>
+                    <td>'.$delivery_birth->delive_24.'</td>
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td class="left">Deliveries 35 years and above</td>
+                    <td>'.$delivery_birth->delive_35.'</td>
+                  </tr>
+                  <tr>
+                    <td>17</td>
+                    <td class="left">Women who received oxytocin IM immediately after birth for active management of third stage of labor</td>
+                    <td>'.$delivery_birth->received_oxytocin.'</td>
+                  </tr>
+                  <tr>
+                    <td>18</td>
+                    <td class="left">Multiple pregnancies (women who delivered twins, triplets, etc.)</td>
+                    <td>'.$delivery_birth->multi_pregnancies.'</td>
+                  </tr>
+                  <tr>
+                    <td>19</td>
+                    <td class="left">Women consulted for risk of premature delivery</td>
+                    <td>'.$delivery_birth->women_cons_risk_prema.'</td>
+                  </tr>
+                  <tr>
+                    <td>20</td>
+                    <td class="left">Mother who received corticosteroid in management of risk of premature delivery</td>
+                    <td>'.$delivery_birth->received_corticosteroid.'</td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td class="left">Women consulted with preterm premature rupture membranes (PPROM)</td>
+                    <td>'.$delivery_birth->cons_preterm_ruptu_memb.'</td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td class="left">Women consulted with preterm premature rupture membranes who received prophylactic antibiotics</td>
+                    <td>'.$delivery_birth->cons_preterm_ruptu_memb_prophylactic.'</td>
+                  </tr>
+                  <tr>
+                    <td>23</td>
+                    <td class="left">Maternal deaths during labor, delivery and 24 hours after delivery (=subsets of all deaths in table above)</td>
+                    <td>'.$delivery_birth->maternal_deaths.'</td>
+                  </tr>
+                  <tr>
+                    <td>24</td>
+                    <td class="left">Births, live</td>
+                    <td>'.$delivery_birth->births_live.'</td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td class="left">Birth weight < 2500 gr (alive)</td>
+                    <td>'.$delivery_birth->births_weight2500.'</td>
+                  </tr>
+                  <tr>
+                    <td>26</td>
+                    <td class="left">Premature newborns (alive) 22-37 weeks</td>
+                    <td>'.$delivery_birth->premature_newborn.'</td>
+                  </tr>
+                  <tr>
+                    <td>27</td>
+                    <td class="left">Birth weight < 2 kg (alive newborns) all</td>
+                    <td>'.$delivery_birth->births_weight2000.'</td>
+                  </tr>
+                  <tr>
+                    <td>28</td>
+                    <td class="left">Still births macerated (≥ 28 weeks or ≥ 1000 gr)</td>
+                    <td>'.$delivery_birth->births_macerated.'</td>
+                  </tr>
+                  <tr>
+                    <td>29</td>
+                    <td class="left">Still births fresh (≥ 28 weeks or ≥ 1000 gr) all</td>
+                    <td>'.$delivery_birth->births_fresh_1000.'</td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td class="left">Still births freash (≥ 2500 gr)</td>
+                    <td>'.$delivery_birth->births_fresh_2500.'</td>
+                  </tr>
+                  <tr>
+                    <td>31</td>
+                    <td class="left">Deaths at birth of live born bebies (within 30 minutes)</td>
+                    <td>'.$delivery_birth->deaths_birth.'</td>
+                  </tr>
+                  <tr>
+                    <td>32</td>
+                    <td class="left">Deaths at birth of live born babies with ≥ 2,5 kg (within 30 minutes)</td>
+                    <td>'.$delivery_birth->deaths_birth_2500.'</td>
+                  </tr>
+                  <tr>
+                    <td>33</td>
+                    <td class="left">Newborns breastfed within 1 hour of delivery</td>
+                    <td>'.$delivery_birth->newborns_breastfed.'</td>
+                  </tr>
+                  <tr>
+                    <td>34</td>
+                    <td class="left">Newborns who were placed skin to skin after birth for at least one hour after birth</td>
+                    <td>'.$delivery_birth->newborns_skintoskin.'</td>
+                  </tr>
+                  <tr>
+                    <td>35</td>
+                    <td class="left">Live newborns who didn\'t cry/breath at birth</td>
+                    <td>'.$delivery_birth->newborns_no_cry.'</td>
+                  </tr>
+                  <tr>
+                    <td>36</td>
+                    <td class="left">Live newborns who didn\'t cry at birth and for whom newborn resuscitation was performed using ambu bag</td>
+                    <td>'.$delivery_birth->newborns_no_cry_ambubag.'</td>
+                  </tr>
+                  <tr>
+                    <td>37</td>
+                    <td class="left">Live newborns who didn\'t cry/breth at birth and were resuscitated successfully (cry/breath within 5 min APGAR > 5 at 5 min)</td>
+                    <td>'.$delivery_birth->newborns_no_cry_success.'</td>
+                  </tr>
+                  <tr>
+                    <td>38</td>
+                    <td class="left">Women suspected to develop obstetrical fistula (during labor)</td>
+                    <td>'.$delivery_birth->fistula.'</td>
+                  </tr>
+                  <tr>
+                    <td>39</td>
+                    <td class="left">Women suspected to develop obstetrical fistula received conservative treatment (foley catheter)</td>
+                    <td>'.$delivery_birth->fistula_treatment.'</td>
+                  </tr>
+                  <tr>
+                    <td>40</td>
+                    <td class="left">Newborns with complications at birth referred to higher level for emergency care</td>
+                    <td>'.$delivery_birth->complications_higher_level.'</td>
+                  </tr>
+                  <tr>
+                    <td>41</td>
+                    <td class="left">Women placed under observation for at least 24 hours before discharge</td>
+                    <td>'.$delivery_birth->observation_24.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XVI] Deliveries and births at health facility</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $postnatal_care = $this->research_model->postnatal_care($date);
+
+        if ($postnatal_care) {
+            $output .= '
+              <h3 class="center">XVII] Postnatal care</h3>
+              <table id="A17" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Mother<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Newborn<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">PNC1 visits within 24 hours of birth</td>
+                    <td>'.$postnatal_care->pnc1_m.'</td>
+                    <td>'.$postnatal_care->pnc1_nb.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Mothers screened for anemia during PNC1 visit</td>
+                    <td>'.$postnatal_care->anemia_pnc1_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Mothers received iron/folic acid during PNC1 visit</td>
+                    <td>'.$postnatal_care->iron_pnc1_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Mothers screened by MUAC for malnutrition during PNC1 visit</td>
+                    <td>'.$postnatal_care->muac_pnc1_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Mothers malnourished (MUAC < 21 cm) during PNC1 visit</td>
+                    <td>'.$postnatal_care->malnourished_pnc1_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">PNC2 visits at 3rd day after birth</td>
+                    <td>'.$postnatal_care->pnc2_m.'</td>
+                    <td>'.$postnatal_care->pnc2_nb.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">PNC3 visits between 7th and 14th day after birth</td>
+                    <td>'.$postnatal_care->pnc3_m.'</td>
+                    <td>'.$postnatal_care->pnc3_nb.'</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="left">Screened for nemia during PNC3 visit</td>
+                    <td>'.$postnatal_care->anemia_pnc3_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="left">Anemia (Hb < 9.5 gr/dl) detected during PNC visits (PNC1 and PNC3)</td>
+                    <td>'.$postnatal_care->anemia_pnc_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td class="left">Complications/denger signs detected during any PNC visit</td>
+                    <td>'.$postnatal_care->complications_m.'</td>
+                    <td>'.$postnatal_care->complications_nb.'</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td class="left">Referrals done for complcations ar any visit</td>
+                    <td>'.$postnatal_care->referrals_m.'</td>
+                    <td>'.$postnatal_care->referrals_nb.'</td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td class="left">Post-partum family planning (PPFP) within 6 weeks after delivery</td>
+                    <td>'.$postnatal_care->ppfp_m.'</td>
+                    <td class="grey"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XVII] Postnatal care</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $kangaroo_mother_care = $this->research_model->kangaroo_mother_care($date);
+
+        if ($kangaroo_mother_care) {
+            $output .= '
+              <h3 class="center">XVIII] Kangaroo mother care</h3>
+              <table id="A18" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Low birth weight < 2000 grams babies admitted in KMC</td>
+                    <td>'.$kangaroo_mother_care->low_birth.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Newborns discharged from KMC unit</td>
+                    <td>'.$kangaroo_mother_care->newborns.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">KMC deaths among KMC admissions</td>
+                    <td>'.$kangaroo_mother_care->kmc_deaths.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">KMC standars follow up visit after discharge within 2 weeks</td>
+                    <td>'.$kangaroo_mother_care->kmc_standard.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XVIII] Kangaroo mother care</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $neonatal=$this->research_model->neonatal($date);
+
         if ($neonatal) {
             $output.='
           <br>
-          <h4>Neonatal causes of hospitalization and deaths</h4>
+          <h3 class="center">XIX] Neonatal causes of hospitalization and deaths</h3>
           <div class="row">
             <table id="A19" class="center">
               <thead>
@@ -5813,11 +5150,19 @@ class research extends CI_Controller
               </tr>
             </tbody>
           </table>';
+        } else {
+            $output .= '
+              <h3 class="center">XIX] Neonatal causes of hospitalization and deaths</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $nutrition=$this->research_model->nutrition($date);
+
         if ($nutrition) {
             $output.='
           <br>
-          <h4>Nutrition screening (all services)</h4>
+          <h3 class="center">XX] Nutrition screening (all services)</h3>
           <div class="row">
             <table id="A20" class="center">
               <thead>
@@ -5925,11 +5270,19 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XX] Nutrition screening (all services)</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $malnourished=$this->research_model->malnourished($date);
+
         if ($malnourished) {
             $output.='
           <br>
-          <h4> Inpatient Rehabilitation of malnourished</h4>
+          <h3 class="center">XXI] Inpatient rehabilitation of malnourished</h4>
           <div class="row">
             <table id="A21" class="center">
               <thead>
@@ -6033,17 +5386,801 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XXI] Inpatient rehabilitation of malnourished</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $family_planning = $this->research_model->family_planning($date);
+
+        if ($family_planning) {
+            $output .= '
+              <h3 class="center">XXII] Family planning</h3>
+              <h4>A) Methods</h4>
+              <table id="A22" class="center">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>New acceptors in the program</th>
+                    <th>PPFP uptake (Before discharge)</th>
+                    <th>New users of FP method</th>
+                    <th>Stopped FP method</th>
+                    <th>Active users at end of month</th>
+                    <th>FP users referred to CHWs</th>
+                    <th>Quantity distributed</th>
+                    <th>Stock at end of the month</th>
+                    <th>Days of stock-out</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Oral contraceptives, progestative</td>
+                    <td>'.$family_planning->oral_contra_proges_accep.'</td>
+                    <td>'.$family_planning->oral_contra_proges_ppfp.'</td>
+                    <td>'.$family_planning->oral_contra_proges_users.'</td>
+                    <td>'.$family_planning->oral_contra_proges_stop.'</td>
+                    <td>'.$family_planning->oral_contra_proges_active.'</td>
+                    <td>'.$family_planning->oral_contra_proges_refer.'</td>
+                    <td>'.$family_planning->oral_contra_proges_quant.'</td>
+                    <td>'.$family_planning->oral_contra_proges_stock.'</td>
+                    <td>'.$family_planning->oral_contra_proges_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Oral contraceptives, combined</td>
+                    <td>'.$family_planning->oral_contra_comb_accep.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->oral_contra_comb_users.'</td>
+                    <td>'.$family_planning->oral_contra_comb_stop.'</td>
+                    <td>'.$family_planning->oral_contra_comb_active.'</td>
+                    <td>'.$family_planning->oral_contra_comb_refer.'</td>
+                    <td>'.$family_planning->oral_contra_comb_quant.'</td>
+                    <td>'.$family_planning->oral_contra_comb_stock.'</td>
+                    <td>'.$family_planning->oral_contra_comb_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Injectables (depo-provera)</td>
+                    <td>'.$family_planning->inject_depo_accep.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->inject_depo_users.'</td>
+                    <td>'.$family_planning->inject_depo_stop.'</td>
+                    <td>'.$family_planning->inject_depo_active.'</td>
+                    <td>'.$family_planning->inject_depo_refer.'</td>
+                    <td>'.$family_planning->inject_depo_quant.'</td>
+                    <td>'.$family_planning->inject_depo_stock.'</td>
+                    <td>'.$family_planning->inject_depo_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Injectables (norristerat)</td>
+                    <td>'.$family_planning->inject_nor_accep.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->inject_nor_users.'</td>
+                    <td>'.$family_planning->inject_nor_stop.'</td>
+                    <td>'.$family_planning->inject_nor_active.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->inject_nor_quant.'</td>
+                    <td>'.$family_planning->inject_nor_stock.'</td>
+                    <td>'.$family_planning->inject_nor_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Implants NXT</td>
+                    <td>'.$family_planning->implants_nxt_accep.'</td>
+                    <td>'.$family_planning->implants_nxt_ppfp.'</td>
+                    <td>'.$family_planning->implants_nxt_users.'</td>
+                    <td>'.$family_planning->implants_nxt_stop.'</td>
+                    <td>'.$family_planning->implants_nxt_active.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->implants_nxt_quant.'</td>
+                    <td>'.$family_planning->implants_nxt_stock.'</td>
+                    <td>'.$family_planning->implants_nxt_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Implants jadelle</td>
+                    <td>'.$family_planning->implants_jad_accep.'</td>
+                    <td>'.$family_planning->implants_jad_ppfp.'</td>
+                    <td>'.$family_planning->implants_jad_users.'</td>
+                    <td>'.$family_planning->implants_jad_stop.'</td>
+                    <td>'.$family_planning->implants_jad_active.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->implants_jad_quant.'</td>
+                    <td>'.$family_planning->implants_jad_stock.'</td>
+                    <td>'.$family_planning->implants_jad_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">IUD</td>
+                    <td>'.$family_planning->iud_accep.'</td>
+                    <td>'.$family_planning->iud_ppfp.'</td>
+                    <td>'.$family_planning->iud_users.'</td>
+                    <td>'.$family_planning->iud_stop.'</td>
+                    <td>'.$family_planning->iud_active.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->iud_quant.'</td>
+                    <td>'.$family_planning->iud_stock.'</td>
+                    <td>'.$family_planning->iud_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="left">Male condoms</td>
+                    <td>'.$family_planning->m_condoms_accep.'</td>
+                    <td>'.$family_planning->m_condoms_ppfp.'</td>
+                    <td>'.$family_planning->m_condoms_users.'</td>
+                    <td>'.$family_planning->m_condoms_stop.'</td>
+                    <td>'.$family_planning->m_condoms_active.'</td>
+                    <td>'.$family_planning->m_condoms_refer.'</td>
+                    <td>'.$family_planning->m_condoms_quant.'</td>
+                    <td>'.$family_planning->m_condoms_stock.'</td>
+                    <td>'.$family_planning->m_condoms_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="left">Female condoms</td>
+                    <td>'.$family_planning->f_condoms_accep.'</td>
+                    <td>'.$family_planning->f_condoms_ppfp.'</td>
+                    <td>'.$family_planning->f_condoms_users.'</td>
+                    <td>'.$family_planning->f_condoms_stop.'</td>
+                    <td>'.$family_planning->f_condoms_active.'</td>
+                    <td>'.$family_planning->f_condoms_refer.'</td>
+                    <td>'.$family_planning->f_condoms_quant.'</td>
+                    <td>'.$family_planning->f_condoms_stock.'</td>
+                    <td>'.$family_planning->f_condoms_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td class="left">Other barrier methods</td>
+                    <td>'.$family_planning->other_method_accep.'</td>
+                    <td>'.$family_planning->other_method_ppfp.'</td>
+                    <td>'.$family_planning->other_method_users.'</td>
+                    <td>'.$family_planning->other_method_stop.'</td>
+                    <td>'.$family_planning->other_method_active.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->other_method_quant.'</td>
+                    <td>'.$family_planning->other_method_stock.'</td>
+                    <td>'.$family_planning->other_method_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td class="left">Cycle beads</td>
+                    <td>'.$family_planning->cycle_accep.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->cycle_users.'</td>
+                    <td>'.$family_planning->cycle_stop.'</td>
+                    <td>'.$family_planning->cycle_active.'</td>
+                    <td>'.$family_planning->cycle_refer.'</td>
+                    <td>'.$family_planning->cycle_quant.'</td>
+                    <td>'.$family_planning->cycle_stock.'</td>
+                    <td>'.$family_planning->cycle_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td class="left">Lactational amenorrhea</td>
+                    <td>'.$family_planning->lam_accep.'</td>
+                    <td>'.$family_planning->lam_ppfp.'</td>
+                    <td>'.$family_planning->lam_users.'</td>
+                    <td>'.$family_planning->lam_stop.'</td>
+                    <td>'.$family_planning->lam_active.'</td>
+                    <td>'.$family_planning->lam_refer.'</td>
+                    <td>'.$family_planning->lam_quant.'</td>
+                    <td>'.$family_planning->lam_stock.'</td>
+                    <td>'.$family_planning->lam_day.'</td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td class="left">Auto-observation</td>
+                    <td>'.$family_planning->auto_obs_accep.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->auto_obs_users.'</td>
+                    <td>'.$family_planning->auto_obs_stop.'</td>
+                    <td>'.$family_planning->auto_obs_active.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td class="left">Tubal ligations</td>
+                    <td>'.$family_planning->tubal_accep.'</td>
+                    <td>'.$family_planning->tubal_ppfp.'</td>
+                    <td>'.$family_planning->tubal_users.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->tubal_active.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td class="left">Vasectomy</td>
+                    <td>'.$family_planning->vasectomy_accep.'</td>
+                    <td>'.$family_planning->vasectomy_ppfp.'</td>
+                    <td>'.$family_planning->vasectomy_users.'</td>
+                    <td class="grey"></td>
+                    <td>'.$family_planning->vasectomy_active.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="row">
+                <div class="col-xs-4">
+                  <h4>B) New FP Users</h4>
+                </div>
+                <div class="col-xs-8">
+                  <h4>C) Sperm Control</h4>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-xs-4">
+                  <table id="B22" class="center">
+                    <thead>
+                      <tr>
+                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="left">FP new acceptors to the program accompanied by partner</td>
+                        <td>'.$family_planning->fp_new_acceptors.'</td>
+                      </tr>
+                      <tr>
+                        <td class="left">New FP users referred by CHWs for modern family planning method</td>
+                        <td>'.$family_planning->new_fp_users.'</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-xs-8">
+                  <table id="C22" class="center">
+                    <thead>
+                      <tr>
+                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Test taken<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Positive<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Negative (no spermatozoids)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="left">Sperm control of vasectomized clients</td>
+                        <td>'.$family_planning->sperm_control_test.'</td>
+                        <td>'.$family_planning->sperm_control_positive.'</td>
+                        <td>'.$family_planning->sperm_control_negative.'</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br>
+              <h4>D) Summary by Age</h4>
+              <table id="D22" class="center">
+                <thead>
+                  <tr>
+                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Age 15 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Age 20 to 24<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Age 25 to 34<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Age > 35<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="left">New acceptors in the program by age group</td>
+                    <td>'.$family_planning->acceptors_prog_19.'</td>
+                    <td>'.$family_planning->acceptors_prog_24.'</td>
+                    <td>'.$family_planning->acceptors_prog_34.'</td>
+                    <td>'.$family_planning->acceptors_prog_35.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XXII] Family planning</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $laboratory = $this->research_model->laboratory($date);
+
+        if ($laboratory) {
+            $output .= '
+              <h3 class="center">XXIII] Laboratory</h4>
+              <table id="A23" class="center">
+                <thead>
+                  <tr>
+                    <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th rowspan="2">Examens<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th colspan="2">Results</th>
+                    <th>Total</th>
+                  </tr>
+                  <tr>
+                    <th>Positives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Negatives<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <td>'.$laboratory->exams_t.'</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">Blood smears</td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->blood_n.'</td>
+                    <td>'.$laboratory->blood_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>1.1</td>
+                    <td class="left">Plasmodium</td>
+                    <td>'.$laboratory->plasmodium_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>1.2</td>
+                    <td class="left">Micro-filaria</td>
+                    <td>'.$laboratory->micro_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>1.3</td>
+                    <td class="left">Borellia</td>
+                    <td>'.$laboratory->borellia_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>1.4</td>
+                    <td class="left">Trypanosoma</td>
+                    <td>'.$laboratory->trypa_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Rapid diagnostic tests for malaria</td>
+                    <td>'.$laboratory->malaria_p.'</td>
+                    <td>'.$laboratory->malaria_n.'</td>
+                    <td>'.$laboratory->malaria_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Stools samples total</td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->stools_n.'</td>
+                    <td>'.$laboratory->stools_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>3.1</td>
+                    <td class="left pad">Entamoebahistolytica</td>
+                    <td>'.$laboratory->entamo_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.2</td>
+                    <td class="left pad">Entamoeba coli</td>
+                    <td>'.$laboratory->coli_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.3</td>
+                    <td class="left pad">Giardia</td>
+                    <td>'.$laboratory->giardia_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.4</td>
+                    <td class="left pad">Ascariasis</td>
+                    <td>'.$laboratory->asca_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.5</td>
+                    <td class="left pad">Ankylostomiasis</td>
+                    <td>'.$laboratory->anky_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.6</td>
+                    <td class="left pad">Schistosoma</td>
+                    <td>'.$laboratory->schisto_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.7</td>
+                    <td class="left pad">Trichuris</td>
+                    <td>'.$laboratory->trichuris_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.8</td>
+                    <td class="left pad">Taenia</td>
+                    <td>'.$laboratory->taenia_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>3.9</td>
+                    <td class="left pad">Other parasites in stools</td>
+                    <td>'.$laboratory->other_stools_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Urine</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>4.1</td>
+                    <td class="left pad">Sugar</td>
+                    <td>'.$laboratory->sugar_p.'</td>
+                    <td>'.$laboratory->sugar_n.'</td>
+                    <td>'.$laboratory->sugar_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.2</td>
+                    <td class="left pad">Albumin</td>
+                    <td>'.$laboratory->albumin_p.'</td>
+                    <td>'.$laboratory->albumin_n.'</td>
+                    <td>'.$laboratory->albumin_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>4.3</td>
+                    <td class="left pad">Pregnancy Test</td>
+                    <td>'.$laboratory->pregnancy_p.'</td>
+                    <td>'.$laboratory->pregnancy_n.'</td>
+                    <td>'.$laboratory->pregnancy_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="left">Sputum (number of patients)</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>5.1</td>
+                    <td class="left pad">Diagnosis of TB by microscopy</td>
+                    <td>'.$laboratory->diag_tb_p.'</td>
+                    <td>'.$laboratory->diag_tb_n.'</td>
+                    <td>'.$laboratory->diag_tb_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>5.2</td>
+                    <td class="left pad">Control of TB positive patients</td>
+                    <td>'.$laboratory->control_tb_p.'</td>
+                    <td>'.$laboratory->control_tb_n.'</td>
+                    <td>'.$laboratory->control_tb_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="left">Bacteriology</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>6.1</td>
+                    <td class="left pad">Vaginal swab fresh</td>
+                    <td>'.$laboratory->vag_fresh_p.'</td>
+                    <td>'.$laboratory->vag_fresh_n.'</td>
+                    <td>'.$laboratory->vag_fresh_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>6.2</td>
+                    <td class="left pad">Vaginal swab gram</td>
+                    <td>'.$laboratory->vag_gram_p.'</td>
+                    <td>'.$laboratory->vag_gram_n.'</td>
+                    <td>'.$laboratory->vag_gram_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>6.3</td>
+                    <td class="left pad">Vaginal swab diplococcus gram</td>
+                    <td>'.$laboratory->vag_diplo_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>6.4</td>
+                    <td class="left pad">Urethral swab fresh</td>
+                    <td>'.$laboratory->ure_fresh_p.'</td>
+                    <td>'.$laboratory->ure_fresh_n.'</td>
+                    <td>'.$laboratory->ure_fresh_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>6.5</td>
+                    <td class="left pad">Urethral swab gram</td>
+                    <td>'.$laboratory->ure_gram_p.'</td>
+                    <td>'.$laboratory->ure_gram_n.'</td>
+                    <td>'.$laboratory->ure_gram_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>6.6</td>
+                    <td class="left pad">Urethral swab diplococcus gram</td>
+                    <td>'.$laboratory->ure_diplo_p.'</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="left">Blood</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                  </tr>
+                  <tr>
+                    <td>7.1</td>
+                    <td class="left pad">Hemoglobin</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->hemo_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.2</td>
+                    <td class="left pad">RPR</td>
+                    <td>'.$laboratory->rpr_p.'</td>
+                    <td>'.$laboratory->rpr_n.'</td>
+                    <td>'.$laboratory->rpr_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.3</td>
+                    <td class="left pad">HIV final result</td>
+                    <td>'.$laboratory->hiv_p.'</td>
+                    <td>'.$laboratory->hiv_n.'</td>
+                    <td>'.$laboratory->hiv_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.4</td>
+                    <td class="left pad">ESR</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->esr_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.5</td>
+                    <td class="left pad">Full blood count (FBC/NFS)</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->full_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.6</td>
+                    <td class="left pad">ALAT (GPT)</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->alat_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.7</td>
+                    <td class="left pad">Creatinine</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->crea_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.8</td>
+                    <td class="left pad">Blood glucose</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->glucose_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.9</td>
+                    <td class="left pad">Amylase</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->amylase_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.10</td>
+                    <td class="left pad">CD<sub>4</sub></td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->cd4_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.11</td>
+                    <td class="left pad">Widal</td>
+                    <td>'.$laboratory->widal_p.'</td>
+                    <td>'.$laboratory->widal_n.'</td>
+                    <td>'.$laboratory->widal_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>7.12</td>
+                    <td class="left pad">Pregnancy test</td>
+                    <td>'.$laboratory->blood_preg_p.'</td>
+                    <td>'.$laboratory->blood_preg_n.'</td>
+                    <td>'.$laboratory->blood_preg_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="left">CerebroSpinal fluid</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->cerebro_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="left">Other lab tests</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->other_lab_t.'</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td class="left">Total tests conducted in the laboratory</td>
+                    <td class="grey"></td>
+                    <td class="grey"></td>
+                    <td>'.$laboratory->total.'</td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XXIII] Laboratory</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $blood_bank_security = $this->research_model->blood_bank_security($date);
+
+        if ($blood_bank_security) {
+            $output .= '
+            <h3 class="center">XXIV] Blood bank security</h3>
+              <div class="row">
+                <div class="col-xs-5">
+                  <h4>A) Transfusions</h4>
+                </div>
+                <div class="col-xs-7">
+                  <h4>B) Blood pack stock management</h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-5">
+                  <table id="A24" class="center">
+                    <thead>
+                      <tr>
+                        <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Patients transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Packs of blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="left">Internal medicine</td>
+                        <td>'.$blood_bank_security->im_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->im_packs.'</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td class="left">Pediatrics</td>
+                        <td>'.$blood_bank_security->p_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->p_packs.'</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td class="left">Surgery</td>
+                        <td>'.$blood_bank_security->s_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->s_packs.'</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td class="left">Gyneco - obstetrical</td>
+                        <td>'.$blood_bank_security->go_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->go_packs.'</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td class="left">Intensive care / Emergency</td>
+                        <td>'.$blood_bank_security->ic_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->ic_packs.'</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td class="left">Neonatology</td>
+                        <td>'.$blood_bank_security->n_patient_transfused.'</td>
+                        <td>'.$blood_bank_security->n_packs.'</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-xs-7">
+                  <table id="B24" class="center">
+                    <thead>
+                      <tr>
+                        <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Type A<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Type B<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Type AB<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                        <th>Type O<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="left">Blood pack received</td>
+                        <td>'.$blood_bank_security->a_received.'</td>
+                        <td>'.$blood_bank_security->b_received.'</td>
+                        <td>'.$blood_bank_security->ab_received.'</td>
+                        <td>'.$blood_bank_security->o_received.'</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td class="left">Blood pack used</td>
+                        <td>'.$blood_bank_security->a_used.'</td>
+                        <td>'.$blood_bank_security->b_used.'</td>
+                        <td>'.$blood_bank_security->ab_used.'</td>
+                        <td>'.$blood_bank_security->o_used.'</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td class="left">Blood pack destroyed or damaged</td>
+                        <td>'.$blood_bank_security->a_destroyed.'</td>
+                        <td>'.$blood_bank_security->b_destroyed.'</td>
+                        <td>'.$blood_bank_security->ab_destroyed.'</td>
+                        <td>'.$blood_bank_security->o_destroyed.'</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td class="left">Blood pack remaining in stock</td>
+                        <td>'.$blood_bank_security->a_stock.'</td>
+                        <td>'.$blood_bank_security->b_stock.'</td>
+                        <td>'.$blood_bank_security->ab_stock.'</td>
+                        <td>'.$blood_bank_security->o_stock.'</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br>';
+        } else {
+            $output .= '
+              <h3 class="center">XXIV] Blood bank security</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
+        }
+
+        $imagery=$this->research_model->imagery($date);
+
         if ($imagery) {
             $output.='
           <br>
-          <h4>XXV] Medical Imagery</h4>
+          <h4>XXV] Medical imagery</h4>
           <div class="row">
-            <table id="XXV" class="center">
+            <table id="A25" class="center">
               <thead>
                 <tr>
                   <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th class="des">X-Ray (Radiology)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th class="des">X-Ray (radiology)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                   <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                   <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                   <th class="des">Other<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -6053,7 +6190,7 @@ class research extends CI_Controller
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td class="left">X-Ray Lung</td>
+                  <td class="left">X-Ray lung</td>
                   <td>'.$imagery->lung.'</td>
                   <td>6</td>
                   <td class="left">Gastroscopy</td>
@@ -6061,15 +6198,15 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td class="left">X-Ray Bones</td>
+                  <td class="left">X-Ray bones</td>
                   <td>'.$imagery->bones.'</td>
                   <td>7</td>
-                  <td class="left">Ultrasound (Echography)</td>
+                  <td class="left">Ultrasound (echography)</td>
                   <td>'.$imagery->ultrasound.'</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td class="left">X-Ray Abdomen without Preparation</td>
+                  <td class="left">X-Ray abdomen without preparation</td>
                   <td>'.$imagery->abdomen_without.'</td>
                   <td>8</td>
                   <td class="left">ECG</td>
@@ -6077,7 +6214,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td class="left">X-Ray Abdomen with Dye</td>
+                  <td class="left">X-Ray abdomen with dye</td>
                   <td>'.$imagery->abdomen_with.'</td>
                   <td>9</td>
                   <td class="left">Other Medical Imagery</td>
@@ -6085,7 +6222,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td class="left">X-Ray Other</td>
+                  <td class="left">X-Ray other</td>
                   <td>'.$imagery->other_xray.'</td>
                   <td class="grey"></td>
                   <td class="grey"></td>
@@ -6094,11 +6231,19 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XXV] Medical imagery</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $stock=$this->research_model->stock($date);
+
         if ($stock) {
             $output.='
           <br>
-          <h4>XXVI] Stock of tracer drugs</h4>
+          <h3 class="center">XXVI] Stock of tracer drugs</h3>
           <div class="row">
             <table id="A26" class="center">
               <thead>
@@ -6577,11 +6722,20 @@ class research extends CI_Controller
               </tbody>
             </table>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XXVI] Stock of tracer drugs</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
+
+        $staff=$this->research_model->staff($date);
+
         if ($staff) {
             $output.='
           <br>
-          <h4>XXVII] Staffing Information</h4>
+          <h3 class="center">XXVII] Staffing information</h3>
+          <h4>A) Staff information</h4>
           <div class="row">
             <table id="A27" class="center">
               <thead>
@@ -6606,7 +6760,7 @@ class research extends CI_Controller
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td class="left">Doctors (Specialist)</td>
+                  <td class="left">Doctors (specialist)</td>
                   <td>'.$staff->doc_spe_34m.'</td>
                   <td>'.$staff->doc_spe_34f.'</td>
                   <td>'.$staff->doc_spe_35m.'</td>
@@ -6616,7 +6770,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td class="left">Doctors (Generalist)</td>
+                  <td class="left">Doctors (generalist)</td>
                   <td>'.$staff->doc_ge_34m.'</td>
                   <td>'.$staff->doc_ge_34f.'</td>
                   <td>'.$staff->doc_ge_35m.'</td>
@@ -6646,7 +6800,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td class="left">Lab Technicians</td>
+                  <td class="left">Lab technicians</td>
                   <td>'.$staff->lab_tech_34m.'</td>
                   <td>'.$staff->lab_tech_34f.'</td>
                   <td>'.$staff->lab_tech_35m.'</td>
@@ -6666,7 +6820,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>7</td>
-                  <td class="left">Other Allied Health Professionals</td>
+                  <td class="left">Other allied health professionals</td>
                   <td>'.$staff->other_34m.'</td>
                   <td>'.$staff->other_34f.'</td>
                   <td>'.$staff->other_35m.'</td>
@@ -6686,7 +6840,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>9</td>
-                  <td class="left">Administrative and Support Personnel</td>
+                  <td class="left">Administrative and support personnel</td>
                   <td>'.$staff->admin_34m.'</td>
                   <td>'.$staff->admin_34f.'</td>
                   <td>'.$staff->admin_35m.'</td>
@@ -6698,10 +6852,10 @@ class research extends CI_Controller
             </table>
             <div class="row">
               <div class="col-xs-7">
-                <h4>Status of Staff</h4>
+                <h4>B) Status of staff</h4>
               </div>
               <div class="col-xs-5">
-                <h4>Reasons of Leaving</h4>
+                <h4>C) Reasons of leaving</h4>
               </div>
             </div>
             <div class="row">
@@ -6711,22 +6865,22 @@ class research extends CI_Controller
                     <tr>
                       <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                       <th class="cat">Category<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th>Newly Recruited this Month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th>Left this Month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                      <th>Vacant Position<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      <th>Newly Recruited this month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      <th>Left this month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                      <th>Vacant position<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td class="left">Doctors (Specialist)</td>
+                      <td class="left">Doctors (specialist)</td>
                       <td>'.$staff->doc_spe_new.'</td>
                       <td>'.$staff->doc_spe_left.'</td>
                       <td>'.$staff->doc_spe_vacant.'</td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td class="left">Doctors (Generalist)</td>
+                      <td class="left">Doctors (generalist)</td>
                       <td>'.$staff->doc_ge_new.'</td>
                       <td>'.$staff->doc_ge_left.'</td>
                       <td>'.$staff->doc_ge_vacant.'</td>
@@ -6747,21 +6901,21 @@ class research extends CI_Controller
                     </tr>
                     <tr>
                       <td>5</td>
-                      <td class="left">Lab Technicians</td>
+                      <td class="left">Lab technicians</td>
                       <td>'.$staff->lab_tech_new.'</td>
                       <td>'.$staff->lab_tech_left.'</td>
                       <td>'.$staff->lab_tech_vacant.'</td>
                     </tr>
                     <tr>
                       <td>6</td>
-                      <td class="left">Dental Assistant</td>
+                      <td class="left">Dental assistant</td>
                       <td>'.$staff->dental_new.'</td>
                       <td>'.$staff->dental_left.'</td>
                       <td>'.$staff->dental_vacant.'</td>
                     </tr>
                     <tr>
                       <td>7</td>
-                      <td class="left">Other Allied Health Professionals</td>
+                      <td class="left">Other allied health professionals</td>
                       <td>'.$staff->other_new.'</td>
                       <td>'.$staff->other_left.'</td>
                       <td>'.$staff->other_vacant.'</td>
@@ -6798,17 +6952,17 @@ class research extends CI_Controller
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td class="left">Career Development</td>
+                      <td class="left">Career development</td>
                       <td>'.$staff->left_career.'</td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td class="left">Better Remuneration</td>
+                      <td class="left">Better remuneration</td>
                       <td>'.$staff->left_remuneration.'</td>
                     </tr>
                     <tr>
                       <td>5</td>
-                      <td class="left">Other Attrition Reasons</td>
+                      <td class="left">Other attrition reasons</td>
                       <td>'.$staff->left_other.'</td>
                     </tr>
                   </tbody>
@@ -6816,6 +6970,11 @@ class research extends CI_Controller
               </div>
             </div>
           </div>';
+        } else {
+            $output .= '
+              <h3 class="center">XXVII] Staffing information</h3>
+              <h2>This part has not been filled yet</h2>
+              <br>';
         }
 
         echo $output;
