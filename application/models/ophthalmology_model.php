@@ -190,7 +190,8 @@ class ophthalmology_model extends CI_Model
           'eye_pb_40m' => $eye_pb_40m,
           'eye_pb_40f' => $eye_pb_40f,
 
-          'num_rapport' => $num_rapport
+          'num_rapport' => $num_rapport,
+          'num_user' => $this->session->userdata('num_user')
         ))
             ->set('date_consultation_fg', $this->session->userdata('add_date'))
             ->insert('Consultation_fg');
@@ -390,6 +391,7 @@ class ophthalmology_model extends CI_Model
         $this->db->set('eye_pb_40f', $eye_pb_40f);
 
         $this->db->where('date_consultation_fg', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Consultation_fg');
     }
 }

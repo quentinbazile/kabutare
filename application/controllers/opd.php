@@ -5,9 +5,14 @@ class opd extends CI_Controller
 {
     public function index()
     {
+        $this->load->model('home_model');
         $this->load->model('opd_model');
         if ($this->session->userdata('num_user') != '') {
+          if ($this->home_model->check_service('opd')) {
             $this->fetch();
+          } else {
+              redirect('login', 'refresh');
+          }
         } else {
             redirect('login', 'refresh');
         }

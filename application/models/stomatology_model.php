@@ -113,37 +113,11 @@ class stomatology_model extends CI_Model
               'other_teeth_40m' => $other_teeth_40m,
               'other_teeth_40f' => $other_teeth_40f,
 
-              'num_rapport' => $num_rapport
+              'num_rapport' => $num_rapport,
+              'num_user' => $this->session->userdata('num_user')
             ))
                 ->set('date_consultation_fg', $this->session->userdata('add_date'))
                 ->insert('Consultation_fg');
-        } else {
-            $this->db->set(array(
-            'dent_caries_19m' => $dent_caries_19m,
-            'dent_caries_19f' => $dent_caries_19f,
-            'dent_caries_39m' => $dent_caries_39m,
-            'dent_caries_39f' => $dent_caries_39f,
-            'dent_caries_40m' => $dent_caries_40m,
-            'dent_caries_40f' => $dent_caries_40f,
-
-            'perio_diseas_19m' => $perio_diseas_19m,
-            'perio_diseas_19f' => $perio_diseas_19f,
-            'perio_diseas_39m' => $perio_diseas_39m,
-            'perio_diseas_39f' => $perio_diseas_39f,
-            'perio_diseas_40m' => $perio_diseas_40m,
-            'perio_diseas_40f' => $perio_diseas_40f,
-
-            'other_teeth_19m' => $other_teeth_19m,
-            'other_teeth_19f' => $other_teeth_19f,
-            'other_teeth_39m' => $other_teeth_39m,
-            'other_teeth_39f' => $other_teeth_39f,
-            'other_teeth_40m' => $other_teeth_40m,
-            'other_teeth_40f' => $other_teeth_40f,
-
-            'num_rapport' => $num_rapport
-          ))
-              ->where('date_consultation_fg', $this->session->userdata('add_date'));
-            return $this->db->update('Consultation_fg');
         }
     }
 
@@ -263,6 +237,7 @@ class stomatology_model extends CI_Model
         $this->db->set('other_teeth_40f', $other_teeth_40f);
 
         $this->db->where('date_consultation_fg', $this->session->userdata('update_date'));
+        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Consultation_fg');
     }
 }
