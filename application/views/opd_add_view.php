@@ -758,12 +758,12 @@
                   <tr>
                     <td>6</td>
                     <td class="left">Pinguecula</td>
-                    <td><input type="number" min="0" name="pinguela_19m" class="form-control"></td>
-                    <td><input type="number" min="0" name="pinguela_19f" class="form-control"></td>
-                    <td><input type="number" min="0" name="pinguela_39m" class="form-control"></td>
-                    <td><input type="number" min="0" name="pinguela_39f" class="form-control"></td>
-                    <td><input type="number" min="0" name="pinguela_40m" class="form-control"></td>
-                    <td><input type="number" min="0" name="pinguela_40f" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_19m" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_19f" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_39m" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_39f" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_40m" class="form-control"></td>
+                    <td><input type="number" min="0" name="pinguecula_40f" class="form-control"></td>
                   </tr>
                   <tr>
                     <td>7</td>
