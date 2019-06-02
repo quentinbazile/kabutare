@@ -15,18 +15,6 @@ class login_model extends CI_Model
         }
     }
 
-    public function check_add()
-    {
-        $this->db->select('*')
-              ->from('Gender_Based_Violence')
-              ->where('date_gender_based_violence', date('Y-m-d'));
-        if ($this->db->get()->num_rows() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function num_user($pseudo)
     {
         return $this->db->select('num_user')
@@ -34,5 +22,14 @@ class login_model extends CI_Model
               ->where('login', $pseudo)
               ->get()
               ->row();
+    }
+
+    public function catch_password()
+    {
+        return $this->db->select('*')
+            ->from('user')
+            ->where('service', 'data_manager')
+            ->get()
+            ->row();
     }
 }

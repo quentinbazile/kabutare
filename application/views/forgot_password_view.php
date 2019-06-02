@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Daily HMIS Report</title>
+	<title>Forgot Password</title>
 	<!-- un CSS pour formatter la page web -->
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/log6.css'); ?>" />
 	<!-- On charge les polices Google -->
@@ -36,31 +36,21 @@
 			</div>
 		</div>
 
-		<!-- La box du login -->
-
 		<div class="loginBox">
-
-			<!-- L'image cadenas -->
 
 			<img src="<?php echo base_url('assets/images/lock.png'); ?>" class="lock">
 
-			<h2>Log In</h2>
-
-			<!-- Un formulaire pour renvoyer les paramètres saisis par l'utilisateur -->
+			<h2>Forgot Password ?</h2>
 
 			<form action="" method="POST">
-				<p>Username</p>
-				<input type='text' name='pseudo' required>
-				<p>Password</p>
-				<input type='password' name='mdp' required>
+				<label>If you are not the Data Manager, please ask him your password.
+				If you are the Data Manager, please answer this secret question to recover your password.</label><br><br>
 
-				<a href="forgot_password" class="right">Forgot Password ?</a>
+				<p class="up">Quels sont les noms des pionniers ?<p>
 
-				<!-- Le bouton Connexion -->
+				<input type='text' name='answer' required>
 
-				<input class="top" type='submit' name='action' value='Sign In'>
-
-				<!-- Le message d'erreur -->
+				<input class="top" type='submit' name='action' value='Validate'>
 
 				<div class="msg up">
 					<h4><?php echo $msg; ?></h4>
@@ -69,8 +59,6 @@
 			</form>
 		</div>
 	</div>
-
-	<!-- Importation jQuery et BootStrap -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
