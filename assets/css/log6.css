@@ -161,6 +161,25 @@ label {
   text-align: justify;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer a {
+  font-size: 14px;
+  color: grey;
+}
+
+.footer a:hover {
+  font-size: 14px;
+  color: grey;
+}
+
 /* Permet de modifier les titres de niveau h1 */
 /*h1 {
   font-family: "Roboto";
