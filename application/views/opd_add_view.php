@@ -1814,8 +1814,7 @@
 					          <td><input type="number" min="0" name="annual_checkup" class="form-control"></td>
 					        </tr>
 									<tr>
-                    <td class="grey"></td>
-                    <td class="left">Suspected positive at medical checkup who were referred for further diagnosis for the following diseases:</td>
+                    <td class="left" colspan="2">Suspected positive at medical checkup who were referred for further diagnosis for the following diseases:</td>
                     <td class="grey"></td>
 									</tr>
 	                <tr>

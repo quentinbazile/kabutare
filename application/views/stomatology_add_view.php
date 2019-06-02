@@ -24,10 +24,10 @@
         <form method="post" action="" class="form-inline">
 					<div class="row">
 						<div class="col-xs-8">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
 						<div class="col-xs-4">
-					  	<h4>Health Insurance Status of New Cases</h4>
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 						<br>
-	      		<h4>Oral Diseases</h4>
+	      		<h4>Oral diseases</h4>
 	      		<table id="Gb" class="center">
 			        <thead>
 			          <tr>
@@ -175,7 +175,7 @@
 			        <tbody>
 			          <tr>
 			            <td>1</td>
-			            <td class="left">Dental Caries</td>
+			            <td class="left">Dental caries</td>
 			            <td><input type="number" min="0" name="dent_caries_19m" class="form-control"></td>
 			            <td><input type="number" min="0" name="dent_caries_19f" class="form-control"></td>
 			            <td><input type="number" min="0" name="dent_caries_39m" class="form-control"></td>
@@ -185,7 +185,7 @@
 			          </tr>
 			          <tr>
 			            <td>2</td>
-			            <td class="left">Periodontal Disease</td>
+			            <td class="left">Periodontal disease</td>
 			            <td><input type="number" min="0" name="perio_diseas_19m" class="form-control"></td>
 			            <td><input type="number" min="0" name="perio_diseas_19f" class="form-control"></td>
 			            <td><input type="number" min="0" name="perio_diseas_39m" class="form-control"></td>
@@ -195,7 +195,7 @@
 			          </tr>
 			          <tr>
 			            <td>3</td>
-			            <td class="left">Other Teeth and Gum Infections</td>
+			            <td class="left">Other teeth and gum infections</td>
 			            <td><input type="number" min="0" name="other_teeth_19m" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_teeth_19f" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_teeth_39m" class="form-control"></td>

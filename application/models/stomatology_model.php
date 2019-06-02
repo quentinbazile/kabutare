@@ -88,9 +88,6 @@ class stomatology_model extends CI_Model
         $other_teeth_40f,
         $num_rapport
     ) {
-        $this->db->where('date_consultation_fg', $this->session->userdata('add_date'));
-        $q = $this->db->get('Consultation_fg');
-        if ($q->num_rows() == 0) {
             return $this->db->set(array(
               'dent_caries_19m' => $dent_caries_19m,
               'dent_caries_19f' => $dent_caries_19f,
@@ -118,7 +115,6 @@ class stomatology_model extends CI_Model
             ))
                 ->set('date_consultation_fg', $this->session->userdata('add_date'))
                 ->insert('Consultation_fg');
-        }
     }
 
     public function show_table1()
@@ -132,6 +128,7 @@ class stomatology_model extends CI_Model
     public function show_table2()
     {
         return $this->db->where('date_consultation_fg', $this->session->userdata('update_date'))
+                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_fg')
                         ->row();
     }

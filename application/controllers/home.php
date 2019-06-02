@@ -21,7 +21,7 @@ class home extends CI_Controller
       $this->session->sess_destroy();
       redirect('login', 'refresh');
     }
-    
+
     public function fetch()
     {
         $this->load->library('form_validation');

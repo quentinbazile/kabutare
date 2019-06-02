@@ -3384,6 +3384,7 @@ CREATE TABLE Obstetrical_Complication_BC(
 #------------------------------------------------------------
 
 CREATE TABLE Consultation_FG(
+        num_consultation_fg      Int  Auto_increment  NOT NULL ,
         date_consultation_fg     Date NOT NULL ,
         fractures_5m             Int DEFAULT 0 ,
         fractures_5f             Int DEFAULT 0 ,
@@ -3539,7 +3540,7 @@ CREATE TABLE Consultation_FG(
         other_teeth_40f          Int DEFAULT 0 ,
         num_rapport              Int DEFAULT 0 ,
 	num_user		 Int DEFAULT 0
-	,CONSTRAINT Consultation_FG_PK PRIMARY KEY (date_consultation_fg)
+	,CONSTRAINT Consultation_FG_PK PRIMARY KEY (num_consultation_fg)
 )ENGINE=InnoDB;
 
 ALTER TABLE Postnatal_Care
@@ -3813,10 +3814,6 @@ ALTER TABLE Consultation_FG
 	ADD CONSTRAINT Consultation_FG_Rapport0_FK
 	FOREIGN KEY (num_rapport)
 	REFERENCES Rapport(num_rapport);
-
-ALTER TABLE Consultation_FG
-	ADD CONSTRAINT Consultation_FG_Rapport0_AK
-	UNIQUE (num_rapport);
 
 ALTER TABLE Consultation_FG
 	ADD CONSTRAINT Consultation_FG_User1_FK

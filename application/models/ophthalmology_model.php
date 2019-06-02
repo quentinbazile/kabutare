@@ -208,6 +208,7 @@ class ophthalmology_model extends CI_Model
     public function show_table2()
     {
         return $this->db->where('date_consultation_fg', $this->session->userdata('update_date'))
+                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Consultation_fg')
                         ->row();
     }

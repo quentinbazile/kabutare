@@ -24,10 +24,10 @@
         <form method="post" action="" class="form-inline">
 					<div class="row">
 						<div class="col-xs-8">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
 						<div class="col-xs-4">
-					  	<h4>Health Insurance Status of New Cases</h4>
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -160,11 +160,14 @@
 					        <tr>
 					          <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="3">Old Cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th colspan="3">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="6">Old cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					        </tr>
 					        <tr>
 					          <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					        </tr>
@@ -185,7 +188,7 @@
 					      </thead>
 					      <tbody>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>1</td>
 					          <td class="left">Medical condition</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -201,7 +204,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 					        <tr>
-					          <td>1</td>
+					          <td>1.1</td>
 					          <td class="left">Hypertension</td>
 					          <td><input type="number" min="0" name="hyper_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="hyper_oc19f" class="form-control"></td>
@@ -217,7 +220,7 @@
 	                  <td class="grey"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>2</td>
 					          <td class="left">Respiratory diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -233,7 +236,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>2.1</td>
 					          <td class="left">Asthma intermittant</td>
 					          <td><input type="number" min="0" name="asth_int_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="asth_int_oc19f" class="form-control"></td>
@@ -250,7 +253,7 @@
 					          <td><input type="number" min="0" name="asth_int_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>2.2</td>
 					          <td class="left">Asthma persintent mild</td>
 					          <td><input type="number" min="0" name="asth_mild_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="asth_mild_oc19f" class="form-control"></td>
@@ -267,7 +270,7 @@
 					          <td><input type="number" min="0" name="asth_mild_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>2.3</td>
 					          <td class="left">Asthma persintent modarate</td>
 					          <td><input type="number" min="0" name="asth_mod_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="asth_mod_oc19f" class="form-control"></td>
@@ -284,7 +287,7 @@
 					          <td><input type="number" min="0" name="asth_mod_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>4</td>
+					          <td>2.4</td>
 					          <td class="left">Asthma persintent severe</td>
 					          <td><input type="number" min="0" name="asth_sev_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="asth_sev_oc19f" class="form-control"></td>
@@ -301,7 +304,7 @@
 					          <td><input type="number" min="0" name="asth_sev_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>5</td>
+					          <td>2.5</td>
 					          <td class="left">Bronchitis</td>
 					          <td><input type="number" min="0" name="bronch_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="bronch_oc19f" class="form-control"></td>
@@ -318,8 +321,8 @@
 					          <td><input type="number" min="0" name="bronch_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>6</td>
-					          <td class="left">Other Chronic obstructive pulmonary diseases</td>
+					          <td>2.6</td>
+					          <td class="left">Other chronic obstructive pulmonary diseases</td>
 					          <td><input type="number" min="0" name="other_pulm_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="other_pulm_oc19f" class="form-control"></td>
 					          <td><input type="number" min="0" name="other_pulm_oc39m" class="form-control"></td>
@@ -335,7 +338,7 @@
 					          <td><input type="number" min="0" name="other_pulm_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>3</td>
 					          <td class="left">Diabetes</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -351,7 +354,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>3.1</td>
 					          <td class="left">Diabetes - Type 1</td>
 					          <td><input type="number" min="0" name="diab1_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="diab1_oc19f" class="form-control"></td>
@@ -368,7 +371,7 @@
 					          <td><input type="number" min="0" name="diab1_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>3.2</td>
 					          <td class="left">Diabetes - Type 2</td>
 					          <td><input type="number" min="0" name="diab2_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="diab2_oc19f" class="form-control"></td>
@@ -385,7 +388,7 @@
 					          <td><input type="number" min="0" name="diab2_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>3.3</td>
 					          <td class="left">Diabetes gestational</td>
 					          <td><input type="number" min="0" name="diab_gest_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="diab_gest_oc19f" class="form-control"></td>
@@ -402,7 +405,7 @@
 					          <td><input type="number" min="0" name="diab_gest_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>4</td>
 					          <td class="left">Cancer</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -418,8 +421,8 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
-					          <td class="left">Breast Cancer</td>
+					          <td>4.01</td>
+					          <td class="left">Breast cancer</td>
 	                  <td class="grey"></td>
 					          <td><input type="number" min="0" name="breast_oc19f" class="form-control"></td>
 	                  <td class="grey"></td>
@@ -435,7 +438,7 @@
 					          <td><input type="number" min="0" name="breast_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>4.02</td>
 					          <td class="left">Cervical cancer</td>
 					          <td><input type="number" min="0" name="cervical_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="cervical_oc19f" class="form-control"></td>
@@ -452,7 +455,7 @@
 					          <td><input type="number" min="0" name="cervical_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>3</td>
+					          <td>4.03</td>
 					          <td class="left">Lymphoma</td>
 					          <td><input type="number" min="0" name="lympho_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="lympho_oc19f" class="form-control"></td>
@@ -469,7 +472,7 @@
 					          <td><input type="number" min="0" name="lympho_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>4</td>
+					          <td>4.04</td>
 					          <td class="left">Leucamia</td>
 					          <td><input type="number" min="0" name="leuca_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="leuca_oc19f" class="form-control"></td>
@@ -486,7 +489,7 @@
 					          <td><input type="number" min="0" name="leuca_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>5</td>
+					          <td>4.05</td>
 					          <td class="left">Colon recto cancer</td>
 					          <td><input type="number" min="0" name="colon_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="colon_oc19f" class="form-control"></td>
@@ -503,7 +506,7 @@
 					          <td><input type="number" min="0" name="colon_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>6</td>
+					          <td>4.06</td>
 					          <td class="left">Kaposi sarcoma</td>
 					          <td><input type="number" min="0" name="kaposi_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="kaposi_oc19f" class="form-control"></td>
@@ -520,7 +523,7 @@
 					          <td><input type="number" min="0" name="kaposi_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>7</td>
+					          <td>4.07</td>
 					          <td class="left">Retinoblastoma</td>
 					          <td><input type="number" min="0" name="retino_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="retino_oc19f" class="form-control"></td>
@@ -537,7 +540,7 @@
 					          <td><input type="number" min="0" name="retino_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>8</td>
+					          <td>4.08</td>
 					          <td class="left">Nephroblastoma</td>
 					          <td><input type="number" min="0" name="nephro_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="nephro_oc19f" class="form-control"></td>
@@ -554,7 +557,7 @@
 					          <td><input type="number" min="0" name="nephro_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>9</td>
+					          <td>4.09</td>
 					          <td class="left">Ovarian cancer</td>
 	                  <td class="grey"></td>
 					          <td><input type="number" min="0" name="ovarian_oc19f" class="form-control"></td>
@@ -571,7 +574,7 @@
 					          <td><input type="number" min="0" name="ovarian_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>10</td>
+					          <td>4.10</td>
 					          <td class="left">Prostate cancer</td>
 					          <td><input type="number" min="0" name="prostate_oc19m" class="form-control"></td>
 	                  <td class="grey"></td>
@@ -588,7 +591,7 @@
 	                  <td class="grey"></td>
 					        </tr>
 					        <tr>
-					          <td>11</td>
+					          <td>4.11</td>
 					          <td class="left">Cancer others</td>
 					          <td><input type="number" min="0" name="cancer_others_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="cancer_others_oc19f" class="form-control"></td>
@@ -615,11 +618,14 @@
 					        <tr>
 					          <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th rowspan="3">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="3">Old Cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th colspan="3">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="6">Old cases<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					        </tr>
 					        <tr>
 					          <th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th colspan="2">Age < 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th colspan="2">Age 20 to 39<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					          <th colspan="2">Age > 40<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 					        </tr>
@@ -640,7 +646,7 @@
 					      </thead>
 					      <tbody>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>1</td>
 					          <td class="left">Medical condition</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -656,7 +662,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 					        <tr>
-					          <td>1</td>
+					          <td>1.1</td>
 					          <td class="left">Cardiomyopathies</td>
 					          <td><input type="number" min="0" name="cardio_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="cardio_oc19f" class="form-control"></td>
@@ -673,7 +679,7 @@
 					          <td><input type="number" min="0" name="cardio_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>2</td>
+					          <td>1.2</td>
 					          <td class="left">Stroke/TIA</td>
 					          <td><input type="number" min="0" name="stroke_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="stroke_oc19f" class="form-control"></td>
@@ -690,7 +696,7 @@
 					          <td><input type="number" min="0" name="stroke_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>3</td>
+					          <td>1.3</td>
 					          <td class="left">Rheumatic heart disease</td>
 					          <td><input type="number" min="0" name="rheumatic_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="rheumatic_oc19f" class="form-control"></td>
@@ -707,7 +713,7 @@
 					          <td><input type="number" min="0" name="rheumatic_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>4</td>
+					          <td>1.4</td>
 					          <td class="left">Congenital heart disease</td>
 					          <td><input type="number" min="0" name="cong_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="cong_oc19f" class="form-control"></td>
@@ -724,7 +730,7 @@
 					          <td><input type="number" min="0" name="cong_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>5</td>
+					          <td>1.5</td>
 					          <td class="left">Coronary artery disease</td>
 					          <td><input type="number" min="0" name="coronary_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="coronary_oc19f" class="form-control"></td>
@@ -741,7 +747,7 @@
 					          <td><input type="number" min="0" name="coronary_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>6</td>
+					          <td>1.6</td>
 					          <td class="left">Pericardial disease</td>
 					          <td><input type="number" min="0" name="peri_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="peri_oc19f" class="form-control"></td>
@@ -758,7 +764,7 @@
 					          <td><input type="number" min="0" name="peri_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>7</td>
+					          <td>1.7</td>
 					          <td class="left">Heart failure</td>
 					          <td><input type="number" min="0" name="heart_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="heart_oc19f" class="form-control"></td>
@@ -775,7 +781,7 @@
 					          <td><input type="number" min="0" name="heart_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>8</td>
+					          <td>1.8</td>
 					          <td class="left">Other cardiovascular</td>
 					          <td><input type="number" min="0" name="other_cardio_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="other_cardio_oc19f" class="form-control"></td>
@@ -792,7 +798,7 @@
 					          <td><input type="number" min="0" name="other_cardio_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td>9</td>
+					          <td>1.9</td>
 					          <td class="left">Post heart surgery</td>
 					          <td><input type="number" min="0" name="post_heart_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="post_heart_oc19f" class="form-control"></td>
@@ -809,7 +815,7 @@
 					          <td><input type="number" min="0" name="post_heart_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>2</td>
 					          <td class="left">Kidney diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -825,7 +831,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>2.1</td>
 					          <td class="left">Renal failure</td>
 					          <td><input type="number" min="0" name="renal_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="renal_oc19f" class="form-control"></td>
@@ -842,7 +848,7 @@
 					          <td><input type="number" min="0" name="renal_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>2.2</td>
 					          <td class="left">Other chonic kidney diseases</td>
 					          <td><input type="number" min="0" name="other_chronic_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="other_chronic_oc19f" class="form-control"></td>
@@ -859,7 +865,7 @@
 					          <td><input type="number" min="0" name="other_chronic_d40f" class="form-control"></td>
 					        </tr>
 	                <tr>
-					          <td class="grey"></td>
+					          <td>3</td>
 					          <td class="left">Metabolic diseases</td>
 					          <td class="grey"></td>
 	                  <td class="grey"></td>
@@ -875,7 +881,7 @@
 	                  <td class="grey"></td>
 	                </tr>
 	                <tr>
-					          <td>1</td>
+					          <td>3.1</td>
 					          <td class="left">Thyroid disease</td>
 					          <td><input type="number" min="0" name="thyroid_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="thyroid_oc19f" class="form-control"></td>
@@ -892,7 +898,7 @@
 					          <td><input type="number" min="0" name="thyroid_d40f" class="form-control"></td>
 					        </tr>
 					        <tr>
-					          <td>2</td>
+					          <td>3.2</td>
 					          <td class="left">Other endocrine and metabolic diseases</td>
 					          <td><input type="number" min="0" name="other_endo_oc19m" class="form-control"></td>
 					          <td><input type="number" min="0" name="other_endo_oc19f" class="form-control"></td>
