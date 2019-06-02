@@ -13,13 +13,54 @@ class home extends CI_Controller
         }
     }
 
-    public function logout(){
-      $user_data = $this->session->all_userdata();
-      foreach ($user_data as $key => $value){
-        $this->session->unset_userdata($key);
-      }
-      $this->session->sess_destroy();
-      redirect('login', 'refresh');
+    public function logout()
+    {
+        $user_data = $this->session->all_userdata();
+        foreach ($user_data as $key => $value) {
+            $this->session->unset_userdata($key);
+        }
+        $this->session->sess_destroy();
+        redirect('login', 'refresh');
+    }
+
+    public function changePassword()
+    {
+        $this->load->library('form_validation');
+        $this->load->model('home_model');
+
+        $this->form_validation->set_rules('oldpass', 'old password', 'callback_password_check');
+        $this->form_validation->set_rules('newpass', 'new password', 'required');
+        $this->form_validation->set_rules('passconf', 'confirm password', 'required|matches[newpass]');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+        if ($this->form_validation->run() == false) {
+            $data['dates'] = $this->home_model->show_dates();
+            $data['dates_surgery'] = $this->home_model->show_dates_surgery();
+            $data['dates_im'] = $this->home_model->show_dates_im();
+            $data['dates_fp'] = $this->home_model->show_dates_fp();
+            $data['dates_pharm'] = $this->home_model->show_dates_pharm();
+            $data['dates_hr'] = $this->home_model->show_dates_hr();
+            $data['dates_lab'] = $this->home_model->show_dates_lab();
+            $this->load->view('home_view', $data);
+        } else {
+            $id = $this->session->userdata('num_user');
+            $newpass = $this->input->post('newpass');
+            $this->home_model->update_user($id, array('password' => $newpass));
+            $this->logout();
+        }
+    }
+
+    public function password_check($oldpass)
+    {
+        $this->load->model('home_model');
+        $id = $this->session->userdata('num_user');
+        $user = $this->home_model->get_user($id);
+        if ($user->password !== $oldpass) {
+            $this->form_validation->set_message('password_check', 'The {field} does not match');
+            return false;
+        }
+        return true;
     }
 
     public function fetch()

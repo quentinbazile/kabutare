@@ -31,48 +31,48 @@
                              date('Y-m-d', strtotime('-1 day')),
                              date('Y-m-d'));
                 if ($this->home_model->check_service('minor_surgery') || $this->home_model->check_service('operating_room')) {
-                  foreach ($dates_surgery as $d):
-	                   if (($val = array_search($d->date_surgery, $array)) !== false) {
-	                       unset($array[$val]);
-	                   }
-                  endforeach;
+                    foreach ($dates_surgery as $d):
+                       if (($val = array_search($d->date_surgery, $array)) !== false) {
+                           unset($array[$val]);
+                       }
+                    endforeach;
                 } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
                           $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care') || $this->home_model->check_service('nut_rehab') || $this->home_model->check_service('gynecology')) {
-									foreach ($dates_im as $d):
-										if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
-											unset($array[$val]);
-										}
-                  endforeach;
+                    foreach ($dates_im as $d):
+                                        if (($val = array_search($d->date_hospitalization_bcde, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 } elseif ($this->home_model->check_service('family_planning')) {
-									foreach ($dates_fp as $d):
-										if (($val = array_search($d->date_family_planning, $array)) !== false) {
-											unset($array[$val]);
-										}
-									endforeach;
+                    foreach ($dates_fp as $d):
+                                        if (($val = array_search($d->date_family_planning, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 } elseif ($this->home_model->check_service('pharmacy')) {
-									foreach ($dates_pharm as $d):
-										if (($val = array_search($d->date_pharmacy, $array)) !== false) {
-											unset($array[$val]);
-										}
-									endforeach;
+                    foreach ($dates_pharm as $d):
+                                        if (($val = array_search($d->date_pharmacy, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 } elseif ($this->home_model->check_service('hr')) {
-									foreach ($dates_hr as $d):
-										if (($val = array_search($d->date_staff, $array)) !== false) {
-											unset($array[$val]);
-										}
-									endforeach;
+                    foreach ($dates_hr as $d):
+                                        if (($val = array_search($d->date_staff, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 } elseif ($this->home_model->check_service('laboratory')) {
-									foreach ($dates_lab as $d):
-										if (($val = array_search($d->date_laboratory, $array)) !== false) {
-											unset($array[$val]);
-										}
-									endforeach;
+                    foreach ($dates_lab as $d):
+                                        if (($val = array_search($d->date_laboratory, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 } else {
-									foreach ($dates as $date):
-										if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
-											unset($array[$val]);
-										}
-									endforeach;
+                    foreach ($dates as $date):
+                                        if (($val = array_search($date->date_consultation_abcde, $array)) !== false) {
+                                            unset($array[$val]);
+                                        }
+                    endforeach;
                 }
                 foreach ($array as $value):?>
 								<option value="<?php echo $value; ?>"><?php echo date('d/m/Y', strtotime($value)); ?></option>
@@ -92,32 +92,32 @@
 						<div class="col-xs-offset-4 col-xs-2">
 							<select name="update" id="update" class="form-control" required>
 								<?php if ($this->home_model->check_service('minor_surgery') || $this->home_model->check_service('operating_room')) {
-									foreach ($dates_surgery as $d):?>
+                    foreach ($dates_surgery as $d):?>
 										<option value="<?php echo $d->date_surgery; ?>"><?php echo date('d/m/Y', strtotime($d->date_surgery)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
-								$this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care') || $this->home_model->check_service('nut_rehab') || $this->home_model->check_service('gynecology')) {
-									foreach ($dates_im as $d):?>
+                } elseif ($this->home_model->check_service('internal_medicine') || $this->home_model->check_service('neonatology') || $this->home_model->check_service('pediatrics') ||
+                                $this->home_model->check_service('surgery') || $this->home_model->check_service('intensive_care') || $this->home_model->check_service('nut_rehab') || $this->home_model->check_service('gynecology')) {
+                    foreach ($dates_im as $d):?>
 										<option value="<?php echo $d->date_hospitalization_bcde; ?>"><?php echo date('d/m/Y', strtotime($d->date_hospitalization_bcde)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('family_planning')) {
-									foreach ($dates_fp as $d):?>
+                } elseif ($this->home_model->check_service('family_planning')) {
+                    foreach ($dates_fp as $d):?>
 										<option value="<?php echo $d->date_family_planning; ?>"><?php echo date('d/m/Y', strtotime($d->date_family_planning)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('pharmacy')) {
-									foreach ($dates_pharm as $d):?>
+                } elseif ($this->home_model->check_service('pharmacy')) {
+                    foreach ($dates_pharm as $d):?>
 										<option value="<?php echo $d->date_pharmacy; ?>"><?php echo date('d/m/Y', strtotime($d->date_pharmacy)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('hr')) {
-									foreach ($dates_hr as $d):?>
+                } elseif ($this->home_model->check_service('hr')) {
+                    foreach ($dates_hr as $d):?>
 										<option value="<?php echo $d->date_staff; ?>"><?php echo date('d/m/Y', strtotime($d->date_staff)); ?></option>
 									<?php endforeach;
-								} elseif ($this->home_model->check_service('laboratory')) {
-									foreach ($dates_lab as $d):?>
+                } elseif ($this->home_model->check_service('laboratory')) {
+                    foreach ($dates_lab as $d):?>
 										<option value="<?php echo $d->date_laboratory; ?>"><?php echo date('d/m/Y', strtotime($d->date_laboratory)); ?></option>
 									<?php endforeach;
-								} else {
-									foreach ($dates as $date):?>
+                } else {
+                    foreach ($dates as $date):?>
 										<option value="<?php echo $date->date_consultation_abcde; ?>"><?php echo date('d/m/Y', strtotime($date->date_consultation_abcde)); ?></option>
 									<?php endforeach;
                 }?>
@@ -129,7 +129,37 @@
 					</form>
 				</div>
     	</div>
-			<button class="center" type="button" onclick="location.href='<?php echo base_url();?>home/logout'">Log Out</button>
+
+			<div class="row">
+				<div class="col-xs-offset-11">
+					<button class="center" type="button" onclick="location.href='<?php echo base_url();?>home/logout'">Log Out</button>
+				</div>
+			</div>
+
+			<div id="changePassword">
+				<div class="row">
+        	<h2>Change Password</h2>
+					<?php echo form_open('home/changePassword')?>
+					<div class="col-xs-offset-2 col-xs-2">
+	          <input type="password" name="oldpass" id="oldpass" class="form-control" placeholder="Old Password" />
+	          <?php echo form_error('oldpass', '<div class="error">', '</div>')?>
+					</div>
+					<div class="col-xs-2">
+	          <input type="password" name="newpass" id="newpass" class="form-control" placeholder="New Password" />
+	          <?php echo form_error('newpass', '<div class="error">', '</div>')?>
+					</div>
+					<div class="col-xs-2">
+	          <input type="password" name="passconf" id="passconf" class="form-control" placeholder="Confirm Password" />
+	          <?php echo form_error('passconf', '<div class="error">', '</div>')?>
+					</div>
+					<div class="col-xs-2">
+	          <button type="submit">Change</button>
+					</div>
+		        <?php echo form_close(); ?>
+				</div>
+			</div>
+
+
 		</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
