@@ -5,7 +5,19 @@ class research extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('test');
+        $this->load->model('home_model');
+        if ($this->session->userdata('num_user') != '') {
+            if ($this->home_model->check_service('data_manager') || $this->home_model->check_service('dg') ||
+            $this->home_model->check_service('clinical_director') || $this->home_model->check_service('nursing_director') ||
+            $this->home_model->check_service('monitoring_evaluation')) {
+                $this->load->view('research_view');
+            } else {
+                $this->logout();
+                redirect('login', 'refresh');
+            }
+        } else {
+            redirect('login', 'refresh');
+        }
     }
 
     public function fetch()
@@ -1177,12 +1189,12 @@ class research extends CI_Controller
   				      </tbody>
   				    </table>
               <br>';
-            } else {
+        } else {
             $output .= '
               <h3 class="center">III] Mental health</h3>
               <h2>This part has not been filled yet</h2>
               <br>';
-            }
+        }
 
         $chronic_disease=$this->research_model->chronic_disease($date);
 
@@ -2882,7 +2894,7 @@ class research extends CI_Controller
         $hospitalization_bcde = $this->research_model->hospitalization_bcde($date);
 
         if ($hospitalization_bcde->hosp_1m_total != null) {
-          $output.='
+            $output.='
               <br>
               <h4>B) Summary by age</h4>
               <table id="B10" class="center">

@@ -7,6 +7,7 @@ class login extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('login_model');
+        $this->load->model('home_model');
     }
 
     public function index()
@@ -29,7 +30,13 @@ class login extends CI_Controller
             if ($this->login_model->check_login($pseudo, $mdp)) {
                 $num_user = $this->login_model->num_user($pseudo)->num_user;
                 $this->session->set_userdata('num_user', $num_user);
-                redirect('home', 'refresh');
+                if ($this->home_model->check_service('data_manager') || $this->home_model->check_service('dg') ||
+                  $this->home_model->check_service('clinical_director') || $this->home_model->check_service('nursing_director') ||
+                  $this->home_model->check_service('monitoring_evaluation')) {
+                    redirect('admin', 'refresh');
+                } else {
+                    redirect('home', 'refresh');
+                }
             } else {
                 $data['msg'] = "Authentication Failed !";
                 $this->load->view('login_view', $data);
