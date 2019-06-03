@@ -70,7 +70,7 @@
 		</div>
 
 		<div class="footer">
-			<a href="https://hmis.moh.gov.rw/">HMIS</a> |
+			<a href="">HMIS</a> |
 			<a href="">Logistics & Store</a> |
 			<a href="">Archives</a> |
 			<a href="">Customers Care & Social</a> |
