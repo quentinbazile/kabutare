@@ -6,11 +6,26 @@ class surgery extends CI_Controller
     public function index()
     {
         $this->load->model('surgery_model');
+        $this->load->model('home_model');
         if ($this->session->userdata('num_user') != '') {
+          if ($this->home_model->check_service('surgery')) {
             $this->fetch();
+          } else {
+              $this->logout();
+              redirect('login', 'refresh');
+          }
         } else {
             redirect('login', 'refresh');
         }
+    }
+
+    public function logout(){
+      $user_data = $this->session->all_userdata();
+      foreach ($user_data as $key => $value){
+        $this->session->unset_userdata($key);
+      }
+      $this->session->sess_destroy();
+      redirect('login', 'refresh');
     }
 
     public function fetch()
@@ -638,20 +653,20 @@ class surgery extends CI_Controller
             $num_rapport = $this->surgery_model->num_rapport()->num_rapport;
 
             $this->surgery_model->fetch_data1(
-              $e_beds,
-              $e_present_start,
-              $e_admissions,
-              $e_referred,
-              $e_no_referred,
-              $e_discharges,
-              $e_authorized,
-              $e_abandoned,
-              $e_deaths,
-              $e_dis_referred,
-              $e_counter,
-              $e_present_end,
-              $e_total,
-              $e_actual,
+              $s_beds,
+              $s_present_start,
+              $s_admissions,
+              $s_referred,
+              $s_no_referred,
+              $s_discharges,
+              $s_authorized,
+              $s_abandoned,
+              $s_deaths,
+              $s_dis_referred,
+              $s_counter,
+              $s_present_end,
+              $s_total,
+              $s_actual,
               $num_rapport
             );
 

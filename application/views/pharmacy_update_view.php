@@ -18,7 +18,7 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Pharmacy - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
@@ -33,7 +33,7 @@
 			            <th>Quantity at the beginning of the month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 			            <th>Quantity received<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 			            <th>Quantity dispensed<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-			            <th>Quantity expired/damaged/lost<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th>Quantity expired / damaged / lost<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 			            <th>Quantity at end of month<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 			            <th>Days of stock out<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 </tr>
@@ -311,7 +311,7 @@
                 </tr>
                 <tr>
                   <td>28</td>
-                  <td class="left">artemeter vial 20 mg/ml</td>
+                  <td class="left">Artemeter vial 20 mg/ml</td>
 									<td><input type="number" min="0" name="artemeter_vial_begin" class="form-control" value="<?php echo $table1->artemeter_vial_begin; ?>"></td>
 									<td><input type="number" min="0" name="artemeter_vial_received" class="form-control" value="<?php echo $table1->artemeter_vial_received; ?>"></td>
 									<td><input type="number" min="0" name="artemeter_vial_dispensed" class="form-control" value="<?php echo $table1->artemeter_vial_dispensed; ?>"></td>

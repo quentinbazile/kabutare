@@ -18,7 +18,7 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Gynecology Obstetrics - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
@@ -27,7 +27,7 @@
 				      	<h4>Summary statistics by service</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Payment for Hospitalization</h4>
+						  	<h4>Payment for hospitalization</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -58,7 +58,7 @@
 					          </tr>
                     <tr>
                       <td>3.1</td>
-					            <td class="left">Referred from the Health Center</td>
+					            <td class="left">Referred from the health center</td>
 					            <td><input type="number" min="0" name="go_referred" class="form-control"></td>
 					          </tr>
                     <tr>
@@ -73,7 +73,7 @@
 					          </tr>
                     <tr>
                       <td>4.1</td>
-					            <td class="left">Authorized/Cured</td>
+					            <td class="left">Authorized / Cured</td>
 					            <td><input type="number" min="0" name="go_authorized" class="form-control"></td>
 					          </tr>
                     <tr>
@@ -125,7 +125,7 @@
   					        </thead>
   			        		<tbody>
   					          <tr>
-  					            <td class="left">Insured discharges(mutuelle, etc)</td>
+  					            <td class="left">Insured discharges (mutuelle, etc)</td>
   					            <td><input type="number" min="0" name="insured_dis" class="form-control"></td>
   					          </tr>
   					          <tr>
@@ -186,13 +186,13 @@
 			        </thead>
 			        <tbody>
 			          <tr>
-			            <td class="center">1</td>
+			            <td>1</td>
 			            <td class="left">Hospitalized</td>
 			            <td><input type="number" min="0" name="hosp_19f" class="form-control"></td>
 			            <td><input type="number" min="0" name="hosp_20f" class="form-control"></td>
 			          </tr>
 			          <tr>
-			            <td class="center">2</td>
+			            <td>2</td>
 			            <td class="left">Deaths</td>
 			            <td><input type="number" min="0" name="deaths_19f" class="form-control"></td>
 			            <td><input type="number" min="0" name="deaths_20f" class="form-control"></td>
@@ -200,7 +200,7 @@
 			        </tbody>
 			      </table>
             <br>
-	      		<h4>Cases and Deaths</h4>
+	      		<h4>Cases and deaths</h4>
 	      		<table id="A15" class="center">
 			        <thead>
 			          <tr>
@@ -219,7 +219,7 @@
 			        <tbody>
 			          <tr>
 			            <td>1</td>
-			            <td class="left">Complications of Abortions(Spontaneous and Induced)</td>
+			            <td class="left">Complications of abortions (spontaneous and induced)</td>
 			            <td><input type="number" min="0" name="complications_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="complications_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="complications_deaths19" class="form-control"></td>
@@ -227,7 +227,7 @@
 			          </tr>
 			          <tr>
 			            <td>2</td>
-			            <td class="left">Ectopic Pregnancy</td>
+			            <td class="left">Ectopic pregnancy</td>
 			            <td><input type="number" min="0" name="ectopic_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="ectopic_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="ectopic_deaths19" class="form-control"></td>
@@ -235,7 +235,7 @@
 			          </tr>
 			          <tr>
 			            <td>3</td>
-			            <td class="left">Antepartum Hemorrhage (APH)</td>
+			            <td class="left">Ante-partum hemorrhage (APH)</td>
 			            <td><input type="number" min="0" name="antepartum_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="antepartum_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="antepartum_deaths19" class="form-control"></td>
@@ -243,7 +243,7 @@
 			          </tr>
 								<tr>
 			            <td>4</td>
-			            <td class="left">Post-Partum Hemorrhage (PPH)</td>
+			            <td class="left">Post-partum hemorrhage (PPH)</td>
 			            <td><input type="number" min="0" name="postpartum_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_deaths19" class="form-control"></td>
@@ -251,7 +251,7 @@
 			          </tr>
 								<tr>
 			            <td>5</td>
-			            <td class="left">Eclampsia / Severe Pre Eclampsia</td>
+			            <td class="left">Eclampsia / Severe pre eclampsia</td>
 			            <td><input type="number" min="0" name="eclampsia_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="eclampsia_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="eclampsia_deaths19" class="form-control"></td>
@@ -267,7 +267,7 @@
 			          </tr>
 								<tr>
 			            <td>7</td>
-			            <td class="left">Other Postpartum Infections</td>
+			            <td class="left">Other post-partum infections</td>
 			            <td><input type="number" min="0" name="postpartum_other_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_other_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_other_deaths19" class="form-control"></td>
@@ -275,7 +275,7 @@
 			          </tr>
 								<tr>
 			            <td>8</td>
-			            <td class="left">Prolonged or Obstructed Labor</td>
+			            <td class="left">Prolonged or obstructed labor</td>
 			            <td><input type="number" min="0" name="prolonged_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="prolonged_hos20" class="form-control"></td>
                   <td class="grey"></td>
@@ -283,7 +283,7 @@
 			          </tr>
 								<tr>
 			            <td>9</td>
-			            <td class="left">Uterine Rupture</td>
+			            <td class="left">Uterine rupture</td>
 			            <td><input type="number" min="0" name="uterine_rup_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="uterine_rup_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="uterine_rup_deaths19" class="form-control"></td>
@@ -294,20 +294,20 @@
 			            <td class="left">Amniotic embolism</td>
                   <td class="grey"></td>
 									<td class="grey"></td>
-			            <td><input type="number" min="0" name="other_direct_obste_deaths19" class="form-control"></td>
-			            <td><input type="number" min="0" name="other_direct_obste_deaths20" class="form-control"></td>
+			            <td><input type="number" min="0" name="amniotic_deaths19" class="form-control"></td>
+			            <td><input type="number" min="0" name="amniotic_deaths20" class="form-control"></td>
 			          </tr>
                 <tr>
 			            <td>11</td>
 			            <td class="left">Complication of anesthesia</td>
                   <td class="grey"></td>
 									<td class="grey"></td>
-			            <td><input type="number" min="0" name="other_direct_obste_deaths19" class="form-control"></td>
-			            <td><input type="number" min="0" name="other_direct_obste_deaths20" class="form-control"></td>
+			            <td><input type="number" min="0" name="compli_anesthesia_deaths19" class="form-control"></td>
+			            <td><input type="number" min="0" name="compli_anesthesia_deaths20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>12</td>
-			            <td class="left">Other Direct Obstetrical Complication</td>
+			            <td class="left">Other direct obstetrical complication</td>
 			            <td><input type="number" min="0" name="other_direct_obste_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_direct_obste_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_direct_obste_deaths19" class="form-control"></td>
@@ -315,7 +315,7 @@
 			          </tr>
 								<tr>
 			            <td>13</td>
-			            <td class="left">Anemia Severe (< 7gm/dl)</td>
+			            <td class="left">Anemia severe (< 7gm/dl)</td>
 			            <td><input type="number" min="0" name="anemia_sev_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="anemia_sev_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="anemia_sev_deaths19" class="form-control"></td>
@@ -323,7 +323,7 @@
 			          </tr>
 								<tr>
 			            <td>14</td>
-			            <td class="left">Malaria Simple in Pregnancy</td>
+			            <td class="left">Malaria simple in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_sim_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_sim_hos20" class="form-control"></td>
                   <td class="grey"></td>
@@ -331,7 +331,7 @@
 			          </tr>
 								<tr>
 			            <td>15</td>
-			            <td class="left">Malaria with Minor Digestive Symptoms in Pregnancy</td>
+			            <td class="left">Malaria with minor digestive symptoms in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_dig_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_dig_hos20" class="form-control"></td>
                   <td class="grey"></td>
@@ -339,7 +339,7 @@
 			          </tr>
 								<tr>
 			            <td>16</td>
-			            <td class="left">Severe Malaria in Pregnancy</td>
+			            <td class="left">Severe malaria in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_sev_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_sev_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_sev_deaths19" class="form-control"></td>
@@ -347,7 +347,7 @@
 			          </tr>
 								<tr>
 			            <td>17</td>
-			            <td class="left">HIV/Opportunistic Infections</td>
+			            <td class="left">HIV / Opportunistic infections</td>
 			            <td><input type="number" min="0" name="hiv_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="hiv_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="hiv_deaths19" class="form-control"></td>
@@ -355,7 +355,7 @@
 			          </tr>
 								<tr>
 			            <td>18</td>
-			            <td class="left">Pulmonary Embolism</td>
+			            <td class="left">Pulmonary embolism</td>
 			            <td><input type="number" min="0" name="pulmonary_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="pulmonary_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="pulmonary_deaths19" class="form-control"></td>
@@ -363,7 +363,7 @@
 			          </tr>
 								<tr>
 			            <td>19</td>
-			            <td class="left">Pneumonia on Pregnancy</td>
+			            <td class="left">Pneumonia on pregnancy</td>
 			            <td><input type="number" min="0" name="pneumonia_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="pneumonia_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="pneumonia_deaths19" class="form-control"></td>
@@ -371,7 +371,7 @@
 			          </tr>
 								<tr>
 			            <td>20</td>
-			            <td class="left">Other Indirect Obstetrical Complication</td>
+			            <td class="left">Other indirect obstetrical complication</td>
 			            <td><input type="number" min="0" name="other_ind_obstet_hos19" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_ind_obstet_hos20" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_ind_obstet_deaths19" class="form-control"></td>
@@ -505,7 +505,7 @@
 			          </tr>
 			          <tr>
 			            <td>12</td>
-			            <td class="left">hydrocephalus</td>
+			            <td class="left">Hydrocephalus</td>
 			            <td><input type="number" min="0" name="hydrocephalus" class="form-control"></td>
 			          </tr>
 			          <tr>
@@ -620,7 +620,7 @@
 			          </tr>
 								<tr>
 			            <td>35</td>
-			            <td class="left">Live newborns who didn't cry/breath at birth</td>
+			            <td class="left">Live newborns who didn't cry / breath at birth</td>
 			            <td><input type="number" min="0" name="newborns_no_cry" class="form-control"></td>
 			          </tr>
 								<tr>
@@ -630,7 +630,7 @@
 			          </tr>
 								<tr>
 			            <td>37</td>
-			            <td class="left">Live newborns who didn't cry/breth at birth and were resuscitated successfully (cry/breath within 5 min APGAR > 5 at 5 min)</td>
+			            <td class="left">Live newborns who didn't cry / breath at birth and were resuscitated successfully (cry / breath within 5 min APGAR > 5 at 5 min)</td>
 			            <td><input type="number" min="0" name="newborns_no_cry_success" class="form-control"></td>
 			          </tr>
 								<tr>
@@ -681,7 +681,7 @@
 			          </tr>
 			          <tr>
 			            <td>3</td>
-			            <td class="left">Mothers received iron/folic acid during PNC1 visit</td>
+			            <td class="left">Mothers received iron / folic acid during PNC1 visit</td>
 			            <td><input type="number" min="0" name="iron_pnc1_m" class="form-control"></td>
 									<td class="grey"></td>
 			          </tr>
@@ -723,7 +723,7 @@
 			          </tr>
 								<tr>
 			            <td>10</td>
-			            <td class="left">Complications/denger signs detected during any PNC visit</td>
+			            <td class="left">Complications / Danger signs detected during any PNC visit</td>
 			            <td><input type="number" min="0" name="complications_m" class="form-control"></td>
 			            <td><input type="number" min="0" name="complications_nb" class="form-control"></td>
 			          </tr>

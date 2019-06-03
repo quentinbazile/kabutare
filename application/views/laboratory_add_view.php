@@ -40,7 +40,7 @@
 		        <tbody>
 		          <tr>
 								<td>1</td>
-		            <td class="left">Blood Smears</td>
+		            <td class="left">Blood smears</td>
 								<td class="grey"></td>
 		            <td><input type="number" min="0" name="blood_n" class="form-control"></td>
 		            <td><input type="number" min="0" name="blood_t" class="form-control"></td>
@@ -75,14 +75,14 @@
 		          </tr>
 							<tr>
 								<td>2</td>
-		            <td class="left">Rapid Diagnostic Tests for Malaria</td>
+		            <td class="left">Rapid diagnostic tests for malaria</td>
 								<td><input type="number" min="0" name="malaria_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="malaria_n" class="form-control"></td>
 								<td><input type="number" min="0" name="malaria_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>3</td>
-		            <td class="left">Stools Samples Total</td>
+		            <td class="left">Stools samples total</td>
 								<td class="grey"></td>
 		            <td><input type="number" min="0" name="stools_n" class="form-control"></td>
 		            <td><input type="number" min="0" name="stools_t" class="form-control"></td>
@@ -96,7 +96,7 @@
 		          </tr>
 							<tr>
 								<td>3.2</td>
-		            <td class="left pad">Entamoeba Coli</td>
+		            <td class="left pad">Entamoeba coli</td>
 								<td><input type="number" min="0" name="coli_p" class="form-control"></td>
 		            <td class="grey"></td>
 								<td class="grey"></td>
@@ -145,7 +145,7 @@
 		          </tr>
 							<tr>
 								<td>3.9</td>
-		            <td class="left pad">Other Parasites in Stools</td>
+		            <td class="left pad">Other parasites in stools</td>
 								<td><input type="number" min="0" name="other_stools_p" class="form-control"></td>
 		            <td class="grey"></td>
 								<td class="grey"></td>
@@ -173,28 +173,28 @@
 		          </tr>
 							<tr>
 								<td>4.3</td>
-		            <td class="left pad">Pregnancy Test</td>
+		            <td class="left pad">Pregnancy test</td>
 								<td><input type="number" min="0" name="pregnancy_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="pregnancy_n" class="form-control"></td>
 								<td><input type="number" min="0" name="pregnancy_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>5</td>
-		            <td class="left">Sputum (Number of Patients)</td>
+		            <td class="left">Sputum (number of patients)</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>5.1</td>
-		            <td class="left pad">Diagnosis of TB by Microscopy</td>
+		            <td class="left pad">Diagnosis of TB by microscopy</td>
 								<td><input type="number" min="0" name="diag_tb_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="diag_tb_n" class="form-control"></td>
 								<td><input type="number" min="0" name="diag_tb_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>5.2</td>
-		            <td class="left pad">Control of TB Positive Patients</td>
+		            <td class="left pad">Control of TB positive patients</td>
 								<td><input type="number" min="0" name="control_tb_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="control_tb_n" class="form-control"></td>
 								<td><input type="number" min="0" name="control_tb_t" class="form-control"></td>
@@ -208,42 +208,42 @@
 		          </tr>
 							<tr>
 								<td>6.1</td>
-		            <td class="left pad">Vaginal Swab Fresh</td>
+		            <td class="left pad">Vaginal swab fresh</td>
 								<td><input type="number" min="0" name="vag_fresh_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="vag_fresh_n" class="form-control"></td>
 								<td><input type="number" min="0" name="vag_fresh_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>6.2</td>
-		            <td class="left pad">Vaginal Swab Gram</td>
+		            <td class="left pad">Vaginal swab gram</td>
 								<td><input type="number" min="0" name="vag_gram_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="vag_gram_n" class="form-control"></td>
 								<td><input type="number" min="0" name="vag_gram_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>6.3</td>
-		            <td class="left pad">Vaginal Swab Diplococcus Gram</td>
+		            <td class="left pad">Vaginal swab diplococcus gram</td>
 								<td><input type="number" min="0" name="vag_diplo_p" class="form-control"></td>
 		            <td class="grey"></td>
 								<td class="grey"></td>
 		          </tr>
 							<tr>
 								<td>6.4</td>
-		            <td class="left pad">Urethral Swab Fresh</td>
+		            <td class="left pad">Urethral swab fresh</td>
 								<td><input type="number" min="0" name="ure_fresh_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="ure_fresh_n" class="form-control"></td>
 								<td><input type="number" min="0" name="ure_fresh_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>6.5</td>
-		            <td class="left pad">Urethral Swab Gram</td>
+		            <td class="left pad">Urethral swab gram</td>
 								<td><input type="number" min="0" name="ure_gram_p" class="form-control"></td>
 		            <td><input type="number" min="0" name="ure_gram_n" class="form-control"></td>
 								<td><input type="number" min="0" name="ure_gram_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>6.6</td>
-		            <td class="left pad">Urethral Swab Diplococcus Gram</td>
+		            <td class="left pad">Urethral swab diplococcus gram</td>
 								<td><input type="number" min="0" name="ure_diplo_p" class="form-control"></td>
 		            <td class="grey"></td>
 								<td class="grey"></td>
@@ -271,7 +271,7 @@
 		          </tr>
 							<tr>
 								<td>7.3</td>
-		            <td class="left pad">HIV Final Result</td>
+		            <td class="left pad">HIV final result</td>
 								<td><input type="number" min="0" name="hiv_p" class="form-control"></td>
 								<td><input type="number" min="0" name="hiv_n" class="form-control"></td>
 								<td><input type="number" min="0" name="hiv_t" class="form-control"></td>
@@ -285,7 +285,7 @@
 		          </tr>
 							<tr>
 								<td>7.5</td>
-		            <td class="left pad">Full Blood Count (FBC/NFS)</td>
+		            <td class="left pad">Full blood count (FBC / NFS)</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td><input type="number" min="0" name="full_t" class="form-control"></td>
@@ -306,7 +306,7 @@
 		          </tr>
 							<tr>
 								<td>7.8</td>
-		            <td class="left pad">Blood Glucose</td>
+		            <td class="left pad">Blood glucose</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td><input type="number" min="0" name="glucose_t" class="form-control"></td>
@@ -334,28 +334,28 @@
 		          </tr>
 							<tr>
 								<td>7.12</td>
-		            <td class="left pad">Pregnancy Test</td>
+		            <td class="left pad">Pregnancy test</td>
 								<td><input type="number" min="0" name="blood_preg_p" class="form-control"></td>
 								<td><input type="number" min="0" name="blood_preg_n" class="form-control"></td>
 								<td><input type="number" min="0" name="blood_preg_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>8</td>
-		            <td class="left">CerebroSpinal Fluid</td>
+		            <td class="left">CerebroSpinal fluid</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td><input type="number" min="0" name="cerebro_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>9</td>
-		            <td class="left">Other Lab Tests</td>
+		            <td class="left">Other lab tests</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td><input type="number" min="0" name="other_lab_t" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>10</td>
-		            <td class="left">Total Tests Conducted in the Laboratory</td>
+		            <td class="left">Total tests conducted in the laboratory</td>
 								<td class="grey"></td>
 								<td class="grey"></td>
 								<td><input type="number" min="0" name="total" class="form-control"></td>
@@ -370,7 +370,7 @@
 							<h4>Transfusions</h4>
 						</div>
 						<div class="col-xs-7">
-							<h4>Blood Pack Stock Management</h4>
+							<h4>Blood pack stock management</h4>
 						</div>
 					</div>
 
@@ -381,14 +381,14 @@
 				          <tr>
 				            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 										<th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th>Patients Transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-										<th>Packs of Blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Patients transfused<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+										<th>Packs of blood<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 				          </tr>
 				        </thead>
 				        <tbody>
 				          <tr>
 										<td>1</td>
-				            <td class="left">Internal Medicine</td>
+				            <td class="left">Internal medicine</td>
 				            <td><input type="number" min="0" name="im_patient_transfused" class="form-control"></td>
 				            <td><input type="number" min="0" name="im_packs" class="form-control"></td>
 				          </tr>
@@ -406,13 +406,13 @@
 				          </tr>
 									<tr>
 										<td>4</td>
-				            <td class="left">Gyneco - Obstetrical</td>
+				            <td class="left">Gyneco - obstetrical</td>
 										<td><input type="number" min="0" name="go_patient_transfused" class="form-control"></td>
 				            <td><input type="number" min="0" name="go_packs" class="form-control"></td>
 				          </tr>
 									<tr>
 										<td>5</td>
-				            <td class="left">Intensive Care / Emergency</td>
+				            <td class="left">Intensive care / Emergency</td>
 										<td><input type="number" min="0" name="ic_patient_transfused" class="form-control"></td>
 				            <td><input type="number" min="0" name="ic_packs" class="form-control"></td>
 				          </tr>
@@ -441,7 +441,7 @@
 				        <tbody>
 				          <tr>
 										<td>1</td>
-				            <td class="left">Blood Pack Received</td>
+				            <td class="left">Blood pack received</td>
 				            <td><input type="number" min="0" name="a_received" class="form-control"></td>
 										<td><input type="number" min="0" name="b_received" class="form-control"></td>
 										<td><input type="number" min="0" name="ab_received" class="form-control"></td>
@@ -449,7 +449,7 @@
 				          </tr>
 				          <tr>
 										<td>2</td>
-				            <td class="left">Blood Pack Used</td>
+				            <td class="left">Blood pack used</td>
 										<td><input type="number" min="0" name="a_used" class="form-control"></td>
 										<td><input type="number" min="0" name="b_used" class="form-control"></td>
 										<td><input type="number" min="0" name="ab_used" class="form-control"></td>
@@ -457,7 +457,7 @@
 				          </tr>
 									<tr>
 										<td>3</td>
-				            <td class="left">Blood Pack Destroyed or Damaged</td>
+				            <td class="left">Blood pack destroyed or damaged</td>
 										<td><input type="number" min="0" name="a_destroyed" class="form-control"></td>
 										<td><input type="number" min="0" name="b_destroyed" class="form-control"></td>
 										<td><input type="number" min="0" name="ab_destroyed" class="form-control"></td>
@@ -465,7 +465,7 @@
 				          </tr>
 									<tr>
 										<td>4</td>
-				            <td class="left">Blood Pack Remaining in Stock</td>
+				            <td class="left">Blood pack remaining in stock</td>
 										<td><input type="number" min="0" name="a_stock" class="form-control"></td>
 										<td><input type="number" min="0" name="b_stock" class="form-control"></td>
 										<td><input type="number" min="0" name="ab_stock" class="form-control"></td>

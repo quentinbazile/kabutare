@@ -6,33 +6,48 @@ class neonatology extends CI_Controller
     public function index()
     {
         $this->load->model('neonatology_model');
+        $this->load->model('home_model');
         if ($this->session->userdata('num_user') != '') {
+          if ($this->home_model->check_service('neonatology')) {
             $this->fetch();
+          } else {
+              $this->logout();
+              redirect('login', 'refresh');
+          }
         } else {
             redirect('login', 'refresh');
         }
     }
 
+    public function logout(){
+      $user_data = $this->session->all_userdata();
+      foreach ($user_data as $key => $value){
+        $this->session->unset_userdata($key);
+      }
+      $this->session->sess_destroy();
+      redirect('login', 'refresh');
+    }
+
     public function fetch()
     {
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('e_beds', '"e_beds"', 'numeric');
+        $this->form_validation->set_rules('n_beds', '"n_beds"', 'numeric');
         if ($this->form_validation->run()) {
 
-            $e_beds = $this->input->post('e_beds');
-            $e_present_start = $this->input->post('e_present_start');
-            $e_admissions = $this->input->post('e_admissions');
-            $e_referred = $this->input->post('e_referred');
-            $e_no_referred = $this->input->post('e_no_referred');
-            $e_discharges = $this->input->post('e_discharges');
-            $e_authorized = $this->input->post('e_authorized');
-            $e_abandoned = $this->input->post('e_abandoned');
-            $e_deaths = $this->input->post('e_deaths');
-            $e_dis_referred = $this->input->post('e_dis_referred');
-            $e_counter = $this->input->post('e_counter');
-            $e_present_end = $this->input->post('e_present_end');
-            $e_total = $this->input->post('e_total');
-            $e_actual = $this->input->post('e_actual');
+            $n_beds = $this->input->post('n_beds');
+            $n_present_start = $this->input->post('n_present_start');
+            $n_admissions = $this->input->post('n_admissions');
+            $n_referred = $this->input->post('n_referred');
+            $n_no_referred = $this->input->post('n_no_referred');
+            $n_discharges = $this->input->post('n_discharges');
+            $n_authorized = $this->input->post('n_authorized');
+            $n_abandoned = $this->input->post('n_abandoned');
+            $n_deaths = $this->input->post('n_deaths');
+            $n_dis_referred = $this->input->post('n_dis_referred');
+            $n_counter = $this->input->post('n_counter');
+            $n_present_end = $this->input->post('n_present_end');
+            $n_total = $this->input->post('n_total');
+            $n_actual = $this->input->post('n_actual');
 
             $hosp_1m = $this->input->post('hosp_1m');
             $hosp_1f = $this->input->post('hosp_1f');
@@ -174,20 +189,20 @@ class neonatology extends CI_Controller
             $num_rapport = $this->neonatology_model->num_rapport()->num_rapport;
 
             $this->neonatology_model->fetch_data1(
-              $e_beds,
-              $e_present_start,
-              $e_admissions,
-              $e_referred,
-              $e_no_referred,
-              $e_discharges,
-              $e_authorized,
-              $e_abandoned,
-              $e_deaths,
-              $e_dis_referred,
-              $e_counter,
-              $e_present_end,
-              $e_total,
-              $e_actual,
+              $n_beds,
+              $n_present_start,
+              $n_admissions,
+              $n_referred,
+              $n_no_referred,
+              $n_discharges,
+              $n_authorized,
+              $n_abandoned,
+              $n_deaths,
+              $n_dis_referred,
+              $n_counter,
+              $n_present_end,
+              $n_total,
+              $n_actual,
               $num_rapport
             );
             $this->neonatology_model->fetch_data2(

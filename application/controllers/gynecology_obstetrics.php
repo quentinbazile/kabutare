@@ -6,11 +6,26 @@ class gynecology_obstetrics extends CI_Controller
     public function index()
     {
         $this->load->model('gynecology_obstetrics_model');
+        $this->load->model('home_model');
         if ($this->session->userdata('num_user') != '') {
+          if ($this->home_model->check_service('gynecology')) {
             $this->fetch();
+          } else {
+              $this->logout();
+              redirect('login', 'refresh');
+          }
         } else {
             redirect('login', 'refresh');
         }
+    }
+
+    public function logout(){
+      $user_data = $this->session->all_userdata();
+      foreach ($user_data as $key => $value){
+        $this->session->unset_userdata($key);
+      }
+      $this->session->sess_destroy();
+      redirect('login', 'refresh');
     }
 
     public function fetch()
@@ -136,7 +151,7 @@ class gynecology_obstetrics extends CI_Controller
           $delive_dystocic = $this->input->post('delive_dystocic');
           $delive_w_episiotomy = $this->input->post('delive_w_episiotomy');
           $delive_w_oxytocin = $this->input->post('delive_w_oxytocin');
-          $delive_complicated = $this->input->post('delive_w_complicated');
+          $delive_complicated = $this->input->post('delive_complicated');
           $birth_trauma = $this->input->post('birth_trauma');
           $cleft_palate = $this->input->post('cleft_palate');
           $omphalocel = $this->input->post('omphalocel');

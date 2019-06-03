@@ -70,7 +70,7 @@ class nut_rehab_model extends CI_Model
 
             'num_rapport' => $num_rapport
           ))
-          ->where('date_hospitalization_a', $this->session->userdata('update_date'));
+          ->where('date_hospitalization_a', $this->session->userdata('add_date'));
         return $this->db->update('Hospitalization_a');
       }
     }
@@ -381,6 +381,7 @@ class nut_rehab_model extends CI_Model
     public function show_table2()
     {
         return $this->db->where('date_hospitalization_bcde', $this->session->userdata('update_date'))
+                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Hospitalization_bcde')
                         ->row();
     }

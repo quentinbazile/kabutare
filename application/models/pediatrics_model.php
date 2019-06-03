@@ -935,6 +935,7 @@ class pediatrics_model extends CI_Model
     public function show_table2()
     {
         return $this->db->where('date_hospitalization_bcde', $this->session->userdata('update_date'))
+                        ->where('num_user', $this->session->userdata('num_user'))
                         ->get('Hospitalization_bcde')
                         ->row();
     }

@@ -18,7 +18,7 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Nutrition Rehab - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
@@ -27,7 +27,7 @@
 			      	<h4>Summary statistics by service</h4>
 						</div>
 						<div class="col-xs-6">
-					  	<h4>Payment for Hospitalization</h4>
+					  	<h4>Payment for hospitalization</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -58,7 +58,7 @@
 				          </tr>
                   <tr>
                     <td>3.1</td>
-				            <td class="left">Referred from the Health Center</td>
+				            <td class="left">Referred from the health center</td>
 				            <td><input type="number" min="0" name="nr_referred" class="form-control" value="<?php echo $table1->nr_referred; ?>"></td>
 				          </tr>
                   <tr>
@@ -73,7 +73,7 @@
 				          </tr>
                   <tr>
                     <td>4.1</td>
-				            <td class="left">Authorized/Cured</td>
+				            <td class="left">Authorized / Cured</td>
 				            <td><input type="number" min="0" name="nr_authorized" class="form-control" value="<?php echo $table1->nr_authorized; ?>"></td>
 				          </tr>
                   <tr>
@@ -125,7 +125,7 @@
 					        </thead>
 			        		<tbody>
 					          <tr>
-					            <td class="left">Insured discharges(mutuelle, etc)</td>
+					            <td class="left">Insured discharges (mutuelle, etc)</td>
 					            <td><input type="number" min="0" name="insured_dis" class="form-control" value="<?php echo $table2->insured_dis; ?>"></td>
 					          </tr>
 					          <tr>
@@ -198,7 +198,7 @@
 		        </thead>
 		        <tbody>
 		          <tr>
-		            <td class="center">1</td>
+		            <td>1</td>
 		            <td class="left">Hospitalized</td>
 		            <td><input type="number" min="0" name="hosp_1m" class="form-control" value="<?php echo $table2->hosp_1m; ?>"></td>
 		            <td><input type="number" min="0" name="hosp_1f" class="form-control" value="<?php echo $table2->hosp_1f; ?>"></td>
@@ -210,7 +210,7 @@
 								<td><input type="number" min="0" name="hosp_20f" class="form-control" value="<?php echo $table2->hosp_20f; ?>"></td>
 		          </tr>
 		          <tr>
-		            <td class="center">2</td>
+		            <td>2</td>
 		            <td class="left">Deaths</td>
 		            <td><input type="number" min="0" name="deaths_1m" class="form-control" value="<?php echo $table2->deaths_1m; ?>"></td>
 		            <td><input type="number" min="0" name="deaths_1f" class="form-control" value="<?php echo $table2->deaths_1f; ?>"></td>
@@ -239,7 +239,7 @@
 		        </thead>
 		        <tbody>
 		          <tr>
-		            <td class="center">1</td>
+		            <td>1</td>
 		            <td class="left">Screened for malnutrition</td>
 		            <td><input type="number" min="0" name="screened_6" class="form-control" value="<?php echo $table3->screened_6; ?>"></td>
 		            <td><input type="number" min="0" name="screened_7" class="form-control" value="<?php echo $table3->screened_7; ?>"></td>
@@ -248,7 +248,7 @@
 		            <td><input type="number" min="0" name="screened_15" class="form-control" value="<?php echo $table3->screened_15; ?>"></td>
 		          </tr>
 		          <tr>
-		            <td class="center">2</td>
+		            <td>2</td>
 		            <td class="left">Malnourished total</td>
 		            <td><input type="number" min="0" name="malnourished_6" class="form-control" value="<?php echo $table3->malnourished_6; ?>"></td>
 		            <td><input type="number" min="0" name="malnourished_7" class="form-control" value="<?php echo $table3->malnourished_7; ?>"></td>
@@ -257,7 +257,7 @@
 		            <td><input type="number" min="0" name="malnourished_15" class="form-control" value="<?php echo $table3->malnourished_15; ?>"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.1</td>
+		            <td>2.1</td>
 		            <td class="left">Malnutrition acute severe</td>
 		            <td><input type="number" min="0" name="acute_sev_6" class="form-control" value="<?php echo $table3->acute_sev_6; ?>"></td>
 		            <td><input type="number" min="0" name="acute_sev_7" class="form-control" value="<?php echo $table3->acute_sev_7; ?>"></td>
@@ -266,7 +266,7 @@
 		            <td><input type="number" min="0" name="acute_sev_15" class="form-control" value="<?php echo $table3->acute_sev_15; ?>"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.2</td>
+		            <td>2.2</td>
 		            <td class="left">Malnutrition acute moderate</td>
 		            <td><input type="number" min="0" name="acute_mod_6" class="form-control" value="<?php echo $table3->acute_mod_6; ?>"></td>
 		            <td><input type="number" min="0" name="acute_mod_7" class="form-control" value="<?php echo $table3->acute_mod_7; ?>"></td>
@@ -275,7 +275,7 @@
 		            <td><input type="number" min="0" name="acute_mod_15" class="form-control" value="<?php echo $table3->acute_mod_15; ?>"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.3</td>
+		            <td>2.3</td>
 		            <td class="left">Underweight severe</td>
 		            <td><input type="number" min="0" name="under_sev_6" class="form-control" value="<?php echo $table3->under_sev_6; ?>"></td>
 		            <td><input type="number" min="0" name="under_sev_7" class="form-control" value="<?php echo $table3->under_sev_7; ?>"></td>
@@ -284,7 +284,7 @@
                 <td class="grey"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.4</td>
+		            <td>2.4</td>
 		            <td class="left">Underweight moderate</td>
 		            <td><input type="number" min="0" name="under_mod_6" class="form-control" value="<?php echo $table3->under_mod_6; ?>"></td>
 		            <td><input type="number" min="0" name="under_mod_7" class="form-control" value="<?php echo $table3->under_mod_7; ?>"></td>
@@ -293,7 +293,7 @@
                 <td class="grey"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.5</td>
+		            <td>2.5</td>
 		            <td class="left">Malnutrition chronic severe (stunting)</td>
 		            <td><input type="number" min="0" name="chronic_sev_6" class="form-control" value="<?php echo $table3->chronic_sev_6; ?>"></td>
 		            <td><input type="number" min="0" name="chronic_sev_7" class="form-control" value="<?php echo $table3->chronic_sev_7; ?>"></td>
@@ -302,7 +302,7 @@
                 <td class="grey"></td>
 		          </tr>
               <tr>
-		            <td class="center">2.6</td>
+		            <td>2.6</td>
 		            <td class="left">Malnutrition chronic moderate (stunting)</td>
 		            <td><input type="number" min="0" name="chronic_mod_6" class="form-control" value="<?php echo $table3->chronic_mod_6; ?>"></td>
 		            <td><input type="number" min="0" name="chronic_mod_7" class="form-control" value="<?php echo $table3->chronic_mod_7; ?>"></td>
@@ -311,7 +311,7 @@
                 <td class="grey"></td>
 		          </tr>
               <tr>
-		            <td class="center">3</td>
+		            <td>3</td>
 		            <td class="left">Referred to outpatient malnutrition program</td>
 		            <td><input type="number" min="0" name="outpatient_6" class="form-control" value="<?php echo $table3->outpatient_6; ?>"></td>
 		            <td><input type="number" min="0" name="outpatient_7" class="form-control" value="<?php echo $table3->outpatient_7; ?>"></td>
@@ -320,7 +320,7 @@
 		            <td><input type="number" min="0" name="outpatient_15" class="form-control" value="<?php echo $table3->outpatient_15; ?>"></td>
 		          </tr>
               <tr>
-		            <td class="center">4</td>
+		            <td>4</td>
 		            <td class="left">Referred to inpatient malnutrition program (hospital)</td>
 		            <td><input type="number" min="0" name="inpatient_6" class="form-control" value="<?php echo $table3->inpatient_6; ?>"></td>
 		            <td><input type="number" min="0" name="inpatient_7" class="form-control" value="<?php echo $table3->inpatient_7; ?>"></td>
@@ -331,7 +331,7 @@
 		        </tbody>
 		      </table>
 					<br>
-					<h4> Inpatient Rehabilitation of malnourished</h4>
+					<h4> Inpatient rehabilitation of malnourished</h4>
           <table id="A21" class="center">
             <thead>
               <tr>

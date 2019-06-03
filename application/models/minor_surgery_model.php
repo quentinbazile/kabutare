@@ -25,7 +25,6 @@ class minor_surgery_model extends CI_Model
         $gs_other_urg,
         $gs_other_plan,
         $gs_total,
-        $cesarean_urg,
         $amputations_urg,
         $amputations_plan,
         $osteo_urg,

@@ -117,11 +117,11 @@ class family_planning_model extends CI_Model
       $auto_obs_active,
       $tubal_accep,
         $tubal_ppfp,
-        $tubal_stop,
+        $tubal_users,
       $tubal_active,
       $vasectomy_accep,
         $vasectomy_ppfp,
-        $vasectomy_stop,
+        $vasectomy_users,
       $vasectomy_active,
     $fp_new_acceptors,
       $new_fp_users,
@@ -400,11 +400,11 @@ class family_planning_model extends CI_Model
       $auto_obs_active,
       $tubal_accep,
         $tubal_ppfp,
-        $tubal_stop,
+        $tubal_users,
       $tubal_active,
       $vasectomy_accep,
         $vasectomy_ppfp,
-        $vasectomy_stop,
+        $vasectomy_users,
       $vasectomy_active,
     $fp_new_acceptors,
       $new_fp_users,
@@ -555,7 +555,6 @@ class family_planning_model extends CI_Model
         $this->db->set('acceptors_prog_35', $acceptors_prog_35);
 
         $this->db->where('date_family_planning', $this->session->userdata('update_date'));
-        $this->db->where('num_user', $this->session->userdata('num_user'));
         return $this->db->update('Family_Planning');
     }
 }

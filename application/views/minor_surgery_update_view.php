@@ -28,16 +28,16 @@
 		          <tr>
 		            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Type of Surgical Intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Urgent Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Planned Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Post-Surgical Infection Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Type of surgical intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Urgent interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Planned interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Post-surgical infection total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		          </tr>
 		        </thead>
-		        <tbody class="center">
+		        <tbody>
 		          <tr>
 		            <td rowspan="6">1</td>
-		            <td rowspan="6">General Surgery</td>
+		            <td rowspan="6">General surgery</td>
 		            <td class="left">1. Appendicectomy</td>
 		            <td><input type="number" min="0" name="appendice_urg" class="form-control" value="<?php echo $table1->appendice_urg; ?>"></td>
 		            <td><input type="number" min="0" name="appendice_plan" class="form-control" value="<?php echo $table1->appendice_plan; ?>"></td>
@@ -64,7 +64,7 @@
 		            <td><input type="number" min="0" name="adeno_plan" class="form-control" value="<?php echo $table1->adeno_plan; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">6. General Surgery Other</td>
+		            <td class="left">6. General surgery other</td>
 		            <td><input type="number" min="0" name="gs_other_urg" class="form-control" value="<?php echo $table1->gs_other_urg; ?>"></td>
 		            <td><input type="number" min="0" name="gs_other_plan" class="form-control" value="<?php echo $table1->gs_other_plan; ?>"></td>
 							</tr>
@@ -82,12 +82,12 @@
 		            <td><input type="number" min="0" name="osteo_plan" class="form-control" value="<?php echo $table1->osteo_plan; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">3. Fracture Without Implant</td>
+		            <td class="left">3. Fracture without implant</td>
 		            <td><input type="number" min="0" name="fracture_urg" class="form-control" value="<?php echo $table1->fracture_urg; ?>"></td>
 		            <td><input type="number" min="0" name="fracture_plan" class="form-control" value="<?php echo $table1->fracture_plan; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">4. Orthopedic Surgery Other</td>
+		            <td class="left">4. Orthopedic surgery other</td>
 		            <td><input type="number" min="0" name="ortho_other_urg" class="form-control" value="<?php echo $table1->ortho_other_urg; ?>"></td>
 		            <td><input type="number" min="0" name="ortho_other_plan" class="form-control" value="<?php echo $table1->ortho_other_plan; ?>"></td>
 							</tr>
@@ -115,38 +115,38 @@
 		            <td><input type="number" min="0" name="trauma_plan" class="form-control" value="<?php echo $table1->trauma_plan; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">5. Ophthalmological Surgery Other</td>
+		            <td class="left">5. Ophthalmological surgery other</td>
 		            <td><input type="number" min="0" name="oph_other_urg" class="form-control" value="<?php echo $table1->oph_other_urg; ?>"></td>
 		            <td><input type="number" min="0" name="oph_other_plan" class="form-control" value="<?php echo $table1->oph_other_plan; ?>"></td>
 							</tr>
 							<tr>
 		            <td rowspan="2">4</td>
-		            <td rowspan="2">Plastic Surgery</td>
-		            <td class="left">1. Cleft Palate, Cleft Lip</td>
+		            <td rowspan="2">Plastic surgery</td>
+		            <td class="left">1. Cleft palate, cleft lip</td>
 		            <td><input type="number" min="0" name="cleft_urg" class="form-control" value="<?php echo $table1->cleft_urg; ?>"></td>
 		            <td><input type="number" min="0" name="cleft_plan" class="form-control" value="<?php echo $table1->cleft_plan; ?>"></td>
 		            <td rowspan="2"><input type="number" min="0" name="plastic_total" class="form-control" value="<?php echo $table1->plastic_total; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">2. Other Plastic Surgery</td>
+		            <td class="left">2. Other plastic surgery</td>
 		            <td><input type="number" min="0" name="plastic_other_urg" class="form-control" value="<?php echo $table1->plastic_other_urg; ?>"></td>
 		            <td><input type="number" min="0" name="plastic_other_plan" class="form-control" value="<?php echo $table1->plastic_other_plan; ?>"></td>
 							</tr>
 							<tr>
 		            <td rowspan="3">5</td>
-		            <td colspan="2">SURGICAL INTERVENTIONS TOTAL</td>
+		            <td colspan="2">Surgical Interventions Total</td>
 		            <td><input type="number" min="0" name="total_urg" class="form-control" value="<?php echo $table1->total_urg; ?>"></td>
 		            <td><input type="number" min="0" name="total_plan" class="form-control" value="<?php echo $table1->total_plan; ?>"></td>
 		            <td rowspan="3" class="grey"></td>
 							</tr>
 							<tr>
-								<td rowspan="2">Of Which</td>
-		            <td class="left">1. Major Surgery</td>
+								<td rowspan="2">Of which</td>
+		            <td class="left">1. Major surgery</td>
 		            <td><input type="number" min="0" name="major_urg" class="form-control" value="<?php echo $table1->major_urg; ?>"></td>
 		            <td><input type="number" min="0" name="major_plan" class="form-control" value="<?php echo $table1->major_plan; ?>"></td>
 							</tr>
 							<tr>
-		            <td class="left">2. Minor Surgery</td>
+		            <td class="left">2. Minor surgery</td>
 		            <td><input type="number" min="0" name="minor_urg" class="form-control" value="<?php echo $table1->minor_urg; ?>"></td>
 		            <td><input type="number" min="0" name="minor_plan" class="form-control" value="<?php echo $table1->minor_plan; ?>"></td>
 							</tr>
@@ -165,22 +165,22 @@
 		        <tbody>
 		          <tr>
 								<td>1</td>
-		            <td class="left">General Anesthesia</td>
+		            <td class="left">General anesthesia</td>
 		            <td><input type="number" min="0" name="general" class="form-control" value="<?php echo $table2->general; ?>"></td>
 		          </tr>
 		          <tr>
 								<td>2</td>
-		            <td class="left">Regional Anesthesia</td>
+		            <td class="left">Regional anesthesia</td>
 		            <td><input type="number" min="0" name="regional" class="form-control" value="<?php echo $table2->regional; ?>"></td>
 		          </tr>
 							<tr>
 								<td>3</td>
-		            <td class="left">Local Anesthesia</td>
+		            <td class="left">Local anesthesia</td>
 		            <td><input type="number" min="0" name="local" class="form-control" value="<?php echo $table2->local; ?>"></td>
 		          </tr>
 							<tr>
 								<td>4</td>
-		            <td class="left">Other Types of Anesthesia</td>
+		            <td class="left">Other types of anesthesia</td>
 		            <td><input type="number" min="0" name="other_type" class="form-control" value="<?php echo $table2->other_type; ?>"></td>
 		          </tr>
 		        </tbody>

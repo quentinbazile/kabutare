@@ -24,10 +24,10 @@
         <form method="post" action="" class="form-inline">
 					<div class="row">
 						<div class="col-xs-7">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
 						<div class="col-xs-5">
-					  	<h4>Health Insurance Status of New Cases</h4>
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control" value="<?php echo $table1->insured; ?>"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -154,7 +154,7 @@
 						</div>
 						<br>
 						<div class="row">
-							<h4>New cases of priority health problems in General OPD</h4>
+							<h4>New cases of priority health problems in general OPD</h4>
 						</div>
 						<div class="row">
 							<table id="E2" class="center">
@@ -286,8 +286,8 @@
 				            <td><input type="number" min="0" name="giardia_20f" class="form-control" value="<?php echo $table1->giardia_20f; ?>"></td>
 				          </tr>
 				          <tr>
-				            <td class="center">12</td>
-				            <td>Taenia</td>
+				            <td>12</td>
+				            <td class="left">Taenia</td>
 				            <td><input type="number" min="0" name="taenia_5m" class="form-control" value="<?php echo $table1->taenia_5m; ?>"></td>
 				            <td><input type="number" min="0" name="taenia_5f" class="form-control" value="<?php echo $table1->taenia_5f; ?>"></td>
 				            <td><input type="number" min="0" name="taenia_19m" class="form-control" value="<?php echo $table1->taenia_19m; ?>"></td>
@@ -357,7 +357,7 @@
 				          </tr>
 				          <tr>
 				            <td>19</td>
-				            <td class="left">Influenza/Syndrome gripal</td>
+				            <td class="left">Influenza / Syndrome gripal</td>
 				            <td><input type="number" min="0" name="grip_5m" class="form-control" value="<?php echo $table1->grip_5m; ?>"></td>
 				            <td><input type="number" min="0" name="grip_5f" class="form-control" value="<?php echo $table1->grip_5f; ?>"></td>
 				            <td><input type="number" min="0" name="grip_19m" class="form-control" value="<?php echo $table1->grip_19m; ?>"></td>
@@ -507,7 +507,7 @@
 				          </tr>
 				          <tr>
 				            <td>34</td>
-				            <td class="left">Viral hepatitis (A, B, Chronic & others)</td>
+				            <td class="left">Viral hepatitis (A, B, chronic & others)</td>
 				            <td><input type="number" min="0" name="hepatitis_5m" class="form-control" value="<?php echo $table1->hepatitis_5m; ?>"></td>
 				            <td><input type="number" min="0" name="hepatitis_5f" class="form-control" value="<?php echo $table1->hepatitis_5f; ?>"></td>
 				            <td><input type="number" min="0" name="hepatitis_19m" class="form-control" value="<?php echo $table1->hepatitis_19m; ?>"></td>
@@ -524,7 +524,7 @@
 				      	<h4>Summary statistics by service</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Payment for Hospitalization</h4>
+						  	<h4>Payment for hospitalization</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -622,7 +622,7 @@
   					        </thead>
   			        		<tbody>
   					          <tr>
-  					            <td class="left">Insured discharges(mutuelle, etc)</td>
+  					            <td class="left">Insured discharges (mutuelle, etc)</td>
   					            <td><input type="number" min="0" name="insured_dis" class="form-control" value="<?php echo $table3->insured_dis; ?>"></td>
   					          </tr>
   					          <tr>
@@ -695,7 +695,7 @@
 			        </thead>
 			        <tbody>
 			          <tr>
-			            <td class="center">1</td>
+			            <td>1</td>
 			            <td class="left">Hospitalized</td>
 			            <td><input type="number" min="0" name="hosp_1m" class="form-control" value="<?php echo $table3->hosp_1m; ?>"></td>
 			            <td><input type="number" min="0" name="hosp_1f" class="form-control" value="<?php echo $table3->hosp_1f; ?>"></td>
@@ -707,7 +707,7 @@
 			            <td><input type="number" min="0" name="hosp_20f" class="form-control" value="<?php echo $table3->hosp_20f; ?>"></td>
 			          </tr>
 			          <tr>
-			            <td class="center">2</td>
+			            <td>2</td>
 			            <td class="left">Deaths</td>
 			            <td><input type="number" min="0" name="deaths_1m" class="form-control" value="<?php echo $table3->deaths_1m; ?>"></td>
 			            <td><input type="number" min="0" name="deaths_1f" class="form-control" value="<?php echo $table3->deaths_1f; ?>"></td>
@@ -755,7 +755,7 @@
 			        </thead>
 			        <tbody>
 			          <tr>
-			            <td class="center">1</td>
+			            <td>1</td>
 			            <td class="left">Malaria simple</td>
 			            <td><input type="number" min="0" name="malaria_sim_hos5m" class="form-control" value="<?php echo $table3->malaria_sim_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="malaria_sim_hos5f" class="form-control" value="<?php echo $table3->malaria_sim_hos5f; ?>"></td>
@@ -771,7 +771,7 @@
                   <td class="grey"></td>
 			          </tr>
 			          <tr>
-			            <td class="center">2</td>
+			            <td>2</td>
 			            <td class="left">Malaria severe</td>
 			            <td><input type="number" min="0" name="malaria_sev_hos5m" class="form-control" value="<?php echo $table3->malaria_sev_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="malaria_sev_hos5f" class="form-control" value="<?php echo $table3->malaria_sev_hos5f; ?>"></td>
@@ -787,7 +787,7 @@
 			            <td><input type="number" min="0" name="malaria_sev_deaths20f" class="form-control" value="<?php echo $table3->malaria_sev_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">3</td>
+			            <td>3</td>
 			            <td class="left">Borreliosis</td>
 			            <td><input type="number" min="0" name="borreliosis_hos5m" class="form-control" value="<?php echo $table3->borreliosis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="borreliosis_hos5f" class="form-control" value="<?php echo $table3->borreliosis_hos5f; ?>"></td>
@@ -803,7 +803,7 @@
 			            <td><input type="number" min="0" name="borreliosis_deaths20f" class="form-control" value="<?php echo $table3->borreliosis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">4</td>
+			            <td>4</td>
 			            <td class="left">Pneumonia simple</td>
 			            <td><input type="number" min="0" name="pneumonia_sim_hos5m" class="form-control" value="<?php echo $table3->pneumonia_sim_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="pneumonia_sim_hos5f" class="form-control" value="<?php echo $table3->pneumonia_sim_hos5f; ?>"></td>
@@ -819,7 +819,7 @@
 			            <td><input type="number" min="0" name="pneumonia_sim_deaths20f" class="form-control" value="<?php echo $table3->pneumonia_sim_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">5</td>
+			            <td>5</td>
 			            <td class="left">Pneumonia severe</td>
 			            <td><input type="number" min="0" name="pneumonia_sev_hos5m" class="form-control" value="<?php echo $table3->pneumonia_sev_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="pneumonia_sev_hos5f" class="form-control" value="<?php echo $table3->pneumonia_sev_hos5f; ?>"></td>
@@ -835,7 +835,7 @@
 			            <td><input type="number" min="0" name="pneumonia_sev_deaths20f" class="form-control" value="<?php echo $table3->pneumonia_sev_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">6</td>
+			            <td>6</td>
 			            <td class="left">Pleurisy (non-tuberculosis)</td>
 			            <td><input type="number" min="0" name="pleurisy_hos5m" class="form-control" value="<?php echo $table3->pleurisy_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="pleurisy_hos5f" class="form-control" value="<?php echo $table3->pleurisy_hos5f; ?>"></td>
@@ -851,8 +851,8 @@
 			            <td><input type="number" min="0" name="pleurisy_deaths20f" class="form-control" value="<?php echo $table3->pleurisy_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">7</td>
-			            <td class="left">Respratory infection acute (ARI) Other</td>
+			            <td>7</td>
+			            <td class="left">Respratory infection acute (ARI) other</td>
 			            <td><input type="number" min="0" name="ari_hos5m" class="form-control" value="<?php echo $table3->ari_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="ari_hos5f" class="form-control" value="<?php echo $table3->ari_hos5f; ?>"></td>
 			            <td><input type="number" min="0" name="ari_hos19m" class="form-control" value="<?php echo $table3->ari_hos19m; ?>"></td>
@@ -867,7 +867,7 @@
 			            <td><input type="number" min="0" name="ari_deaths20f" class="form-control" value="<?php echo $table3->ari_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">8</td>
+			            <td>8</td>
 			            <td class="left">Diarrhea bloody (dysentery)</td>
 			            <td><input type="number" min="0" name="diarr_bloody_hos5m" class="form-control" value="<?php echo $table3->diarr_bloody_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="diarr_bloody_hos5f" class="form-control" value="<?php echo $table3->diarr_bloody_hos5f; ?>"></td>
@@ -883,7 +883,7 @@
 			            <td><input type="number" min="0" name="diarr_bloody_deaths20f" class="form-control" value="<?php echo $table3->diarr_bloody_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">9</td>
+			            <td>9</td>
 			            <td class="left">Diarrhea with dehydration</td>
 			            <td><input type="number" min="0" name="diarr_dehy_hos5m" class="form-control" value="<?php echo $table3->diarr_dehy_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="diarr_dehy_hos5f" class="form-control" value="<?php echo $table3->diarr_dehy_hos5f; ?>"></td>
@@ -899,7 +899,7 @@
 			            <td><input type="number" min="0" name="diarr_dehy_deaths20f" class="form-control" value="<?php echo $table3->diarr_dehy_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">10</td>
+			            <td>10</td>
 			            <td class="left">Diarrhea no dehydration</td>
 			            <td><input type="number" min="0" name="diarr_no_dehy_hos5m" class="form-control" value="<?php echo $table3->diarr_no_dehy_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="diarr_no_dehy_hos5f" class="form-control" value="<?php echo $table3->diarr_no_dehy_hos5f; ?>"></td>
@@ -915,7 +915,7 @@
 			            <td><input type="number" min="0" name="diarr_no_dehy_deaths20f" class="form-control" value="<?php echo $table3->diarr_no_dehy_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">11</td>
+			            <td>11</td>
 			            <td class="left">Cholera</td>
 			            <td><input type="number" min="0" name="cholera_hos5m" class="form-control" value="<?php echo $table3->cholera_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="cholera_hos5f" class="form-control" value="<?php echo $table3->cholera_hos5f; ?>"></td>
@@ -931,7 +931,7 @@
 			            <td><input type="number" min="0" name="cholera_deaths20f" class="form-control" value="<?php echo $table3->cholera_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">12</td>
+			            <td>12</td>
 			            <td class="left">Typhoid fever (salmonellosis)</td>
 			            <td><input type="number" min="0" name="typhoid_hos5m" class="form-control" value="<?php echo $table3->typhoid_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="typhoid_hos5f" class="form-control" value="<?php echo $table3->typhoid_hos5f; ?>"></td>
@@ -947,7 +947,7 @@
 			            <td><input type="number" min="0" name="typhoid_deaths20f" class="form-control" value="<?php echo $table3->typhoid_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">13</td>
+			            <td>13</td>
 			            <td class="left">Meningitis</td>
 			            <td><input type="number" min="0" name="meningitis_hos5m" class="form-control" value="<?php echo $table3->meningitis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="meningitis_hos5f" class="form-control" value="<?php echo $table3->meningitis_hos5f; ?>"></td>
@@ -963,7 +963,7 @@
 			            <td><input type="number" min="0" name="meningitis_deaths20f" class="form-control" value="<?php echo $table3->meningitis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">14</td>
+			            <td>14</td>
 			            <td class="left">Measles</td>
 			            <td><input type="number" min="0" name="measles_hos5m" class="form-control" value="<?php echo $table3->measles_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="measles_hos5f" class="form-control" value="<?php echo $table3->measles_hos5f; ?>"></td>
@@ -979,7 +979,7 @@
 			            <td><input type="number" min="0" name="measles_deaths20f" class="form-control" value="<?php echo $table3->measles_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">15</td>
+			            <td>15</td>
 			            <td class="left">TB bacteriologically confirmed</td>
 			            <td><input type="number" min="0" name="tb_conf_hos5m" class="form-control" value="<?php echo $table3->tb_conf_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="tb_conf_hos5f" class="form-control" value="<?php echo $table3->tb_conf_hos5f; ?>"></td>
@@ -995,7 +995,7 @@
 			            <td><input type="number" min="0" name="tb_conf_deaths20f" class="form-control" value="<?php echo $table3->tb_conf_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">16</td>
+			            <td>16</td>
 			            <td class="left">TB clinically diagnosed</td>
 			            <td><input type="number" min="0" name="tb_diag_hos5m" class="form-control" value="<?php echo $table3->tb_diag_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="tb_diag_hos5f" class="form-control" value="<?php echo $table3->tb_diag_hos5f; ?>"></td>
@@ -1011,7 +1011,7 @@
 			            <td><input type="number" min="0" name="tb_diag_deaths20f" class="form-control" value="<?php echo $table3->tb_diag_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">17</td>
+			            <td>17</td>
 			            <td class="left">Fever chronic (>1 month)</td>
 			            <td><input type="number" min="0" name="fever_hos5m" class="form-control" value="<?php echo $table3->fever_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="fever_hos5f" class="form-control" value="<?php echo $table3->fever_hos5f; ?>"></td>
@@ -1027,7 +1027,7 @@
 			            <td><input type="number" min="0" name="fever_deaths20f" class="form-control" value="<?php echo $table3->fever_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">18</td>
+			            <td>18</td>
 			            <td class="left">Encephalitis</td>
 			            <td><input type="number" min="0" name="encephalitis_hos5m" class="form-control" value="<?php echo $table3->encephalitis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="encephalitis_hos5f" class="form-control" value="<?php echo $table3->encephalitis_hos5f; ?>"></td>
@@ -1043,7 +1043,7 @@
 			            <td><input type="number" min="0" name="encephalitis_deaths20f" class="form-control" value="<?php echo $table3->encephalitis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">19</td>
+			            <td>19</td>
 			            <td class="left">Meningitis cryptococal</td>
 			            <td><input type="number" min="0" name="mening_crypto_hos5m" class="form-control" value="<?php echo $table3->mening_crypto_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="mening_crypto_hos5f" class="form-control" value="<?php echo $table3->mening_crypto_hos5f; ?>"></td>
@@ -1059,7 +1059,7 @@
 			            <td><input type="number" min="0" name="mening_crypto_deaths20f" class="form-control" value="<?php echo $table3->mening_crypto_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">20</td>
+			            <td>20</td>
 			            <td class="left">Skin infections</td>
 			            <td><input type="number" min="0" name="skin_hos5m" class="form-control" value="<?php echo $table3->skin_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="skin_hos5f" class="form-control" value="<?php echo $table3->skin_hos5f; ?>"></td>
@@ -1075,7 +1075,7 @@
 			            <td><input type="number" min="0" name="skin_deaths20f" class="form-control" value="<?php echo $table3->skin_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">21</td>
+			            <td>21</td>
 			            <td class="left">Diarrhea chronic opportunistic infection</td>
 			            <td><input type="number" min="0" name="diarr_chronic_hos5m" class="form-control" value="<?php echo $table3->diarr_chronic_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="diarr_chronic_hos5f" class="form-control" value="<?php echo $table3->diarr_chronic_hos5f; ?>"></td>
@@ -1091,8 +1091,8 @@
 			            <td><input type="number" min="0" name="diarr_chronic_deaths20f" class="form-control" value="<?php echo $table3->diarr_chronic_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">22</td>
-			            <td class="left">HIV oppotunistic infections Other</td>
+			            <td>22</td>
+			            <td class="left">HIV oppotunistic infections other</td>
 									<td><input type="number" min="0" name="hiv_hos5m" class="form-control" value="<?php echo $table3->hiv_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="hiv_hos5f" class="form-control" value="<?php echo $table3->hiv_hos5f; ?>"></td>
 			            <td><input type="number" min="0" name="hiv_hos19m" class="form-control" value="<?php echo $table3->hiv_hos19m; ?>"></td>
@@ -1107,7 +1107,7 @@
 			            <td><input type="number" min="0" name="hiv_deaths20f" class="form-control" value="<?php echo $table3->hiv_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">23</td>
+			            <td>23</td>
 			            <td class="left">Trauma head</td>
 									<td><input type="number" min="0" name="trauma_hos5m" class="form-control" value="<?php echo $table3->trauma_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="trauma_hos5f" class="form-control" value="<?php echo $table3->trauma_hos5f; ?>"></td>
@@ -1123,7 +1123,7 @@
 			            <td><input type="number" min="0" name="trauma_deaths20f" class="form-control" value="<?php echo $table3->trauma_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">24</td>
+			            <td>24</td>
 			            <td class="left">Ruptured spleen</td>
 									<td><input type="number" min="0" name="spleen_hos5m" class="form-control" value="<?php echo $table3->spleen_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="spleen_hos5f" class="form-control" value="<?php echo $table3->spleen_hos5f; ?>"></td>
@@ -1139,7 +1139,7 @@
 			            <td><input type="number" min="0" name="spleen_deaths20f" class="form-control" value="<?php echo $table3->spleen_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">25</td>
+			            <td>25</td>
 			            <td class="left">Fractures, open</td>
 									<td><input type="number" min="0" name="frac_open_hos5m" class="form-control" value="<?php echo $table3->frac_open_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="frac_open_hos5f" class="form-control" value="<?php echo $table3->frac_open_hos5f; ?>"></td>
@@ -1155,7 +1155,7 @@
 			            <td><input type="number" min="0" name="frac_open_deaths20f" class="form-control" value="<?php echo $table3->frac_open_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">26</td>
+			            <td>26</td>
 			            <td class="left">Fractures, internal</td>
 									<td><input type="number" min="0" name="frac_int_hos5m" class="form-control" value="<?php echo $table3->frac_int_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="frac_int_hos5f" class="form-control" value="<?php echo $table3->frac_int_hos5f; ?>"></td>
@@ -1171,7 +1171,7 @@
 			            <td><input type="number" min="0" name="frac_int_deaths20f" class="form-control" value="<?php echo $table3->frac_int_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">27</td>
+			            <td>27</td>
 			            <td class="left">Trauma other</td>
 									<td><input type="number" min="0" name="trauma_other_hos5m" class="form-control" value="<?php echo $table3->trauma_other_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="trauma_other_hos5f" class="form-control" value="<?php echo $table3->trauma_other_hos5f; ?>"></td>
@@ -1187,7 +1187,7 @@
 			            <td><input type="number" min="0" name="trauma_other_deaths20f" class="form-control" value="<?php echo $table3->trauma_other_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">28</td>
+			            <td>28</td>
 			            <td class="left">Burns</td>
 									<td><input type="number" min="0" name="burns_hos5m" class="form-control" value="<?php echo $table3->burns_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="burns_hos5f" class="form-control" value="<?php echo $table3->burns_hos5f; ?>"></td>
@@ -1203,7 +1203,7 @@
 			            <td><input type="number" min="0" name="burns_deaths20f" class="form-control" value="<?php echo $table3->burns_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">29</td>
+			            <td>29</td>
 			            <td class="left">Hepatitis</td>
 									<td><input type="number" min="0" name="hepatitis_hos5m" class="form-control" value="<?php echo $table3->hepatitis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="hepatitis_hos5f" class="form-control" value="<?php echo $table3->hepatitis_hos5f; ?>"></td>
@@ -1219,7 +1219,7 @@
 			            <td><input type="number" min="0" name="hepatitis_deaths20f" class="form-control" value="<?php echo $table3->hepatitis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">30</td>
+			            <td>30</td>
 			            <td class="left">Cirrhosis of the liver</td>
 									<td><input type="number" min="0" name="cirrhosis_hos5m" class="form-control" value="<?php echo $table3->cirrhosis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="cirrhosis_hos5f" class="form-control" value="<?php echo $table3->cirrhosis_hos5f; ?>"></td>
@@ -1235,7 +1235,7 @@
 			            <td><input type="number" min="0" name="cirrhosis_deaths20f" class="form-control" value="<?php echo $table3->cirrhosis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">31</td>
+			            <td>31</td>
 			            <td class="left">Digestive tract hemorrhages</td>
 									<td><input type="number" min="0" name="digestive_hos5m" class="form-control" value="<?php echo $table3->digestive_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="digestive_hos5f" class="form-control" value="<?php echo $table3->digestive_hos5f; ?>"></td>
@@ -1251,7 +1251,7 @@
 			            <td><input type="number" min="0" name="digestive_deaths20f" class="form-control" value="<?php echo $table3->digestive_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">32</td>
+			            <td>32</td>
 			            <td class="left">Gastritis</td>
 									<td><input type="number" min="0" name="gastritis_hos5m" class="form-control" value="<?php echo $table3->gastritis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="gastritis_hos5f" class="form-control" value="<?php echo $table3->gastritis_hos5f; ?>"></td>
@@ -1267,7 +1267,7 @@
 			            <td><input type="number" min="0" name="gastritis_deaths20f" class="form-control" value="<?php echo $table3->gastritis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">33</td>
+			            <td>33</td>
 			            <td class="left">Ulcer, gastro-duodenal</td>
 									<td><input type="number" min="0" name="ulcer_hos5m" class="form-control" value="<?php echo $table3->ulcer_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="ulcer_hos5f" class="form-control" value="<?php echo $table3->ulcer_hos5f; ?>"></td>
@@ -1283,7 +1283,7 @@
 			            <td><input type="number" min="0" name="ulcer_deaths20f" class="form-control" value="<?php echo $table3->ulcer_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">34</td>
+			            <td>34</td>
 			            <td class="left">Appendicitis</td>
 									<td><input type="number" min="0" name="appendi_hos5m" class="form-control" value="<?php echo $table3->appendi_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="appendi_hos5f" class="form-control" value="<?php echo $table3->appendi_hos5f; ?>"></td>
@@ -1299,7 +1299,7 @@
 			            <td><input type="number" min="0" name="appendi_deaths20f" class="form-control" value="<?php echo $table3->appendi_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">35</td>
+			            <td>35</td>
 			            <td class="left">Hernia</td>
 									<td><input type="number" min="0" name="hernia_hos5m" class="form-control" value="<?php echo $table3->hernia_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="hernia_hos5f" class="form-control" value="<?php echo $table3->hernia_hos5f; ?>"></td>
@@ -1315,7 +1315,7 @@
 			            <td><input type="number" min="0" name="hernia_deaths20f" class="form-control" value="<?php echo $table3->hernia_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">36</td>
+			            <td>36</td>
 			            <td class="left">Peritonitis (non-tuberculosis)</td>
 									<td><input type="number" min="0" name="peritonitis_hos5m" class="form-control" value="<?php echo $table3->peritonitis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="peritonitis_hos5f" class="form-control" value="<?php echo $table3->peritonitis_hos5f; ?>"></td>
@@ -1331,7 +1331,7 @@
 			            <td><input type="number" min="0" name="peritonitis_deaths20f" class="form-control" value="<?php echo $table3->peritonitis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">37</td>
+			            <td>37</td>
 			            <td class="left">Intestinal occlusion</td>
 									<td><input type="number" min="0" name="intestinal_hos5m" class="form-control" value="<?php echo $table3->intestinal_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="intestinal_hos5f" class="form-control" value="<?php echo $table3->intestinal_hos5f; ?>"></td>
@@ -1347,7 +1347,7 @@
 			            <td><input type="number" min="0" name="intestinal_deaths20f" class="form-control" value="<?php echo $table3->intestinal_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">38</td>
+			            <td>38</td>
 			            <td class="left">Urinary tract infections</td>
 									<td><input type="number" min="0" name="urinary_hos5m" class="form-control" value="<?php echo $table3->urinary_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="urinary_hos5f" class="form-control" value="<?php echo $table3->urinary_hos5f; ?>"></td>
@@ -1363,7 +1363,7 @@
 			            <td><input type="number" min="0" name="urinary_deaths20f" class="form-control" value="<?php echo $table3->urinary_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">39</td>
+			            <td>39</td>
 			            <td class="left">Bone infections (including osteomyelitis)</td>
 									<td><input type="number" min="0" name="bone_inf_hos5m" class="form-control" value="<?php echo $table3->bone_inf_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="bone_inf_hos5f" class="form-control" value="<?php echo $table3->bone_inf_hos5f; ?>"></td>
@@ -1379,7 +1379,7 @@
 			            <td><input type="number" min="0" name="bone_inf_deaths20f" class="form-control" value="<?php echo $table3->bone_inf_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">40</td>
+			            <td>40</td>
 			            <td class="left">Bone and joint disease other</td>
 									<td><input type="number" min="0" name="bone_other_hos5m" class="form-control" value="<?php echo $table3->bone_other_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="bone_other_hos5f" class="form-control" value="<?php echo $table3->bone_other_hos5f; ?>"></td>
@@ -1395,7 +1395,7 @@
 			            <td><input type="number" min="0" name="bone_other_deaths20f" class="form-control" value="<?php echo $table3->bone_other_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">41</td>
+			            <td>41</td>
 			            <td class="left">Acute flaccid paralysis (polio)</td>
 									<td><input type="number" min="0" name="acute_hos5m" class="form-control" value="<?php echo $table3->acute_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="acute_hos5f" class="form-control" value="<?php echo $table3->acute_hos5f; ?>"></td>
@@ -1411,7 +1411,7 @@
 			            <td><input type="number" min="0" name="acute_deaths20f" class="form-control" value="<?php echo $table3->acute_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">42</td>
+			            <td>42</td>
 			            <td class="left">Gynecological problems</td>
 			            <td class="grey"></td>
                   <td class="grey"></td>
@@ -1427,7 +1427,7 @@
 			            <td><input type="number" min="0" name="gyneco_deaths20f" class="form-control" value="<?php echo $table3->gyneco_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">43</td>
+			            <td>43</td>
 			            <td class="left">Mastoditis</td>
 									<td><input type="number" min="0" name="mastoditis_hos5m" class="form-control" value="<?php echo $table3->mastoditis_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="mastoditis_hos5f" class="form-control" value="<?php echo $table3->mastoditis_hos5f; ?>"></td>
@@ -1443,7 +1443,7 @@
 			            <td><input type="number" min="0" name="mastoditis_deaths20f" class="form-control" value="<?php echo $table3->mastoditis_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">44</td>
+			            <td>44</td>
 			            <td class="left">Tetanus</td>
 									<td><input type="number" min="0" name="tetanus_hos5m" class="form-control" value="<?php echo $table3->tetanus_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="tetanus_hos5f" class="form-control" value="<?php echo $table3->tetanus_hos5f; ?>"></td>
@@ -1459,7 +1459,7 @@
 			            <td><input type="number" min="0" name="tetanus_deaths20f" class="form-control" value="<?php echo $table3->tetanus_deaths20f; ?>"></td>
 			          </tr>
                 <tr>
-			            <td class="center">45</td>
+			            <td>45</td>
 			            <td class="left">Cancer all</td>
 									<td><input type="number" min="0" name="cancer_hos5m" class="form-control" value="<?php echo $table3->cancer_hos5m; ?>"></td>
 			            <td><input type="number" min="0" name="cancer_hos5f" class="form-control" value="<?php echo $table3->cancer_hos5f; ?>"></td>

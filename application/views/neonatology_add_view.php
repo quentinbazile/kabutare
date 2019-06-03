@@ -18,7 +18,7 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Neonatology - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
@@ -27,7 +27,7 @@
 			      	<h4>Summary statistics by service</h4>
 						</div>
 						<div class="col-xs-6">
-					  	<h4>Payment for Hospitalization</h4>
+					  	<h4>Payment for hospitalization</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -58,7 +58,7 @@
 				          </tr>
                   <tr>
                     <td>3.1</td>
-				            <td class="left">Referred from the Health Center</td>
+				            <td class="left">Referred from the health center</td>
 				            <td><input type="number" min="0" name="n_referred" class="form-control"></td>
 				          </tr>
                   <tr>
@@ -73,7 +73,7 @@
 				          </tr>
                   <tr>
                     <td>4.1</td>
-				            <td class="left">Authorized/Cured</td>
+				            <td class="left">Authorized / Cured</td>
 				            <td><input type="number" min="0" name="n_authorized" class="form-control"></td>
 				          </tr>
                   <tr>
@@ -125,7 +125,7 @@
 					        </thead>
 			        		<tbody>
 					          <tr>
-					            <td class="left">Insured discharges(mutuelle, etc)</td>
+					            <td class="left">Insured discharges (mutuelle, etc)</td>
 					            <td><input type="number" min="0" name="insured_dis" class="form-control"></td>
 					          </tr>
 					          <tr>
@@ -226,13 +226,13 @@
 		        </thead>
 		        <tbody>
 		          <tr>
-		            <td class="center">1</td>
+		            <td>1</td>
 		            <td class="left">Hospitalized</td>
 		            <td><input type="number" min="0" name="hosp_1m" class="form-control"></td>
 		            <td><input type="number" min="0" name="hosp_1f" class="form-control"></td>
 		          </tr>
 		          <tr>
-		            <td class="center">2</td>
+		            <td>2</td>
 		            <td class="left">Deaths</td>
 		            <td><input type="number" min="0" name="deaths_1m" class="form-control"></td>
 		            <td><input type="number" min="0" name="deaths_1f" class="form-control"></td>
@@ -268,7 +268,7 @@
 		        </thead>
 		        <tbody>
 		          <tr>
-		            <td class="center">1</td>
+		            <td>1</td>
 		            <td class="left">Asphyxia</td>
 		            <td><input type="number" min="0" name="asphyxia_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="asphyxia_ad7f" class="form-control"></td>
@@ -280,7 +280,7 @@
 		            <td><input type="number" min="0" name="asphyxia_d8f" class="form-control"></td>
 		          </tr>
 		          <tr>
-		            <td class="center">2</td>
+		            <td>2</td>
 		            <td class="left">Prematurity (22 to 37 weeks)</td>
 		            <td><input type="number" min="0" name="prematurity_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="prematurity_ad7f" class="form-control"></td>
@@ -292,7 +292,7 @@
 		            <td><input type="number" min="0" name="prematurity_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">3</td>
+		            <td>3</td>
 		            <td class="left">Congenital malformations</td>
 		            <td><input type="number" min="0" name="congenital_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="congenital_ad7f" class="form-control"></td>
@@ -304,7 +304,7 @@
 		            <td><input type="number" min="0" name="congenital_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">4</td>
+		            <td>4</td>
 		            <td class="left">Pneumonia</td>
 		            <td><input type="number" min="0" name="pneumonia_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="pneumonia_ad7f" class="form-control"></td>
@@ -316,7 +316,7 @@
 		            <td><input type="number" min="0" name="pneumonia_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">5</td>
+		            <td>5</td>
 		            <td class="left">Meningitis</td>
 		            <td><input type="number" min="0" name="meningitis_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="meningitis_ad7f" class="form-control"></td>
@@ -328,7 +328,7 @@
 		            <td><input type="number" min="0" name="meningitis_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">6</td>
+		            <td>6</td>
 		            <td class="left">Skin infections</td>
 		            <td><input type="number" min="0" name="skin_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="skin_ad7f" class="form-control"></td>
@@ -340,7 +340,7 @@
 		            <td><input type="number" min="0" name="skin_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">7</td>
+		            <td>7</td>
 		            <td class="left">Sepsis suspected</td>
 		            <td><input type="number" min="0" name="sepsis_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="sepsis_ad7f" class="form-control"></td>
@@ -352,7 +352,7 @@
 		            <td><input type="number" min="0" name="sepsis_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">8</td>
+		            <td>8</td>
 		            <td class="left">Tetanus Neonatal</td>
 		            <td><input type="number" min="0" name="tetanus_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="tetanus_ad7f" class="form-control"></td>
@@ -364,7 +364,7 @@
 		            <td><input type="number" min="0" name="tetanus_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">9</td>
+		            <td>9</td>
 		            <td class="left">All other neonatal infections</td>
 		            <td><input type="number" min="0" name="others_neonatal_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="others_neonatal_ad7f" class="form-control"></td>
@@ -376,7 +376,7 @@
 		            <td><input type="number" min="0" name="others_neonatal_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">10</td>
+		            <td>10</td>
 		            <td class="left">All other causes of neonatal mobidity (infections excluded)</td>
 		            <td><input type="number" min="0" name="others_causes_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="others_causes_ad7f" class="form-control"></td>
@@ -388,7 +388,7 @@
 		            <td><input type="number" min="0" name="others_causes_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">11</td>
+		            <td>11</td>
 		            <td class="left">Total neonates born in this facility</td>
 		            <td><input type="number" min="0" name="total_born_in_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="total_born_in_ad7f" class="form-control"></td>
@@ -400,7 +400,7 @@
 		            <td><input type="number" min="0" name="total_born_in_d8f" class="form-control"></td>
 		          </tr>
               <tr>
-		            <td class="center">12</td>
+		            <td>12</td>
 		            <td class="left">Total neonates born outside this health facility</td>
 		            <td><input type="number" min="0" name="total_born_out_ad7m" class="form-control"></td>
 		            <td><input type="number" min="0" name="total_born_out_ad7f" class="form-control"></td>

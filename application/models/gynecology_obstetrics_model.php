@@ -70,7 +70,7 @@ class gynecology_obstetrics_model extends CI_Model
 
         'num_rapport' => $num_rapport
       ))
-      ->where('date_hospitalization_a', $this->session->userdata('update_date'));
+      ->where('date_hospitalization_a', $this->session->userdata('add_date'));
         return $this->db->update('Hospitalization_a');
     }
   }
@@ -192,6 +192,9 @@ class gynecology_obstetrics_model extends CI_Model
       $other_ind_obstet_deaths20,
       $num_rapport
     ) {
+      $this->db->where('date_obstetrical_complication_a', $this->session->userdata('add_date'));
+      $q = $this->db->get('Obstetrical_Complication_a');
+      if ($q->num_rows() == 0) {
         return $this->db->set(array(
           'complications_hos19' => $complications_hos19,
           'complications_hos20' => $complications_hos20,
@@ -269,7 +272,84 @@ class gynecology_obstetrics_model extends CI_Model
     ))
             ->set('date_obstetrical_complication_a', $this->session->userdata('add_date'))
             ->insert('Obstetrical_Complication_a');
+          }else {
+              $this->db->set(array(
+                  'complications_hos19' => $complications_hos19,
+                  'complications_hos20' => $complications_hos20,
+                  'complications_deaths19' => $complications_deaths19,
+                  'complications_deaths20' => $complications_deaths20,
+                  'ectopic_hos19' => $ectopic_hos19,
+                  'ectopic_hos20' => $ectopic_hos20,
+                  'ectopic_deaths19' => $ectopic_deaths19,
+                  'ectopic_deaths20' => $ectopic_deaths20,
+                  'antepartum_hos19' => $antepartum_hos19,
+                  'antepartum_hos20' => $antepartum_hos20,
+                  'antepartum_deaths19' => $antepartum_deaths19,
+                  'antepartum_deaths20' => $antepartum_deaths20,
+                  'postpartum_hos19' => $postpartum_hos19,
+                  'postpartum_hos20' => $postpartum_hos20,
+                  'postpartum_deaths19' => $postpartum_deaths19,
+                  'postpartum_deaths20' => $postpartum_deaths20,
+                  'eclampsia_hos19' => $eclampsia_hos19,
+                  'eclampsia_hos20' => $eclampsia_hos20,
+                  'eclampsia_deaths19' => $eclampsia_deaths19,
+                  'eclampsia_deaths20' => $eclampsia_deaths20,
+                  'postc_hos19' => $postc_hos19,
+                  'postc_hos20' => $postc_hos20,
+                  'postc_deaths19' => $postc_deaths19,
+                  'postc_deaths20' => $postc_deaths20,
+                  'postpartum_other_hos19' => $postpartum_other_hos19,
+                  'postpartum_other_hos20' => $postpartum_other_hos20,
+                  'postpartum_other_deaths19' => $postpartum_other_deaths19,
+                  'postpartum_other_deaths20' => $postpartum_other_deaths20,
+                  'prolonged_hos19' => $prolonged_hos19,
+                  'prolonged_hos20' => $prolonged_hos20,
+                  'uterine_rup_hos19' => $uterine_rup_hos19,
+                  'uterine_rup_hos20' => $uterine_rup_hos20,
+                  'uterine_rup_deaths19' => $uterine_rup_deaths19,
+                  'uterine_rup_deaths20' => $uterine_rup_deaths20,
+                  'amniotic_deaths19' => $amniotic_deaths19,
+                  'amniotic_deaths20' => $amniotic_deaths20,
+                  'compli_anesthesia_deaths19' => $compli_anesthesia_deaths19,
+                  'compli_anesthesia_deaths20' => $compli_anesthesia_deaths20,
+                  'other_direct_obste_hos19' => $other_direct_obste_hos19,
+                  'other_direct_obste_hos20' => $other_direct_obste_hos20,
+                  'other_direct_obste_deaths19' => $other_direct_obste_deaths19,
+                  'other_direct_obste_deaths20' => $other_direct_obste_deaths20,
+                  'anemia_sev_hos19' => $anemia_sev_hos19,
+                  'anemia_sev_hos20' => $anemia_sev_hos20,
+                  'anemia_sev_deaths19' => $anemia_sev_deaths19,
+                  'anemia_sev_deaths20' => $anemia_sev_deaths20,
+                  'malaria_sim_hos19' => $malaria_sim_hos19,
+                  'malaria_sim_hos20' => $malaria_sim_hos20,
+                  'malaria_dig_hos19' => $malaria_dig_hos19,
+                  'malaria_dig_hos20' => $malaria_dig_hos20,
+                  'malaria_sev_hos19' => $malaria_sev_hos19,
+                  'malaria_sev_hos20' => $malaria_sev_hos20,
+                  'malaria_sev_deaths19' => $malaria_sev_deaths19,
+                  'malaria_sev_deaths20' => $malaria_sev_deaths20,
+                  'hiv_hos19' => $hiv_hos19,
+                  'hiv_hos20' => $hiv_hos20,
+                  'hiv_deaths19' => $hiv_deaths19,
+                  'hiv_deaths20' => $hiv_deaths20,
+                  'pulmonary_hos19' => $pulmonary_hos19,
+                  'pulmonary_hos20' => $pulmonary_hos20,
+                  'pulmonary_deaths19' => $pulmonary_deaths19,
+                  'pulmonary_deaths20' => $pulmonary_deaths20,
+                  'pneumonia_hos19' => $pneumonia_hos19,
+                  'pneumonia_hos20' => $pneumonia_hos20,
+                  'pneumonia_deaths19' => $pneumonia_deaths19,
+                  'pneumonia_deaths20' => $pneumonia_deaths20,
+                  'other_ind_obstet_hos19' => $other_ind_obstet_hos19,
+                  'other_ind_obstet_hos20' => $other_ind_obstet_hos20,
+                  'other_ind_obstet_deaths19' => $other_ind_obstet_deaths19,
+                  'other_ind_obstet_deaths20' => $other_ind_obstet_deaths20,
 
+              'num_rapport' => $num_rapport
+            ))
+            ->where('date_obstetrical_complication_a', $this->session->userdata('add_date'));
+              return $this->db->update('Obstetrical_Complication_a');
+          }
     }
 
     public function fetch_data4(

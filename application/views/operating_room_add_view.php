@@ -28,91 +28,91 @@
 		          <tr>
 		            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		            <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Type of Surgical Intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Urgent Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Planned Interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-		            <th>Post-Surgical Infection Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Type of surgical intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Urgent interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Planned interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+		            <th>Post-surgical infection total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 		          </tr>
 		        </thead>
-		        <tbody class="center">
+		        <tbody>
 							<tr>
 		            <td rowspan="12">1</td>
-		            <td rowspan="12">Gyneco-Obstetrical</td>
-		            <td class="left">1. Cesarean Section</td>
+		            <td rowspan="12">Gyneco-obstetrical</td>
+		            <td class="left">1. Cesarean section</td>
 		            <td><input type="number" min="0" name="cesarean_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="cesarean_plan" class="form-control"></td>
 		            <td rowspan="12"><input type="number" min="0" name="go_total" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">2.1 Gynecological Hysterectomy</td>
+		            <td class="left">2.1 Gynecological hysterectomy</td>
 		            <td><input type="number" min="0" name="gyneco_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="gyneco_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">2.2 Obstetrical Hysterectomy</td>
+		            <td class="left">2.2 Obstetrical hysterectomy</td>
 		            <td><input type="number" min="0" name="obste_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="obste_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">3.1 Laparotomy for Extra Uterine Pregnancy</td>
+		            <td class="left">3.1 Laparotomy for extra uterine pregnancy</td>
 		            <td><input type="number" min="0" name="laparo_preg_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="laparo_preg_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">3.2 Laparotomy for Uterine Rupture</td>
+		            <td class="left">3.2 Laparotomy for uterine rupture</td>
 		            <td><input type="number" min="0" name="laparo_rupt_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="laparo_rupt_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">3.3 Laparotomy for Peritonitis</td>
+		            <td class="left">3.3 Laparotomy for peritonitis</td>
 		            <td><input type="number" min="0" name="laparo_perit_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="laparo_perit_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">3.4. Laparatomy for Myomectomy</td>
+		            <td class="left">3.4. Laparatomy for myomectomy</td>
 		            <td><input type="number" min="0" name="laparo_myomec_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="laparo_myomec_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">4.1 Vesico Vaginal Fistula Repaired</td>
+		            <td class="left">4.1 Vesico vaginal fistula repaired</td>
 		            <td class="grey"></td>
 		            <td><input type="number" min="0" name="vesico_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">4.2 Recto Vaginal Fistula Repaired</td>
+		            <td class="left">4.2 Recto vaginal fistula repaired</td>
 		            <td class="grey"></td>
 		            <td><input type="number" min="0" name="recto_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">4.3 Ureteric Vaginal Fistula Repaired</td>
+		            <td class="left">4.3 Ureteric vaginal fistula repaired</td>
 		            <td class="grey"></td>
 		            <td><input type="number" min="0" name="ureteric_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">5. Biopsy Curettage</td>
+		            <td class="left">5. Biopsy curettage</td>
 		            <td class="grey"></td>
 		            <td><input type="number" min="0" name="biopsy_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">6. Gyneco-Obstetrical Surgery Other</td>
+		            <td class="left">6. Gyneco-obstetrical surgery other</td>
 		            <td><input type="number" min="0" name="go_other_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="go_other_plan" class="form-control"></td>
 							</tr>
 							<tr>
 		            <td rowspan="3">2</td>
-		            <td colspan="2">SURGICAL INTERVENTIONS TOTAL</td>
+		            <td colspan="2">Surgical Interventions Total</td>
 		            <td><input type="number" min="0" name="total_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="total_plan" class="form-control"></td>
 		            <td rowspan="3" class="grey"></td>
 							</tr>
 							<tr>
-								<td rowspan="2">Of Which</td>
-		            <td class="left">1. Major Surgery</td>
+								<td rowspan="2">Of which</td>
+		            <td class="left">1. Major surgery</td>
 		            <td><input type="number" min="0" name="major_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="major_plan" class="form-control"></td>
 							</tr>
 							<tr>
-		            <td class="left">2. Minor Surgery</td>
+		            <td class="left">2. Minor surgery</td>
 		            <td><input type="number" min="0" name="minor_urg" class="form-control"></td>
 		            <td><input type="number" min="0" name="minor_plan" class="form-control"></td>
 							</tr>
@@ -131,22 +131,22 @@
 		        <tbody>
 		          <tr>
 								<td>1</td>
-		            <td class="left">General Anesthesia</td>
+		            <td class="left">General anesthesia</td>
 		            <td><input type="number" min="0" name="general" class="form-control"></td>
 		          </tr>
 		          <tr>
 								<td>2</td>
-		            <td class="left">Regional Anesthesia</td>
+		            <td class="left">Regional anesthesia</td>
 		            <td><input type="number" min="0" name="regional" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>3</td>
-		            <td class="left">Local Anesthesia</td>
+		            <td class="left">Local anesthesia</td>
 		            <td><input type="number" min="0" name="local" class="form-control"></td>
 		          </tr>
 							<tr>
 								<td>4</td>
-		            <td class="left">Other Types of Anesthesia</td>
+		            <td class="left">Other types of anesthesia</td>
 		            <td><input type="number" min="0" name="other_type" class="form-control"></td>
 		          </tr>
 		        </tbody>

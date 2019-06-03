@@ -6,11 +6,26 @@ class family_planning_update extends CI_Controller
     public function index()
     {
         $this->load->model('family_planning_model');
+        $this->load->model('home_model');
         if ($this->session->userdata('num_user') != '') {
+          if ($this->home_model->check_service('family_planning')) {
             $this->fetch();
+          } else {
+              $this->logout();
+              redirect('login', 'refresh');
+          }
         } else {
             redirect('login', 'refresh');
         }
+    }
+
+    public function logout(){
+      $user_data = $this->session->all_userdata();
+      foreach ($user_data as $key => $value){
+        $this->session->unset_userdata($key);
+      }
+      $this->session->sess_destroy();
+      redirect('login', 'refresh');
     }
 
     public function fetch()
@@ -262,11 +277,11 @@ class family_planning_update extends CI_Controller
           $auto_obs_active,
           $tubal_accep,
             $tubal_ppfp,
-            $tubal_stop,
+            $tubal_users,
           $tubal_active,
           $vasectomy_accep,
             $vasectomy_ppfp,
-            $vasectomy_stop,
+            $vasectomy_users,
           $vasectomy_active,
         $fp_new_acceptors,
           $new_fp_users,

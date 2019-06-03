@@ -24,10 +24,10 @@
         <form method="post" action="" class="form-inline">
 					<div class="row">
 						<div class="col-xs-8">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
 						<div class="col-xs-4">
-					  	<h4>Health Insurance Status of New Cases</h4>
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 						<br>
-	      		<h4>Cases and Deaths</h4>
+	      		<h4>Cases and deaths</h4>
 	      		<table id="XV" class="center">
 			        <thead>
 			          <tr>
@@ -169,121 +169,121 @@
 			        <tbody>
 			          <tr>
 			            <td>1</td>
-			            <td class="left">Complications of Abortions(Spontaneous and Induced)</td>
+			            <td class="left">Complications of abortions (spontaneous and induced)</td>
 			            <td><input type="number" min="0" name="complications_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="complications_opd20" class="form-control"></td>
 			          </tr>
 			          <tr>
 			            <td>2</td>
-			            <td class="left">Ectopic Pregnancy</td>
+			            <td class="left">Ectopic pregnancy</td>
 			            <td><input type="number" min="0" name="ectopic_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="ectopic_opd20" class="form-control"></td>
 			          </tr>
 			          <tr>
 			            <td>3</td>
-			            <td class="left">Antepartum Hemorrhage (APH)</td>
+			            <td class="left">Ante-partum hemorrhage (APH)</td>
 			            <td><input type="number" min="0" name="antepartum_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="antepartum_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>4</td>
-			            <td class="left">Post-Partum Hemorrhage (PPH)</td>
+			            <td class="left">Post-partum hemorrhage (PPH)</td>
 			            <td><input type="number" min="0" name="postpartum_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>5</td>
-			            <td class="left">Eclampsia / Severe Pre Eclampsia</td>
+			            <td class="left">Eclampsia / Severe pre eclampsia</td>
 			            <td><input type="number" min="0" name="eclampsia_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="eclampsia_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>6</td>
-			            <td class="left">Post C/Section Infection</td>
+			            <td class="left">Post C / Section infection</td>
 			            <td><input type="number" min="0" name="postc_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="postc_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>7</td>
-			            <td class="left">Other Postpartum Infections</td>
+			            <td class="left">Other post-partum infections</td>
 			            <td><input type="number" min="0" name="postpartum_other_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="postpartum_other_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>8</td>
-			            <td class="left">Prolonged or Obstructed Labor</td>
+			            <td class="left">Prolonged or obstructed labor</td>
 			            <td><input type="number" min="0" name="prolonged_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="prolonged_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>9</td>
-			            <td class="left">Uterine Rupture</td>
+			            <td class="left">Uterine rupture</td>
 			            <td><input type="number" min="0" name="uterine_rup_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="uterine_rup_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>10</td>
-			            <td class="left">Other Direct Obstetrical Complication</td>
+			            <td class="left">Other direct obstetrical complication</td>
 			            <td><input type="number" min="0" name="other_direct_obste_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_direct_obste_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>11</td>
-			            <td class="left">Anemia Severe (< 7gm/dl)</td>
+			            <td class="left">Anemia severe (< 7gm/dl)</td>
 			            <td><input type="number" min="0" name="anemia_sev_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="anemia_sev_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>12</td>
-			            <td class="left">Malaria Simple in Pregnancy</td>
+			            <td class="left">Malaria simple in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_sim_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_sim_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>13</td>
-			            <td class="left">Malaria with Minor Digestive Symptoms in Pregnancy</td>
+			            <td class="left">Malaria with minor digestive symptoms in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_dig_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_dig_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>14</td>
-			            <td class="left">Severe Malaria in Pregnancy</td>
+			            <td class="left">Severe malaria in pregnancy</td>
 			            <td><input type="number" min="0" name="malaria_sev_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="malaria_sev_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>15</td>
-			            <td class="left">HIV/Opportunistic Infections</td>
+			            <td class="left">HIV / Opportunistic infections</td>
 			            <td><input type="number" min="0" name="hiv_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="hiv_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>16</td>
-			            <td class="left">Pulmonary Embolism</td>
+			            <td class="left">Pulmonary embolism</td>
 			            <td><input type="number" min="0" name="pulmonary_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="pulmonary_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>17</td>
-			            <td class="left">Pneumonia on Pregnancy</td>
+			            <td class="left">Pneumonia on pregnancy</td>
 			            <td><input type="number" min="0" name="pneumonia_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="pneumonia_opd20" class="form-control"></td>
 			          </tr>
 								<tr>
 			            <td>18</td>
-			            <td class="left">Other Indirect Obstetrical Complication</td>
+			            <td class="left">Other indirect obstetrical complication</td>
 			            <td><input type="number" min="0" name="other_ind_obstet_opd19" class="form-control"></td>
 			            <td><input type="number" min="0" name="other_ind_obstet_opd20" class="form-control"></td>
 			          </tr>
 			        </tbody>
 			      </table>
 						<br>
-	      		<h4>Medical Imagery</h4>
+	      		<h4>Medical imagery</h4>
 	      		<table id="XXV" class="center">
 			        <thead>
 			          <tr>
 			            <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-			            <th class="des">X-Ray (Radiology)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+			            <th class="des">X-Ray (radiology)<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 			            <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 									<th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
 									<th class="des">Other<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -293,7 +293,7 @@
 			        <tbody>
 			          <tr>
 			            <td>1</td>
-			            <td class="left">X-Ray Lung</td>
+			            <td class="left">X-Ray lung</td>
 			            <td><input type="number" min="0" name="lung" class="form-control"></td>
 									<td>6</td>
 			            <td class="left">Gastroscopy</td>
@@ -301,15 +301,15 @@
 			          </tr>
 			          <tr>
 									<td>2</td>
-			            <td class="left">X-Ray Bones</td>
+			            <td class="left">X-Ray bones</td>
 			            <td><input type="number" min="0" name="bones" class="form-control"></td>
 									<td>7</td>
-			            <td class="left">Ultrasound (Echography)</td>
+			            <td class="left">Ultrasound (echography)</td>
 			            <td><input type="number" min="0" name="ultrasound" class="form-control"></td>
 			          </tr>
 								<tr>
 									<td>3</td>
-			            <td class="left">X-Ray Abdomen without Preparation</td>
+			            <td class="left">X-Ray abdomen without preparation</td>
 			            <td><input type="number" min="0" name="abdomen_without" class="form-control"></td>
 									<td>8</td>
 			            <td class="left">ECG</td>
@@ -317,15 +317,15 @@
 			          </tr>
 								<tr>
 									<td>4</td>
-			            <td class="left">X-Ray Abdomen with Dye</td>
+			            <td class="left">X-Ray abdomen with dye</td>
 			            <td><input type="number" min="0" name="abdomen_with" class="form-control"></td>
 									<td>9</td>
-			            <td class="left">Other Medical Imagery</td>
+			            <td class="left">Other medical imagery</td>
 			            <td><input type="number" min="0" name="other_medical_img" class="form-control"></td>
 			          </tr>
 								<tr>
 									<td>5</td>
-			            <td class="left">X-Ray Other</td>
+			            <td class="left">X-Ray other</td>
 			            <td><input type="number" min="0" name="other_xray" class="form-control"></td>
 									<td class="grey"></td>
 									<td class="grey"></td>

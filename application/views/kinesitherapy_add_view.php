@@ -18,16 +18,16 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Kinesitherapy - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
 					<div class="row">
 						<div class="col-xs-8">
-			      	<h4>Outpatient Morbidity Summary Table</h4>
+			      	<h4>Outpatient morbidity summary table</h4>
 						</div>
 						<div class="col-xs-4">
-					  	<h4>Health Insurance Status of New Cases</h4>
+					  	<h4>Health insurance status of new cases</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -81,7 +81,7 @@
 				        </thead>
 				        <tbody>
 				          <tr>
-				            <td class="left">Insured (Mutuelle or other insurance members)</td>
+				            <td class="left">Insured (mutuelle or other insurance members)</td>
 				            <td><input type="number" min="0" name="insured" class="form-control"></td>
 				          </tr>
 				          <tr>
@@ -103,7 +103,7 @@
 				      	<h4>Referrals</h4>
 							</div>
 							<div class="col-xs-6">
-						  	<h4>Origin of Outpatients</h4>
+						  	<h4>Origin of outpatients</h4>
 							</div>
 						</div>
 						<div class="row">

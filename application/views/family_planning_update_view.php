@@ -29,7 +29,7 @@
                 <th>N°</th>
                 <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                 <th>New acceptors in the program</th>
-                <th>PPFP uptake (Before discharge)</th>
+                <th>PPFP uptake (before discharge)</th>
                 <th>New users of FP method</th>
                 <th>Stopped FP method</th>
                 <th>Active users at end of month</th>
@@ -68,7 +68,7 @@
               </tr>
               <tr>
                 <td>3</td>
-                <td class="left">Injectables (Depo-Provera)</td>
+                <td class="left">Injectables (depo-provera)</td>
                 <td><input type="number" min="0" name="inject_depo_accep" class="form-control" value="<?php echo $table1->inject_depo_accep; ?>"></td>
                 <td class="grey"></td>
                 <td><input type="number" min="0" name="inject_depo_users" class="form-control" value="<?php echo $table1->inject_depo_users; ?>"></td>
@@ -81,7 +81,7 @@
               </tr>
               <tr>
                 <td>4</td>
-                <td class="left">Injectables (Norristerat)</td>
+                <td class="left">Injectables (norristerat)</td>
                 <td><input type="number" min="0" name="inject_nor_accep" class="form-control" value="<?php echo $table1->inject_nor_accep; ?>"></td>
                 <td class="grey"></td>
                 <td><input type="number" min="0" name="inject_nor_users" class="form-control" value="<?php echo $table1->inject_nor_users; ?>"></td>
@@ -107,7 +107,7 @@
               </tr>
               <tr>
                 <td>6</td>
-                <td class="left">Implants Jadelle</td>
+                <td class="left">Implants jadelle</td>
                 <td><input type="number" min="0" name="implants_jad_accep" class="form-control" value="<?php echo $table1->implants_jad_accep; ?>"></td>
                 <td><input type="number" min="0" name="implants_jad_ppfp" class="form-control" value="<?php echo $table1->implants_jad_ppfp; ?>"></td>
                 <td><input type="number" min="0" name="implants_jad_users" class="form-control" value="<?php echo $table1->implants_jad_users; ?>"></td>
