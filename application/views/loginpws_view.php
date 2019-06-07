@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<div class="container">
-				<div id="result"></div>
+				<div id="result"></div><br><br>
     </div>
 		<script src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.6/b-html5-1.5.6/datatables.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
