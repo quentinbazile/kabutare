@@ -31,10 +31,10 @@ class loginpws extends CI_Controller
           <table id="log" class="center">
             <thead>
               <tr>
-                <th>N°</th>
-                <th>Service</th>
-                <th>Login</th>
-                <th>Passwords</th>
+                <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Login<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                <th>Passwords<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
               </tr>
             </thead>
             <tbody>';

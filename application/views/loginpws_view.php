@@ -50,8 +50,7 @@ $(document).ready(function(){
 					"bPaginate": false,
 					"bLengthChange": false,
 					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip'
+					"searching": false
 				});
 				$('.dataTables_length').addClass('bs-select');
 			},
