@@ -25,6 +25,257 @@ class research extends CI_Controller
         $this->load->model('research_model');
         $output = '';
         $date = $this->input->post('date');
+        $injury=$this->research_model->injury($date);
+        $GBV=$this->research_model->GBV($date);
+        $physiotherapy = $this->research_model->physiotherapy($date);
+        $imagery=$this->research_model->imagery($date);
+        $neonatal=$this->research_model->neonatal($date);
+        $delivery_birth = $this->research_model->delivery_birth($date);
+        $malnourished=$this->research_model->malnourished($date);
+        $stock=$this->research_model->stock($date);
+        $laboratory = $this->research_model->laboratory($date);
+        $staff=$this->research_model->staff($date);
+        $family_planning = $this->research_model->family_planning($date);
+        $complete_ncds = $this->research_model->complete_ncds($date);
+        $complete_stoma = $this->research_model->complete_stoma($date);
+        $complete_ophta = $this->research_model->complete_ophta($date);
+        $complete_mental = $this->research_model->complete_mental($date);
+        $complete_emer = $this->research_model->complete_emer($date);
+        $complete_im = $this->research_model->complete_im($date);
+        $complete_pedia = $this->research_model->complete_pedia($date);
+        $complete_surge = $this->research_model->complete_surge($date);
+        $complete_ic = $this->research_model->complete_ic($date);
+        $complete_ms = $this->research_model->complete_ms($date);
+        $complete_or = $this->research_model->complete_or($date);
+
+        $output.='
+        <br>
+        <div class="row">
+          <div class="col-xs-6">
+            <table id="Cpl1" class="center">
+              <thead>
+                <tr>
+                  <th>Services</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>OPD</td>';
+                  if ($injury){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>NCDS</td>';
+                  if ($complete_ncds){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Stomatology</td>';
+                  if ($complete_stoma){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Ophtalmology</td>';
+                  if ($complete_ophta){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Mental health</td>';
+                  if ($complete_mental){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>GBV</td>';
+                  if ($GBV){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Kinesitherapy</td>';
+                  if ($physiotherapy){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Pregnant woman</td>';
+                  if ($imagery){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Emergency</td>';
+                  if ($complete_emer){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Internal medicine</td>';
+                  if ($complete_im){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Pediatrics</td>';
+                  if ($complete_pedia){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+
+        $output.='
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-6">
+            <table id="Cpl2" class="center">
+              <thead>
+                <tr>
+                  <th>Services</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Surgery</td>';
+                  if ($complete_surge){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Neonatology</td>';
+                  if ($neonatal){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Gynecology obstetric</td>';
+                  if ($delivery_birth){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Nutrition rehabilitation</td>';
+                  if ($malnourished){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Pharmacy</td>';
+                  if ($stock){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Intensive care</td>';
+                  if ($complete_ic){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Minor surgery</td>';
+                  if ($complete_ms){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Operating room</td>';
+                  if ($complete_or){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Laboratory</td>';
+                  if ($laboratory){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Humain ressource</td>';
+                  if ($staff){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                $output.='
+                </tr>
+                <tr>
+                  <td>Family planning</td>';
+                  if ($family_planning){
+                    $output.='<td>Yes</td>';
+                  } else {
+                    $output.='<td>No</td>';
+                  }
+                  $output.='
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>';
+
 
         $consultation_abcde=$this->research_model->consultation_abcde($date);
 
@@ -2240,7 +2491,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $injury=$this->research_model->injury($date);
+
 
         if ($injury) {
             $output.='
@@ -2488,10 +2739,10 @@ class research extends CI_Controller
               <table id="A7" class="center">
 					      <thead>
 					        <tr>
-					          <th rowspan="2">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th rowspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="2">Age < 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-					          <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+					          <th rowspan="2">N°</th>
+					          <th rowspan="2">Designation</th>
+					          <th colspan="2">Age < 20</th>
+					          <th colspan="2">Age > 20</th>
 					        </tr>
 					        <tr>
 					          <th>M</th>
@@ -2567,9 +2818,9 @@ class research extends CI_Controller
               <table id="A8" class="center">
                 <thead>
                   <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>N°</th>
+                    <th>Designation</th>
+                    <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2631,9 +2882,9 @@ class research extends CI_Controller
               <table id="A9" class="center">
                 <thead>
                   <tr>
-                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                    <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>N°</th>
+                    <th>Designation</th>
+                    <th>Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -3756,7 +4007,7 @@ class research extends CI_Controller
           <br>';
         }
 
-        $GBV=$this->research_model->GBV($date);
+
 
         if ($GBV) {
             $output.='
@@ -3990,12 +4241,12 @@ class research extends CI_Controller
             <table id="A12" class="center">
               <thead>
                 <tr>
-                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Service<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Type of surgical intervention<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Urgent interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Planned interventions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Post-surgical infection total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>N°</th>
+                  <th>Service</th>
+                  <th>Type of surgical intervention</th>
+                  <th>Urgent interventions</th>
+                  <th>Planned interventions</th>
+                  <th>Post-surgical infection total</th>
                 </tr>
               </thead>
               <tbody class="center">
@@ -4191,52 +4442,56 @@ class research extends CI_Controller
 
         if ($anesthesia->general_total != null) {
             $output.='
-          <br>
-          <h3 class="center">XIII] Anesthesia</h3>
-          <div class="row">
-            <table id="A13" class="center">
-              <thead>
-                <tr>
-                  <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td class="left">General anesthesia</td>
-                  <td>'.$anesthesia->general_total.'</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td class="left">Regional anesthesia</td>
-                  <td>'.$anesthesia->regional_total.'</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td class="left">Local anesthesia</td>
-                  <td>'.$anesthesia->local_total.'</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td class="left">Other types of anesthesia</td>
-                  <td>'.$anesthesia->other_type_total.'</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="col-xs-6">
+            <h3 class="center">XIII] Anesthesia</h3>
+            <div class="row">
+              <table id="A13" class="center">
+                <thead>
+                  <tr>
+                    <th>N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th class="des">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                    <th>Number<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="left">General anesthesia</td>
+                    <td>'.$anesthesia->general_total.'</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="left">Regional anesthesia</td>
+                    <td>'.$anesthesia->regional_total.'</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="left">Local anesthesia</td>
+                    <td>'.$anesthesia->local_total.'</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="left">Other types of anesthesia</td>
+                    <td>'.$anesthesia->other_type_total.'</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>';
         } else {
             $output .= '
+            <div class="col-xs-6">
               <h3 class="center">XIII] Anesthesia</h3>
               <h2>This part has not been filled yet</h2>
-              <br>';
+              <br>
+            </div>';
         }
 
-        $physiotherapy = $this->research_model->physiotherapy($date);
+
 
         if ($physiotherapy) {
             $output .= '
+            <div class="col-xs-6">
               <h3 class="center">XIV] Physiotherapy</h3>
               <table id="A14" class="center">
                 <thead>
@@ -4268,12 +4523,15 @@ class research extends CI_Controller
                   </tr>
                 </tbody>
               </table>
-              <br>';
+              <br>
+            </div>';
         } else {
             $output .= '
+            <div class="col-xs-6">
               <h3 class="center">XIV] Physiotherapy</h3>
               <h2>This part has not been filled yet</h2>
-              <br>';
+              <br>
+            </div>';
         }
 
         $obstetrical_a=$this->research_model->obstetrical_a($date);
@@ -4580,7 +4838,7 @@ class research extends CI_Controller
           </div>';
         }
 
-        $delivery_birth = $this->research_model->delivery_birth($date);
+
 
         if ($delivery_birth) {
             $output .= '
@@ -4950,7 +5208,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $neonatal=$this->research_model->neonatal($date);
+
 
         if ($neonatal) {
             $output.='
@@ -5289,7 +5547,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $malnourished=$this->research_model->malnourished($date);
+
 
         if ($malnourished) {
             $output.='
@@ -5299,11 +5557,11 @@ class research extends CI_Controller
             <table id="A21" class="center">
               <thead>
                 <tr>
-                  <th rowspan="3">N°<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th rowspan="3" colspan="2">Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th colspan="4">Acutely malnourished<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th rowspan="3">Pregnant women<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                  <th rowspan="3">Lactating women<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th rowspan="3">N°</th>
+                  <th rowspan="3">Designation</th>
+                  <th colspan="4">Acutely malnourished</th>
+                  <th rowspan="3">Pregnant women</th>
+                  <th rowspan="3">Lactating women</th>
                 </tr>
                 <tr>
                   <th colspan="2">Moderate<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
@@ -5319,7 +5577,7 @@ class research extends CI_Controller
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td class="left" colspan="2">Present beginning of month</td>
+                  <td class="left">Present beginning of month</td>
                   <td>'.$malnourished->present_start_mod4.'</td>
                   <td>'.$malnourished->present_start_mod5.'</td>
                   <td>'.$malnourished->present_start_sev4.'</td>
@@ -5328,9 +5586,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->present_start_lw.'</td>
                 </tr>
                 <tr>
-                  <td rowspan="2">2</td>
-                  <td class="left" rowspan="2">Hospitalized</td>
-                  <td class="left">New cases</td>
+                  <td>2.1</td>
+                  <td class="left">Hospitalized - New cases</td>
                   <td>'.$malnourished->nc_mod4.'</td>
                   <td>'.$malnourished->nc_mod5.'</td>
                   <td>'.$malnourished->nc_sev4.'</td>
@@ -5339,7 +5596,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->nc_lw.'</td>
                 </tr>
                 <tr>
-                  <td class="left">Relapsed Cases</td>
+                <td>2.2</td>
+                  <td class="left">Hospitalized - Relapsed cases</td>
                   <td>'.$malnourished->relapsed_mod4.'</td>
                   <td>'.$malnourished->relapsed_mod5.'</td>
                   <td>'.$malnourished->relapsed_sev4.'</td>
@@ -5348,9 +5606,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->relapsed_lw.'</td>
                 </tr>
                 <tr>
-                  <td rowspan="4">3</td>
-                  <td class="left" rowspan="4">Discharges</td>
-                  <td class="left">Cured</td>
+                  <td>3.1</td>
+                  <td class="left">Discharges - Cured</td>
                   <td>'.$malnourished->cured_mod4.'</td>
                   <td>'.$malnourished->cured_mod5.'</td>
                   <td>'.$malnourished->cured_sev4.'</td>
@@ -5359,7 +5616,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->cured_lw.'</td>
                 </tr>
                 <tr>
-                  <td class="left">Referred</td>
+                  <td>3.2</td>
+                  <td class="left">Discharges - Referred</td>
                   <td>'.$malnourished->referred_mod4.'</td>
                   <td>'.$malnourished->referred_mod5.'</td>
                   <td>'.$malnourished->referred_sev4.'</td>
@@ -5368,7 +5626,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->referred_lw.'</td>
                 </tr>
                 <tr>
-                  <td class="left">Abandoned</td>
+                  <td>3.3</td>
+                  <td class="left">Discharges - Abandoned</td>
                   <td>'.$malnourished->abandoned_mod4.'</td>
                   <td>'.$malnourished->abandoned_mod5.'</td>
                   <td>'.$malnourished->abandoned_sev4.'</td>
@@ -5377,7 +5636,8 @@ class research extends CI_Controller
                   <td>'.$malnourished->abandoned_lw.'</td>
                 </tr>
                 <tr>
-                  <td class="left">Died</td>
+                  <td>3.4</td>
+                  <td class="left">Discharges - Died</td>
                   <td>'.$malnourished->died_mod4.'</td>
                   <td>'.$malnourished->died_mod5.'</td>
                   <td>'.$malnourished->died_sev4.'</td>
@@ -5387,7 +5647,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td class="left" colspan="2">Present at end of month</td>
+                  <td class="left">Present at end of month</td>
                   <td>'.$malnourished->present_end_mod4.'</td>
                   <td>'.$malnourished->present_end_mod5.'</td>
                   <td>'.$malnourished->present_end_sev4.'</td>
@@ -5405,7 +5665,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $family_planning = $this->research_model->family_planning($date);
+
 
         if ($family_planning) {
             $output .= '
@@ -5706,7 +5966,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $laboratory = $this->research_model->laboratory($date);
+
 
         if ($laboratory) {
             $output .= '
@@ -6181,7 +6441,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $imagery=$this->research_model->imagery($date);
+
 
         if ($imagery) {
             $output.='
@@ -6250,7 +6510,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $stock=$this->research_model->stock($date);
+
 
         if ($stock) {
             $output.='
@@ -6741,7 +7001,7 @@ class research extends CI_Controller
               <br>';
         }
 
-        $staff=$this->research_model->staff($date);
+
 
         if ($staff) {
             $output.='

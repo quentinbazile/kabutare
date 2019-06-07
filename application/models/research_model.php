@@ -1367,4 +1367,70 @@ class research_model extends CI_Model
     {
         return $this->db->get_where('staff', array('date_staff' => $date))->row();
     }
+
+    public function complete_ncds($date)
+    {
+      $num_user_ncds = $this->db->get_where('user', array('service' => 'ncds'))->row()->num_user;
+      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ncds, 'date_consultation_abcde' => $date))->row();
+    }
+
+    public function complete_stoma($date)
+    {
+      $num_user_stoma = $this->db->get_where('user', array('service' => 'stomatology'))->row()->num_user;
+      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_stoma, 'date_consultation_abcde' => $date))->row();
+    }
+
+    public function complete_ophta($date)
+    {
+      $num_user_ophta = $this->db->get_where('user', array('service' => 'ophthalmology'))->row()->num_user;
+      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ophta, 'date_consultation_abcde' => $date))->row();
+    }
+
+    public function complete_mental($date)
+    {
+      $num_user_mental = $this->db->get_where('user', array('service' => 'mental_health'))->row()->num_user;
+      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_mental, 'date_consultation_abcde' => $date))->row();
+    }
+
+    public function complete_emer($date)
+    {
+      $num_user_emer = $this->db->get_where('user', array('service' => 'emergency'))->row()->num_user;
+      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_emer, 'date_consultation_abcde' => $date))->row();
+    }
+
+    public function complete_im($date)
+    {
+      $num_user_im = $this->db->get_where('user', array('service' => 'internal_medicine'))->row()->num_user;
+      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_im, 'date_hospitalization_bcde' => $date))->row();
+    }
+
+    public function complete_pedia($date)
+    {
+      $num_user_pedia = $this->db->get_where('user', array('service' => 'pediatrics'))->row()->num_user;
+      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_pedia, 'date_hospitalization_bcde' => $date))->row();
+    }
+
+    public function complete_surge($date)
+    {
+      $num_user_surge = $this->db->get_where('user', array('service' => 'surgery'))->row()->num_user;
+      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_surge, 'date_hospitalization_bcde' => $date))->row();
+    }
+
+    public function complete_ic($date)
+    {
+      $num_user_ic = $this->db->get_where('user', array('service' => 'intensive_care'))->row()->num_user;
+      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_ic, 'date_hospitalization_bcde' => $date))->row();
+    }
+
+    public function complete_ms($date)
+    {
+      $num_user_ms = $this->db->get_where('user', array('service' => 'minor_surgery'))->row()->num_user;
+      return $this->db->get_where('surgery', array('num_user' => $num_user_ms, 'date_surgery' => $date))->row();
+    }
+
+    public function complete_or($date)
+    {
+      $num_user_or = $this->db->get_where('user', array('service' => 'operating_room'))->row()->num_user;
+      return $this->db->get_where('surgery', array('num_user' => $num_user_or, 'date_surgery' => $date))->row();
+    }
 }

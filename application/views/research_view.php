@@ -20,7 +20,9 @@
 	</head>
 	<body>
 		<div class="container">
-				<input id="date" type="date">
+			<h2>Research a report by date</h2>
+
+				<center><input id="date" type="date"></center>
 				<div id="result"></div>
     </div>
 		<script src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.6/b-html5-1.5.6/datatables.min.js"></script>
@@ -48,6 +50,18 @@ $(document).ready(function(){
 			data:{date:date},
 			success:function(data){
 				$('#result').html(data);
+				$('#Cpl1').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false
+				});
+				$('#Cpl2').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false
+				});
 				$('#A2').DataTable({
 					"bPaginate": false,
 					"bLengthChange": false,
@@ -281,6 +295,7 @@ $(document).ready(function(){
 				$('#A7').DataTable({
 					"bPaginate": false,
 					"bLengthChange": false,
+					"ordering": false,
 					"bInfo": false,
 					"searching": false,
 					"dom": 'Bfrtip',
@@ -293,132 +308,6 @@ $(document).ready(function(){
  					 }, {
 						 extend: 'print',
  					   title: 'VII] Palliative care'
- 					 }
-        	]
-				});
-				$('#A8').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'VIII] Community checkup'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'VIII] Community checkup'
- 					 }, {
-						 extend: 'print',
- 					   title: 'VIII] Community checkup'
- 					 }
-        	]
-				});
-				$('#A9').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'IX] Cancer screening'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'IX] Cancer screening'
- 					 }, {
-						 extend: 'print',
- 					   title: 'IX] Cancer screening'
- 					 }
-        	]
-				});
-				$('#A10').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'X] Hospitalizations - Summary by service'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'X] Hospitalizations - Summary by service'
- 					 }, {
-						 extend: 'print',
- 					   title: 'X] Hospitalizations - Summary by service'
- 					 }
-        	]
-				});
-				$('#B10').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'X] Hospitalizations - Summary by age'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'X] Hospitalizations - Summary by age'
- 					 }, {
-						 extend: 'print',
- 					   title: 'X] Hospitalizations - Summary by age'
- 					 }
-        	]
-				});
-				$('#C10').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'X] Hospitalizations - Payment'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'X] Hospitalizations - Payment'
- 					 }, {
-						 extend: 'print',
- 					   title: 'X] Hospitalizations - Payment'
- 					 }
-        	]
-				});
-				$('#D10').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'X] Hospitalizations - Special causes'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'X] Hospitalizations - Special causes'
- 					 }, {
-						 extend: 'print',
- 					   title: 'X] Hospitalizations - Special causes'
- 					 }
-        	]
-				});
-				$('#E10').DataTable({
-					"bPaginate": false,
-					"bLengthChange": false,
-					"bInfo": false,
-					"fixedHeader": true,
-					"dom": 'Bfrtip',
-	        "buttons": [{
-					   extend: 'excelHtml5',
-					   title: 'X] Hospitalizations - Causes'
-					 }, {
-						 extend: 'pdfHtml5',
- 					   title: 'X] Hospitalizations - Causes'
- 					 }, {
-						 extend: 'print',
- 					   title: 'X] Hospitalizations - Causes'
  					 }
         	]
 				});
@@ -440,24 +329,142 @@ $(document).ready(function(){
  					 }
         	]
 				});
-				$('#A12').DataTable({
+				$('#E10').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"fixedHeader": true,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'X] Hospitalizations - Causes'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'X] Hospitalizations - Causes'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'X] Hospitalizations - Causes'
+ 					 }
+        	]
+				});
+				$('#D10').DataTable({
 					"bPaginate": false,
 					"bLengthChange": false,
 					"bInfo": false,
 					"searching": false,
 					"dom": 'Bfrtip',
-					"buttons": [{
+	        "buttons": [{
 					   extend: 'excelHtml5',
-					   title: 'XII] Surgery'
+					   title: 'X] Hospitalizations - Special causes'
 					 }, {
 						 extend: 'pdfHtml5',
- 					   title: 'XII] Surgery'
+ 					   title: 'X] Hospitalizations - Special causes'
  					 }, {
 						 extend: 'print',
- 					   title: 'XII] Surgery'
+ 					   title: 'X] Hospitalizations - Special causes'
  					 }
         	]
 				});
+				$('#C10').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'X] Hospitalizations - Payment'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'X] Hospitalizations - Payment'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'X] Hospitalizations - Payment'
+ 					 }
+        	]
+				});
+				$('#B10').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'X] Hospitalizations - Summary by age'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'X] Hospitalizations - Summary by age'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'X] Hospitalizations - Summary by age'
+ 					 }
+        	]
+				});
+				$('#A10').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'X] Hospitalizations - Summary by service'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'X] Hospitalizations - Summary by service'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'X] Hospitalizations - Summary by service'
+ 					 }
+        	]
+				});
+				$('#A9').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'IX] Cancer screening'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'IX] Cancer screening'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'IX] Cancer screening'
+ 					 }
+        	]
+				});
+
+				$('#A8').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"ordering": false,
+					"dom": 'Bfrtip',
+	        "buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'VIII] Community checkup'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'VIII] Community checkup'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'VIII] Community checkup'
+ 					 }
+        	]
+				});
+
+
+
+
+
+
+
+
 				$('#A13').DataTable({
 					"bPaginate": false,
 					"bLengthChange": false,
@@ -869,10 +876,25 @@ $(document).ready(function(){
  					 }
         	]
 				});
+				$('#A12').DataTable({
+					"bPaginate": false,
+					"bLengthChange": false,
+					"bInfo": false,
+					"searching": false,
+					"dom": 'Bfrtip',
+					"buttons": [{
+					   extend: 'excelHtml5',
+					   title: 'XII] Surgery'
+					 }, {
+						 extend: 'pdfHtml5',
+ 					   title: 'XII] Surgery'
+ 					 }, {
+						 extend: 'print',
+ 					   title: 'XII] Surgery'
+ 					 }
+        	]
+				});
 				$('.dataTables_length').addClass('bs-select');
-			},
-			error:function(data){
-
 			}
 		})
 	}

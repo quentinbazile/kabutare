@@ -1999,13 +1999,14 @@
     "bInfo": false,
     "searching": false
   });
-	$('#A8').DataTable({
+
+	$('#A9').DataTable({
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false,
     "searching": false
   });
-	$('#A9').DataTable({
+	$('#A8').DataTable({
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false,

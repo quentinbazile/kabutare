@@ -25,8 +25,8 @@
 			<center><button type="button" onclick="location.href='<?php echo base_url();?>research'">Research</button></center>
 
 			<div id="users">
-				<h2>Users password</h2>
-				<center><button type="button" onclick="">Passwords</button></center>
+				<h2>Users passwords</h2>
+				<center><button type="button" onclick="location.href='<?php echo base_url();?>loginpws'">Passwords</button></center>
 			</div>
 
 			<div class="row">
