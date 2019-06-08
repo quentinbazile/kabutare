@@ -333,7 +333,6 @@ $(document).ready(function(){
 					"bPaginate": false,
 					"bLengthChange": false,
 					"bInfo": false,
-					"fixedHeader": true,
 					"dom": 'Bfrtip',
 	        "buttons": [{
 					   extend: 'excelHtml5',

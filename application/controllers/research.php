@@ -3197,57 +3197,62 @@ class research extends CI_Controller
                 </tbody>
               </table>
           <br>
-          <h4>C) Payment</h4>
-          <table id="C10" class="center">
-            <thead>
-              <tr>
-                <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="left">Insured discharges(mutuelle, etc)</td>
-                <td>'.$hospitalization_bcde->insured_dis_total.'</td>
-              </tr>
-              <tr>
-                <td class="left">Non-paying discharges</td>
-                <td>'.$hospitalization_bcde->no_paying_dis_total.'</td>
-              </tr>
-              <tr>
-                <td class="left">Non-paying indigents discharged</td>
-                <td>'.$hospitalization_bcde->no_paying_ind_total.'</td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <h4>D) Special Causes of Admissions and Deaths</h4>
-          <table id="D10" class="center">
-            <thead>
-              <tr>
-                <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                <th>Admissions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-                <th>Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="left">Road traffic accidents</td>
-                <td>'.$hospitalization_bcde->road_acc_ad_total.'</td>
-                <td>'.$hospitalization_bcde->road_acc_deaths_total.'</td>
-              </tr>
-              <tr>
-                <td class="left">Natural or man-made disasters (epidemic, earthquake, etc)</td>
-                <td>'.$hospitalization_bcde->natural_disa_ad_total.'</td>
-                <td>'.$hospitalization_bcde->natural_disa_deaths_total.'</td>
-              </tr>
-              <tr>
-                <td class="left">Workplace injuries</td>
-                <td>'.$hospitalization_bcde->work_inj_ad_total.'</td>
-                <td>'.$hospitalization_bcde->work_inj_deaths_total.'</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="row">
+            <div class="col-xs-6">
+              <h4>C) Payment</h4>
+              <table id="C10" class="center">
+              <thead>
+                <tr>
+                  <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Total<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="left">Insured discharges(mutuelle, etc)</td>
+                  <td>'.$hospitalization_bcde->insured_dis_total.'</td>
+                </tr>
+                <tr>
+                  <td class="left">Non-paying discharges</td>
+                  <td>'.$hospitalization_bcde->no_paying_dis_total.'</td>
+                </tr>
+                <tr>
+                  <td class="left">Non-paying indigents discharged</td>
+                  <td>'.$hospitalization_bcde->no_paying_ind_total.'</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="col-xs-6">
+              <h4>D) Special Causes of Admissions and Deaths</h4>
+              <table id="D10" class="center">
+              <thead>
+                <tr>
+                  <th>Designation<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Admissions<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                  <th>Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="left">Road traffic accidents</td>
+                  <td>'.$hospitalization_bcde->road_acc_ad_total.'</td>
+                  <td>'.$hospitalization_bcde->road_acc_deaths_total.'</td>
+                </tr>
+                <tr>
+                  <td class="left">Natural or man-made disasters (epidemic, earthquake, etc)</td>
+                  <td>'.$hospitalization_bcde->natural_disa_ad_total.'</td>
+                  <td>'.$hospitalization_bcde->natural_disa_deaths_total.'</td>
+                </tr>
+                <tr>
+                  <td class="left">Workplace injuries</td>
+                  <td>'.$hospitalization_bcde->work_inj_ad_total.'</td>
+                  <td>'.$hospitalization_bcde->work_inj_deaths_total.'</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
           <br>
           <h4>E) Causes of hospitalization and death at discharge</h4>
           <table id="E10" class="center">
@@ -3258,7 +3263,7 @@ class research extends CI_Controller
                     <th colspan="6">Hospitalization<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                     <th colspan="6">Deaths<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                   </tr>
-              <tr>
+                  <tr>
                     <th colspan="2">Age < 5<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                     <th colspan="2">Age 5 to 19<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
                     <th colspan="2">Age > 20<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
