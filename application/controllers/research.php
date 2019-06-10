@@ -7254,6 +7254,10 @@ class research extends CI_Controller
               <br>';
         }
 
+        $output .= '
+          <br>';
+
+
         echo $output;
     }
 }

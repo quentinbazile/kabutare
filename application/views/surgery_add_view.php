@@ -999,7 +999,8 @@
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false,
-    "searching": false
+    "searching": false,
+		"fixedHeader": true
       });
   $('#B10').DataTable({
     "bPaginate": false,

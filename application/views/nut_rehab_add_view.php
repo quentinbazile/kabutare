@@ -10,6 +10,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/recherche15.css'); ?>" />
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.css"/>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	  <!--[if lt IE 9]>
@@ -442,6 +443,7 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
   </body>
 </html>
 <script>
@@ -449,7 +451,8 @@
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false,
-    "searching": false
+    "searching": false,
+		"fixedHeader": true
       });
   $('#B10').DataTable({
     "bPaginate": false,
@@ -473,7 +476,8 @@
     "bPaginate": false,
     "bLengthChange": false,
     "bInfo": false,
-    "searching": false
+    "searching": false,
+		"fixedHeader": true
       });
   $('#A21').DataTable({
     "bPaginate": false,
