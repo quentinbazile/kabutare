@@ -6209,63 +6209,63 @@ class research extends CI_Controller
                     <td class="grey"></td>
                   </tr>
                   <tr>
-                    <td>7.1</td>
+                    <td>7.01</td>
                     <td class="left pad">Hemoglobin</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->hemo_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.2</td>
+                    <td>7.02</td>
                     <td class="left pad">RPR</td>
                     <td>'.$laboratory->rpr_p.'</td>
                     <td>'.$laboratory->rpr_n.'</td>
                     <td>'.$laboratory->rpr_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.3</td>
+                    <td>7.03</td>
                     <td class="left pad">HIV final result</td>
                     <td>'.$laboratory->hiv_p.'</td>
                     <td>'.$laboratory->hiv_n.'</td>
                     <td>'.$laboratory->hiv_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.4</td>
+                    <td>7.04</td>
                     <td class="left pad">ESR</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->esr_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.5</td>
+                    <td>7.05</td>
                     <td class="left pad">Full blood count (FBC/NFS)</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->full_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.6</td>
+                    <td>7.06</td>
                     <td class="left pad">ALAT (GPT)</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->alat_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.7</td>
+                    <td>7.07</td>
                     <td class="left pad">Creatinine</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->crea_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.8</td>
+                    <td>7.08</td>
                     <td class="left pad">Blood glucose</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
                     <td>'.$laboratory->glucose_t.'</td>
                   </tr>
                   <tr>
-                    <td>7.9</td>
+                    <td>7.09</td>
                     <td class="left pad">Amylase</td>
                     <td class="grey"></td>
                     <td class="grey"></td>
