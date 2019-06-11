@@ -1370,67 +1370,260 @@ class research_model extends CI_Model
 
     public function complete_ncds($date)
     {
-      $num_user_ncds = $this->db->get_where('user', array('service' => 'ncds'))->row()->num_user;
-      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ncds, 'date_consultation_abcde' => $date))->row();
+        $num_user_ncds = $this->db->get_where('user', array('service' => 'ncds'))->row()->num_user;
+        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ncds, 'date_consultation_abcde' => $date))->row();
     }
 
     public function complete_stoma($date)
     {
-      $num_user_stoma = $this->db->get_where('user', array('service' => 'stomatology'))->row()->num_user;
-      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_stoma, 'date_consultation_abcde' => $date))->row();
+        $num_user_stoma = $this->db->get_where('user', array('service' => 'stomatology'))->row()->num_user;
+        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_stoma, 'date_consultation_abcde' => $date))->row();
     }
 
     public function complete_ophta($date)
     {
-      $num_user_ophta = $this->db->get_where('user', array('service' => 'ophthalmology'))->row()->num_user;
-      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ophta, 'date_consultation_abcde' => $date))->row();
+        $num_user_ophta = $this->db->get_where('user', array('service' => 'ophthalmology'))->row()->num_user;
+        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ophta, 'date_consultation_abcde' => $date))->row();
     }
 
     public function complete_mental($date)
     {
-      $num_user_mental = $this->db->get_where('user', array('service' => 'mental_health'))->row()->num_user;
-      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_mental, 'date_consultation_abcde' => $date))->row();
+        $num_user_mental = $this->db->get_where('user', array('service' => 'mental_health'))->row()->num_user;
+        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_mental, 'date_consultation_abcde' => $date))->row();
     }
 
     public function complete_emer($date)
     {
-      $num_user_emer = $this->db->get_where('user', array('service' => 'emergency'))->row()->num_user;
-      return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_emer, 'date_consultation_abcde' => $date))->row();
+        $num_user_emer = $this->db->get_where('user', array('service' => 'emergency'))->row()->num_user;
+        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_emer, 'date_consultation_abcde' => $date))->row();
     }
 
     public function complete_im($date)
     {
-      $num_user_im = $this->db->get_where('user', array('service' => 'internal_medicine'))->row()->num_user;
-      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_im, 'date_hospitalization_bcde' => $date))->row();
+        $num_user_im = $this->db->get_where('user', array('service' => 'internal_medicine'))->row()->num_user;
+        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_im, 'date_hospitalization_bcde' => $date))->row();
     }
 
     public function complete_pedia($date)
     {
-      $num_user_pedia = $this->db->get_where('user', array('service' => 'pediatrics'))->row()->num_user;
-      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_pedia, 'date_hospitalization_bcde' => $date))->row();
+        $num_user_pedia = $this->db->get_where('user', array('service' => 'pediatrics'))->row()->num_user;
+        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_pedia, 'date_hospitalization_bcde' => $date))->row();
     }
 
     public function complete_surge($date)
     {
-      $num_user_surge = $this->db->get_where('user', array('service' => 'surgery'))->row()->num_user;
-      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_surge, 'date_hospitalization_bcde' => $date))->row();
+        $num_user_surge = $this->db->get_where('user', array('service' => 'surgery'))->row()->num_user;
+        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_surge, 'date_hospitalization_bcde' => $date))->row();
     }
 
     public function complete_ic($date)
     {
-      $num_user_ic = $this->db->get_where('user', array('service' => 'intensive_care'))->row()->num_user;
-      return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_ic, 'date_hospitalization_bcde' => $date))->row();
+        $num_user_ic = $this->db->get_where('user', array('service' => 'intensive_care'))->row()->num_user;
+        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_ic, 'date_hospitalization_bcde' => $date))->row();
     }
 
     public function complete_ms($date)
     {
-      $num_user_ms = $this->db->get_where('user', array('service' => 'minor_surgery'))->row()->num_user;
-      return $this->db->get_where('surgery', array('num_user' => $num_user_ms, 'date_surgery' => $date))->row();
+        $num_user_ms = $this->db->get_where('user', array('service' => 'minor_surgery'))->row()->num_user;
+        return $this->db->get_where('surgery', array('num_user' => $num_user_ms, 'date_surgery' => $date))->row();
     }
 
     public function complete_or($date)
     {
-      $num_user_or = $this->db->get_where('user', array('service' => 'operating_room'))->row()->num_user;
-      return $this->db->get_where('surgery', array('num_user' => $num_user_or, 'date_surgery' => $date))->row();
+        $num_user_or = $this->db->get_where('user', array('service' => 'operating_room'))->row()->num_user;
+        return $this->db->get_where('surgery', array('num_user' => $num_user_or, 'date_surgery' => $date))->row();
+    }
+
+    public function mental_health2($date1, $date2)
+    {
+        $this->db->select("
+          SUM(follow_up) AS follow_up_total,
+          SUM(higher_level) AS higher_level_total,
+          SUM(hospitalized) AS hospitalized_total,
+          SUM(anxiety_nc19m) AS anxiety_nc19m_total,
+          SUM(anxiety_nc19f) AS anxiety_nc19f_total,
+          SUM(anxiety_nc39m) AS anxiety_nc39m_total,
+          SUM(anxiety_nc39f) AS anxiety_nc39f_total,
+          SUM(anxiety_nc40m) AS anxiety_nc40m_total,
+          SUM(anxiety_nc40f) AS anxiety_nc40f_total,
+          SUM(stress_nc19m) AS stress_nc19m_total,
+          SUM(stress_nc19f) AS stress_nc19f_total,
+          SUM(stress_nc39m) AS stress_nc39m_total,
+          SUM(stress_nc39f) AS stress_nc39f_total,
+          SUM(stress_nc40m) AS stress_nc40m_total,
+          SUM(stress_nc40f) AS stress_nc40f_total,
+          SUM(schizo_nc19m) AS schizo_nc19m_total,
+          SUM(schizo_nc19f) AS schizo_nc19f_total,
+          SUM(schizo_nc39m) AS schizo_nc39m_total,
+          SUM(schizo_nc39f) AS schizo_nc39f_total,
+          SUM(schizo_nc40m) AS schizo_nc40m_total,
+          SUM(schizo_nc40f) AS schizo_nc40f_total,
+          SUM(soma_nc19m) AS soma_nc19m_total,
+          SUM(soma_nc19f) AS soma_nc19f_total,
+          SUM(soma_nc39m) AS soma_nc39m_total,
+          SUM(soma_nc39f) AS soma_nc39f_total,
+          SUM(soma_nc40m) AS soma_nc40m_total,
+          SUM(soma_nc40f) AS soma_nc40f_total,
+          SUM(child_nc19m) AS child_nc19m_total,
+          SUM(child_nc19f) AS child_nc19f_total,
+          SUM(child_nc39m) AS child_nc39m_total,
+          SUM(child_nc39f) AS child_nc39f_total,
+          SUM(child_nc40m) AS child_nc40m_total,
+          SUM(child_nc40f) AS child_nc40f_total,
+          SUM(alcohol_nc19m) AS alcohol_nc19m_total,
+          SUM(alcohol_nc19f) AS alcohol_nc19f_total,
+          SUM(alcohol_nc39m) AS alcohol_nc39m_total,
+          SUM(alcohol_nc39f) AS alcohol_nc39f_total,
+          SUM(alcohol_nc40m) AS alcohol_nc40m_total,
+          SUM(alcohol_nc40f) AS alcohol_nc40f_total,
+          SUM(drugs_nc19m) AS drugs_nc19m_total,
+          SUM(drugs_nc19f) AS drugs_nc19f_total,
+          SUM(drugs_nc39m) AS drugs_nc39m_total,
+          SUM(drugs_nc39f) AS drugs_nc39f_total,
+          SUM(drugs_nc40m) AS drugs_nc40m_total,
+          SUM(drugs_nc40f) AS drugs_nc40f_total,
+          SUM(dep_nc19m) AS dep_nc19m_total,
+          SUM(dep_nc19f) AS dep_nc19f_total,
+          SUM(dep_nc39m) AS dep_nc39m_total,
+          SUM(dep_nc39f) AS dep_nc39f_total,
+          SUM(dep_nc40m) AS dep_nc40m_total,
+          SUM(dep_nc40f) AS dep_nc40f_total,
+          SUM(suicid_att_nc19m) AS suicid_att_nc19m_total,
+          SUM(suicid_att_nc19f) AS suicid_att_nc19f_total,
+          SUM(suicid_att_nc39m) AS suicid_att_nc39m_total,
+          SUM(suicid_att_nc39f) AS suicid_att_nc39f_total,
+          SUM(suicid_att_nc40m) AS suicid_att_nc40m_total,
+          SUM(suicid_att_nc40f) AS suicid_att_nc40f_total,
+          SUM(suicid_d_nc19m) AS suicid_d_nc19m_total,
+          SUM(suicid_d_nc19f) AS suicid_d_nc19f_total,
+          SUM(suicid_d_nc39m) AS suicid_d_nc39m_total,
+          SUM(suicid_d_nc39f) AS suicid_d_nc39f_total,
+          SUM(suicid_d_nc40m) AS suicid_d_nc40m_total,
+          SUM(suicid_d_nc40f) AS suicid_d_nc40f_total,
+          SUM(maniac_nc19m) AS maniac_nc19m_total,
+          SUM(maniac_nc19f) AS maniac_nc19f_total,
+          SUM(maniac_nc39m) AS maniac_nc39m_total,
+          SUM(maniac_nc39f) AS maniac_nc39f_total,
+          SUM(maniac_nc40m) AS maniac_nc40m_total,
+          SUM(maniac_nc40f) AS maniac_nc40f_total,
+          SUM(bipolar_nc19m) AS bipolar_nc19m_total,
+          SUM(bipolar_nc19f) AS bipolar_nc19f_total,
+          SUM(bipolar_nc39m) AS bipolar_nc39m_total,
+          SUM(bipolar_nc39f) AS bipolar_nc39f_total,
+          SUM(bipolar_nc40m) AS bipolar_nc40m_total,
+          SUM(bipolar_nc40f) AS bipolar_nc40f_total,
+          SUM(other_psy_nc19m) AS other_psy_nc19m_total,
+          SUM(other_psy_nc19f) AS other_psy_nc19f_total,
+          SUM(other_psy_nc39m) AS other_psy_nc39m_total,
+          SUM(other_psy_nc39f) AS other_psy_nc39f_total,
+          SUM(other_psy_nc40m) AS other_psy_nc40m_total,
+          SUM(other_psy_nc40f) AS other_psy_nc40f_total,
+          SUM(epilepsy_nc19m) AS epilepsy_nc19m_total,
+          SUM(epilepsy_nc19f) AS epilepsy_nc19f_total,
+          SUM(epilepsy_nc39m) AS epilepsy_nc39m_total,
+          SUM(epilepsy_nc39f) AS epilepsy_nc39f_total,
+          SUM(epilepsy_nc40m) AS epilepsy_nc40m_total,
+          SUM(epilepsy_nc40f) AS epilepsy_nc40f_total,
+          SUM(other_neuro_nc19m) AS other_neuro_nc19m_total,
+          SUM(other_neuro_nc19f) AS other_neuro_nc19f_total,
+          SUM(other_neuro_nc39m) AS other_neuro_nc39m_total,
+          SUM(other_neuro_nc39f) AS other_neuro_nc39f_total,
+          SUM(other_neuro_nc40m) AS other_neuro_nc40m_total,
+          SUM(other_neuro_nc40f) AS other_neuro_nc40f_total,
+          SUM(anxiety_oc19m) AS anxiety_oc19m_total,
+          SUM(anxiety_oc19f) AS anxiety_oc19f_total,
+          SUM(anxiety_oc39m) AS anxiety_oc39m_total,
+          SUM(anxiety_oc39f) AS anxiety_oc39f_total,
+          SUM(anxiety_oc40m) AS anxiety_oc40m_total,
+          SUM(anxiety_oc40f) AS anxiety_oc40f_total,
+          SUM(stress_oc19m) AS stress_oc19m_total,
+          SUM(stress_oc19f) AS stress_oc19f_total,
+          SUM(stress_oc39m) AS stress_oc39m_total,
+          SUM(stress_oc39f) AS stress_oc39f_total,
+          SUM(stress_oc40m) AS stress_oc40m_total,
+          SUM(stress_oc40f) AS stress_oc40f_total,
+          SUM(schizo_oc19m) AS schizo_oc19m_total,
+          SUM(schizo_oc19f) AS schizo_oc19f_total,
+          SUM(schizo_oc39m) AS schizo_oc39m_total,
+          SUM(schizo_oc39f) AS schizo_oc39f_total,
+          SUM(schizo_oc40m) AS schizo_oc40m_total,
+          SUM(schizo_oc40f) AS schizo_oc40f_total,
+          SUM(soma_oc19m) AS soma_oc19m_total,
+          SUM(soma_oc19f) AS soma_oc19f_total,
+          SUM(soma_oc39m) AS soma_oc39m_total,
+          SUM(soma_oc39f) AS soma_oc39f_total,
+          SUM(soma_oc40m) AS soma_oc40m_total,
+          SUM(soma_oc40f) AS soma_oc40f_total,
+          SUM(child_oc19m) AS child_oc19m_total,
+          SUM(child_oc19f) AS child_oc19f_total,
+          SUM(child_oc39m) AS child_oc39m_total,
+          SUM(child_oc39f) AS child_oc39f_total,
+          SUM(child_oc40m) AS child_oc40m_total,
+          SUM(child_oc40f) AS child_oc40f_total,
+          SUM(alcohol_oc19m) AS alcohol_oc19m_total,
+          SUM(alcohol_oc19f) AS alcohol_oc19f_total,
+          SUM(alcohol_oc39m) AS alcohol_oc39m_total,
+          SUM(alcohol_oc39f) AS alcohol_oc39f_total,
+          SUM(alcohol_oc40m) AS alcohol_oc40m_total,
+          SUM(alcohol_oc40f) AS alcohol_oc40f_total,
+          SUM(drugs_oc19m) AS drugs_oc19m_total,
+          SUM(drugs_oc19f) AS drugs_oc19f_total,
+          SUM(drugs_oc39m) AS drugs_oc39m_total,
+          SUM(drugs_oc39f) AS drugs_oc39f_total,
+          SUM(drugs_oc40m) AS drugs_oc40m_total,
+          SUM(drugs_oc40f) AS drugs_oc40f_total,
+          SUM(dep_oc19m) AS dep_oc19m_total,
+          SUM(dep_oc19f) AS dep_oc19f_total,
+          SUM(dep_oc39m) AS dep_oc39m_total,
+          SUM(dep_oc39f) AS dep_oc39f_total,
+          SUM(dep_oc40m) AS dep_oc40m_total,
+          SUM(dep_oc40f) AS dep_oc40f_total,
+          SUM(suicid_att_oc19m) AS suicid_att_oc19m_total,
+          SUM(suicid_att_oc19f) AS suicid_att_oc19f_total,
+          SUM(suicid_att_oc39m) AS suicid_att_oc39m_total,
+          SUM(suicid_att_oc39f) AS suicid_att_oc39f_total,
+          SUM(suicid_att_oc40m) AS suicid_att_oc40m_total,
+          SUM(suicid_att_oc40f) AS suicid_att_oc40f_total,
+          SUM(suicid_d_oc19m) AS suicid_d_oc19m_total,
+          SUM(suicid_d_oc19f) AS suicid_d_oc19f_total,
+          SUM(suicid_d_oc39m) AS suicid_d_oc39m_total,
+          SUM(suicid_d_oc39f) AS suicid_d_oc39f_total,
+          SUM(suicid_d_oc40m) AS suicid_d_oc40m_total,
+          SUM(suicid_d_oc40f) AS suicid_d_oc40f_total,
+          SUM(maniac_oc19m) AS maniac_oc19m_total,
+          SUM(maniac_oc19f) AS maniac_oc19f_total,
+          SUM(maniac_oc39m) AS maniac_oc39m_total,
+          SUM(maniac_oc39f) AS maniac_oc39f_total,
+          SUM(maniac_oc40m) AS maniac_oc40m_total,
+          SUM(maniac_oc40f) AS maniac_oc40f_total,
+          SUM(bipolar_oc19m) AS bipolar_oc19m_total,
+          SUM(bipolar_oc19f) AS bipolar_oc19f_total,
+          SUM(bipolar_oc39m) AS bipolar_oc39m_total,
+          SUM(bipolar_oc39f) AS bipolar_oc39f_total,
+          SUM(bipolar_oc40m) AS bipolar_oc40m_total,
+          SUM(bipolar_oc40f) AS bipolar_oc40f_total,
+          SUM(other_psy_oc19m) AS other_psy_oc19m_total,
+          SUM(other_psy_oc19f) AS other_psy_oc19f_total,
+          SUM(other_psy_oc39m) AS other_psy_oc39m_total,
+          SUM(other_psy_oc39f) AS other_psy_oc39f_total,
+          SUM(other_psy_oc40m) AS other_psy_oc40m_total,
+          SUM(other_psy_oc40f) AS other_psy_oc40f_total,
+          SUM(epilepsy_oc19m) AS epilepsy_oc19m_total,
+          SUM(epilepsy_oc19f) AS epilepsy_oc19f_total,
+          SUM(epilepsy_oc39m) AS epilepsy_oc39m_total,
+          SUM(epilepsy_oc39f) AS epilepsy_oc39f_total,
+          SUM(epilepsy_oc40m) AS epilepsy_oc40m_total,
+          SUM(epilepsy_oc40f) AS epilepsy_oc40f_total,
+          SUM(other_neuro_oc19m) AS other_neuro_oc19m_total,
+          SUM(other_neuro_oc19f) AS other_neuro_oc19f_total,
+          SUM(other_neuro_oc39m) AS other_neuro_oc39m_total,
+          SUM(other_neuro_oc39f) AS other_neuro_oc39f_total,
+          SUM(other_neuro_oc40m) AS other_neuro_oc40m_total,
+          SUM(other_neuro_oc40f) AS other_neuro_oc40f_total,
+        ");
+        $this->db->from('Mental_Health');
+        $this->db->where('date_mental_health >=', $date1);
+        $this->db->where('date_mental_health <=', $date2);
+        return $this->db->get()->row();
     }
 }
