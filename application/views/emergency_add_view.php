@@ -4,13 +4,13 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Emergency</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,500|Roboto:300,400,500,700">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.min.css'); ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/css/bs-css.css'); ?>" />
+		<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/recherche15.css'); ?>" />
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.css"/>
+	  <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-select.min.css'); ?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/datatables3.min.css'); ?>"/>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	  <!--[if lt IE 9]>
@@ -1483,11 +1483,11 @@
     		</form>
     	</div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-		<script src="https://cdn.datatables.net/v/dt/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
+    <script src="<?php echo base_url('assets/js/jquery2.min.js'); ?>"></script>
+	  <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+	  <script src="<?php echo base_url('assets/js/bootstrap-select.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/datatablesFH.min.js'); ?>"></script>
   </body>
 </html>
 <script>
