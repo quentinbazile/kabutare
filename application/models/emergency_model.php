@@ -569,7 +569,7 @@ class emergency_model extends CI_Model
 
             'num_rapport' => $num_rapport
           ))
-          ->where('date_hospitalization_a', $this->session->userdata('update_date'));
+          ->where('date_hospitalization_a', $this->session->userdata('add_date'));
             return $this->db->update('Hospitalization_a');
         }
     }
