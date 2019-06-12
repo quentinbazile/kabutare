@@ -49,8 +49,7 @@ $(document).ready(function(){
 				$('#log').DataTable({
 					"bPaginate": false,
 					"bLengthChange": false,
-					"bInfo": false,
-					"searching": false
+					"bInfo": false
 				});
 				$('.dataTables_length').addClass('bs-select');
 			},
