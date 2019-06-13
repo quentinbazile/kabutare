@@ -18,7 +18,7 @@
 	    <![endif]-->
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container">
 			<h2>Stomatology - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('update_date'))); ?></h2>
       <div>
         <form method="post" action="" class="form-inline">
