@@ -254,7 +254,7 @@ class research extends CI_Controller
         $output.='
                 </tr>
                 <tr>
-                  <td>Humain ressource</td>';
+                  <td>Human ressources</td>';
         if ($staff) {
             $output.='<td>Yes</td>';
         } else {
@@ -7496,7 +7496,7 @@ class research extends CI_Controller
         $output.='
                 </tr>
                 <tr>
-                  <td>Humain ressource</td>';
+                  <td>Human ressources</td>';
         if ($staff) {
             $output.='<td>Yes</td>';
         } else {
