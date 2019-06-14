@@ -1629,7 +1629,7 @@ class research_model extends CI_Model
 
     public function other_cardiovascular2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(cardio_nc19m) AS cardio_nc19m_total,
         SUM(cardio_nc19f) AS cardio_nc19f_total,
         SUM(cardio_nc39m) AS cardio_nc39m_total,
@@ -1885,7 +1885,7 @@ class research_model extends CI_Model
 
     public function palliative_care2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(oc_19m) AS oc_19m_total,
         SUM(oc_19f) AS oc_19f_total,
         SUM(oc_20m) AS oc_20m_total,
@@ -1924,7 +1924,7 @@ class research_model extends CI_Model
 
     public function community_checkup2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(annual_checkup) AS annual_checkup_total,
         SUM(cardio) AS cardio_total,
         SUM(respiratory) AS respiratory_total,
@@ -1933,15 +1933,15 @@ class research_model extends CI_Model
         SUM(cancer) AS cancer_total,
         SUM(disability) AS disability_total
       ");
-      $this->db->from('Community_Checkup');
-      $this->db->where('date_community_checkup >=', $date1);
-      $this->db->where('date_community_checkup <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Community_Checkup');
+        $this->db->where('date_community_checkup >=', $date1);
+        $this->db->where('date_community_checkup <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function cancer_screening2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(cervical) AS cervical_total,
         SUM(cervical_viap) AS cervical_viap_total,
         SUM(cervical_viap_hivp) AS cervical_viap_hivp_total,
@@ -1952,15 +1952,15 @@ class research_model extends CI_Model
         SUM(cervical_otherlevel) AS cervical_otherlevel_total,
         SUM(biopsies) AS biopsies_total
       ");
-      $this->db->from('Cancer_Screening');
-      $this->db->where('date_cancer_screening >=', $date1);
-      $this->db->where('date_cancer_screening <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Cancer_Screening');
+        $this->db->where('date_cancer_screening >=', $date1);
+        $this->db->where('date_cancer_screening <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function hospitalization_a2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(im_beds) AS im_beds_total,
         SUM(p_beds) AS p_beds_total,
         SUM(s_beds) AS s_beds_total,
@@ -2087,10 +2087,10 @@ class research_model extends CI_Model
         SUM(n_actual) AS n_actual_total,
         SUM(e_actual) AS e_actual_total
       ");
-      $this->db->from('Hospitalization_A');
-      $this->db->where('date_hospitalization_a >=', $date1);
-      $this->db->where('date_hospitalization_a <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Hospitalization_A');
+        $this->db->where('date_hospitalization_a >=', $date1);
+        $this->db->where('date_hospitalization_a <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function hospitalization_bcde2($date1, $date2)
@@ -2704,7 +2704,7 @@ class research_model extends CI_Model
 
     public function physiotherapy2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(physical_therapy) AS physical_therapy_total,
         SUM(audiology) AS audiology_total,
         SUM(speech_therapy) AS speech_therapy_total,
@@ -2712,15 +2712,15 @@ class research_model extends CI_Model
         SUM(audiology_hos) AS audiology_hos_total,
         SUM(speech_therapy_hos) AS speech_therapy_hos_total
       ");
-      $this->db->from('Physiotherapy');
-      $this->db->where('date_physiotherapy >=', $date1);
-      $this->db->where('date_physiotherapy <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Physiotherapy');
+        $this->db->where('date_physiotherapy >=', $date1);
+        $this->db->where('date_physiotherapy <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function delivery_birth2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(delive_total) AS delive_total_total,
         SUM(delive_eutocic) AS delive_eutocic_total,
         SUM(delive_dystocic) AS delive_dystocic_total,
@@ -2764,15 +2764,15 @@ class research_model extends CI_Model
         SUM(observation_24) AS observation_24_total
 
       ");
-      $this->db->from('Delivery_Birth');
-      $this->db->where('date_delivery_birth >=', $date1);
-      $this->db->where('date_delivery_birth <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Delivery_Birth');
+        $this->db->where('date_delivery_birth >=', $date1);
+        $this->db->where('date_delivery_birth <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function postnatal_care2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(pnc1_m) AS pnc1_m_total,
         SUM(pnc1_nb) AS pnc1_nb_total,
         SUM(anemia_pnc1_m) AS anemia_pnc1_m_total,
@@ -2791,29 +2791,29 @@ class research_model extends CI_Model
         SUM(referrals_nb) AS referrals_nb_total,
         SUM(ppfp_m) AS ppfp_m_total
       ");
-      $this->db->from('Postnatal_Care');
-      $this->db->where('date_postnatal_care >=', $date1);
-      $this->db->where('date_postnatal_care <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Postnatal_Care');
+        $this->db->where('date_postnatal_care >=', $date1);
+        $this->db->where('date_postnatal_care <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function kangaroo_mother_care2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(low_birth) AS low_birth_total,
         SUM(newborns) AS newborns_total,
         SUM(kmc_deaths) AS kmc_deaths_total,
         SUM(kmc_standard) AS kmc_standard_total
       ");
-      $this->db->from('Kangaroo_Mother_Care');
-      $this->db->where('date_kangaroo_mother_care >=', $date1);
-      $this->db->where('date_kangaroo_mother_care <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Kangaroo_Mother_Care');
+        $this->db->where('date_kangaroo_mother_care >=', $date1);
+        $this->db->where('date_kangaroo_mother_care <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function family_planning2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(oral_contra_proges_accep) AS oral_contra_proges_accep_total,
         SUM(oral_contra_proges_ppfp) AS oral_contra_proges_ppfp_total,
         SUM(oral_contra_proges_users) AS oral_contra_proges_users_total,
@@ -2950,15 +2950,15 @@ class research_model extends CI_Model
         SUM(implants_jad_stock) AS implants_jad_stock_total,
         SUM(implants_jad_day) AS implants_jad_day_total,
       ");
-      $this->db->from('Family_Planning');
-      $this->db->where('date_family_planning >=', $date1);
-      $this->db->where('date_family_planning <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Family_Planning');
+        $this->db->where('date_family_planning >=', $date1);
+        $this->db->where('date_family_planning <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function laboratory2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(exams_t) AS exams_t_total,
         SUM(blood_n) AS blood_n_total,
         SUM(blood_t) AS blood_t_total,
@@ -3033,15 +3033,15 @@ class research_model extends CI_Model
         SUM(other_lab_t) AS other_lab_t_total,
         SUM(total) AS total_total
       ");
-      $this->db->from('Laboratory');
-      $this->db->where('date_laboratory >=', $date1);
-      $this->db->where('date_laboratory <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Laboratory');
+        $this->db->where('date_laboratory >=', $date1);
+        $this->db->where('date_laboratory <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function blood_bank_security2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(im_patient_transfused) AS im_patient_transfused_total,
         SUM(p_patient_transfused) AS p_patient_transfused_total,
         SUM(s_patient_transfused) AS s_patient_transfused_total,
@@ -3076,10 +3076,10 @@ class research_model extends CI_Model
         SUM(o_destroyed) AS o_destroyed_total,
         SUM(o_stock) AS o_stock_total
       ");
-      $this->db->from('Blood_Bank_Security');
-      $this->db->where('date_blood_bank_security >=', $date1);
-      $this->db->where('date_blood_bank_security <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('Blood_Bank_Security');
+        $this->db->where('date_blood_bank_security >=', $date1);
+        $this->db->where('date_blood_bank_security <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function consultation_abcde2($date1, $date2)
@@ -3485,7 +3485,7 @@ class research_model extends CI_Model
 
     public function chronic_disease2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(hyper_nc19m) AS hyper_nc19m_total,
         SUM(hyper_nc19f) AS hyper_nc19f_total,
         SUM(hyper_nc39m) AS hyper_nc39m_total,
@@ -3852,15 +3852,15 @@ class research_model extends CI_Model
         SUM(cancer_others_d40m) AS cancer_others_d40m_total,
         SUM(cancer_others_d40f) AS cancer_others_d40f_total,
         ");
-          $this->db->from('chronic_disease');
-          $this->db->where('date_chronic_disease >=', $date1);
-          $this->db->where('date_chronic_disease <=', $date2);
-          return $this->db->get()->row();
+        $this->db->from('chronic_disease');
+        $this->db->where('date_chronic_disease >=', $date1);
+        $this->db->where('date_chronic_disease <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function injury2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(road_nc19m) AS road_nc19m_total,
         SUM(road_nc19f) AS road_nc19f_total,
         SUM(road_nc39m) AS road_nc39m_total,
@@ -4017,15 +4017,15 @@ class research_model extends CI_Model
         SUM(other_unintent_d40m) AS other_unintent_d40m_total,
         SUM(other_unintent_d40f) AS other_unintent_d40f_total
       ");
-      $this->db->from('injury');
-      $this->db->where('date_injury >=', $date1);
-      $this->db->where('date_injury <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('injury');
+        $this->db->where('date_injury >=', $date1);
+        $this->db->where('date_injury <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function GBV2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(sexual_violence_5m) AS sexual_violence_5m_total,
         SUM(sexual_violence_5f) AS sexual_violence_5f_total,
         SUM(sexual_violence_9m) AS sexual_violence_9m_total,
@@ -4157,10 +4157,10 @@ class research_model extends CI_Model
         SUM(exposure_hiv_25m) AS exposure_hiv_25m_total,
         SUM(exposure_hiv_25f) AS exposure_hiv_25f_total
       ");
-      $this->db->from('gender_based_violence');
-      $this->db->where('date_gender_based_violence >=', $date1);
-      $this->db->where('date_gender_based_violence <=', $date2);
-      return $this->db->get()->row();
+        $this->db->from('gender_based_violence');
+        $this->db->where('date_gender_based_violence >=', $date1);
+        $this->db->where('date_gender_based_violence <=', $date2);
+        return $this->db->get()->row();
     }
 
     public function anesthesia2($date1, $date2)
@@ -4179,7 +4179,7 @@ class research_model extends CI_Model
 
     public function obstetrical_a2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(complications_opd19) as complications_opd19_total,
         SUM(complications_opd20) as complications_opd20_total,
         SUM(complications_hos19) as complications_hos19_total,
@@ -4408,7 +4408,7 @@ class research_model extends CI_Model
 
     public function neonatal2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(asphyxia_ad7m) as asphyxia_ad7m_total,
         SUM(asphyxia_ad7f) as asphyxia_ad7f_total,
         SUM(asphyxia_ad8m) as asphyxia_ad8m_total,
@@ -4530,7 +4530,7 @@ class research_model extends CI_Model
 
     public function nutrition2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(screened_6) as screened_6_total,
         SUM(screened_7) as screened_7_total,
         SUM(screened_2) as screened_2_total,
@@ -4595,7 +4595,7 @@ class research_model extends CI_Model
 
     public function malnourished2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(present_start_mod4) as present_start_mod4_total,
         SUM(present_start_mod5) as present_start_mod5_total,
         SUM(present_start_sev4) as present_start_sev4_total,
@@ -4660,7 +4660,7 @@ class research_model extends CI_Model
 
     public function imagery2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(lung) as lung_total,
         SUM(bones) as bones_total,
         SUM(abdomen_without) as abdomen_without_total,
@@ -4679,7 +4679,7 @@ class research_model extends CI_Model
 
     public function stock2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(amoxycillin_begin) as amoxycillin_begin_total,
         SUM(amoxycillin_received) as amoxycillin_received_total,
         SUM(amoxycillin_dispensed) as amoxycillin_dispensed_total,
@@ -5010,7 +5010,7 @@ class research_model extends CI_Model
 
     public function staff2($date1, $date2)
     {
-      $this->db->select("
+        $this->db->select("
         SUM(doc_spe_34m) as doc_spe_34m_total,
         SUM(doc_spe_34f) as doc_spe_34f_total,
         SUM(doc_spe_35m) as doc_spe_35m_total,
@@ -5117,71 +5117,5 @@ class research_model extends CI_Model
         $this->db->where('date_staff >=', $date1);
         $this->db->where('date_staff <=', $date2);
         return $this->db->get()->row();
-    }
-
-    public function complete_ncds2($date1, $date2)
-    {
-        $num_user_ncds = $this->db->get_where('user', array('service' => 'ncds'))->row()->num_user;
-        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ncds, 'date_consultation_abcde >=' => $date1, 'date_consultation_abcde <=' => $date2))->row();
-    }
-
-    public function complete_stoma2($date1, $date2)
-    {
-        $num_user_stoma = $this->db->get_where('user', array('service' => 'stomatology'))->row()->num_user;
-        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_stoma, 'date_consultation_abcde >=' => $date1, 'date_consultation_abcde <=' => $date2))->row();
-    }
-
-    public function complete_ophta2($date1, $date2)
-    {
-        $num_user_ophta = $this->db->get_where('user', array('service' => 'ophthalmology'))->row()->num_user;
-        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_ophta, 'date_consultation_abcde >=' => $date1, 'date_consultation_abcde <=' => $date2))->row();
-    }
-
-    public function complete_mental2($date1, $date2)
-    {
-        $num_user_mental = $this->db->get_where('user', array('service' => 'mental_health'))->row()->num_user;
-        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_mental, 'date_consultation_abcde >=' => $date1, 'date_consultation_abcde <=' => $date2))->row();
-    }
-
-    public function complete_emer2($date1, $date2)
-    {
-        $num_user_emer = $this->db->get_where('user', array('service' => 'emergency'))->row()->num_user;
-        return $this->db->get_where('consultation_abcde', array('num_user' => $num_user_emer, 'date_consultation_abcde >=' => $date1, 'date_consultation_abcde <=' => $date2))->row();
-    }
-
-    public function complete_im2($date1, $date2)
-    {
-        $num_user_im = $this->db->get_where('user', array('service' => 'internal_medicine'))->row()->num_user;
-        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_im, 'date_hospitalization_bcde >=' => $date1, 'date_hospitalization_bcde <=' => $date2))->row();
-    }
-
-    public function complete_pedia2($date1, $date2)
-    {
-        $num_user_pedia = $this->db->get_where('user', array('service' => 'pediatrics'))->row()->num_user;
-        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_pedia, 'date_hospitalization_bcde >=' => $date1, 'date_hospitalization_bcde <=' => $date2))->row();
-    }
-
-    public function complete_surge2($date1, $date2)
-    {
-        $num_user_surge = $this->db->get_where('user', array('service' => 'surgery'))->row()->num_user;
-        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_surge, 'date_hospitalization_bcde >=' => $date1, 'date_hospitalization_bcde <=' => $date2))->row();
-    }
-
-    public function complete_ic2($date1, $date2)
-    {
-        $num_user_ic = $this->db->get_where('user', array('service' => 'intensive_care'))->row()->num_user;
-        return $this->db->get_where('hospitalization_bcde', array('num_user' => $num_user_ic, 'date_hospitalization_bcde >=' => $date1, 'date_hospitalization_bcde <=' => $date2))->row();
-    }
-
-    public function complete_ms2($date1, $date2)
-    {
-        $num_user_ms = $this->db->get_where('user', array('service' => 'minor_surgery'))->row()->num_user;
-        return $this->db->get_where('surgery', array('num_user' => $num_user_ms, 'date_surgery >=' => $date1, 'date_surgery <=' => $date2))->row();
-    }
-
-    public function complete_or2($date1, $date2)
-    {
-        $num_user_or = $this->db->get_where('user', array('service' => 'operating_room'))->row()->num_user;
-        return $this->db->get_where('surgery', array('num_user' => $num_user_or, 'date_surgery >=' => $date1, 'date_surgery <=' => $date2))->row();
     }
 }
