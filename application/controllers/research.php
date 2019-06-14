@@ -7304,7 +7304,7 @@ class research extends CI_Controller
               <tbody>
                 <tr>
                   <td>OPD</td>';
-        if ($injury) {
+        if ($injury->road_nc19m_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7349,7 +7349,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>GBV</td>';
-        if ($GBV) {
+        if ($GBV->sexual_violence_5m_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7358,7 +7358,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Kinesitherapy</td>';
-        if ($physiotherapy) {
+        if ($physiotherapy->physical_therapy_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7367,7 +7367,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Pregnant woman</td>';
-        if ($imagery) {
+        if ($imagery->lung_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7425,7 +7425,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Neonatology</td>';
-        if ($neonatal) {
+        if ($neonatal->asphyxia_ad7m_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7434,7 +7434,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Gynecology obstetric</td>';
-        if ($delivery_birth) {
+        if ($delivery_birth->delive_total_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7443,7 +7443,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Nutrition rehabilitation</td>';
-        if ($malnourished) {
+        if ($malnourished->present_start_mod4_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7452,7 +7452,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Pharmacy</td>';
-        if ($stock) {
+        if ($stock->amoxycillin_begin_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7488,7 +7488,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Laboratory</td>';
-        if ($laboratory) {
+        if ($laboratory->exams_t_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7497,7 +7497,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Human ressources</td>';
-        if ($staff) {
+        if ($staff->doc_spe_34m_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -7506,7 +7506,7 @@ class research extends CI_Controller
                 </tr>
                 <tr>
                   <td>Family planning</td>';
-        if ($family_planning) {
+        if ($family_planning->oral_contra_proges_accep_total != null) {
             $output.='<td>Yes</td>';
         } else {
             $output.='<td>No</td>';
@@ -8691,7 +8691,7 @@ class research extends CI_Controller
 
         $chronic_disease=$this->research_model->chronic_disease2($date1, $date2);
 
-        if ($chronic_disease) {
+        if ($chronic_disease->hyper_nc19m_total != null) {
             $output.='
           <br>
           <h3 class="center">IV] Chronic diseases</h3>
@@ -9300,7 +9300,7 @@ class research extends CI_Controller
 
         $other_cardiovascular = $this->research_model->other_cardiovascular2($date1, $date2);
 
-        if ($other_cardiovascular) {
+        if ($other_cardiovascular->cardio_nc19m_total != null) {
             $output .= '
               <h3 class="center">V] Other cardiovascular and kindney diseases</h3>
               <table id="A5" class="center">
@@ -9735,7 +9735,7 @@ class research extends CI_Controller
 
 
 
-        if ($injury) {
+        if ($injury->road_nc19m_total != null) {
             $output.='
           <h3 class="center">VI] Injuries</h3>
           <div class="row">
@@ -9975,7 +9975,7 @@ class research extends CI_Controller
 
         $palliative_care = $this->research_model->palliative_care2($date1, $date2);
 
-        if ($palliative_care) {
+        if ($palliative_care->oc_19m_total != null) {
             $output .= '
               <h3 class="center">VII] Palliative care</h3>
               <table id="A7" class="center">
@@ -10054,7 +10054,7 @@ class research extends CI_Controller
 
         $community_checkup = $this->research_model->community_checkup2($date1, $date2);
 
-        if ($community_checkup) {
+        if ($community_checkup->annual_checkup_total != null) {
             $output .= '
               <h3 class="center">VIII] Community checkup</h3>
               <table id="A8" class="center">
@@ -10118,7 +10118,7 @@ class research extends CI_Controller
 
         $cancer_screening = $this->research_model->cancer_screening2($date1, $date2);
 
-        if ($cancer_screening) {
+        if ($cancer_screening->cervical_total != null) {
             $output .= '
               <h3 class="center">IX] Cancer screening</h3>
               <table id="A9" class="center">
@@ -10187,7 +10187,7 @@ class research extends CI_Controller
 
         $hospitalization_a = $this->research_model->hospitalization_a2($date1, $date2);
 
-        if ($hospitalization_a) {
+        if ($hospitalization_a->im_beds_total != null) {
             $output .= '
               <h3 class="center">X] Hospitalizations</h3>
               <h4>A) Summary by service</h4>
@@ -11256,7 +11256,7 @@ class research extends CI_Controller
 
 
 
-        if ($GBV) {
+        if ($GBV->sexual_violence_5m_total != null) {
             $output.='
           <br>
           <h3 class="center">XI] Gender based violence</h3>
@@ -11736,7 +11736,7 @@ class research extends CI_Controller
 
 
 
-        if ($physiotherapy) {
+        if ($physiotherapy->physical_therapy_total != null) {
             $output .= '
             <div class="col-xs-6">
               <h3 class="center">XIV] Physiotherapy</h3>
@@ -11783,7 +11783,7 @@ class research extends CI_Controller
 
         $obstetrical_a=$this->research_model->obstetrical_a2($date1, $date2);
 
-        if ($obstetrical_a) {
+        if ($obstetrical_a->complications_opd19_total != null) {
             $output.='
           <br>
           <h3 class="center">XV] Obstetrical complications</h3>
@@ -12087,7 +12087,7 @@ class research extends CI_Controller
 
 
 
-        if ($delivery_birth) {
+        if ($delivery_birth->delive_total_total != null) {
             $output .= '
               <h3 class="center">XVI] Deliveries and births at health facility</h3>
               <table id="A16" class="center">
@@ -12316,7 +12316,7 @@ class research extends CI_Controller
 
         $postnatal_care = $this->research_model->postnatal_care2($date1, $date2);
 
-        if ($postnatal_care) {
+        if ($postnatal_care->pnc1_m_total != null) {
             $output .= '
               <h3 class="center">XVII] Postnatal care</h3>
               <table id="A17" class="center">
@@ -12413,7 +12413,7 @@ class research extends CI_Controller
 
         $kangaroo_mother_care = $this->research_model->kangaroo_mother_care2($date1, $date2);
 
-        if ($kangaroo_mother_care) {
+        if ($kangaroo_mother_care->low_birth_total != null) {
             $output .= '
               <h3 class="center">XVIII] Kangaroo mother care</h3>
               <table id="A18" class="center">
@@ -12457,7 +12457,7 @@ class research extends CI_Controller
 
 
 
-        if ($neonatal) {
+        if ($neonatal->asphyxia_ad7m_total != null) {
             $output.='
           <br>
           <h3 class="center">XIX] Neonatal causes of hospitalization and deaths</h3>
@@ -12676,7 +12676,7 @@ class research extends CI_Controller
 
         $nutrition=$this->research_model->nutrition2($date1, $date2);
 
-        if ($nutrition) {
+        if ($nutrition->screened_6_total != null) {
             $output.='
           <br>
           <h3 class="center">XX] Nutrition screening (all services)</h3>
@@ -12796,7 +12796,7 @@ class research extends CI_Controller
 
 
 
-        if ($malnourished) {
+        if ($malnourished->present_start_mod4_total != null) {
             $output.='
           <br>
           <h3 class="center">XXI] Inpatient rehabilitation of malnourished</h4>
@@ -12914,7 +12914,7 @@ class research extends CI_Controller
 
 
 
-        if ($family_planning) {
+        if ($family_planning->oral_contra_proges_accep_total != null) {
             $output .= '
               <h3 class="center">XXII] Family planning</h3>
               <h4>A) Methods</h4>
@@ -13215,7 +13215,7 @@ class research extends CI_Controller
 
 
 
-        if ($laboratory) {
+        if ($laboratory->exams_t_total != null) {
             $output .= '
               <h3 class="center">XXIII] Laboratory</h4>
               <table id="A23" class="center">
@@ -13567,7 +13567,7 @@ class research extends CI_Controller
 
         $blood_bank_security = $this->research_model->blood_bank_security2($date1, $date2);
 
-        if ($blood_bank_security) {
+        if ($blood_bank_security->im_patient_transfused_total != null) {
             $output .= '
             <h3 class="center">XXIV] Blood bank security</h3>
               <div class="row">
@@ -13690,7 +13690,7 @@ class research extends CI_Controller
 
 
 
-        if ($imagery) {
+        if ($imagery->lung_total != null) {
             $output.='
           <br>
           <h4>XXV] Medical imagery</h4>
@@ -13759,7 +13759,7 @@ class research extends CI_Controller
 
 
 
-        if ($stock) {
+        if ($stock->amoxycillin_begin_total != null) {
             $output.='
           <br>
           <h3 class="center">XXVI] Stock of tracer drugs</h3>
@@ -14250,7 +14250,7 @@ class research extends CI_Controller
 
 
 
-        if ($staff) {
+        if ($staff->doc_spe_34m_total != null) {
             $output.='
           <br>
           <h3 class="center">XXVII] Staffing information</h3>
