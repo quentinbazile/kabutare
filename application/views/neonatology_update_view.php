@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 	<head>
 		<meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2>Neonatology - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('add_date'))); ?></h2>
+			<h2>Neonatology - Report of <?php echo date('d/m/Y', strtotime($this->session->userdata('update_date'))); ?></h2>
 			<div>
         <form method="post" action="" class="form-inline">
           <div class="row">
